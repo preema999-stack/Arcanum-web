@@ -29,11 +29,10 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
           ? 'border-b border-white/10 bg-slate-950/80 backdrop-blur-xl'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
@@ -45,7 +44,7 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
             <div className="flex flex-col leading-tight">
               <span className="text-base font-bold tracking-tight text-white transition-colors group-hover:text-[#2384ba]">ARCANUM</span>
               <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">
-                Information Tech
+                Information Technology
               </span>
             </div>
           </a>

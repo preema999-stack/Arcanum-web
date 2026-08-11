@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   motion,
   useScroll,
@@ -9,6 +9,8 @@ import {
 } from 'framer-motion';
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { scrollToId } from '@/components/scrollTo';
+import { GsapTextSplit } from '@/components/GsapTextSplit';
+import { gsap } from 'gsap';
 
 const FRAME_START = 84;
 const FRAME_END = 125;
@@ -25,13 +27,27 @@ interface HeroTopSectionProps {
 export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+  const tagRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
+
+  const [activePhase, setActivePhase] = useState<1 | 2 | 3>(1);
 
   const { scrollYProgress } = useScroll({
     target: trackRef,
     offset: ['start start', 'end end'],
   });
 
+  // Track active phase for GSAP trigger recalculation
+  useEffect(() => {
+    const unsub = scrollYProgress.on('change', (v) => {
+      if (v < 0.28 && activePhase !== 1) setActivePhase(1);
+      else if (v >= 0.28 && v < 0.62 && activePhase !== 2) setActivePhase(2);
+      else if (v >= 0.62 && activePhase !== 3) setActivePhase(3);
+    });
+    return unsub;
+  }, [scrollYProgress, activePhase]);
+
+  // Frame preloading & scrub binding
   useEffect(() => {
     if (reducedMotion) return;
 
@@ -53,7 +69,18 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
     return unsub;
   }, [scrollYProgress, reducedMotion]);
 
-  // Smooth content phase transitions as user scrolls through the 42 frames
+  // Initial GSAP Tag pulse animation
+  useEffect(() => {
+    if (tagRef.current) {
+      gsap.fromTo(
+        tagRef.current,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out', delay: 0.2 }
+      );
+    }
+  }, []);
+
+  // Smooth content phase opacity & Y offsets tied to scroll
   const phase1Opacity = useTransform(scrollYProgress, [0, 0.05, 0.22, 0.32], [1, 1, 0, 0]);
   const phase1Y = useTransform(scrollYProgress, [0.22, 0.32], [0, -25]);
 
@@ -80,55 +107,79 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
           className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover"
         />
 
-        {/* Minimal left gradient overlay to guarantee text legibility without blocking video */}
+        {/* Minimal left gradient overlay for crystal-clear readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/95 via-[#0f172a]/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0f172a] to-transparent" />
 
-        {/* Main Content Overlay - Clean, Unboxed & Full Bleed */}
+        {/* Main Content Overlay - Clean, Full Bleed with GSAP Kinetic Text */}
         <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
           className="absolute inset-0 z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-20"
         >
           <div className="w-full max-w-5xl">
-            {/* Subtle Tag */}
-            <div className="mb-6 flex items-center space-x-2 font-mono text-xs tracking-widest text-[#2384ba]">
+            {/* Tag Badge */}
+            <div
+              ref={tagRef}
+              className="mb-6 flex items-center space-x-2 font-mono text-xs tracking-widest text-[#2384ba]"
+            >
               <span className="h-2 w-2 rounded-full bg-[#2384ba] animate-pulse" />
               <span className="uppercase font-semibold">UAE SOFTWARE DEVELOPMENT FIRM</span>
             </div>
 
-            {/* Phased Headlines Area */}
+            {/* Phased GSAP Animated Headlines Area */}
             <div className="relative min-h-[220px] sm:min-h-[260px] flex flex-col justify-center">
               {/* Phase 1 */}
               <motion.div style={{ opacity: phase1Opacity, y: phase1Y }} className="absolute inset-x-0">
                 <h1 className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-4">
-                  If You Have an Idea,
+                  <GsapTextSplit text="If You Have an Idea," isActive={activePhase === 1} />
                 </h1>
-                <p className="text-3xl sm:text-5xl xl:text-6xl font-semibold tracking-tight text-[#2384ba] leading-tight">
-                  We Will Make It a Reality.
-                </p>
+                <div className="text-3xl sm:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight">
+                  <GsapTextSplit
+                    text="We Will Make It a"
+                    highlightText="Reality."
+                    highlightClassName="text-[#2384ba] drop-shadow-[0_0_20px_rgba(35,132,186,0.35)]"
+                    delay={0.12}
+                    isActive={activePhase === 1}
+                    variant="chars"
+                  />
+                </div>
               </motion.div>
 
               {/* Phase 2 */}
               <motion.div style={{ opacity: phase2Opacity, y: phase2Y }} className="absolute inset-x-0 max-w-4xl">
                 <h2 className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-6">
-                  From Bold Vision to{' '}
-                  <span className="text-[#2384ba]">Enterprise Reality.</span>
+                  <GsapTextSplit
+                    text="From Bold Vision to"
+                    highlightText="Enterprise Reality."
+                    highlightClassName="text-[#2384ba] drop-shadow-[0_0_20px_rgba(35,132,186,0.35)]"
+                    isActive={activePhase === 2}
+                  />
                 </h2>
                 <p className="text-base sm:text-xl leading-relaxed text-slate-300 max-w-2xl font-sans font-normal">
-                  We engineer custom ERPs, core banking engines, clinical platforms, and cloud infrastructure — 
-                  built with architectural rigor and operational longevity.
+                  <GsapTextSplit
+                    text="We engineer custom ERPs, core banking engines, clinical platforms, and cloud infrastructure — built with architectural rigor."
+                    delay={0.2}
+                    isActive={activePhase === 2}
+                  />
                 </p>
               </motion.div>
 
               {/* Phase 3 */}
               <motion.div style={{ opacity: phase3Opacity, y: phase3Y }} className="absolute inset-x-0 max-w-4xl">
                 <h2 className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-6">
-                  And We Build Systems{' '}
-                  <span className="text-[#2384ba]">That Endure.</span>
+                  <GsapTextSplit
+                    text="And We Build Systems"
+                    highlightText="That Endure."
+                    highlightClassName="text-[#2384ba] drop-shadow-[0_0_20px_rgba(35,132,186,0.35)]"
+                    isActive={activePhase === 3}
+                  />
                 </h2>
                 <p className="text-base sm:text-xl leading-relaxed text-slate-300 max-w-2xl font-sans font-normal">
-                  Secure, scalable, and backed by senior engineers across the UAE — so your 
-                  software keeps evolving as your business grows.
+                  <GsapTextSplit
+                    text="Secure, scalable, and backed by senior engineers across the UAE — so your software keeps evolving as your business grows."
+                    delay={0.2}
+                    isActive={activePhase === 3}
+                  />
                 </p>
               </motion.div>
             </div>
@@ -137,7 +188,7 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <button
                 onClick={onOpenContact}
-                className="group flex items-center space-x-2.5 px-7 py-4 bg-[#2384ba] hover:bg-[#1b6ca1] text-white text-xs font-mono font-medium uppercase tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#2384ba]/25 hover:shadow-[#2384ba]/40"
+                className="group flex items-center space-x-2.5 px-7 py-4 bg-[#2384ba] hover:bg-[#1b6ca1] text-white text-xs font-mono font-medium uppercase tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#2384ba]/25 hover:shadow-[#2384ba]/45 hover:scale-[1.02]"
               >
                 <span>Start Your Project</span>
                 <ArrowDownRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
@@ -154,7 +205,7 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
           </div>
         </motion.div>
 
-        {/* Sleek Minimal Scroll Progress Line (Bottom Right) */}
+        {/* Minimal Scroll Progress Bar (Bottom Right) */}
         <div className="absolute bottom-8 right-8 z-20 flex items-center gap-3">
           <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
             SCROLL
