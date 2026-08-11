@@ -9,6 +9,7 @@ import { LocationsSection } from '@/components/LocationsSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { BrochureModal } from '@/components/BrochureModal';
+import { GsapPreloader } from '@/components/GsapPreloader';
 
 export default function Home() {
   const [brochuresOpen, setBrochuresOpen] = useState(false);
@@ -16,6 +17,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#0f172a] font-sans">
+      {/* GSAP Website Entrance Preloader Animation */}
+      <GsapPreloader />
+
       <Header
         onOpenBrochures={() => setBrochuresOpen(true)}
         onOpenContact={() => setContactOpen(true)}
