@@ -39,11 +39,11 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
         <div className="flex items-center justify-between py-4">
           {/* Brand */}
           <a href="#" className="group flex items-center gap-3 focus:outline-none">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/10 p-1.5 backdrop-blur-md transition-transform group-hover:scale-105">
-              <img src="/logo.png" alt="Arcanum IT Logo" className="h-full w-full object-contain" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 p-1 backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#2384ba]/50 group-hover:shadow-[0_0_15px_rgba(35,132,186,0.3)]">
+              <img src="/logo.png" alt="Arcanum IT Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight text-white">ARCANUM</span>
+              <span className="text-base font-bold tracking-tight text-white transition-colors group-hover:text-[#2384ba]">ARCANUM</span>
               <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">
                 Information Tech
               </span>

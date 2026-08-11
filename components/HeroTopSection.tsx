@@ -98,7 +98,7 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
         <div className="vignette absolute inset-0" />
 
         {/* Top marker */}
-        <div className="absolute top-0 inset-x-0 z-10">
+        {/* <div className="absolute top-0 inset-x-0 z-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 pt-32 text-xs font-mono text-slate-400 md:pt-36">
               <div className="flex items-center space-x-3">
@@ -113,7 +113,7 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
               <span className="hidden sm:inline text-slate-500">SCROLL TO EXPLORE</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Inspiring content */}
         <motion.div
@@ -181,13 +181,13 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
         </motion.div>
 
         {/* HUD: frame counter (bottom left) */}
-        <div className="absolute bottom-6 left-6 z-20 hidden items-center gap-3 font-mono text-[11px] text-white/70 sm:flex">
+        {/* <div className="absolute bottom-6 left-6 z-20 hidden items-center gap-3 font-mono text-[11px] text-white/70 sm:flex">
           <span className="h-px w-10 bg-white/30" />
           <span>FRAME</span>
           <FrameCounter progress={scrollYProgress} />
           <span>/</span>
           <span>{FRAME_COUNT}</span>
-        </div>
+        </div> */}
 
         {/* HUD: scroll progress (bottom right) */}
         <div className="absolute bottom-6 right-6 z-20 flex items-center gap-3">

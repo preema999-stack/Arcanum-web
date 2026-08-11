@@ -34,8 +34,8 @@ export function Footer({ onOpenBrochures, onOpenContact }: FooterProps) {
           {/* Brand */}
           <div className="space-y-4 lg:col-span-5">
             <div className="flex items-center gap-3.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/10 p-1.5">
-                <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 p-1 backdrop-blur-md">
+                <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
               </div>
               <span className="text-lg font-bold tracking-tight text-white">
                 {ARCANUM_INFO.name}
