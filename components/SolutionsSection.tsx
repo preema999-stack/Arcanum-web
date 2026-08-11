@@ -140,33 +140,33 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
       </div>
 
       {/* Full Catalog */}
-      <div id="catalog" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24 relative z-10 scroll-mt-24">
+      <div id="catalog" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-20 md:mt-24 relative z-10 scroll-mt-24 min-w-0 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7 }}
-          className="rounded-2xl border border-white/10 bg-slate-950/70 p-8 backdrop-blur-xl sm:p-10"
+          className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 sm:p-8 lg:p-10 backdrop-blur-xl w-full min-w-0 overflow-hidden shadow-2xl"
         >
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
+          <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#2384ba]">
+              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#2384ba]">
                 04 / Full Product Catalog
               </span>
-              <h3 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
                 All {ARCANUM_MODULES.length} Modules
               </h3>
             </div>
             <button
               onClick={onOpenBrochures}
-              className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2.5 font-mono text-xs text-white backdrop-blur-md transition-colors hover:bg-white/20"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 sm:px-5 sm:py-2.5 font-mono text-xs text-white backdrop-blur-md transition-colors hover:bg-white/20 shrink-0 w-fit"
             >
-              <FileText className="h-3.5 w-3.5" />
-              Brochure Vault
+              <FileText className="h-3.5 w-3.5 text-[#2384ba]" />
+              <span>Brochure Vault</span>
             </button>
           </div>
 
-          <div className="grid gap-2.5 sm:grid-cols-2">
+          <div className="grid gap-2.5 grid-cols-1 sm:grid-cols-2 min-w-0 w-full">
             {ARCANUM_MODULES.map((m) => {
               const Icon = CATEGORY_ICONS[m.category] ?? Boxes;
               return (
@@ -175,14 +175,16 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
                   href={m.brochureUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center gap-4 rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 transition-colors hover:border-[#2384ba]/60 hover:bg-slate-900"
+                  className="group flex items-center gap-3 sm:gap-4 rounded-xl border border-white/10 bg-slate-900/60 p-3 sm:px-4 sm:py-3 transition-all hover:border-[#2384ba]/60 hover:bg-slate-900 min-w-0 w-full overflow-hidden"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2384ba]/15 text-[#2384ba]">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="truncate text-sm font-medium text-white">{m.title}</div>
-                    <div className="truncate font-mono text-[11px] text-slate-400">
+                  <div className="min-w-0 flex-1 overflow-hidden">
+                    <div className="truncate text-xs sm:text-sm font-medium text-white group-hover:text-[#2384ba] transition-colors">
+                      {m.title}
+                    </div>
+                    <div className="truncate font-mono text-[10px] sm:text-[11px] text-slate-400">
                       {m.category}
                     </div>
                   </div>

@@ -19,40 +19,40 @@ export function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-[#0f172a] text-slate-100 rounded-lg p-6 sm:p-8 max-w-3xl w-full border border-slate-800 shadow-2xl relative max-h-[85vh] flex flex-col"
+        className="bg-[#0f172a] text-slate-100 rounded-2xl p-4 sm:p-8 max-w-3xl w-full border border-slate-800 shadow-2xl relative max-h-[85vh] flex flex-col min-w-0 overflow-hidden"
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded bg-[#2384ba]/20 text-[#2384ba] flex items-center justify-center">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-4 sm:mb-6">
+          <div className="flex items-center space-x-3 min-w-0">
+            <div className="w-8 h-8 rounded bg-[#2384ba]/20 text-[#2384ba] flex items-center justify-center shrink-0">
               <FileText className="w-4 h-4" />
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-white font-display">Technical Brochure Vault</h3>
-              <span className="text-xs font-mono text-slate-400">OFFICIAL ARCANUM IT DOCUMENTATION</span>
+            <div className="min-w-0">
+              <h3 className="text-base sm:text-lg font-bold text-white font-display truncate">Technical Brochure Vault</h3>
+              <span className="text-[10px] sm:text-xs font-mono text-slate-400 block truncate">OFFICIAL ARCANUM IT DOCUMENTATION</span>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1 text-slate-400 hover:text-white rounded focus:outline-none"
+            className="p-1 text-slate-400 hover:text-white rounded focus:outline-none shrink-0"
           >
             <X className="w-6 h-6" />
           </button>
         </div>
 
         {/* List of Brochures */}
-        <div className="overflow-y-auto pr-2 space-y-3 flex-1 mb-6">
+        <div className="overflow-y-auto pr-1 sm:pr-2 space-y-2.5 flex-1 mb-4 sm:mb-6 min-w-0">
           {BROCHURES_LIST.map((b) => (
             <div
               key={b.title}
-              className="bg-slate-900/90 p-4 rounded border border-slate-800 hover:border-[#2384ba]/50 transition-colors flex items-center justify-between"
+              className="bg-slate-900/90 p-3 sm:p-4 rounded-xl border border-slate-800 hover:border-[#2384ba]/50 transition-colors flex items-center justify-between gap-3 min-w-0"
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 min-w-0 flex-1 overflow-hidden">
                 <FileText className="w-4 h-4 text-[#2384ba] shrink-0" />
-                <div>
-                  <h4 className="text-sm font-semibold text-white font-display">{b.title}</h4>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase">{b.category}</span>
+                <div className="min-w-0 flex-1">
+                  <h4 className="text-xs sm:text-sm font-semibold text-white font-display truncate">{b.title}</h4>
+                  <span className="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase block truncate">{b.category}</span>
                 </div>
               </div>
 

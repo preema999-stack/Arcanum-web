@@ -27,7 +27,12 @@ export const ARCANUM_INFO = {
   heroHeadlineSuffix: '& Smart Software Solutions.',
   heroDescription:
     'Arcanum Information Technology is a professionally managed software development firm in the UAE. We engineer high-performance ERPs, banking integrations, clinical management systems, and legacy Oracle Forms modernizations with enterprise-grade security and reliability.',
-  established: 'UAE',
+  established: 'UAE & India',
+  locations: [
+    { city: 'Abu Dhabi', country: 'UAE', label: 'Global Headquarters', flag: '🇦🇪' },
+    { city: 'Kerala', country: 'India', label: 'Engineering & R&D Hub', flag: '🇮🇳' },
+    { city: 'Gujarat', country: 'India', label: 'Tech & Operations Center', flag: '🇮🇳' },
+  ],
   stats: [
     { label: 'Enterprise Applications', value: '22+', change: '+4 this year' },
     { label: 'System Uptime SLA', value: '99.99%', change: 'Zero critical downtime' },
@@ -35,7 +40,7 @@ export const ARCANUM_INFO = {
     { label: 'Active Enterprise Users', value: '150K+', change: 'Cross-platform users' },
   ],
   contact: {
-    address: 'Arcanum Information Technology, UAE',
+    address: 'Abu Dhabi (UAE) • Kerala (India) • Gujarat (India)',
     email: 'info@arcanum.ae',
     website: 'https://arcanum.ae',
     phone: '+971 4 000 0000',
