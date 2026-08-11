@@ -45,9 +45,14 @@ export function Footer({ onOpenBrochures, onOpenContact }: FooterProps) {
               Professionally managed software development firm delivering secure enterprise software
               across ERP, Banking, Healthcare, Education, and Cloud Infrastructure.
             </p>
-            <div className="flex items-center gap-2 font-mono text-xs text-slate-400">
+            <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-slate-300">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-              UAE CLUSTER ACTIVE
+              <span>GLOBAL HUBS:</span>
+              <span className="text-[#2384ba]">🇦🇪 ABU DHABI</span>
+              <span>•</span>
+              <span className="text-[#2384ba]">🇮🇳 KERALA</span>
+              <span>•</span>
+              <span className="text-[#2384ba]">🇮🇳 GUJARAT</span>
             </div>
           </div>
 

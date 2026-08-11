@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import { HeroTopSection } from '@/components/HeroTopSection';
 import { AboutSection } from '@/components/AboutSection';
 import { SolutionsSection } from '@/components/SolutionsSection';
+import { LocationsSection } from '@/components/LocationsSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { BrochureModal } from '@/components/BrochureModal';
@@ -25,6 +26,8 @@ export default function Home() {
       <AboutSection />
 
       <SolutionsSection onOpenBrochures={() => setBrochuresOpen(true)} />
+
+      <LocationsSection onOpenContact={() => setContactOpen(true)} />
 
       <ContactSection />
 

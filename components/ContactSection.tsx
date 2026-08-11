@@ -47,25 +47,47 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Address & Contact Info Box */}
-        <div className="lg:col-span-5 bg-[#0f172a] text-slate-100 rounded-lg p-8 border border-slate-800 shadow-xl space-y-6">
+        <div className="lg:col-span-5 bg-[#0f172a] text-slate-100 rounded-xl p-8 border border-slate-800 shadow-xl space-y-6">
           <div>
             <span className="text-[#2384ba] font-mono text-xs uppercase tracking-wider block mb-1">
-              HEADQUARTERS & TELEMETRY
+              GLOBAL OPERATIONAL HUBS
             </span>
             <h3 className="text-xl font-bold text-white font-display mb-4">
               Arcanum Information Technology
             </h3>
             <p className="text-slate-300 text-xs leading-relaxed font-sans mb-6">
-              Professionally managed software development firm providing innovative, smart, and flexible IT solutions.
+              Professionally managed software development firm operating across strategic tech centers in UAE & India.
             </p>
           </div>
 
-          <div className="space-y-4 pt-4 border-t border-slate-800 text-xs font-mono">
-            <div className="flex items-start space-x-3 text-slate-300">
-              <MapPin className="w-4 h-4 text-[#2384ba] shrink-0 mt-0.5" />
-              <span>{ARCANUM_INFO.contact.address}</span>
+          {/* 3 Location Hubs */}
+          <div className="space-y-3 pt-4 border-t border-slate-800 font-mono text-xs">
+            <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+              <span className="text-base">🇦🇪</span>
+              <div>
+                <div className="font-bold text-white">Abu Dhabi, UAE</div>
+                <div className="text-[11px] text-slate-400 font-sans">Global Headquarters & Client Strategy</div>
+              </div>
             </div>
 
+            <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+              <span className="text-base">🇮🇳</span>
+              <div>
+                <div className="font-bold text-white">Kerala, India</div>
+                <div className="text-[11px] text-slate-400 font-sans">Engineering & Core R&D Hub</div>
+              </div>
+            </div>
+
+            <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+              <span className="text-base">🇮🇳</span>
+              <div>
+                <div className="font-bold text-white">Gujarat, India</div>
+                <div className="text-[11px] text-slate-400 font-sans">Tech & Operations Center</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3 pt-4 border-t border-slate-800 text-xs font-mono">
             <div className="flex items-center space-x-3 text-slate-300">
               <Mail className="w-4 h-4 text-[#2384ba] shrink-0" />
               <a href={`mailto:${ARCANUM_INFO.contact.email}`} className="hover:text-[#2384ba] transition-colors">

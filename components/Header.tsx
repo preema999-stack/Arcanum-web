@@ -13,6 +13,7 @@ interface HeaderProps {
 const NAV = [
   { label: 'Who We Are', id: 'about' },
   { label: 'Solutions', id: 'solutions' },
+  { label: 'Global Hubs', id: 'locations' },
   { label: 'Catalog', id: 'catalog' },
   { label: 'Contact', id: 'contact' },
 ];

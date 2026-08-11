@@ -62,15 +62,34 @@ export function AboutSection() {
             className="lg:col-span-6"
           >
             <p className="text-base leading-relaxed text-slate-300 mb-5">
-              Arcanum Information Technology is a professionally managed software development firm
-              headquartered in the UAE. We employ highly-skilled engineers capable of executing
-              mission-critical IT projects professionally and with architectural clarity.
+              Arcanum Information Technology is a professionally managed software engineering firm operating across three key global centers: 
+              <strong className="text-white"> Abu Dhabi (UAE)</strong>, <strong className="text-white">Kerala (India)</strong>, and <strong className="text-white">Gujarat (India)</strong>. We employ senior software architects and engineers delivering enterprise-grade software.
             </p>
-            <p className="text-base leading-relaxed text-slate-300 mb-8">
-              We provide the market with innovative, flexible, and smart software solutions that let
-              organizations scale across financial management, educational administration, clinical
-              care, and corporate governance.
-            </p>
+
+            {/* 3 Locations Cards */}
+            <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md">
+                <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
+                  <span className="text-sm">🇦🇪</span>
+                  <span>ABU DHABI</span>
+                </div>
+                <div className="text-[10px] text-slate-400 font-sans">Global HQ & Strategy</div>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md">
+                <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
+                  <span className="text-sm">🇮🇳</span>
+                  <span>KERALA</span>
+                </div>
+                <div className="text-[10px] text-slate-400 font-sans">Engineering & R&D Hub</div>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md">
+                <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
+                  <span className="text-sm">🇮🇳</span>
+                  <span>GUJARAT</span>
+                </div>
+                <div className="text-[10px] text-slate-400 font-sans">Tech & Operations Center</div>
+              </div>
+            </div>
 
             <div className="grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               {stats.map((s) => (

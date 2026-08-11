@@ -120,10 +120,17 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
             {/* Tag Badge */}
             <div
               ref={tagRef}
-              className="mb-6 flex items-center space-x-2 font-mono text-xs tracking-widest text-[#2384ba]"
+              className="mb-6 flex flex-wrap items-center gap-2 font-mono text-xs tracking-widest text-[#2384ba]"
             >
-              <span className="h-2 w-2 rounded-full bg-[#2384ba] animate-pulse" />
-              <span className="uppercase font-semibold">UAE SOFTWARE DEVELOPMENT FIRM</span>
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="uppercase font-semibold text-white">GLOBAL HUBS:</span>
+              <span className="inline-flex items-center gap-1.5 rounded-md bg-[#2384ba]/15 px-2.5 py-0.5 border border-[#2384ba]/30 text-white font-medium">
+                <span>🇦🇪 ABU DHABI</span>
+                <span className="text-[#2384ba]">•</span>
+                <span>🇮🇳 KERALA</span>
+                <span className="text-[#2384ba]">•</span>
+                <span>🇮🇳 GUJARAT</span>
+              </span>
             </div>
 
             {/* Phased GSAP Animated Headlines Area */}
