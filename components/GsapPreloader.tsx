@@ -22,6 +22,13 @@ export function GsapPreloader({ onComplete }: { onComplete?: () => void }) {
       const tl = gsap.timeline({
         onComplete: () => {
           document.body.style.overflow = '';
+          if (containerRef.current) {
+            containerRef.current.style.display = 'none';
+          }
+          if (window.__lenis) {
+            window.__lenis.start();
+            window.__lenis.resize();
+          }
           if (onComplete) onComplete();
         },
       });
@@ -72,6 +79,10 @@ export function GsapPreloader({ onComplete }: { onComplete?: () => void }) {
 
     return () => {
       document.body.style.overflow = '';
+      if (window.__lenis) {
+        window.__lenis.start();
+        window.__lenis.resize();
+      }
       ctx.revert();
     };
   }, [onComplete]);

@@ -8,6 +8,7 @@ import { scrollToId } from '@/components/scrollTo';
 interface FooterProps {
   onOpenBrochures: () => void;
   onOpenContact: () => void;
+  onSelectHub: (id: string) => void;
 }
 
 const LINKS = [
@@ -17,7 +18,13 @@ const LINKS = [
   { label: 'Contact', id: 'contact' },
 ];
 
-export function Footer({ onOpenBrochures, onOpenContact }: FooterProps) {
+const HUBS = [
+  { label: 'ABU DHABI', flag: '🇦🇪', id: 'abudhabi' },
+  { label: 'KERALA', flag: '🇮🇳', id: 'kerala' },
+  { label: 'GUJARAT', flag: '🇮🇳', id: 'gujarat' },
+];
+
+export function Footer({ onOpenBrochures, onOpenContact, onSelectHub }: FooterProps) {
   const scrollToTop = () => {
     const lenis = window.__lenis;
     if (lenis && typeof lenis.scrollTo === 'function') {
@@ -48,11 +55,17 @@ export function Footer({ onOpenBrochures, onOpenContact }: FooterProps) {
             <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-slate-300">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
               <span>GLOBAL HUBS:</span>
-              <span className="text-[#2384ba]">🇦🇪 ABU DHABI</span>
-              <span>•</span>
-              <span className="text-[#2384ba]">🇮🇳 KERALA</span>
-              <span>•</span>
-              <span className="text-[#2384ba]">🇮🇳 GUJARAT</span>
+              {HUBS.map((hub, i) => (
+                <React.Fragment key={hub.id}>
+                  {i > 0 && <span>•</span>}
+                  <button
+                    onClick={() => onSelectHub(hub.id)}
+                    className="text-[#2384ba] transition-colors hover:text-white hover:underline"
+                  >
+                    {hub.flag} {hub.label}
+                  </button>
+                </React.Fragment>
+              ))}
             </div>
           </div>
 

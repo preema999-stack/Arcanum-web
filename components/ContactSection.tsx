@@ -19,6 +19,29 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
     message: '',
   });
 
+  React.useEffect(() => {
+    if (!isOpenModal) return;
+
+    const origBody = document.body.style.overflow;
+    const origHtml = document.documentElement.style.overflow;
+
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    if (window.__lenis) {
+      window.__lenis.stop();
+    }
+
+    return () => {
+      document.body.style.overflow = origBody;
+      document.documentElement.style.overflow = origHtml;
+      if (window.__lenis) {
+        window.__lenis.start();
+        window.__lenis.resize();
+      }
+    };
+  }, [isOpenModal]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -207,16 +230,21 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
 
   if (isOpenModal) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+      <div
+        className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md"
+        data-lenis-prevent="true"
+      >
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          className="bg-white rounded-lg p-6 sm:p-8 max-w-4xl w-full border border-slate-200 shadow-2xl relative max-h-[90vh] overflow-y-auto"
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          data-lenis-prevent="true"
+          className="bg-white rounded-xl p-6 sm:p-8 max-w-4xl w-full border border-slate-200 shadow-2xl relative max-h-[88vh] overflow-y-auto overscroll-contain text-left"
         >
           <button
             onClick={onCloseModal}
-            className="absolute top-4 right-4 text-slate-400 hover:text-slate-700"
+            className="absolute top-4 right-4 z-10 p-2 text-slate-400 hover:text-slate-900 rounded-full hover:bg-slate-100 transition-colors"
+            aria-label="Close modal"
           >
             <X className="w-6 h-6" />
           </button>

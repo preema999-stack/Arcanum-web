@@ -189,7 +189,7 @@ export function CodeSandbox() {
       </div>
 
       {/* Code Editor Body */}
-      <div className="p-4 sm:p-6 text-xs sm:text-sm overflow-x-auto max-h-[460px] leading-relaxed bg-[#0b1322]">
+      <div className="p-4 sm:p-6 text-xs sm:text-sm overflow-x-auto max-h-[460px] leading-relaxed bg-[#0b1322]" data-lenis-prevent>
         <pre className="table w-full">
           <tbody>
             {lines.map((line, idx) => (

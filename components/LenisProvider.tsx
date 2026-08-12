@@ -26,10 +26,22 @@ export function LenisProvider({ children }: LenisProviderProps) {
     }
 
     const animationFrameId = requestAnimationFrame(raf);
-
     window.__lenis = lenis;
 
+    // Recalculate scroll dimensions on window resize
+    const handleResize = () => {
+      lenis.resize();
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Initial resize after mount to ensure accurate bounds
+    const timeoutId = setTimeout(() => {
+      lenis.resize();
+    }, 500);
+
     return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
       lenis.destroy();
       delete window.__lenis;

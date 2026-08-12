@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className="bg-[#0f172a] text-white antialiased selection:bg-[#2384ba]/30 selection:text-[#2384ba]">
         <LenisProvider>{children}</LenisProvider>
       </body>

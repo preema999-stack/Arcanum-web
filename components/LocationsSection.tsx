@@ -113,11 +113,21 @@ function LiveClock({ gmtOffset }: { gmtOffset: number }) {
 
 interface LocationsSectionProps {
   onOpenContact?: () => void;
+  selectedHubId?: string;
+  onSelectHub?: (id: string) => void;
 }
 
-export function LocationsSection({ onOpenContact }: LocationsSectionProps) {
-  const [selectedHub, setSelectedHub] = useState<LocationHub>(LOCATION_HUBS[0]);
+export function LocationsSection({ onOpenContact, selectedHubId, onSelectHub }: LocationsSectionProps) {
+  const [internalHubId, setInternalHubId] = useState<string>(LOCATION_HUBS[0].id);
   const [hoveredHub, setHoveredHub] = useState<LocationHub | null>(null);
+
+  const activeHubId = selectedHubId ?? internalHubId;
+  const selectedHub = LOCATION_HUBS.find((hub) => hub.id === activeHubId) ?? LOCATION_HUBS[0];
+
+  const selectHub = (hub: LocationHub) => {
+    if (onSelectHub) onSelectHub(hub.id);
+    else setInternalHubId(hub.id);
+  };
 
   return (
     <section id="locations" className="relative bg-[#0f172a] py-24 md:py-32 overflow-hidden border-t border-white/10">
@@ -149,7 +159,7 @@ export function LocationsSection({ onOpenContact }: LocationsSectionProps) {
             return (
               <button
                 key={hub.id}
-                onClick={() => setSelectedHub(hub)}
+                onClick={() => selectHub(hub)}
                 className={`relative flex items-center justify-between p-5 rounded-2xl border text-left transition-all duration-300 ${
                   isSelected
                     ? 'border-[#2384ba] bg-gradient-to-r from-slate-900 via-slate-900/90 to-[#2384ba]/15 shadow-xl shadow-[#2384ba]/20 scale-[1.02]'
@@ -249,7 +259,7 @@ export function LocationsSection({ onOpenContact }: LocationsSectionProps) {
                     key={hub.id}
                     style={{ left: `${hub.coordinates.x}%`, top: `${hub.coordinates.y}%` }}
                     className="absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20"
-                    onClick={() => setSelectedHub(hub)}
+                    onClick={() => selectHub(hub)}
                     onMouseEnter={() => setHoveredHub(hub)}
                     onMouseLeave={() => setHoveredHub(null)}
                   >
