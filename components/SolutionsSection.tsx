@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { ARCANUM_MODULES } from '@/data/arcanumData';
 import { scrollToId } from '@/components/scrollTo';
+import { GsapTextSplit } from '@/components/GsapTextSplit';
 
 type IconComponent = React.ComponentType<{ className?: string }>;
 
@@ -54,20 +55,18 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
     <section id="solutions" className="relative bg-[#0f172a] py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-wrap items-end justify-between gap-6 mb-14"
-        >
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <div className="max-w-3xl">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#2384ba]">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#2384ba] block mb-3">
               03 / Flagship Solutions
             </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
-              Enterprise Systems We{' '}
-              <span className="text-[#2384ba]">Engineer.</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
+              <GsapTextSplit
+                text="Enterprise Systems We"
+                highlightText="Engineer."
+                variant="heading-3d"
+                triggerOnScroll
+              />
             </h2>
           </div>
           <button
@@ -77,7 +76,7 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
             View all {ARCANUM_MODULES.length} modules
             <ArrowUpRight className="h-4 w-4" />
           </button>
-        </motion.div>
+        </div>
 
         {/* Flagship Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

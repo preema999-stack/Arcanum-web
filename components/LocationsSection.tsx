@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Globe, Clock, Building2, Cpu, ArrowUpRight, CheckCircle2, Navigation } from 'lucide-react';
+import { GsapTextSplit } from '@/components/GsapTextSplit';
 
 export interface LocationHub {
   id: string;
@@ -143,7 +144,12 @@ export function LocationsSection({ onOpenContact, selectedHubId, onSelectHub }: 
               <span>GLOBAL FOOTPRINT & ENGINEERING NODES</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-              Our 3 Operational <span className="text-[#2384ba]">Tech Hubs.</span>
+              <GsapTextSplit
+                text="Our 3 Operational"
+                highlightText="Tech Hubs."
+                variant="heading-3d"
+                triggerOnScroll
+              />
             </h2>
           </div>
           <p className="text-sm sm:text-base text-slate-300 max-w-md font-sans leading-relaxed">
