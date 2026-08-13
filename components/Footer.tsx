@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import { ARCANUM_INFO } from '@/data/arcanumData';
 import { scrollToId } from '@/components/scrollTo';
@@ -114,8 +115,12 @@ export function Footer({ onOpenBrochures, onOpenContact, onSelectHub }: FooterPr
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 py-8 font-mono text-xs text-slate-500 sm:flex-row">
-          <div>
-            © {new Date().getFullYear()} {ARCANUM_INFO.name}. All Rights Reserved. UAE.
+          <div className="flex items-center space-x-4">
+            <span>© {new Date().getFullYear()} {ARCANUM_INFO.name}. All Rights Reserved. UAE.</span>
+            <Link href="/admin" className="text-slate-400 hover:text-[#2384ba] transition-colors flex items-center gap-1">
+              <span>•</span>
+              <span>ADMIN PORTAL</span>
+            </Link>
           </div>
           <button
             onClick={scrollToTop}
