@@ -9,8 +9,8 @@ export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Clean WhatsApp wa.me URL
-  const phoneClean = (ARCANUM_INFO.contact.phone || '+971500000000').replace(/[^0-9]/g, '');
-  const waUrl = `https://wa.me/${phoneClean || '971500000000'}?text=${encodeURIComponent(
+  const phoneClean = (ARCANUM_INFO.contact.phone || '+918137865257').replace(/[^0-9]/g, '');
+  const waUrl = `https://wa.me/${phoneClean || '+918137865257'}?text=${encodeURIComponent(
     'Hello Arcanum IT, I would like to schedule a technical architecture discussion regarding an enterprise project.'
   )}`;
 
