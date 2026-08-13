@@ -11,6 +11,7 @@ import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { BrochureModal } from '@/components/BrochureModal';
 import { GsapPreloader } from '@/components/GsapPreloader';
+import { WhatsAppWidget } from '@/components/WhatsAppWidget';
 
 export default function Home() {
   const [brochuresOpen, setBrochuresOpen] = useState(false);
@@ -51,6 +52,9 @@ export default function Home() {
         onOpenContact={() => setContactOpen(true)}
         onSelectHub={handleSelectHub}
       />
+
+      {/* Floating Theme-Matched WhatsApp Widget */}
+      <WhatsAppWidget />
 
       <BrochureModal isOpen={brochuresOpen} onClose={() => setBrochuresOpen(false)} />
 
