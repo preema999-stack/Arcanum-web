@@ -1,0 +1,63 @@
+{
+  "section_id": "contact",
+  "section_name": "Contact",
+  "tag": "section",
+  "class": "contact",
+  "heading": "Contact",
+  "sub_headings": [
+    "Arcanum Information Technology",
+    "Call Us",
+    "Email Us",
+    "Open Hours"
+  ],
+  "paragraphs": [
+    "Contact Us",
+    "Sarah Building - 305Al Garhoud, Dubai, UAE",
+    "04 3200657 +971 50 3911730",
+    "marketing@arcanum.ae",
+    "Monday - Friday9:00AM - 06:00PM"
+  ],
+  "bullet_points": [],
+  "structured_items": [
+    {
+      "title": "Arcanum Information Technology",
+      "description": "Arcanum Information Technology Sarah Building - 305Al Garhoud, Dubai, UAE",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Call Us",
+      "description": "Call Us 04 3200657 +971 50 3911730",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Email Us",
+      "description": "Email Us marketing@arcanum.ae",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Open Hours",
+      "description": "Open Hours Monday - Friday9:00AM - 06:00PM",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [],
+  "links": [
+    {
+      "text": "04 3200657",
+      "href": "tel:+919447872867"
+    },
+    {
+      "text": "+971 50 3911730",
+      "href": "tel:+918590322609"
+    },
+    {
+      "text": "marketing@arcanum.ae",
+      "href": "mailto:marketing@arcanum.ae?subject=Enquiry form our website"
+    }
+  ],
+  "raw_text": "Contact Contact Us Arcanum Information Technology Sarah Building - 305Al Garhoud, Dubai, UAE Call Us 04 3200657 +971 50 3911730 Email Us marketing@arcanum.ae Open Hours Monday - Friday9:00AM - 06:00PM"
+}

@@ -67,3 +67,4 @@ amplifytools.xcconfig
 
 .env
 .env.development
+sections/

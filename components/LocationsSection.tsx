@@ -112,6 +112,8 @@ function LiveClock({ gmtOffset }: { gmtOffset: number }) {
   return <span className="font-mono text-white font-bold">{timeString || '12:00:00 PM'}</span>;
 }
 
+import { useCms } from '@/lib/cmsContext';
+
 interface LocationsSectionProps {
   onOpenContact?: () => void;
   selectedHubId?: string;
@@ -119,11 +121,15 @@ interface LocationsSectionProps {
 }
 
 export function LocationsSection({ onOpenContact, selectedHubId, onSelectHub }: LocationsSectionProps) {
-  const [internalHubId, setInternalHubId] = useState<string>(LOCATION_HUBS[0].id);
+  const { content } = useCms();
+  const info = content?.info;
+  const locationHubs = content?.locations && content.locations.length > 0 ? content.locations : LOCATION_HUBS;
+
+  const [internalHubId, setInternalHubId] = useState<string>(locationHubs[0]?.id || 'abudhabi');
   const [hoveredHub, setHoveredHub] = useState<LocationHub | null>(null);
 
   const activeHubId = selectedHubId ?? internalHubId;
-  const selectedHub = LOCATION_HUBS.find((hub) => hub.id === activeHubId) ?? LOCATION_HUBS[0];
+  const selectedHub = (locationHubs as LocationHub[]).find((hub) => hub.id === activeHubId) ?? (locationHubs[0] as LocationHub);
 
   const selectHub = (hub: LocationHub) => {
     if (onSelectHub) onSelectHub(hub.id);
@@ -141,26 +147,25 @@ export function LocationsSection({ onOpenContact, selectedHubId, onSelectHub }: 
           <div>
             <div className="inline-flex items-center space-x-2 font-mono text-xs tracking-widest text-[#2384ba] uppercase mb-3">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>GLOBAL FOOTPRINT & ENGINEERING NODES</span>
+              <span>{info?.locationsBadge || 'GLOBAL FOOTPRINT & ENGINEERING NODES'}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               <GsapTextSplit
-                text="Our 3 Operational"
-                highlightText="Tech Hubs."
+                text={info?.locationsTitle || "Our 3 Operational"}
+                highlightText={info?.locationsTitleHighlight || "Tech Hubs."}
                 variant="heading-3d"
                 triggerOnScroll
               />
             </h2>
           </div>
           <p className="text-sm sm:text-base text-slate-300 max-w-md font-sans leading-relaxed">
-            Strategically distributed across Abu Dhabi, Kerala, and Gujarat to deliver 24/7 enterprise 
-            engineering, client strategy, and mission-critical system continuity.
+            {info?.locationsDescription || 'Strategically distributed across Abu Dhabi, Kerala, and Gujarat to deliver 24/7 enterprise engineering, client strategy, and mission-critical system continuity.'}
           </p>
         </div>
 
         {/* Hub Selection Tabs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-          {LOCATION_HUBS.map((hub) => {
+          {locationHubs.map((hub) => {
             const isSelected = selectedHub.id === hub.id;
             return (
               <button
@@ -256,7 +261,7 @@ export function LocationsSection({ onOpenContact, selectedHubId, onSelectHub }: 
               </div>
 
               {/* Interactive Location Pins */}
-              {LOCATION_HUBS.map((hub) => {
+              {locationHubs.map((hub) => {
                 const isSelected = selectedHub.id === hub.id;
                 const isHovered = hoveredHub?.id === hub.id;
 

@@ -1,0 +1,98 @@
+{
+  "section_id": "features_SCB",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "ATM Interface",
+    "SMS Integration",
+    "Customer Portal",
+    "Our Add-On Services"
+  ],
+  "paragraphs": [
+    "Co-operative bank add on services",
+    "We Provide ATM Interface for banking application using latest technology. Our ATM Interface also support online transactions",
+    "We Provide SMS API For Transaction messages , one time password , balance updation etc ...",
+    "Our Customer Portal provide customer access to there account informations online using web applicatcation and mobile application . customer can track there loan installments ,fixed deposits,monthly deposits,recuring deposits,savings accounts on demand ."
+  ],
+  "bullet_points": [
+    "ATM Interface",
+    "SMS Integration",
+    "Customer Portal"
+  ],
+  "structured_items": [
+    {
+      "title": "ATM Interface",
+      "description": "ATM Interface",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "SMS Integration",
+      "description": "SMS Integration",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customer Portal",
+      "description": "Customer Portal",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Add-On Services",
+      "description": "Our Add-On Services ATM Interface SMS Integration Customer Portal We Provide ATM Interface for banking application using latest technology. Our ATM Interface also support online transactions We Provide SMS API For Transaction messages , one time password , balance updation etc ... Our Customer Portal provide customer access to there account informations online using web applicatcation and mobile application . customer can track there loan installments ,fixed deposits,monthly deposits,recuring deposits,savings accounts on demand .",
+      "list_items": [
+        "ATM Interface",
+        "SMS Integration",
+        "Customer Portal"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Co-operative bank add on services",
+      "href": "https://scb.accuratesoftware.online/"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://scb.accuratesoftware.online/"
+    },
+    {
+      "text": "ATM Interface",
+      "href": "https://arcanum.ae/#atmInterface"
+    },
+    {
+      "text": "SMS Integration",
+      "href": "https://arcanum.ae/#smsIntegration"
+    },
+    {
+      "text": "Customer Portal",
+      "href": "https://arcanum.ae/#customerPortal"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://scb.accuratesoftware.online/"
+    }
+  ],
+  "raw_text": "Features Co-operative bank add on services ATM Interface SMS Integration Customer Portal Try it Now Our Add-On Services ATM Interface SMS Integration Customer Portal We Provide ATM Interface for banking application using latest technology. Our ATM Interface also support online transactions We Provide SMS API For Transaction messages , one time password , balance updation etc ... Our Customer Portal provide customer access to there account informations online using web applicatcation and mobile application . customer can track there loan installments ,fixed deposits,monthly deposits,recuring deposits,savings accounts on demand . Try it Now"
+}

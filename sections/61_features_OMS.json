@@ -1,0 +1,86 @@
+{
+  "section_id": "features_OMS",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Efficient UI",
+    "Secure Authentication and Authorization",
+    "Organization Hierarchy Management",
+    "Mobile Responsiveness",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Organization Management System",
+    "The organization module allows users to effortlessly create and manage organizations, streamline member invitations, and oversee hierarchical structures and collaborative activities within the platform.",
+    "user module provides robust functionality for managing user profiles, facilitating seamless onboarding, and ensuring secure authentication and authorization for all members.",
+    "Experience smooth and efficient communication with Messenger."
+  ],
+  "bullet_points": [
+    "Organization Module",
+    "User Interaction"
+  ],
+  "structured_items": [
+    {
+      "title": "Efficient UI",
+      "description": "Efficient UI",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Secure Authentication and Authorization",
+      "description": "Secure Authentication and Authorization",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Organization Hierarchy Management",
+      "description": "Organization Hierarchy Management",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Mobile Responsiveness",
+      "description": "Mobile Responsiveness",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Organization Module User Interaction The organization module allows users to effortlessly create and manage organizations, streamline member invitations, and oversee hierarchical structures and collaborative activities within the platform. user module provides robust functionality for managing user profiles, facilitating seamless onboarding, and ensuring secure authentication and authorization for all members. Experience smooth and efficient communication with Messenger.",
+      "list_items": [
+        "Organization Module",
+        "User Interaction"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/hero-img.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/chat2.jpg",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/assets\\files\\OMS.pdf"
+    },
+    {
+      "text": "Organization Module",
+      "href": "https://arcanum.ae/#organizationModule"
+    },
+    {
+      "text": "User Interaction",
+      "href": "https://arcanum.ae/#userModule"
+    }
+  ],
+  "raw_text": "Features Organization Management System Efficient UI Secure Authentication and Authorization Organization Hierarchy Management Mobile Responsiveness Demo Our Key Features Organization Module User Interaction The organization module allows users to effortlessly create and manage organizations, streamline member invitations, and oversee hierarchical structures and collaborative activities within the platform. user module provides robust functionality for managing user profiles, facilitating seamless onboarding, and ensuring secure authentication and authorization for all members. Experience smooth and efficient communication with Messenger."
+}

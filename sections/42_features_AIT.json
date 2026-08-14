@@ -1,0 +1,85 @@
+{
+  "section_id": "features_AIT",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Categorization and Prioritization",
+    "Communication",
+    "Status Tracking",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Issue Tracker",
+    "The development team can categorize and prioritize issues based on their severity, impact on users, and importance to the project.",
+    "The issue tracker facilitates communication between customers and the development team.",
+    "The issue tracker maintains a record of each issue's status, including whether it's open, in progress, resolved, or closed."
+  ],
+  "bullet_points": [
+    "Categorizing",
+    "Communication",
+    "Status Tracking"
+  ],
+  "structured_items": [
+    {
+      "title": "Categorization and Prioritization",
+      "description": "Categorization and Prioritization",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Communication",
+      "description": "Communication",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Status Tracking",
+      "description": "Status Tracking",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Categorizing Communication Status Tracking The development team can categorize and prioritize issues based on their severity, impact on users, and importance to the project. The issue tracker facilitates communication between customers and the development team. The issue tracker maintains a record of each issue's status, including whether it's open, in progress, resolved, or closed.",
+      "list_items": [
+        "Categorizing",
+        "Communication",
+        "Status Tracking"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/issuetracker.jpg",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/coding.jpg",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/assets\\files\\Issue Tracker.pdf"
+    },
+    {
+      "text": "Categorizing",
+      "href": "https://arcanum.ae/#category"
+    },
+    {
+      "text": "Communication",
+      "href": "https://arcanum.ae/#Communication"
+    },
+    {
+      "text": "Status Tracking",
+      "href": "https://arcanum.ae/#StatusTracking"
+    }
+  ],
+  "raw_text": "Features Issue Tracker Categorization and Prioritization Communication Status Tracking Demo Our Key Features Categorizing Communication Status Tracking The development team can categorize and prioritize issues based on their severity, impact on users, and importance to the project. The issue tracker facilitates communication between customers and the development team. The issue tracker maintains a record of each issue's status, including whether it's open, in progress, resolved, or closed."
+}

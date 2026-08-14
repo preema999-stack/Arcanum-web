@@ -1,0 +1,123 @@
+{
+  "section_id": "features_PAYROLL",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "User-Friendly Interface",
+    "Automated Payroll Processing",
+    "Full Compliance",
+    "Customization and Flexibility",
+    "Comprehensive Reporting",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Advanced Payroll software",
+    "The Payroll Application Administrator Module allows the admin to create and manage user accounts, configure payroll settings, and run monthly payroll calculations. Admins can also update company information and set up essential payroll details to ensure accurate and secure processing.",
+    "In the Masters Module, the admin can perform CRUD (Create, Read, Update, Delete) operations on all lists of values, allowing full control over reference data such as Category, departments, and other essential configurations. This ensures that the system remains flexible and up-to-date with the latest information.",
+    "In the Transactions Module, the admin can perform tasks such as salary prerun, add allowances and deductions, update monthly salary information, and manage LWA (Leave Without Allowance) entries. This helps ensure accurate salary calculations and adjustments for employees on leave without allowances.",
+    "In the Transactions Module, the admin can also generate payroll reports and print them, providing a detailed overview of salary calculations, allowances, deductions, and leave adjustments. These reports ensure transparency and help in auditing and record-keeping of payroll information."
+  ],
+  "bullet_points": [
+    "Administration",
+    "Masters",
+    "Transactions",
+    "Reports"
+  ],
+  "structured_items": [
+    {
+      "title": "User-Friendly Interface",
+      "description": "User-Friendly Interface",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Automated Payroll Processing",
+      "description": "Automated Payroll Processing",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Full Compliance",
+      "description": "Full Compliance",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customization and Flexibility",
+      "description": "Customization and Flexibility",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Comprehensive Reporting",
+      "description": "Comprehensive Reporting",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Administration Masters Transactions Reports The Payroll Application Administrator Module allows the admin to create and manage user accounts, configure payroll settings, and run monthly payroll calculations. Admins can also update company information and set up essential payroll details to ensure accurate and secure processing. In the Masters Module, the admin can perform CRUD (Create, Read, Update, Delete) operations on all lists of values, allowing full control over reference data such as Category, departments, and other essential configurations. This ensures that the system remains flexible and up-to-date with the latest information. In the Transactions Module, the admin can perform tasks such as salary prerun, add allowances and deductions, update monthly salary information, and manage LWA (Leave Without Allowance) entries. This helps ensure accurate salary calculations and adjustments for employees on leave without allowances. In the Transactions Module, the admin can also generate payroll reports and print them, providing a detailed overview of salary calculations, allowances, deductions, and leave adjustments. These reports ensure transparency and help in auditing and record-keeping of payroll information.",
+      "list_items": [
+        "Administration",
+        "Masters",
+        "Transactions",
+        "Reports"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Advanced Payroll software",
+      "href": "https://payrolltest.accuratesoftware.online/"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://payrolltest.accuratesoftware.online/"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/payroll.html"
+    },
+    {
+      "text": "Administration",
+      "href": "https://arcanum.ae/#tab1_payroll"
+    },
+    {
+      "text": "Masters",
+      "href": "https://arcanum.ae/#tab2_payroll"
+    },
+    {
+      "text": "Transactions",
+      "href": "https://arcanum.ae/#tab3_payroll"
+    },
+    {
+      "text": "Reports",
+      "href": "https://arcanum.ae/#tab4_payroll"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://payrolltest.accuratesoftware.online/"
+    }
+  ],
+  "raw_text": "Features Advanced Payroll software User-Friendly Interface Automated Payroll Processing Full Compliance Customization and Flexibility Comprehensive Reporting Try it Now Demo Our Key Features Administration Masters Transactions Reports The Payroll Application Administrator Module allows the admin to create and manage user accounts, configure payroll settings, and run monthly payroll calculations. Admins can also update company information and set up essential payroll details to ensure accurate and secure processing. In the Masters Module, the admin can perform CRUD (Create, Read, Update, Delete) operations on all lists of values, allowing full control over reference data such as Category, departments, and other essential configurations. This ensures that the system remains flexible and up-to-date with the latest information. In the Transactions Module, the admin can perform tasks such as salary prerun, add allowances and deductions, update monthly salary information, and manage LWA (Leave Without Allowance) entries. This helps ensure accurate salary calculations and adjustments for employees on leave without allowances. In the Transactions Module, the admin can also generate payroll reports and print them, providing a detailed overview of salary calculations, allowances, deductions, and leave adjustments. These reports ensure transparency and help in auditing and record-keeping of payroll information. Try it Now"
+}

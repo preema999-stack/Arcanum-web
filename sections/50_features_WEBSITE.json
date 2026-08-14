@@ -1,0 +1,82 @@
+{
+  "section_id": "features_WEBSITE",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "User-Friendly Design",
+    "Reliable Support",
+    "SEO optimised",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Website Development",
+    "Our websites are designed with the user in mind, ensuring easy navigation and a smooth browsing experience. We prioritize intuitive layouts and accessible features to make sure your visitors can find what they need without hassle.",
+    "We offer high-quality website development services at competitive prices. Our solutions are designed to deliver excellent value, providing you with a website that meets your needs and budget without compromising on quality."
+  ],
+  "bullet_points": [
+    "User Friendly Design",
+    "Cost Effective"
+  ],
+  "structured_items": [
+    {
+      "title": "User-Friendly Design",
+      "description": "User-Friendly Design",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Reliable Support",
+      "description": "Reliable Support",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "SEO optimised",
+      "description": "SEO optimised",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features User Friendly Design Cost Effective Our websites are designed with the user in mind, ensuring easy navigation and a smooth browsing experience. We prioritize intuitive layouts and accessible features to make sure your visitors can find what they need without hassle. We offer high-quality website development services at competitive prices. Our solutions are designed to deliver excellent value, providing you with a website that meets your needs and budget without compromising on quality.",
+      "list_items": [
+        "User Friendly Design",
+        "Cost Effective"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "More Info",
+      "href": "https://www.accuratesoftware.online/assets/files/Website%20Creation.pdf"
+    },
+    {
+      "text": "User Friendly Design",
+      "href": "https://arcanum.ae/#UserFriendly"
+    },
+    {
+      "text": "Cost Effective",
+      "href": "https://arcanum.ae/#CostEffective"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://www.accuratesoftware.online/assets/files/Website%20Creation.pdf"
+    }
+  ],
+  "raw_text": "Features Website Development User-Friendly Design Reliable Support SEO optimised More Info Our Key Features User Friendly Design Cost Effective Our websites are designed with the user in mind, ensuring easy navigation and a smooth browsing experience. We prioritize intuitive layouts and accessible features to make sure your visitors can find what they need without hassle. We offer high-quality website development services at competitive prices. Our solutions are designed to deliver excellent value, providing you with a website that meets your needs and budget without compromising on quality. Try it Now"
+}

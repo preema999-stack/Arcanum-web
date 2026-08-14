@@ -1,0 +1,89 @@
+{
+  "section_id": "features_FIN",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Fixed deposit Rates",
+    "",
+    "Stock Dividents",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "My Fin",
+    "User Can get information about interest rate of fixed deposit schemes of different banks in one place. they can also compare it using graph. user can also set preference in profile screen",
+    "Stock Dividents Can be tracked using my fin application. informations like last buy date,share split,bonus,recorded dates are available in application"
+  ],
+  "bullet_points": [
+    "Fixed deposit Rates",
+    "Stock Dividents"
+  ],
+  "structured_items": [
+    {
+      "title": "Fixed deposit Rates",
+      "description": "Fixed deposit Rates",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Stock Dividents",
+      "description": "Stock Dividents",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Fixed deposit Rates Stock Dividents User Can get information about interest rate of fixed deposit schemes of different banks in one place. they can also compare it using graph. user can also set preference in profile screen Stock Dividents Can be tracked using my fin application. informations like last buy date,share split,bonus,recorded dates are available in application",
+      "list_items": [
+        "Fixed deposit Rates",
+        "Stock Dividents"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "My Fin",
+      "href": "http://myfin.accuratesoftware.online/"
+    },
+    {
+      "text": "Try it Now",
+      "href": "http://myfin.accuratesoftware.online/"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/myfin.html"
+    },
+    {
+      "text": "Fixed deposit Rates",
+      "href": "https://arcanum.ae/#fixedDeosit"
+    },
+    {
+      "text": "Stock Dividents",
+      "href": "https://arcanum.ae/#stockDividents"
+    },
+    {
+      "text": "Try it Now",
+      "href": "http://myfin.accuratesoftware.online/"
+    }
+  ],
+  "raw_text": "Features My Fin Fixed deposit Rates Stock Dividents Try it Now Demo Our Key Features Fixed deposit Rates Stock Dividents User Can get information about interest rate of fixed deposit schemes of different banks in one place. they can also compare it using graph. user can also set preference in profile screen Stock Dividents Can be tracked using my fin application. informations like last buy date,share split,bonus,recorded dates are available in application Try it Now"
+}

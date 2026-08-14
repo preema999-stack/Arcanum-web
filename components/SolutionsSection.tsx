@@ -14,6 +14,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { ARCANUM_MODULES } from '@/data/arcanumData';
+import { useCms } from '@/lib/cmsContext';
 import { scrollToId } from '@/components/scrollTo';
 import { GsapTextSplit } from '@/components/GsapTextSplit';
 
@@ -47,7 +48,11 @@ interface SolutionsSectionProps {
 }
 
 export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
-  const flagship = ARCANUM_MODULES.filter((m) =>
+  const { content } = useCms();
+  const info = content?.info;
+  const modulesList = content?.modules && content.modules.length > 0 ? content.modules : ARCANUM_MODULES;
+
+  const flagship = modulesList.filter((m) =>
     ['oms', 'erp', 'banking', 'oracle'].includes(m.id)
   );
 
@@ -58,12 +63,12 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <div className="max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#2384ba] block mb-3">
-              03 / Flagship Solutions
+              {info?.solutionsBadge || '03 / Flagship Solutions'}
             </span>
             <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
               <GsapTextSplit
-                text="Enterprise Systems We"
-                highlightText="Engineer."
+                text={info?.solutionsTitle || "Enterprise Systems We"}
+                highlightText={info?.solutionsTitleHighlight || "Engineer."}
                 variant="heading-3d"
                 triggerOnScroll
               />
@@ -73,7 +78,7 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
             onClick={() => scrollToId('catalog')}
             className="hidden items-center gap-2 font-mono text-xs text-white/80 transition-colors hover:text-white md:flex"
           >
-            View all {ARCANUM_MODULES.length} modules
+            View all {modulesList.length} modules
             <ArrowUpRight className="h-4 w-4" />
           </button>
         </div>
@@ -93,7 +98,7 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
-                    src={FLAGSHIP_IMAGES[m.id]}
+                    src={m.imageSrc || FLAGSHIP_IMAGES[m.id] || '/hero_infrastructure.png'}
                     alt={m.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -150,10 +155,10 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
           <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#2384ba]">
-                04 / Full Product Catalog
+                {info?.catalogBadge || '04 / Full Product Catalog'}
               </span>
               <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
-                All {ARCANUM_MODULES.length} Modules
+                All {modulesList.length} Modules
               </h3>
             </div>
             <button
@@ -166,7 +171,7 @@ export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
           </div>
 
           <div className="grid gap-2.5 grid-cols-1 sm:grid-cols-2 min-w-0 w-full">
-            {ARCANUM_MODULES.map((m) => {
+            {modulesList.map((m) => {
               const Icon = CATEGORY_ICONS[m.category] ?? Boxes;
               return (
                 <a

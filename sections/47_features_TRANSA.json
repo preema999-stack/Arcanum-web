@@ -1,0 +1,89 @@
+{
+  "section_id": "features_TRANSA",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "User-Friendly Design",
+    "Account Management",
+    "Fund Transfers",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Transa Money",
+    "Security is our top priority. Transa Money employs state-of-the-art encryption and authentication mechanisms to ensure that your financial transactions and personal information remain confidential and secure",
+    "Save time by avoiding long queues and paperwork, allowing you to focus on your daily activities",
+    "Trust Transa Money to handle your Transcation data securely and reliably."
+  ],
+  "bullet_points": [
+    "Secure Transactions",
+    "Time-Saving Solutions",
+    "Reliable and Secure"
+  ],
+  "structured_items": [
+    {
+      "title": "User-Friendly Design",
+      "description": "User-Friendly Design",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Account Management",
+      "description": "Account Management",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Fund Transfers",
+      "description": "Fund Transfers",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Secure Transactions Time-Saving Solutions Reliable and Secure Security is our top priority. Transa Money employs state-of-the-art encryption and authentication mechanisms to ensure that your financial transactions and personal information remain confidential and secure Save time by avoiding long queues and paperwork, allowing you to focus on your daily activities Trust Transa Money to handle your Transcation data securely and reliably.",
+      "list_items": [
+        "Secure Transactions",
+        "Time-Saving Solutions",
+        "Reliable and Secure"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Demo",
+      "href": "https://play.google.com/store/apps/details?id=com.transa.money.bank"
+    },
+    {
+      "text": "Secure Transactions",
+      "href": "https://arcanum.ae/#SecureTransactions"
+    },
+    {
+      "text": "Time-Saving Solutions",
+      "href": "https://arcanum.ae/#TTimeSavingSolutions"
+    },
+    {
+      "text": "Reliable and Secure",
+      "href": "https://arcanum.ae/#TReliableandSecure"
+    },
+    {
+      "text": "Try it Now",
+      "href": ""
+    }
+  ],
+  "raw_text": "Features Transa Money User-Friendly Design Account Management Fund Transfers Demo Our Key Features Secure Transactions Time-Saving Solutions Reliable and Secure Security is our top priority. Transa Money employs state-of-the-art encryption and authentication mechanisms to ensure that your financial transactions and personal information remain confidential and secure Save time by avoiding long queues and paperwork, allowing you to focus on your daily activities Trust Transa Money to handle your Transcation data securely and reliably. Try it Now"
+}

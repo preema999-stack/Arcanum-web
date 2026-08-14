@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync-data": "node scripts/syncFirebase.mjs pull",
+    "seed-firebase": "node scripts/syncFirebase.mjs seed"
   },
   "dependencies": {
     "@types/nodemailer": "^8.0.1",

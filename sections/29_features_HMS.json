@@ -1,0 +1,101 @@
+{
+  "section_id": "features_HMS",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Consultation Slot Booking",
+    "Medicine Purchase Booking",
+    "Laboratory Test Booking",
+    "Streamline front desk operations",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Advanced Clinic Management software",
+    "Receptionist can book slots for doctor, Lab test, Medicine using an application. Previous Medical records available for Receptionist. He/ She can add new Patients, other diseases in profile page. Easy and fast payment. Nearby search also available. Notify if Consultation time changes. Get laboratory results directly.Can send Whatsapp notifications on Slot Booking",
+    "Doctor can get patient consultant appointment in approval screen, according to the approval patient gets a token. Doctors can access to patient's previous medical records and daily history. Doctor get payment easily through application. Doctor/Clinic can prefer laboratory and Pharmacy. Can manage holidays and time slots easily. Get laboratory results directly.",
+    "Get Lab test instantly when Clinic / Patient book for test. Can get Payment easily through the application. Easily upload documents to patients and doctors. Daily history and Previous History available. Multiple lab assistants can log in to a single lab.",
+    "Get Medicine Order instantly when Clinic / Patient book for medicine. Can get Payment easily through the application. Daily history and Previous History available. Multiple pharmacists can log in to a single pharmacy."
+  ],
+  "bullet_points": [
+    "Receptionist Module",
+    "Doctor Module",
+    "Laboratory Module"
+  ],
+  "structured_items": [
+    {
+      "title": "Consultation Slot Booking",
+      "description": "Consultation Slot Booking",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Medicine Purchase Booking",
+      "description": "Medicine Purchase Booking",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Laboratory Test Booking",
+      "description": "Laboratory Test Booking",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Streamline front desk operations",
+      "description": "Streamline front desk operations",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Receptionist Module Doctor Module Laboratory Module Receptionist can book slots for doctor, Lab test, Medicine using an application. Previous Medical records available for Receptionist. He/ She can add new Patients, other diseases in profile page. Easy and fast payment. Nearby search also available. Notify if Consultation time changes. Get laboratory results directly.Can send Whatsapp notifications on Slot Booking Doctor can get patient consultant appointment in approval screen, according to the approval patient gets a token. Doctors can access to patient's previous medical records and daily history. Doctor get payment easily through application. Doctor/Clinic can prefer laboratory and Pharmacy. Can manage holidays and time slots easily. Get laboratory results directly. Get Lab test instantly when Clinic / Patient book for test. Can get Payment easily through the application. Easily upload documents to patients and doctors. Daily history and Previous History available. Multiple lab assistants can log in to a single lab. Get Medicine Order instantly when Clinic / Patient book for medicine. Can get Payment easily through the application. Daily history and Previous History available. Multiple pharmacists can log in to a single pharmacy.",
+      "list_items": [
+        "Receptionist Module",
+        "Doctor Module",
+        "Laboratory Module"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://play.google.com/store/apps/details?id=com.acc.hospital"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/hospital.html"
+    },
+    {
+      "text": "Receptionist Module",
+      "href": "https://arcanum.ae/#patientModule"
+    },
+    {
+      "text": "Doctor Module",
+      "href": "https://arcanum.ae/#clinicModule"
+    },
+    {
+      "text": "Laboratory Module",
+      "href": "https://arcanum.ae/#laboratoryModule"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://play.google.com/store/apps/details?id=com.acc.hospital"
+    }
+  ],
+  "raw_text": "Features Advanced Clinic Management software Consultation Slot Booking Medicine Purchase Booking Laboratory Test Booking Streamline front desk operations Try it Now Demo Our Key Features Receptionist Module Doctor Module Laboratory Module Receptionist can book slots for doctor, Lab test, Medicine using an application. Previous Medical records available for Receptionist. He/ She can add new Patients, other diseases in profile page. Easy and fast payment. Nearby search also available. Notify if Consultation time changes. Get laboratory results directly.Can send Whatsapp notifications on Slot Booking Doctor can get patient consultant appointment in approval screen, according to the approval patient gets a token. Doctors can access to patient's previous medical records and daily history. Doctor get payment easily through application. Doctor/Clinic can prefer laboratory and Pharmacy. Can manage holidays and time slots easily. Get laboratory results directly. Get Lab test instantly when Clinic / Patient book for test. Can get Payment easily through the application. Easily upload documents to patients and doctors. Daily history and Previous History available. Multiple lab assistants can log in to a single lab. Get Medicine Order instantly when Clinic / Patient book for medicine. Can get Payment easily through the application. Daily history and Previous History available. Multiple pharmacists can log in to a single pharmacy. Try it Now"
+}

@@ -1,0 +1,79 @@
+{
+  "section_id": "features_MOBILE",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Clinic Management System",
+    "POS Application for Restaurants",
+    "RAC",
+    "Our Native Applications"
+  ],
+  "paragraphs": [
+    "Our Native Mobile Applications",
+    "Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity.",
+    "Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place.",
+    "Automate your business with the most advanced car rental solution software."
+  ],
+  "bullet_points": [
+    "Clinic Management System",
+    "POS Application for Restaurants",
+    "RAC"
+  ],
+  "structured_items": [
+    {
+      "title": "Clinic Management System",
+      "description": "Clinic Management System",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "POS Application for Restaurants",
+      "description": "POS Application for Restaurants",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Native Applications",
+      "description": "Our Native Applications Clinic Management System POS Application for Restaurants RAC Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity. Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place. Automate your business with the most advanced car rental solution software.",
+      "list_items": [
+        "Clinic Management System",
+        "POS Application for Restaurants",
+        "RAC"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Demo",
+      "href": "https://rac.accuratesoftware.online/"
+    },
+    {
+      "text": "Clinic Management System",
+      "href": "https://arcanum.ae/#clinicModuleApp"
+    },
+    {
+      "text": "POS Application for Restaurants",
+      "href": "https://arcanum.ae/#posApplication"
+    },
+    {
+      "text": "RAC",
+      "href": "https://arcanum.ae/#accurateRac"
+    }
+  ],
+  "raw_text": "Features Our Native Mobile Applications Clinic Management System POS Application for Restaurants RAC Demo Our Native Applications Clinic Management System POS Application for Restaurants RAC Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity. Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place. Automate your business with the most advanced car rental solution software."
+}

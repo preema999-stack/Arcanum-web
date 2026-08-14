@@ -2,32 +2,21 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Cpu, Database, Award, ArrowUpRight } from 'lucide-react';
-import { ARCANUM_INFO } from '@/data/arcanumData';
+import { ShieldCheck, Cpu, Database, Award, CheckCircle } from 'lucide-react';
+import { useCms } from '@/lib/cmsContext';
+
+const iconMap: Record<string, any> = {
+  Cpu,
+  Database,
+  ShieldCheck,
+  Award,
+  CheckCircle,
+};
 
 export function CompanyIntro() {
-  const values = [
-    {
-      title: 'Architectural Precision',
-      description: 'Clean modular codebases with strict type safety, zero-trust security layers, and zero technical debt.',
-      icon: Cpu,
-    },
-    {
-      title: 'Legacy Modernization',
-      description: 'Methodologies for refactoring heavy legacy Oracle Forms applications into scalable cloud microservices.',
-      icon: Database,
-    },
-    {
-      title: 'Statutory Compliance',
-      description: 'Native adherence to UAE WPS payroll standards, ISO 8583 banking switches, and clinical EMR protocols.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'Professional Execution',
-      description: 'Employing highly-skilled senior engineers who execute complex IT assignments elegantly and on schedule.',
-      icon: Award,
-    },
-  ];
+  const { content } = useCms();
+  const info = content?.info;
+  const values = content?.values || [];
 
   return (
     <section id="company" className="py-28 bg-[#f8fafc] editorial-grid border-b border-slate-200">
@@ -36,22 +25,22 @@ export function CompanyIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
           <div className="lg:col-span-5">
             <span className="text-[#2384ba] font-mono text-xs tracking-widest uppercase block mb-3">
-              02 / ENGINEERING PHILOSOPHY
+              {info?.aboutBadge || '02 / ENGINEERING PHILOSOPHY'}
             </span>
             <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#0f172a] leading-tight">
-              An IT Engineering Firm Built on Rigor and Reliability.
+              {info?.aboutTitle || 'An Enterprise IT Engineering Firm Built on'}{' '}
+              <span className="text-[#2384ba] font-semibold">{info?.aboutTitleHighlight || 'Rigor and Reliability.'}</span>
             </h2>
           </div>
 
           <div className="lg:col-span-7 space-y-4 text-slate-600 text-base leading-relaxed font-sans">
             <p>
-              Arcanum Information Technology is a professionally managed software development firm headquartered in the UAE. 
-              We employ highly-skilled engineers capable of executing mission-critical IT projects professionally, 
-              elegantly, and with architectural clarity.
+              {info?.aboutDescription1 ||
+                'Arcanum Information Technology is a professionally managed software development firm headquartered in the UAE. We employ senior engineers capable of executing mission-critical IT projects professionally, elegantly, and with architectural clarity.'}
             </p>
             <p>
-              We provide the market with innovative, flexible, and smart software solutions that allow organizations 
-              to scale seamlessly across financial management, educational administration, clinical care, and corporate governance.
+              {info?.aboutDescription2 ||
+                'We provide the market with innovative, flexible, and smart software solutions that allow organizations to scale seamlessly across financial management, educational administration, clinical care, and corporate governance.'}
             </p>
           </div>
         </div>
@@ -59,10 +48,10 @@ export function CompanyIntro() {
         {/* 4 Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, idx) => {
-            const Icon = v.icon;
+            const Icon = iconMap[v.iconName] || Cpu;
             return (
               <motion.div
-                key={v.title}
+                key={v.id || v.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}

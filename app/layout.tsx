@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { LenisProvider } from '@/components/LenisProvider';
 import { AuthProvider } from '@/lib/authContext';
+import { CmsProvider } from '@/lib/cmsContext';
 
 export const metadata: Metadata = {
   title: 'Arcanum Information Technology — Enterprise Software & Digital Architecture',
@@ -40,7 +41,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#0f172a] text-white antialiased selection:bg-[#2384ba]/30 selection:text-[#2384ba]">
         <AuthProvider>
-          <LenisProvider>{children}</LenisProvider>
+          <CmsProvider>
+            <LenisProvider>{children}</LenisProvider>
+          </CmsProvider>
         </AuthProvider>
       </body>
     </html>

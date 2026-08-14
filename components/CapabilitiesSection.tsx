@@ -2,38 +2,52 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Database, ShieldCheck, Smartphone, Layers, ArrowUpRight } from 'lucide-react';
+import { useCms } from '@/lib/cmsContext';
+
+const defaultCaps = [
+  {
+    step: '01',
+    title: 'Enterprise Systems & ERP Architecture',
+    subtitle: 'FINANCE, PAYROLL & GOVERNANCE',
+    description:
+      'Integrating core business processes across finance, supply chain, asset management, and HR. Our ARC ERP and Payroll applications enforce strict compliance with UAE WPS regulations.',
+    image: '/hero_infrastructure.png',
+    tags: ['ARC ERP', 'WPS Payroll', 'OMS Governance', 'Multi-currency'],
+  },
+  {
+    step: '02',
+    title: 'Banking & Financial Switch Add-ons',
+    subtitle: 'ISO 8583 & MOBILE BANKING',
+    description:
+      'Financial technology solutions engineered for retail and co-operative banks. Features include ISO 8583 ATM switch bridging, automated SMS notification gateways, and Transa Mobile Banking.',
+    image: '/banking_fintech.png',
+    tags: ['ISO 8583 Switch', 'Transa Mobile Banking', 'ATM Bridge', 'Deposit Analytics'],
+  },
+  {
+    step: '03',
+    title: 'Legacy Oracle Forms Modernization',
+    subtitle: 'PL/SQL TO CLOUD REFRACTORING',
+    description:
+      'Proven methodologies for decoupling legacy Oracle Forms 12c monoliths into modern microservice REST APIs, preserving legacy database integrity while delivering responsive modern web interfaces.',
+    image: '/oracle_modernization.png',
+    tags: ['Oracle Forms 12c', 'PL/SQL Refactoring', 'REST APIs', 'Zero-downtime'],
+  },
+];
 
 export function CapabilitiesSection() {
-  const capabilities = [
-    {
-      step: '01',
-      title: 'Enterprise Systems & ERP Architecture',
-      subtitle: 'FINANCE, PAYROLL & GOVERNANCE',
-      description:
-        'Integrating core business processes across finance, supply chain, asset management, and HR. Our Accurate ERP and Payroll applications enforce strict compliance with UAE WPS regulations.',
-      image: '/hero_infrastructure.png',
-      tags: ['Accurate ERP', 'WPS Payroll', 'OMS Governance', 'Multi-currency'],
-    },
-    {
-      step: '02',
-      title: 'Banking & Financial Switch Add-ons',
-      subtitle: 'ISO 8583 & MOBILE BANKING',
-      description:
-        'Financial technology solutions engineered for retail and co-operative banks. Features include ISO 8583 ATM switch bridging, automated SMS notification gateways, and Transa Mobile Banking.',
-      image: '/banking_fintech.png',
-      tags: ['ISO 8583 Switch', 'Transa Mobile Banking', 'ATM Bridge', 'Deposit Analytics'],
-    },
-    {
-      step: '03',
-      title: 'Legacy Oracle Forms Modernization',
-      subtitle: 'PL/SQL TO CLOUD REFRACTORING',
-      description:
-        'Proven methodologies for decoupling legacy Oracle Forms 12c monoliths into modern microservice REST APIs, preserving legacy database integrity while delivering responsive modern web interfaces.',
-      image: '/oracle_modernization.png',
-      tags: ['Oracle Forms 12c', 'PL/SQL Refactoring', 'REST APIs', 'Zero-downtime'],
-    },
-  ];
+  const { content } = useCms();
+  const rawCaps = content?.capabilities || [];
+
+  const capabilities = rawCaps.length > 0
+    ? rawCaps.map((c, idx) => ({
+        step: `0${idx + 1}`,
+        title: c.title,
+        subtitle: c.tag,
+        description: c.description,
+        image: idx === 0 ? '/hero_infrastructure.png' : idx === 1 ? '/banking_fintech.png' : '/oracle_modernization.png',
+        tags: c.details || [],
+      }))
+    : defaultCaps;
 
   return (
     <section id="capabilities" className="py-28 bg-[#0f172a] text-slate-100 dark-technical-grid border-b border-slate-800">

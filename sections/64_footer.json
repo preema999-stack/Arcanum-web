@@ -1,0 +1,120 @@
+{
+  "section_id": "footer",
+  "section_name": "Arcanum Information Technology",
+  "tag": "footer",
+  "class": "footer",
+  "heading": "Arcanum Information Technology",
+  "sub_headings": [
+    "Useful Links",
+    "Our Services",
+    "Contact Us"
+  ],
+  "paragraphs": [
+    "is a professionally managed information technology(IT) company in the area of software development. The company employs highly-skilled who are capable of executing any IT related job professionally and elegantly.",
+    "Sarah Building - 305 Al Garhoud, Dubai, UAE Phone:    04 3200657 +971 50 3911730 Email: marketing@arcanum.ae"
+  ],
+  "bullet_points": [
+    "Home",
+    "Privacy policy",
+    "Business Softwares",
+    "SMS Applications",
+    "Web Development",
+    "Training Projects",
+    "ERP Softwares"
+  ],
+  "structured_items": [
+    {
+      "title": "Arcanum Information Technology",
+      "description": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. The company employs highly-skilled who are capable of executing any IT related job professionally and elegantly.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/arcanum.png"
+      ]
+    },
+    {
+      "title": "Useful Links",
+      "description": "Useful Links Home Privacy policy",
+      "list_items": [
+        "Home",
+        "Privacy policy"
+      ],
+      "images": []
+    },
+    {
+      "title": "Our Services",
+      "description": "Our Services Business Softwares SMS Applications Web Development Training Projects ERP Softwares",
+      "list_items": [
+        "Business Softwares",
+        "SMS Applications",
+        "Web Development",
+        "Training Projects",
+        "ERP Softwares"
+      ],
+      "images": []
+    },
+    {
+      "title": "Contact Us",
+      "description": "Contact Us Sarah Building - 305 Al Garhoud, Dubai, UAE Phone:    04 3200657 +971 50 3911730 Email: marketing@arcanum.ae",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/arcanum.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Arcanum Information Technology",
+      "href": "https://arcanum.ae/index.html#"
+    },
+    {
+      "text": "Home",
+      "href": "https://arcanum.ae/index.html#"
+    },
+    {
+      "text": "Privacy policy",
+      "href": "https://arcanum.ae/privacy-policy-new.html"
+    },
+    {
+      "text": "Business Softwares",
+      "href": "https://arcanum.ae/index.html#contact"
+    },
+    {
+      "text": "SMS Applications",
+      "href": "https://arcanum.ae/index.html#contact"
+    },
+    {
+      "text": "Web Development",
+      "href": "https://arcanum.ae/index.html#contact"
+    },
+    {
+      "text": "Training Projects",
+      "href": "https://arcanum.ae/index.html#contact"
+    },
+    {
+      "text": "ERP Softwares",
+      "href": "https://arcanum.ae/index.html#contact"
+    },
+    {
+      "text": "04 3200657",
+      "href": "tel:04 3200657"
+    },
+    {
+      "text": "+971 50 3911730",
+      "href": "tel:+971503911730"
+    },
+    {
+      "text": "marketing@arcanum.ae",
+      "href": "mailto:marketing@arcanum.ae?subject=Enquiry from website"
+    },
+    {
+      "text": "BootstrapMade",
+      "href": "https://bootstrapmade.com/"
+    }
+  ],
+  "raw_text": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. The company employs highly-skilled who are capable of executing any IT related job professionally and elegantly. Useful Links Home Privacy policy Our Services Business Softwares SMS Applications Web Development Training Projects ERP Softwares Contact Us Sarah Building - 305 Al Garhoud, Dubai, UAE Phone:    04 3200657 +971 50 3911730 Email: marketing@arcanum.ae © Copyright Arcanum Information Technology. All Rights Reserved. Designed by BootstrapMade"
+}

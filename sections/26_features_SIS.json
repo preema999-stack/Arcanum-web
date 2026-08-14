@@ -1,0 +1,152 @@
+{
+  "section_id": "features_SIS",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Configurations for All Screen data",
+    "Admission Form for seeking admission",
+    "Report screen to summarize transactions",
+    "Print receipts of the payments made",
+    "Track payment history",
+    "Support Transactional SMS",
+    "Our Key Features",
+    "Basic Configuration",
+    "Academic Configuration",
+    "Cashier Configuration",
+    "Admission Form",
+    "Transfer Certificate",
+    "Admit Student"
+  ],
+  "paragraphs": [
+    "Advanced Student information software",
+    "There are 20+ Configuration screens that allow the user to configure the data that is needed to be displayed in other screens.",
+    "The Basic configurations for the entire application will go here.",
+    "Academic Related data that is needed for other screens to function, like Courses, syllabus, Subjects, etcâ¦ are configured from this screen.",
+    "There will be some financial transactions that are necessary to happen in every institution. This cashier configuration screen helps you to configure all the transaction related data.",
+    "This Module helps the user to record all the transactions like Transfer of students, Fee payment, Student admission, etc. that happen in educational institutions.",
+    "The application provides an application form screen which helps the user to enter the details of an admission seeking student and store this information digitally.",
+    "The Transfer Certificate screen allows the user to generate TCs and view generated TCs.",
+    "we may not be able to admit all the students who had applied to get into the institution because of many reasons. So we have to be picky and give admission to some selected students. This screen allows you to admit students to the institution.",
+    "A Report makes a complex data to be viewed in simpler format and helps us understand the data depicted more easily. This module allows one to generate reports for some specified data in a tabular form. The user will also be able to take a print of the tabular report if he or she wishes to."
+  ],
+  "bullet_points": [
+    "Master Module",
+    "Transactions Module",
+    "Report Module"
+  ],
+  "structured_items": [
+    {
+      "title": "Configurations for All Screen data",
+      "description": "Configurations for All Screen data",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Admission Form for seeking admission",
+      "description": "Admission Form for seeking admission",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Report screen to summarize transactions",
+      "description": "Report screen to summarize transactions",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Print receipts of the payments made",
+      "description": "Print receipts of the payments made",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Track payment history",
+      "description": "Track payment history",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Support Transactional SMS",
+      "description": "Support Transactional SMS",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Basic Configuration",
+      "description": "Basic Configuration",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Academic Configuration",
+      "description": "Academic Configuration",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Cashier Configuration",
+      "description": "Cashier Configuration",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Admission Form",
+      "description": "Admission Form",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Transfer Certificate",
+      "description": "Transfer Certificate",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Admit Student",
+      "description": "Admit Student",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/schoolmanagement.html"
+    },
+    {
+      "text": "Master Module",
+      "href": "https://arcanum.ae/#masterModule"
+    },
+    {
+      "text": "Transactions Module",
+      "href": "https://arcanum.ae/#transactionModule"
+    },
+    {
+      "text": "Report Module",
+      "href": "https://arcanum.ae/#reportModule"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+    }
+  ],
+  "raw_text": "Features Advanced Student information software Configurations for All Screen data Admission Form for seeking admission Report screen to summarize transactions Print receipts of the payments made Track payment history Support Transactional SMS Try it Now Demo Our Key Features Master Module Transactions Module Report Module There are 20+ Configuration screens that allow the user to configure the data that is needed to be displayed in other screens. Basic Configuration The Basic configurations for the entire application will go here. Academic Configuration Academic Related data that is needed for other screens to function, like Courses, syllabus, Subjects, etcâ¦ are configured from this screen. Cashier Configuration There will be some financial transactions that are necessary to happen in every institution. This cashier configuration screen helps you to configure all the transaction related data. This Module helps the user to record all the transactions like Transfer of students, Fee payment, Student admission, etc. that happen in educational institutions. Admission Form The application provides an application form screen which helps the user to enter the details of an admission seeking student and store this information digitally. Transfer Certificate The Transfer Certificate screen allows the user to generate TCs and view generated TCs. Admit Student we may not be able to admit all the students who had applied to get into the institution because of many reasons. So we have to be picky and give admission to some selected students. This screen allows you to admit students to the institution. A Report makes a complex data to be viewed in simpler format and helps us understand the data depicted more easily. This module allows one to generate reports for some specified data in a tabular form. The user will also be able to take a print of the tabular report if he or she wishes to. Try it Now"
+}

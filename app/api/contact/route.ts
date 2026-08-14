@@ -2,10 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { saveInquiryToFirebase, logNotificationToFirebase } from '@/lib/firebaseService';
 import { sendEmail, buildInquiryEmailHtml, SendEmailResult } from '@/lib/nodemailerService';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, module = 'Accurate ERP', message = '' } = body;
+    const { name, email, module = 'ARC ERP', message = '' } = body;
 
     // Payload validation
     if (!name || !email) {

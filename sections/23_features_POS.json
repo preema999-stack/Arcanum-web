@@ -1,0 +1,100 @@
+{
+  "section_id": "features_POS",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Take Orders",
+    "Customizable item menu",
+    "Split Bill",
+    "Combine Bill",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Advanced POS software for restaurants",
+    "while dining in restaurants, we may have come across some situations where we would like to pay for another customer. The software allows you to combine those bills into one bill.",
+    "On some occasions, we may dine out with friends in a restaurant and since we are low on money, we will decide to split the bills so that everyone can pay for what they had. The software also provides the option to split a bill of a table.",
+    "In a growing restaurant/hotel, the menu of food items that they serve may change over time. So there is a need to customize the menu items when some new items are introduced or when some existing items are removed. The Software has the master screens that allows one user to edit the item details."
+  ],
+  "bullet_points": [
+    "Combine Bill",
+    "Split Bills",
+    "Customize Menu"
+  ],
+  "structured_items": [
+    {
+      "title": "Take Orders",
+      "description": "Take Orders",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customizable item menu",
+      "description": "Customizable item menu",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Split Bill",
+      "description": "Split Bill",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Combine Bill",
+      "description": "Combine Bill",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Combine Bill Split Bills Customize Menu while dining in restaurants, we may have come across some situations where we would like to pay for another customer. The software allows you to combine those bills into one bill. On some occasions, we may dine out with friends in a restaurant and since we are low on money, we will decide to split the bills so that everyone can pay for what they had. The software also provides the option to split a bill of a table. In a growing restaurant/hotel, the menu of food items that they serve may change over time. So there is a need to customize the menu items when some new items are introduced or when some existing items are removed. The Software has the master screens that allows one user to edit the item details.",
+      "list_items": [
+        "Combine Bill",
+        "Split Bills",
+        "Customize Menu"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://pos.accuratesoftware.online/auth/login"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/pos.html"
+    },
+    {
+      "text": "Combine Bill",
+      "href": "https://arcanum.ae/#combineBills"
+    },
+    {
+      "text": "Split Bills",
+      "href": "https://arcanum.ae/#splitBills"
+    },
+    {
+      "text": "Customize Menu",
+      "href": "https://arcanum.ae/#customiseMenu"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://pos.accuratesoftware.online/auth/login"
+    }
+  ],
+  "raw_text": "Features Advanced POS software for restaurants Take Orders Customizable item menu Split Bill Combine Bill Try it Now Demo Our Key Features Combine Bill Split Bills Customize Menu while dining in restaurants, we may have come across some situations where we would like to pay for another customer. The software allows you to combine those bills into one bill. On some occasions, we may dine out with friends in a restaurant and since we are low on money, we will decide to split the bills so that everyone can pay for what they had. The software also provides the option to split a bill of a table. In a growing restaurant/hotel, the menu of food items that they serve may change over time. So there is a need to customize the menu items when some new items are introduced or when some existing items are removed. The Software has the master screens that allows one user to edit the item details. Try it Now"
+}

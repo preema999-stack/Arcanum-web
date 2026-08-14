@@ -1,0 +1,93 @@
+{
+  "section_id": "features_FLEX",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Payment Gateway",
+    "Multiple Services",
+    "Multiple Pages",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Flex Data",
+    "customer can create surveys with payment gateway with simple configuration and support multiple payment options like debit card ,credit card ,net banking and UPI payment options",
+    "Flex data support multiple services and can handle all of them in one place .customer can set expiry of the service and can update it also if need",
+    "Flex Data support multiple pages per service can split survey in to multiple pages . it can also handle tables and header detail data in survey"
+  ],
+  "bullet_points": [
+    "Payment Gateway",
+    "Multiple Services",
+    "Multiple Pages"
+  ],
+  "structured_items": [
+    {
+      "title": "Payment Gateway",
+      "description": "Payment Gateway",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multiple Services",
+      "description": "Multiple Services",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multiple Pages",
+      "description": "Multiple Pages",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Payment Gateway Multiple Services Multiple Pages customer can create surveys with payment gateway with simple configuration and support multiple payment options like debit card ,credit card ,net banking and UPI payment options Flex data support multiple services and can handle all of them in one place .customer can set expiry of the service and can update it also if need Flex Data support multiple pages per service can split survey in to multiple pages . it can also handle tables and header detail data in survey",
+      "list_items": [
+        "Payment Gateway",
+        "Multiple Services",
+        "Multiple Pages"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://flexdata.accuratesoftware.online/login"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/flexdata.html"
+    },
+    {
+      "text": "Payment Gateway",
+      "href": "https://arcanum.ae/#paymentGateway"
+    },
+    {
+      "text": "Multiple Services",
+      "href": "https://arcanum.ae/#multiService"
+    },
+    {
+      "text": "Multiple Pages",
+      "href": "https://arcanum.ae/#multiPage"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://flexdata.accuratesoftware.online/login"
+    }
+  ],
+  "raw_text": "Features Flex Data Payment Gateway Multiple Services Multiple Pages Try it Now Demo Our Key Features Payment Gateway Multiple Services Multiple Pages customer can create surveys with payment gateway with simple configuration and support multiple payment options like debit card ,credit card ,net banking and UPI payment options Flex data support multiple services and can handle all of them in one place .customer can set expiry of the service and can update it also if need Flex Data support multiple pages per service can split survey in to multiple pages . it can also handle tables and header detail data in survey Try it Now"
+}

@@ -1,0 +1,161 @@
+{
+  "section_id": "features_ERP",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "ERP Transactions",
+    "Reports",
+    "Cloud Based Solution",
+    "Multiple Branch Selection",
+    "Multi Language Support",
+    "Our Key Features",
+    "Report Print",
+    "Additional Features",
+    "Dashboard",
+    "Master Screens",
+    "Custom Themes",
+    "Data Backup",
+    "Reports"
+  ],
+  "paragraphs": [
+    "Advanced ERP software",
+    "Administration Module for creating users, adding menu and control menu rights for individual User. Can also administrate company, division, branch etc.",
+    "The finance module in an ERP system manages financial transactions and processes such as general ledger, accounts payable, accounts receivable, cash management, and fixed assets. It provides accurate financial reporting, ensures compliance with accounting standards, and enables better financial decision-making. Report Print",
+    "The ERP inventory and procurement module provides businesses with a comprehensive solution managing inventory levels and procurement processes. It enables real-time inventory insights, automated alerts, and notifications for restocking and purchasing. The module is customizable and integrates with other ERP modules for seamless end-to-end supply chain management.",
+    "User can raise issues and queries through support chat, chat box for interaction with the development team",
+    "You can access every information from the dashboard, Financial Reports, Report wise count and many more â¦",
+    "The app supports 15+ Master screens. You can enter common information in masters, and it can be selected in Finance Transactions. So you don't have to type everything again and again.",
+    "You can personalize the look and feel of the applications",
+    "We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+    "You can generate reports from the application and print reports with different filter conditions"
+  ],
+  "bullet_points": [
+    "Administration",
+    "Finance",
+    "Inventory",
+    "Support & Chat"
+  ],
+  "structured_items": [
+    {
+      "title": "ERP Transactions",
+      "description": "ERP Transactions",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Reports",
+      "description": "Reports",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Cloud Based Solution",
+      "description": "Cloud Based Solution",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multiple Branch Selection",
+      "description": "Multiple Branch Selection",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multi Language Support",
+      "description": "Multi Language Support",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Report Print",
+      "description": "Report Print",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Dashboard",
+      "description": "Dashboard You can access every information from the dashboard, Financial Reports, Report wise count and many more â¦",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Master Screens",
+      "description": "Master Screens The app supports 15+ Master screens. You can enter common information in masters, and it can be selected in Finance Transactions. So you don't have to type everything again and again.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Custom Themes",
+      "description": "Custom Themes You can personalize the look and feel of the applications",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Data Backup",
+      "description": "Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Reports",
+      "description": "Reports You can generate reports from the application and print reports with different filter conditions",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-3.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Advanced ERP software",
+      "href": "https://erp.accuratesoftware.online/"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://erp.accuratesoftware.online/"
+    },
+    {
+      "text": "Administration",
+      "href": "https://arcanum.ae/#tab1_erp"
+    },
+    {
+      "text": "Finance",
+      "href": "https://arcanum.ae/#tab2_erp"
+    },
+    {
+      "text": "Inventory",
+      "href": "https://arcanum.ae/#tab3_erp"
+    },
+    {
+      "text": "Support & Chat",
+      "href": "https://arcanum.ae/#tab4_erp"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://erp.accuratesoftware.online/"
+    }
+  ],
+  "raw_text": "Features Advanced ERP software ERP Transactions Reports Cloud Based Solution Multiple Branch Selection Multi Language Support Try it Now Our Key Features Administration Finance Inventory Support & Chat Administration Module for creating users, adding menu and control menu rights for individual User. Can also administrate company, division, branch etc. The finance module in an ERP system manages financial transactions and processes such as general ledger, accounts payable, accounts receivable, cash management, and fixed assets. It provides accurate financial reporting, ensures compliance with accounting standards, and enables better financial decision-making. Report Print The ERP inventory and procurement module provides businesses with a comprehensive solution managing inventory levels and procurement processes. It enables real-time inventory insights, automated alerts, and notifications for restocking and purchasing. The module is customizable and integrates with other ERP modules for seamless end-to-end supply chain management. User can raise issues and queries through support chat, chat box for interaction with the development team Additional Features Dashboard You can access every information from the dashboard, Financial Reports, Report wise count and many more â¦ Master Screens The app supports 15+ Master screens. You can enter common information in masters, and it can be selected in Finance Transactions. So you don't have to type everything again and again. Custom Themes You can personalize the look and feel of the applications Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens. Reports You can generate reports from the application and print reports with different filter conditions Try it Now"
+}

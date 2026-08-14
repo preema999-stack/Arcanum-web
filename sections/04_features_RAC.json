@@ -1,0 +1,185 @@
+{
+  "section_id": "features_RAC",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Rental Agreements",
+    "Vehicle Wise Reports",
+    "Cloud Based Solution",
+    "Maintain Records",
+    "Multiple Branches",
+    "Multi Language Support",
+    "Our Key Features",
+    "Invoice Print",
+    "Live Reports & Tracking",
+    "Additional Features",
+    "Dashboard",
+    "Master Screens",
+    "Custom Themes",
+    "Data Backup",
+    "Reports",
+    "Fine Finder"
+  ],
+  "paragraphs": [
+    "Advanced car rental solution software",
+    "The Rental Agreement is the key part of the software which helps to collect and store all required information for car rental and also supports car replacement. Even with damage marking in and out.",
+    "You can directly get an invoice from the rental agreement page.",
+    "You can start tracking your report from the dashboard once the agreement is created.",
+    "It helps to keep track of the Maintenance history and Maintenance cost history of the vehicle.",
+    "If you want to transfer your car to another branch, you can use the branch transfer section. It will automatically update the branch of the car after the transfer is done.",
+    "If your car taken by staff or yourself and if it's non-revenue it can be entered into a Non Revenue Agreement",
+    "You can access every information from the dashboard ,vehicle count, branch wise count and many more ...",
+    "The app supports 20+ Master screens. You can enter common information in masters, and it can be selected in agreement. So you don't have to type everything again and again.",
+    "You can personalize the look and feel of the applications",
+    "We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+    "You Can generate 20+ reports from the application Fleet Related Reports, Agreement Reports, Revenue Reports, Vehicle Maintenance Reports, Non Revenue Reports, Booking Report. It helps to keep track of everything you need.",
+    "If you received a fine, no problem, you can search by vehicle number and fine date to find the customer details."
+  ],
+  "bullet_points": [
+    "Rental Agreements",
+    "Workshop Tickets",
+    "Branch Transfer",
+    "Non Revenue Agreement"
+  ],
+  "structured_items": [
+    {
+      "title": "Rental Agreements",
+      "description": "Rental Agreements",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Vehicle Wise Reports",
+      "description": "Vehicle Wise Reports",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Cloud Based Solution",
+      "description": "Cloud Based Solution",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Maintain Records",
+      "description": "Maintain Records",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multiple Branches",
+      "description": "Multiple Branches",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multi Language Support",
+      "description": "Multi Language Support",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Invoice Print",
+      "description": "Invoice Print",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Live Reports & Tracking",
+      "description": "Live Reports & Tracking",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Dashboard",
+      "description": "Dashboard You can access every information from the dashboard ,vehicle count, branch wise count and many more ...",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Master Screens",
+      "description": "Master Screens The app supports 20+ Master screens. You can enter common information in masters, and it can be selected in agreement. So you don't have to type everything again and again.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Custom Themes",
+      "description": "Custom Themes You can personalize the look and feel of the applications",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Data Backup",
+      "description": "Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Reports",
+      "description": "Reports You Can generate 20+ reports from the application Fleet Related Reports, Agreement Reports, Revenue Reports, Vehicle Maintenance Reports, Non Revenue Reports, Booking Report. It helps to keep track of everything you need.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Fine Finder",
+      "description": "Fine Finder If you received a fine, no problem, you can search by vehicle number and fine date to find the customer details.",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-3.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Advanced car rental solution software",
+      "href": "https://rac.accuratesoftware.online/"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://rac.accuratesoftware.online/"
+    },
+    {
+      "text": "Rental Agreements",
+      "href": "https://arcanum.ae/#tab1"
+    },
+    {
+      "text": "Workshop Tickets",
+      "href": "https://arcanum.ae/#tab2"
+    },
+    {
+      "text": "Branch Transfer",
+      "href": "https://arcanum.ae/#tab3"
+    },
+    {
+      "text": "Non Revenue Agreement",
+      "href": "https://arcanum.ae/#tab4"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://rac.accuratesoftware.online/"
+    }
+  ],
+  "raw_text": "Features Advanced car rental solution software Rental Agreements Vehicle Wise Reports Cloud Based Solution Maintain Records Multiple Branches Multi Language Support Try it Now Our Key Features Rental Agreements Workshop Tickets Branch Transfer Non Revenue Agreement The Rental Agreement is the key part of the software which helps to collect and store all required information for car rental and also supports car replacement. Even with damage marking in and out. Invoice Print You can directly get an invoice from the rental agreement page. Live Reports & Tracking You can start tracking your report from the dashboard once the agreement is created. It helps to keep track of the Maintenance history and Maintenance cost history of the vehicle. If you want to transfer your car to another branch, you can use the branch transfer section. It will automatically update the branch of the car after the transfer is done. If your car taken by staff or yourself and if it's non-revenue it can be entered into a Non Revenue Agreement Additional Features Dashboard You can access every information from the dashboard ,vehicle count, branch wise count and many more ... Master Screens The app supports 20+ Master screens. You can enter common information in masters, and it can be selected in agreement. So you don't have to type everything again and again. Custom Themes You can personalize the look and feel of the applications Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens. Reports You Can generate 20+ reports from the application Fleet Related Reports, Agreement Reports, Revenue Reports, Vehicle Maintenance Reports, Non Revenue Reports, Booking Report. It helps to keep track of everything you need. Fine Finder If you received a fine, no problem, you can search by vehicle number and fine date to find the customer details. Try it Now"
+}

@@ -11,6 +11,8 @@ import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { scrollToId } from '@/components/scrollTo';
 import { GsapTextSplit } from '@/components/GsapTextSplit';
 import { gsap } from 'gsap';
+import { useCms } from '@/lib/cmsContext';
+import { ARCANUM_INFO } from '@/data/arcanumData';
 
 const FRAME_START = 84;
 const FRAME_END = 125;
@@ -25,6 +27,9 @@ interface HeroTopSectionProps {
 }
 
 export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
+  const { content } = useCms();
+  const info = content?.info || ARCANUM_INFO;
+
   const trackRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const tagRef = useRef<HTMLDivElement>(null);
@@ -123,13 +128,22 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
               className="mb-6 flex flex-wrap items-center gap-2 font-mono text-xs tracking-widest text-[#2384ba]"
             >
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="uppercase font-semibold text-white">GLOBAL HUBS:</span>
+              <span className="uppercase font-semibold text-white">{info.heroBadgeLabel || 'GLOBAL HUBS:'}</span>
               <span className="inline-flex items-center gap-1.5 rounded-md bg-[#2384ba]/15 px-2.5 py-0.5 border border-[#2384ba]/30 text-white font-medium">
-                <span>🇦🇪 ABU DHABI</span>
-                <span className="text-[#2384ba]">•</span>
-                <span>🇮🇳 KERALA</span>
-                <span className="text-[#2384ba]">•</span>
-                <span>🇮🇳 GUJARAT</span>
+                {(content?.locations || []).length > 0 ? (content?.locations || []).map((hub, i) => (
+                  <React.Fragment key={hub.id}>
+                    {i > 0 && <span className="text-[#2384ba]">•</span>}
+                    <span>{hub.flag} {hub.city?.toUpperCase()}</span>
+                  </React.Fragment>
+                )) : (
+                  <>
+                    <span>🇦🇪 ABU DHABI</span>
+                    <span className="text-[#2384ba]">•</span>
+                    <span>🇮🇳 KERALA</span>
+                    <span className="text-[#2384ba]">•</span>
+                    <span>🇮🇳 GUJARAT</span>
+                  </>
+                )}
               </span>
             </div>
 
@@ -138,12 +152,12 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
               {/* Phase 1 */}
               <motion.div style={{ opacity: phase1Opacity, y: phase1Y }} className="absolute inset-x-0">
                 <h1 className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-4">
-                  <GsapTextSplit text="If You Have an Idea," isActive={activePhase === 1} />
+                  <GsapTextSplit text={info.heroHeadline || "If You Have an Idea,"} isActive={activePhase === 1} />
                 </h1>
                 <div className="text-3xl sm:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight">
                   <GsapTextSplit
-                    text="We Will Make It a"
-                    highlightText="Reality."
+                    text={info.heroHeadlineSuffix || "We Will Make It a"}
+                    highlightText={info.heroHeadlineHighlight || "Reality."}
                     highlightClassName="text-[#2384ba] drop-shadow-[0_0_20px_rgba(35,132,186,0.35)]"
                     delay={0.12}
                     isActive={activePhase === 1}
@@ -156,15 +170,15 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
               <motion.div style={{ opacity: phase2Opacity, y: phase2Y }} className="absolute inset-x-0 max-w-4xl">
                 <h2 className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-6">
                   <GsapTextSplit
-                    text="From Bold Vision to"
-                    highlightText="Enterprise Reality."
+                    text={info.heroPhase2Title || "From Bold Vision to"}
+                    highlightText={info.heroPhase2Highlight || "Enterprise Reality."}
                     highlightClassName="text-[#2384ba] drop-shadow-[0_0_20px_rgba(35,132,186,0.35)]"
                     isActive={activePhase === 2}
                   />
                 </h2>
                 <p className="text-base sm:text-xl leading-relaxed text-slate-300 max-w-2xl font-sans font-normal">
                   <GsapTextSplit
-                    text="We engineer custom ERPs, core banking engines, clinical platforms, and cloud infrastructure — built with architectural rigor."
+                    text={info.heroPhase2Description || info.heroDescription || "We engineer custom ERPs, core banking engines, clinical platforms, and cloud infrastructure — built with architectural rigor."}
                     delay={0.2}
                     isActive={activePhase === 2}
                   />
@@ -175,15 +189,15 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
               <motion.div style={{ opacity: phase3Opacity, y: phase3Y }} className="absolute inset-x-0 max-w-4xl">
                 <h2 className="text-4xl sm:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.05] mb-6">
                   <GsapTextSplit
-                    text="And We Build Systems"
-                    highlightText="That Endure."
+                    text={info.heroPhase3Title || "And We Build Systems"}
+                    highlightText={info.heroPhase3Highlight || "That Endure."}
                     highlightClassName="text-[#2384ba] drop-shadow-[0_0_20px_rgba(35,132,186,0.35)]"
                     isActive={activePhase === 3}
                   />
                 </h2>
                 <p className="text-base sm:text-xl leading-relaxed text-slate-300 max-w-2xl font-sans font-normal">
                   <GsapTextSplit
-                    text="Secure, scalable, and backed by senior engineers across the UAE — so your software keeps evolving as your business grows."
+                    text={info.heroPhase3Description || "Secure, scalable, and backed by senior engineers across the UAE — so your software keeps evolving as your business grows."}
                     delay={0.2}
                     isActive={activePhase === 3}
                   />
@@ -197,7 +211,7 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
                 onClick={onOpenContact}
                 className="group flex items-center space-x-2.5 px-7 py-4 bg-[#2384ba] hover:bg-[#1b6ca1] text-white text-xs font-mono font-medium uppercase tracking-wider rounded-lg transition-all duration-300 shadow-lg shadow-[#2384ba]/25 hover:shadow-[#2384ba]/45 hover:scale-[1.02]"
               >
-                <span>Start Your Project</span>
+                <span>{info.heroCta1 || 'Start Your Project'}</span>
                 <ArrowDownRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </button>
 
@@ -205,7 +219,7 @@ export function HeroTopSection({ onOpenContact }: HeroTopSectionProps) {
                 onClick={() => scrollToId('solutions')}
                 className="group flex items-center space-x-2 px-6 py-4 border border-white/20 hover:border-[#2384ba] text-slate-200 hover:text-white text-xs font-mono font-medium rounded-lg bg-white/5 backdrop-blur-md transition-all"
               >
-                <span>Explore Enterprise Catalog</span>
+                <span>{info.heroCta2 || 'Explore Enterprise Catalog'}</span>
                 <ArrowUpRight className="w-4 h-4 text-[#2384ba] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
             </div>

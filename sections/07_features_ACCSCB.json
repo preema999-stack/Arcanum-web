@@ -1,0 +1,87 @@
+{
+  "section_id": "features_ACCSCB",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Customer banking",
+    "Internal and External Transactions",
+    "Employee access",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Banking",
+    "You can use this app as a complete banking app for doing internal and external transfer,viewing the current status of bank account,transaction details etc,. through this application",
+    "our application is more user friendly as any one can use simply and the data is also securely managed",
+    "Employees of the bank can use this application for collecting money from clients,and other functions efficiently"
+  ],
+  "bullet_points": [
+    "Customer Side Banking",
+    "Employee Banking"
+  ],
+  "structured_items": [
+    {
+      "title": "Customer banking",
+      "description": "Customer banking",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Internal and External Transactions",
+      "description": "Internal and External Transactions",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Employee access",
+      "description": "Employee access",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Customer Side Banking Employee Banking You can use this app as a complete banking app for doing internal and external transfer,viewing the current status of bank account,transaction details etc,. through this application our application is more user friendly as any one can use simply and the data is also securely managed Employees of the bank can use this application for collecting money from clients,and other functions efficiently",
+      "list_items": [
+        "Customer Side Banking",
+        "Employee Banking"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://scbmob.accuratesoftware.online/"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/acc-banking.html"
+    },
+    {
+      "text": "Customer Side Banking",
+      "href": "https://arcanum.ae/#customer"
+    },
+    {
+      "text": "Employee Banking",
+      "href": "https://arcanum.ae/#employee"
+    },
+    {
+      "text": "",
+      "href": "https://arcanum.ae/#new"
+    }
+  ],
+  "raw_text": "Features Banking Customer banking Internal and External Transactions Employee access Try it Now Demo Our Key Features Customer Side Banking Employee Banking You can use this app as a complete banking app for doing internal and external transfer,viewing the current status of bank account,transaction details etc,. through this application our application is more user friendly as any one can use simply and the data is also securely managed Employees of the bank can use this application for collecting money from clients,and other functions efficiently"
+}

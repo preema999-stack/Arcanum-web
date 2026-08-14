@@ -1,0 +1,34 @@
+{
+  "section_id": "about",
+  "section_name": "Arcanum Information Technology",
+  "tag": "section",
+  "class": "hero d-flex align-items-center",
+  "heading": "Arcanum Information Technology",
+  "sub_headings": [
+    "is a professionally managed information technology(IT) company in the area of software development. We employs highly-skilled who are capable to execute any IT related job professionally and elegantly. We provide the market with innovative, flexible and smart software solutions."
+  ],
+  "paragraphs": [],
+  "bullet_points": [],
+  "structured_items": [
+    {
+      "title": "Arcanum Information Technology",
+      "description": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. We employs highly-skilled who are capable to execute any IT related job professionally and elegantly. We provide the market with innovative, flexible and smart software solutions. Get Started",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/hero-img.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Get Started",
+      "href": "https://arcanum.ae/#projects"
+    }
+  ],
+  "raw_text": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. We employs highly-skilled who are capable to execute any IT related job professionally and elegantly. We provide the market with innovative, flexible and smart software solutions. Get Started"
+}

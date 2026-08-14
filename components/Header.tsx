@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, FileText, Menu, X } from 'lucide-react';
 import { scrollToId } from '@/components/scrollTo';
+import { useCms } from '@/lib/cmsContext';
 
 interface HeaderProps {
   onOpenBrochures: () => void;
@@ -19,6 +20,8 @@ const NAV = [
 ];
 
 export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
+  const { content } = useCms();
+  const info = content?.info;
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,9 +46,11 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
               <img src="/logo.png" alt="Arcanum IT Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-base font-bold tracking-tight text-white transition-colors group-hover:text-[#2384ba]">ARCANUM</span>
+              <span className="text-base font-bold tracking-tight text-white transition-colors group-hover:text-[#2384ba]">
+                {info?.shortName?.toUpperCase() || 'ARCANUM'}
+              </span>
               <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">
-                Information Technology
+                {info?.name ? 'Information Technology' : 'Information Technology'}
               </span>
             </div>
           </a>

@@ -1,0 +1,89 @@
+{
+  "section_id": "features_FORMBUILDER",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "User-Friendly Design",
+    "Intuitive Drag-and-Drop Interface",
+    "Efficient Data Collection",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Form Builder",
+    "Our form builder is designed for ease of use, allowing you to focus on what matters most â your business goals",
+    "Streamline your workflow and spend less time on administrative tasks.",
+    "Trust  Form Builder to handle your data securely and reliably."
+  ],
+  "bullet_points": [
+    "Simplicity at its Core",
+    "Time-Saving Solutions",
+    "Reliable and Secure"
+  ],
+  "structured_items": [
+    {
+      "title": "User-Friendly Design",
+      "description": "User-Friendly Design",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Intuitive Drag-and-Drop Interface",
+      "description": "Intuitive Drag-and-Drop Interface",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Efficient Data Collection",
+      "description": "Efficient Data Collection",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Simplicity at its Core Time-Saving Solutions Reliable and Secure Our form builder is designed for ease of use, allowing you to focus on what matters most â your business goals Streamline your workflow and spend less time on administrative tasks. Trust  Form Builder to handle your data securely and reliably.",
+      "list_items": [
+        "Simplicity at its Core",
+        "Time-Saving Solutions",
+        "Reliable and Secure"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/assets\\files\\Accurate Form builder.pdf"
+    },
+    {
+      "text": "Simplicity at its Core",
+      "href": "https://arcanum.ae/#SimplicityatitsCore"
+    },
+    {
+      "text": "Time-Saving Solutions",
+      "href": "https://arcanum.ae/#TimeSavingSolutions"
+    },
+    {
+      "text": "Reliable and Secure",
+      "href": "https://arcanum.ae/#ReliableandSecure"
+    },
+    {
+      "text": "Try it Now",
+      "href": ""
+    }
+  ],
+  "raw_text": "Features Form Builder User-Friendly Design Intuitive Drag-and-Drop Interface Efficient Data Collection Demo Our Key Features Simplicity at its Core Time-Saving Solutions Reliable and Secure Our form builder is designed for ease of use, allowing you to focus on what matters most â your business goals Streamline your workflow and spend less time on administrative tasks. Trust  Form Builder to handle your data securely and reliably. Try it Now"
+}

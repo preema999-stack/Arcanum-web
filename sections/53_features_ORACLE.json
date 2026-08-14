@@ -1,0 +1,85 @@
+{
+  "section_id": "features_ORACLE",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "ORACLE MIGRATION",
+    "Oracle AMC",
+    "Trithala Co-Operative Bank",
+    "Our Oracle Forms Works"
+  ],
+  "paragraphs": [
+    "Our Oracle Forms Works",
+    "Arcanum has developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms 12c / Oracle Fusion Middleware. No matter what stage of the migration process you are in, Our Developer can assist in your planning and migration execution. Learn more about Migration Planning and Methodology. Once you're ready to migrate, get started with Our Developer and select our platform to migrate from.",
+    "As an Annual Maintenance Contract (AMC) Services provider, Arcanum maintains the IT infrastructure, provides dedicated man-power from offshore or on the site.",
+    "Trithala Co-Operative Bank(TSCB) is banking software made for service Co-Operative Bank in trithala including customer portal"
+  ],
+  "bullet_points": [
+    "ORACLE MIGRATION",
+    "ORACLE AMC",
+    "Co-Operative Bank"
+  ],
+  "structured_items": [
+    {
+      "title": "ORACLE MIGRATION",
+      "description": "ORACLE MIGRATION",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Oracle AMC",
+      "description": "Oracle AMC",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Trithala Co-Operative Bank",
+      "description": "Trithala Co-Operative Bank",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Oracle Forms Works",
+      "description": "Our Oracle Forms Works ORACLE MIGRATION ORACLE AMC Co-Operative Bank Arcanum has developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms 12c / Oracle Fusion Middleware. No matter what stage of the migration process you are in, Our Developer can assist in your planning and migration execution. Learn more about Migration Planning and Methodology. Once you're ready to migrate, get started with Our Developer and select our platform to migrate from. As an Annual Maintenance Contract (AMC) Services provider, Arcanum maintains the IT infrastructure, provides dedicated man-power from offshore or on the site. Trithala Co-Operative Bank(TSCB) is banking software made for service Co-Operative Bank in trithala including customer portal",
+      "list_items": [
+        "ORACLE MIGRATION",
+        "ORACLE AMC",
+        "Co-Operative Bank"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "ORACLE MIGRATION",
+      "href": "https://arcanum.ae/#oracleMigration"
+    },
+    {
+      "text": "ORACLE AMC",
+      "href": "https://arcanum.ae/#oracleAMC"
+    },
+    {
+      "text": "Co-Operative Bank",
+      "href": "https://arcanum.ae/#tscb"
+    },
+    {
+      "text": "Demo",
+      "href": "https://rac.accuratesoftware.online/"
+    }
+  ],
+  "raw_text": "Features Our Oracle Forms Works ORACLE MIGRATION Oracle AMC Trithala Co-Operative Bank Our Oracle Forms Works ORACLE MIGRATION ORACLE AMC Co-Operative Bank Arcanum has developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms 12c / Oracle Fusion Middleware. No matter what stage of the migration process you are in, Our Developer can assist in your planning and migration execution. Learn more about Migration Planning and Methodology. Once you're ready to migrate, get started with Our Developer and select our platform to migrate from. As an Annual Maintenance Contract (AMC) Services provider, Arcanum maintains the IT infrastructure, provides dedicated man-power from offshore or on the site. Trithala Co-Operative Bank(TSCB) is banking software made for service Co-Operative Bank in trithala including customer portal Demo"
+}

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle, Mail, MapPin, Phone, Globe, Terminal, X } from 'lucide-react';
 import { ARCANUM_INFO } from '@/data/arcanumData';
+import { useCms } from '@/lib/cmsContext';
 
 interface ContactProps {
   isOpenModal?: boolean;
@@ -11,6 +12,9 @@ interface ContactProps {
 }
 
 export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
+  const { content: cmsContent } = useCms();
+  const info = cmsContent?.info || ARCANUM_INFO;
+  const hubs = cmsContent?.locations || [];
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -87,14 +91,13 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
       {/* Section Header */}
       <div className="max-w-3xl mb-12">
         <span className="text-[#2384ba] font-mono text-xs tracking-widest uppercase block mb-2">
-          08 / INITIATE ENGAGEMENT
+          {info.contactBadge || '08 / INITIATE ENGAGEMENT'}
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0f172a] font-display">
-          Schedule Technical Architecture Discovery
+          {info.contactTitle || 'Schedule Technical Architecture Discovery'}
         </h2>
         <p className="text-slate-600 text-base font-sans mt-3">
-          Speak directly with our senior software architects. Whether you need custom ERP implementation, 
-          Oracle Forms refactoring, or co-operative banking integration, we deliver enterprise certainty.
+          {info.contactDescription || 'Speak directly with our senior software architects. Whether you need custom ERP implementation, Oracle Forms refactoring, or co-operative banking integration, we deliver enterprise certainty.'}
         </p>
       </div>
 
@@ -106,52 +109,62 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
               GLOBAL OPERATIONAL HUBS
             </span>
             <h3 className="text-xl font-bold text-white font-display mb-4">
-              Arcanum Information Technology
+              {info.name || 'Arcanum Information Technology'}
             </h3>
             <p className="text-slate-300 text-xs leading-relaxed font-sans mb-6">
-              Professionally managed software development firm operating across strategic tech centers in UAE & India.
+              {info.aboutDescription2 || 'Professionally managed software development firm operating across strategic tech centers in UAE & India.'}
             </p>
           </div>
 
           {/* 3 Location Hubs */}
           <div className="space-y-3 pt-4 border-t border-slate-800 font-mono text-xs">
-            <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
-              <span className="text-base">🇦🇪</span>
-              <div>
-                <div className="font-bold text-white">Abu Dhabi, UAE</div>
-                <div className="text-[11px] text-slate-400 font-sans">Global Headquarters & Client Strategy</div>
+            {hubs.length > 0 ? hubs.map((hub) => (
+              <div key={hub.id} className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+                <span className="text-base">{hub.flag || '🌐'}</span>
+                <div>
+                  <div className="font-bold text-white">{hub.city}, {hub.country}</div>
+                  <div className="text-[11px] text-slate-400 font-sans">{hub.role}</div>
+                </div>
               </div>
-            </div>
-
-            <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
-              <span className="text-base">🇮🇳</span>
-              <div>
-                <div className="font-bold text-white">Kerala, India</div>
-                <div className="text-[11px] text-slate-400 font-sans">Engineering & Core R&D Hub</div>
-              </div>
-            </div>
-
-            <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
-              <span className="text-base">🇮🇳</span>
-              <div>
-                <div className="font-bold text-white">Gujarat, India</div>
-                <div className="text-[11px] text-slate-400 font-sans">Tech & Operations Center</div>
-              </div>
-            </div>
+            )) : (
+              <>
+                <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+                  <span className="text-base">🇦🇪</span>
+                  <div>
+                    <div className="font-bold text-white">Abu Dhabi, UAE</div>
+                    <div className="text-[11px] text-slate-400 font-sans">Global Headquarters & Client Strategy</div>
+                  </div>
+                </div>
+                <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+                  <span className="text-base">🇮🇳</span>
+                  <div>
+                    <div className="font-bold text-white">Kerala, India</div>
+                    <div className="text-[11px] text-slate-400 font-sans">Engineering & Core R&D Hub</div>
+                  </div>
+                </div>
+                <div className="rounded-lg bg-slate-900/80 p-3 border border-slate-800 flex items-start space-x-3">
+                  <span className="text-base">🇮🇳</span>
+                  <div>
+                    <div className="font-bold text-white">Gujarat, India</div>
+                    <div className="text-[11px] text-slate-400 font-sans">Tech & Operations Center</div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="space-y-3 pt-4 border-t border-slate-800 text-xs font-mono">
             <div className="flex items-center space-x-3 text-slate-300">
               <Mail className="w-4 h-4 text-[#2384ba] shrink-0" />
-              <a href={`mailto:${ARCANUM_INFO.contact.email}`} className="hover:text-[#2384ba] transition-colors">
-                {ARCANUM_INFO.contact.email}
+              <a href={`mailto:${info.contact?.email || 'info@arcanum.ae'}`} className="hover:text-[#2384ba] transition-colors">
+                {info.contact?.email || 'info@arcanum.ae'}
               </a>
             </div>
 
             <div className="flex items-center space-x-3 text-slate-300">
               <Globe className="w-4 h-4 text-[#2384ba] shrink-0" />
-              <a href={ARCANUM_INFO.contact.website} target="_blank" rel="noreferrer" className="hover:text-[#2384ba] transition-colors">
-                {ARCANUM_INFO.contact.website}
+              <a href={info.contact?.website || 'https://arcanum.ae'} target="_blank" rel="noreferrer" className="hover:text-[#2384ba] transition-colors">
+                {info.contact?.website || 'https://arcanum.ae'}
               </a>
             </div>
           </div>
@@ -218,15 +231,9 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
                   onChange={(e) => setFormData({ ...formData, module: e.target.value })}
                   className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded text-sm text-[#0f172a] focus:outline-none focus:border-[#2384ba] focus:ring-1 focus:ring-[#2384ba] font-sans"
                 >
-                  <option value="Organization Management System (OMS)">Organization Management System (OMS)</option>
-                  <option value="Accurate ERP System">Accurate ERP System</option>
-                  <option value="Accurate PAYROLL">Accurate PAYROLL</option>
-                  <option value="Oracle Forms Modernization">Oracle Forms Modernization</option>
-                  <option value="Core Banking & Co-op Add-ons">Core Banking & Co-op Add-ons</option>
-                  <option value="Scholar School Management System">Scholar School Management System</option>
-                  <option value="Accurate Clinic Management">Accurate Clinic Management</option>
-                  <option value="Transa Money Mobile Banking">Transa Money Mobile Banking</option>
-                  <option value="Native Mobile Applications">Native Mobile Applications</option>
+                  {(cmsContent?.modules || []).map((m) => (
+                    <option key={m.id} value={m.title}>{m.title}</option>
+                  ))}
                 </select>
               </div>
 

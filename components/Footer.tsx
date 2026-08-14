@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { ArrowUp, ArrowUpRight } from 'lucide-react';
-import { ARCANUM_INFO } from '@/data/arcanumData';
+import { useCms } from '@/lib/cmsContext';
 import { scrollToId } from '@/components/scrollTo';
 
 interface FooterProps {
@@ -19,13 +18,11 @@ const LINKS = [
   { label: 'Contact', id: 'contact' },
 ];
 
-const HUBS = [
-  { label: 'ABU DHABI', flag: '🇦🇪', id: 'abudhabi' },
-  { label: 'KERALA', flag: '🇮🇳', id: 'kerala' },
-  { label: 'GUJARAT', flag: '🇮🇳', id: 'gujarat' },
-];
-
 export function Footer({ onOpenBrochures, onOpenContact, onSelectHub }: FooterProps) {
+  const { content } = useCms();
+  const info = content?.info;
+  const hubs = content?.locations || [];
+
   const scrollToTop = () => {
     const lenis = window.__lenis;
     if (lenis && typeof lenis.scrollTo === 'function') {
@@ -46,24 +43,23 @@ export function Footer({ onOpenBrochures, onOpenContact, onSelectHub }: FooterPr
                 <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
               </div>
               <span className="text-lg font-bold tracking-tight text-white">
-                {ARCANUM_INFO.name}
+                {info?.name || 'Arcanum Information Technology'}
               </span>
             </div>
             <p className="max-w-sm text-xs leading-relaxed text-slate-400">
-              Professionally managed software development firm delivering secure enterprise software
-              across ERP, Banking, Healthcare, Education, and Cloud Infrastructure.
+              {info?.aboutDescription2 || 'Professionally managed software development firm delivering secure enterprise software across ERP, Banking, Healthcare, Education, and Cloud Infrastructure.'}
             </p>
             <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-slate-300">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
               <span>GLOBAL HUBS:</span>
-              {HUBS.map((hub, i) => (
+              {hubs.map((hub, i) => (
                 <React.Fragment key={hub.id}>
                   {i > 0 && <span>•</span>}
                   <button
                     onClick={() => onSelectHub(hub.id)}
                     className="text-[#2384ba] transition-colors hover:text-white hover:underline"
                   >
-                    {hub.flag} {hub.label}
+                    {hub.flag} {hub.city.toUpperCase()}
                   </button>
                 </React.Fragment>
               ))}
@@ -115,12 +111,8 @@ export function Footer({ onOpenBrochures, onOpenContact, onSelectHub }: FooterPr
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 py-8 font-mono text-xs text-slate-500 sm:flex-row">
-          <div className="flex items-center space-x-4">
-            <span>© {new Date().getFullYear()} {ARCANUM_INFO.name}. All Rights Reserved. UAE.</span>
-            <Link href="/admin" className="text-slate-400 hover:text-[#2384ba] transition-colors flex items-center gap-1">
-              <span>•</span>
-              <span>ADMIN PORTAL</span>
-            </Link>
+          <div>
+            <span>© {new Date().getFullYear()} {info?.name || 'Arcanum Information Technology'}. All Rights Reserved. UAE.</span>
           </div>
           <button
             onClick={scrollToTop}

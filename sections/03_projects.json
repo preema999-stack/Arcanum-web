@@ -1,0 +1,420 @@
+{
+  "section_id": "projects",
+  "section_name": "Our Projects",
+  "tag": "section",
+  "class": "values",
+  "heading": "Our Projects",
+  "sub_headings": [
+    "Scholar",
+    "School Management System",
+    "ERP",
+    "PAYROLL",
+    "Sales App",
+    "Banking",
+    "Lead Management System",
+    "Co-operative bank add-ons",
+    "POS Application For Restaurants",
+    "Clinic Management System",
+    "Flex Data",
+    "My Fin",
+    "Native Mobile Applications",
+    "Tender Application",
+    "Messenger",
+    "Issue Tracker",
+    "Form Builder",
+    "Transa Money",
+    "Website Development",
+    "Oracle Forms",
+    "Job Portal",
+    "Organization Management System"
+  ],
+  "paragraphs": [
+    "Here is our recent works",
+    "Manage All Student activity online from our application get track of admission, student information and fee payment history .",
+    "ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity.",
+    "Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations.",
+    "Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types.",
+    "Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank.",
+    "Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers.",
+    "We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration",
+    "Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place",
+    "Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity",
+    "Flex Data is fully Customizable survey application. can create survey with payment option without any hassle.",
+    "My fin is a simple application to track bank deposit rates , corporate actions in single place .",
+    "Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application.",
+    "Empower your business with Tender-APP, the cutting-edge solution for seamless tender management",
+    "Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects",
+    "An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project",
+    "A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs.",
+    "offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility.",
+    "We employ the latest technologies and best practices to ensure optimal performance, security, and scalability.",
+    "We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms.",
+    "Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app",
+    "Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them."
+  ],
+  "bullet_points": [],
+  "structured_items": [
+    {
+      "title": "Scholar",
+      "description": "Scholar School Management System Manage All Student activity online from our application get track of admission, student information and fee payment history .",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\sis.png"
+      ]
+    },
+    {
+      "title": "ERP",
+      "description": "ERP ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/values-2.png"
+      ]
+    },
+    {
+      "title": "PAYROLL",
+      "description": "PAYROLL Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/values-2.png"
+      ]
+    },
+    {
+      "title": "Sales App",
+      "description": "Sales App Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/sales.avif"
+      ]
+    },
+    {
+      "title": "Banking",
+      "description": "Banking Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\fin.png"
+      ]
+    },
+    {
+      "title": "Lead Management System",
+      "description": "Lead Management System Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/values-3.png"
+      ]
+    },
+    {
+      "title": "Co-operative bank add-ons",
+      "description": "Co-operative bank add-ons We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\banking.png"
+      ]
+    },
+    {
+      "title": "POS Application For Restaurants",
+      "description": "POS Application For Restaurants Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\pos.jpg"
+      ]
+    },
+    {
+      "title": "Clinic Management System",
+      "description": "Clinic Management System Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\clinic.jpg"
+      ]
+    },
+    {
+      "title": "Flex Data",
+      "description": "Flex Data Flex Data is fully Customizable survey application. can create survey with payment option without any hassle.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\survey.jpg"
+      ]
+    },
+    {
+      "title": "My Fin",
+      "description": "My Fin My fin is a simple application to track bank deposit rates , corporate actions in single place .",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\fin.png"
+      ]
+    },
+    {
+      "title": "Native Mobile Applications",
+      "description": "Native Mobile Applications Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\native.png"
+      ]
+    },
+    {
+      "title": "Tender Application",
+      "description": "Tender Application Empower your business with Tender-APP, the cutting-edge solution for seamless tender management",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/sales.avif"
+      ]
+    },
+    {
+      "title": "Messenger",
+      "description": "Messenger Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/chat.jpg"
+      ]
+    },
+    {
+      "title": "Issue Tracker",
+      "description": "Issue Tracker An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/values-3.png"
+      ]
+    },
+    {
+      "title": "Form Builder",
+      "description": "Form Builder A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\sis.png"
+      ]
+    },
+    {
+      "title": "Transa Money",
+      "description": "Transa Money offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\banking.png"
+      ]
+    },
+    {
+      "title": "Website Development",
+      "description": "Website Development We employ the latest technologies and best practices to ensure optimal performance, security, and scalability.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\survey.jpg"
+      ]
+    },
+    {
+      "title": "Oracle Forms",
+      "description": "Oracle Forms We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\raw\\oracle.png"
+      ]
+    },
+    {
+      "title": "Job Portal",
+      "description": "Job Portal Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets/img/values-4.png"
+      ]
+    },
+    {
+      "title": "Organization Management System",
+      "description": "Organization Management System Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them.",
+      "list_items": [],
+      "images": [
+        "https://arcanum.ae/assets\\img\\oms.jpg"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets\\raw\\sis.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/values-2.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/values-2.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/sales.avif",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\fin.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/values-3.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\banking.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\pos.jpg",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\clinic.jpg",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\survey.jpg",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\fin.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\native.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/sales.avif",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/chat.jpg",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/values-3.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\sis.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\banking.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\survey.jpg",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\raw\\oracle.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/values-4.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets\\img\\oms.jpg",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Scholar School Management System Manage All Student activity online from our application get track of admission, student information and fee payment history .",
+      "href": "https://arcanum.ae/#features_SIS"
+    },
+    {
+      "text": "ERP ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity.",
+      "href": "https://arcanum.ae/#features_ERP"
+    },
+    {
+      "text": "PAYROLL Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations.",
+      "href": "https://arcanum.ae/#features_PAYROLL"
+    },
+    {
+      "text": "Sales App Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types.",
+      "href": "https://arcanum.ae/#features_SLS"
+    },
+    {
+      "text": "Banking Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank.",
+      "href": "https://arcanum.ae/#features_ACCSCB"
+    },
+    {
+      "text": "Lead Management System Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers.",
+      "href": "https://arcanum.ae/#features_LMS"
+    },
+    {
+      "text": "Co-operative bank add-ons We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration",
+      "href": "https://arcanum.ae/#features_SCB"
+    },
+    {
+      "text": "POS Application For Restaurants Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place",
+      "href": "https://arcanum.ae/#features_POS"
+    },
+    {
+      "text": "Clinic Management System Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity",
+      "href": "https://arcanum.ae/#features_HMS"
+    },
+    {
+      "text": "Flex Data Flex Data is fully Customizable survey application. can create survey with payment option without any hassle.",
+      "href": "https://arcanum.ae/#features_FLEX"
+    },
+    {
+      "text": "My Fin My fin is a simple application to track bank deposit rates , corporate actions in single place .",
+      "href": "https://arcanum.ae/#features_FIN"
+    },
+    {
+      "text": "Native Mobile Applications Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application.",
+      "href": "https://arcanum.ae/#features_MOBILE"
+    },
+    {
+      "text": "Tender Application Empower your business with Tender-APP, the cutting-edge solution for seamless tender management",
+      "href": "https://arcanum.ae/#features_TENDER"
+    },
+    {
+      "text": "Messenger Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects",
+      "href": "https://arcanum.ae/#features_ASM"
+    },
+    {
+      "text": "Issue Tracker An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project",
+      "href": "https://arcanum.ae/#features_AIT"
+    },
+    {
+      "text": "Form Builder A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs.",
+      "href": "https://arcanum.ae/#features_FORMBUILDER"
+    },
+    {
+      "text": "Transa Money offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility.",
+      "href": "https://arcanum.ae/#features_TRANSA"
+    },
+    {
+      "text": "Website Development We employ the latest technologies and best practices to ensure optimal performance, security, and scalability.",
+      "href": "https://arcanum.ae/#features_WEBSITE"
+    },
+    {
+      "text": "Oracle Forms We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms.",
+      "href": "https://arcanum.ae/#features_ORACLE"
+    },
+    {
+      "text": "Job Portal Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app",
+      "href": "https://arcanum.ae/#features_JOB"
+    },
+    {
+      "text": "Organization Management System Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them.",
+      "href": "https://arcanum.ae/#features_OMS"
+    }
+  ],
+  "raw_text": "Our Projects Here is our recent works Scholar School Management System Manage All Student activity online from our application get track of admission, student information and fee payment history . ERP ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity. PAYROLL Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations. Sales App Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types. Banking Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank. Lead Management System Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers. Co-operative bank add-ons We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration POS Application For Restaurants Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place Clinic Management System Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity Flex Data Flex Data is fully Customizable survey application. can create survey with payment option without any hassle. My Fin My fin is a simple application to track bank deposit rates , corporate actions in single place . Native Mobile Applications Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application. Tender Application Empower your business with Tender-APP, the cutting-edge solution for seamless tender management Messenger Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects Issue Tracker An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project Form Builder A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs. Transa Money offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility. Website Development We employ the latest technologies and best practices to ensure optimal performance, security, and scalability. Oracle Forms We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms. Job Portal Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app Organization Management System Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them."
+}

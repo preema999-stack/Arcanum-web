@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { HeroTopSection } from '@/components/HeroTopSection';
 import { AboutSection } from '@/components/AboutSection';
@@ -12,11 +12,16 @@ import { Footer } from '@/components/Footer';
 import { BrochureModal } from '@/components/BrochureModal';
 import { GsapPreloader } from '@/components/GsapPreloader';
 import { WhatsAppWidget } from '@/components/WhatsAppWidget';
+import { trackVisitorSession } from '@/lib/analyticsService';
 
 export default function Home() {
   const [brochuresOpen, setBrochuresOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedHubId, setSelectedHubId] = useState<string>(LOCATION_HUBS[0].id);
+
+  useEffect(() => {
+    trackVisitorSession();
+  }, []);
 
   const handleSelectHub = (id: string) => {
     setSelectedHubId(id);

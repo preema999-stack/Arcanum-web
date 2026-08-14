@@ -1,0 +1,3872 @@
+{
+  "website_metadata": {
+    "url": "https://arcanum.ae/",
+    "title": "Arcanum Information Technology",
+    "description": "Unlock your business potential with Arcanum Information Technology. We provide custom software, ERP, and IT consulting for enhanced productivity.",
+    "crawled_at": "2026-08-08T15:38:43.257173",
+    "total_sections": 64
+  },
+  "sections": [
+    {
+      "section_id": "header",
+      "section_name": "Header & Navigation",
+      "tag": "header",
+      "class": "header fixed-top",
+      "brand_logo": {
+        "title": "Arcanum Information Technology",
+        "image": "https://arcanum.ae/assets/img/arcanum.png"
+      },
+      "navigation_links": [
+        {
+          "text": "Home",
+          "href": "https://arcanum.ae/index.html#about"
+        },
+        {
+          "text": "Our Projects",
+          "href": "https://arcanum.ae/index.html#projects"
+        },
+        {
+          "text": "Scholar - School Management Software",
+          "href": "https://arcanum.ae/index.html#features_SIS"
+        },
+        {
+          "text": "PAYROLL",
+          "href": "https://arcanum.ae/index.html#features_PAYROLL"
+        },
+        {
+          "text": "ERP",
+          "href": "https://arcanum.ae/index.html#features_ERP"
+        },
+        {
+          "text": "Sales App - Sales Managment Software",
+          "href": "https://arcanum.ae/index.html#features_SLS"
+        },
+        {
+          "text": "Messenger",
+          "href": "https://arcanum.ae/index.html#features_ASM"
+        },
+        {
+          "text": "Issue Tracker",
+          "href": "https://arcanum.ae/index.html#features_AIT"
+        },
+        {
+          "text": "Banking Application",
+          "href": "https://arcanum.ae/index.html#features_ACCSCB"
+        },
+        {
+          "text": "LMS - Lead Management Software",
+          "href": "https://arcanum.ae/index.html#features_LMS"
+        },
+        {
+          "text": "Flex Data - Dynamic Survey Forms",
+          "href": "https://arcanum.ae/index.html#features_FLEX"
+        },
+        {
+          "text": "Clinic Management",
+          "href": "https://arcanum.ae/index.html#features_HMS"
+        },
+        {
+          "text": "Point Of Sales For Restaurants",
+          "href": "https://arcanum.ae/index.html#features_POS"
+        },
+        {
+          "text": "My-Fin",
+          "href": "https://arcanum.ae/index.html#features_FIN"
+        },
+        {
+          "text": "Organization Management System",
+          "href": "https://arcanum.ae/index.html#features_OMS"
+        },
+        {
+          "text": "Oracle Forms",
+          "href": "https://arcanum.ae/index.html#features_ORACLE"
+        },
+        {
+          "text": "Job Portal",
+          "href": "https://arcanum.ae/index.html#features_JOB"
+        },
+        {
+          "text": "Tender Application",
+          "href": "https://arcanum.ae/index.html#features_TENDER"
+        },
+        {
+          "text": "Form Builder",
+          "href": "https://arcanum.ae/index.html#features_FORMBUILDER"
+        },
+        {
+          "text": "Transa Money",
+          "href": "https://arcanum.ae/index.html#features_TRANSA"
+        },
+        {
+          "text": "Website Development",
+          "href": "https://arcanum.ae/index.html#features_WEBSITE"
+        },
+        {
+          "text": "Native Mobile Applications",
+          "href": "https://arcanum.ae/index.html#features_MOBILE"
+        },
+        {
+          "text": "Co-operative bank Add-ons",
+          "href": "https://arcanum.ae/index.html#features_SCB"
+        },
+        {
+          "text": "Brochures",
+          "href": "https://arcanum.ae/index.html#projects"
+        },
+        {
+          "text": "Scholar - School Management Software",
+          "href": "https://arcanum.ae/assets\\files\\Scholar School Management System.pdf"
+        },
+        {
+          "text": "PAYROLL",
+          "href": "https://arcanum.ae/assets\\files\\Accurate PAYROLL.pdf"
+        },
+        {
+          "text": "ERP",
+          "href": "https://arcanum.ae/assets\\files\\ARC ERP.pdf"
+        },
+        {
+          "text": "Sales App - Sales Managment Software",
+          "href": "https://arcanum.ae/assets\\files\\Accurate Sales.pdf"
+        },
+        {
+          "text": "LMS - Lead Management Software",
+          "href": "https://arcanum.ae/assets\\files\\Accurate LMS.pdf"
+        },
+        {
+          "text": "Messenger",
+          "href": "https://arcanum.ae/assets\\files\\Simple Messenger.pdf"
+        },
+        {
+          "text": "Organization Management System",
+          "href": "https://arcanum.ae/assets\\files\\OMS.pdf"
+        },
+        {
+          "text": "Issue Tracker",
+          "href": "https://arcanum.ae/assets\\files\\Issue Tracker.pdf"
+        },
+        {
+          "text": "Flex Data - Dynamic Survey Forms",
+          "href": "https://arcanum.ae/assets\\files\\Flex Data.pdf"
+        },
+        {
+          "text": "Clinic Management",
+          "href": "https://arcanum.ae/assets\\files\\Accurate Clinic Management.pdf"
+        },
+        {
+          "text": "Point Of Sales For Restaurants",
+          "href": "https://arcanum.ae/assets\\files\\Point of sales.pdf"
+        },
+        {
+          "text": "My-Fin",
+          "href": "https://arcanum.ae/assets\\files\\Accurate My FIN.pdf"
+        },
+        {
+          "text": "Tender Application",
+          "href": "https://arcanum.ae/assets\\files\\Accurate-Tender.pdf"
+        },
+        {
+          "text": "Website Development",
+          "href": "https://arcanum.ae/assets\\files\\Website%20Creation.pdf"
+        },
+        {
+          "text": "Form Builder",
+          "href": "https://arcanum.ae/assets\\files\\Accurate Form builder.pdf"
+        },
+        {
+          "text": "Transa Money",
+          "href": "https://arcanum.ae/assets\\files\\Transa Money.pdf"
+        },
+        {
+          "text": "Oracle Forms",
+          "href": "https://arcanum.ae/assets\\files\\Oracle Forms.pdf"
+        },
+        {
+          "text": "Co-operative bank Add-ons",
+          "href": "https://arcanum.ae/assets\\files\\SCB Add ons-new.pdf"
+        },
+        {
+          "text": "Job Portal",
+          "href": "https://arcanum.ae/assets\\files\\Accurate Job Portal.pdf"
+        },
+        {
+          "text": "Contact",
+          "href": "https://arcanum.ae/index.html#contact"
+        },
+        {
+          "text": "Get Started",
+          "href": "https://arcanum.ae/index.html#projects"
+        }
+      ],
+      "raw_text": "Arcanum Information Technology Home Our Projects Scholar - School Management Software PAYROLL ERP Sales App - Sales Managment Software Messenger Issue Tracker Banking Application LMS - Lead Management Software Flex Data - Dynamic Survey Forms Clinic Management Point Of Sales For Restaurants My-Fin Organization Management System Oracle Forms Job Portal Tender Application Form Builder Transa Money Website Development Native Mobile Applications Co-operative bank Add-ons Brochures Scholar - School Management Software PAYROLL ERP Sales App - Sales Managment Software LMS - Lead Management Software Messenger Organization Management System Issue Tracker Flex Data - Dynamic Survey Forms Clinic Management Point Of Sales For Restaurants My-Fin Tender Application Website Development Form Builder Transa Money Oracle Forms Co-operative bank Add-ons Job Portal Contact Get Started"
+    },
+    {
+      "section_id": "about",
+      "section_name": "Arcanum Information Technology",
+      "tag": "section",
+      "class": "hero d-flex align-items-center",
+      "heading": "Arcanum Information Technology",
+      "sub_headings": [
+        "is a professionally managed information technology(IT) company in the area of software development. We employs highly-skilled who are capable to execute any IT related job professionally and elegantly. We provide the market with innovative, flexible and smart software solutions."
+      ],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [
+        {
+          "title": "Arcanum Information Technology",
+          "description": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. We employs highly-skilled who are capable to execute any IT related job professionally and elegantly. We provide the market with innovative, flexible and smart software solutions. Get Started",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/hero-img.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Get Started",
+          "href": "https://arcanum.ae/#projects"
+        }
+      ],
+      "raw_text": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. We employs highly-skilled who are capable to execute any IT related job professionally and elegantly. We provide the market with innovative, flexible and smart software solutions. Get Started"
+    },
+    {
+      "section_id": "projects",
+      "section_name": "Our Projects",
+      "tag": "section",
+      "class": "values",
+      "heading": "Our Projects",
+      "sub_headings": [
+        "Scholar",
+        "School Management System",
+        "ERP",
+        "PAYROLL",
+        "Sales App",
+        "Banking",
+        "Lead Management System",
+        "Co-operative bank add-ons",
+        "POS Application For Restaurants",
+        "Clinic Management System",
+        "Flex Data",
+        "My Fin",
+        "Native Mobile Applications",
+        "Tender Application",
+        "Messenger",
+        "Issue Tracker",
+        "Form Builder",
+        "Transa Money",
+        "Website Development",
+        "Oracle Forms",
+        "Job Portal",
+        "Organization Management System"
+      ],
+      "paragraphs": [
+        "Here is our recent works",
+        "Manage All Student activity online from our application get track of admission, student information and fee payment history .",
+        "ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity.",
+        "Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations.",
+        "Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types.",
+        "Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank.",
+        "Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers.",
+        "We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration",
+        "Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place",
+        "Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity",
+        "Flex Data is fully Customizable survey application. can create survey with payment option without any hassle.",
+        "My fin is a simple application to track bank deposit rates , corporate actions in single place .",
+        "Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application.",
+        "Empower your business with Tender-APP, the cutting-edge solution for seamless tender management",
+        "Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects",
+        "An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project",
+        "A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs.",
+        "offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility.",
+        "We employ the latest technologies and best practices to ensure optimal performance, security, and scalability.",
+        "We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms.",
+        "Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app",
+        "Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them."
+      ],
+      "bullet_points": [],
+      "structured_items": [
+        {
+          "title": "Scholar",
+          "description": "Scholar School Management System Manage All Student activity online from our application get track of admission, student information and fee payment history .",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\sis.png"
+          ]
+        },
+        {
+          "title": "ERP",
+          "description": "ERP ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/values-2.png"
+          ]
+        },
+        {
+          "title": "PAYROLL",
+          "description": "PAYROLL Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/values-2.png"
+          ]
+        },
+        {
+          "title": "Sales App",
+          "description": "Sales App Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/sales.avif"
+          ]
+        },
+        {
+          "title": "Banking",
+          "description": "Banking Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\fin.png"
+          ]
+        },
+        {
+          "title": "Lead Management System",
+          "description": "Lead Management System Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/values-3.png"
+          ]
+        },
+        {
+          "title": "Co-operative bank add-ons",
+          "description": "Co-operative bank add-ons We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\banking.png"
+          ]
+        },
+        {
+          "title": "POS Application For Restaurants",
+          "description": "POS Application For Restaurants Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\pos.jpg"
+          ]
+        },
+        {
+          "title": "Clinic Management System",
+          "description": "Clinic Management System Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\clinic.jpg"
+          ]
+        },
+        {
+          "title": "Flex Data",
+          "description": "Flex Data Flex Data is fully Customizable survey application. can create survey with payment option without any hassle.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\survey.jpg"
+          ]
+        },
+        {
+          "title": "My Fin",
+          "description": "My Fin My fin is a simple application to track bank deposit rates , corporate actions in single place .",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\fin.png"
+          ]
+        },
+        {
+          "title": "Native Mobile Applications",
+          "description": "Native Mobile Applications Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\native.png"
+          ]
+        },
+        {
+          "title": "Tender Application",
+          "description": "Tender Application Empower your business with Tender-APP, the cutting-edge solution for seamless tender management",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/sales.avif"
+          ]
+        },
+        {
+          "title": "Messenger",
+          "description": "Messenger Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/chat.jpg"
+          ]
+        },
+        {
+          "title": "Issue Tracker",
+          "description": "Issue Tracker An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/values-3.png"
+          ]
+        },
+        {
+          "title": "Form Builder",
+          "description": "Form Builder A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\sis.png"
+          ]
+        },
+        {
+          "title": "Transa Money",
+          "description": "Transa Money offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\banking.png"
+          ]
+        },
+        {
+          "title": "Website Development",
+          "description": "Website Development We employ the latest technologies and best practices to ensure optimal performance, security, and scalability.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\survey.jpg"
+          ]
+        },
+        {
+          "title": "Oracle Forms",
+          "description": "Oracle Forms We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\raw\\oracle.png"
+          ]
+        },
+        {
+          "title": "Job Portal",
+          "description": "Job Portal Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/values-4.png"
+          ]
+        },
+        {
+          "title": "Organization Management System",
+          "description": "Organization Management System Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets\\img\\oms.jpg"
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets\\raw\\sis.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/values-2.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/values-2.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/sales.avif",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\fin.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/values-3.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\banking.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\pos.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\clinic.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\survey.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\fin.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\native.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/sales.avif",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/chat.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/values-3.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\sis.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\banking.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\survey.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\raw\\oracle.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/values-4.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets\\img\\oms.jpg",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Scholar School Management System Manage All Student activity online from our application get track of admission, student information and fee payment history .",
+          "href": "https://arcanum.ae/#features_SIS"
+        },
+        {
+          "text": "ERP ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity.",
+          "href": "https://arcanum.ae/#features_ERP"
+        },
+        {
+          "text": "PAYROLL Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations.",
+          "href": "https://arcanum.ae/#features_PAYROLL"
+        },
+        {
+          "text": "Sales App Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types.",
+          "href": "https://arcanum.ae/#features_SLS"
+        },
+        {
+          "text": "Banking Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank.",
+          "href": "https://arcanum.ae/#features_ACCSCB"
+        },
+        {
+          "text": "Lead Management System Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers.",
+          "href": "https://arcanum.ae/#features_LMS"
+        },
+        {
+          "text": "Co-operative bank add-ons We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration",
+          "href": "https://arcanum.ae/#features_SCB"
+        },
+        {
+          "text": "POS Application For Restaurants Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place",
+          "href": "https://arcanum.ae/#features_POS"
+        },
+        {
+          "text": "Clinic Management System Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity",
+          "href": "https://arcanum.ae/#features_HMS"
+        },
+        {
+          "text": "Flex Data Flex Data is fully Customizable survey application. can create survey with payment option without any hassle.",
+          "href": "https://arcanum.ae/#features_FLEX"
+        },
+        {
+          "text": "My Fin My fin is a simple application to track bank deposit rates , corporate actions in single place .",
+          "href": "https://arcanum.ae/#features_FIN"
+        },
+        {
+          "text": "Native Mobile Applications Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application.",
+          "href": "https://arcanum.ae/#features_MOBILE"
+        },
+        {
+          "text": "Tender Application Empower your business with Tender-APP, the cutting-edge solution for seamless tender management",
+          "href": "https://arcanum.ae/#features_TENDER"
+        },
+        {
+          "text": "Messenger Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects",
+          "href": "https://arcanum.ae/#features_ASM"
+        },
+        {
+          "text": "Issue Tracker An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project",
+          "href": "https://arcanum.ae/#features_AIT"
+        },
+        {
+          "text": "Form Builder A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs.",
+          "href": "https://arcanum.ae/#features_FORMBUILDER"
+        },
+        {
+          "text": "Transa Money offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility.",
+          "href": "https://arcanum.ae/#features_TRANSA"
+        },
+        {
+          "text": "Website Development We employ the latest technologies and best practices to ensure optimal performance, security, and scalability.",
+          "href": "https://arcanum.ae/#features_WEBSITE"
+        },
+        {
+          "text": "Oracle Forms We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms.",
+          "href": "https://arcanum.ae/#features_ORACLE"
+        },
+        {
+          "text": "Job Portal Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app",
+          "href": "https://arcanum.ae/#features_JOB"
+        },
+        {
+          "text": "Organization Management System Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them.",
+          "href": "https://arcanum.ae/#features_OMS"
+        }
+      ],
+      "raw_text": "Our Projects Here is our recent works Scholar School Management System Manage All Student activity online from our application get track of admission, student information and fee payment history . ERP ERP software integrates business processes and automates tasks like finance, inventory and Asset. It provides real-time data, streamlines workflows, and enhances productivity. PAYROLL Managing payroll can be complex, but our advanced payroll application simplifies the process. It ensures accurate, timely payments, tax filing, and benefits tracking, while keeping your organization fully compliant with all regulations. Sales App Our sales invoice application is designed to help businesses of all sizes easily create and send professional invoices to their clients. The application is easy to use and comes with a variety of features that are tailored to meet the needs of different business types. Banking Banking is designed to help banks as well as co-operative banks to do banking from customer side and also for the employee who works on that bank. Lead Management System Get Connected with your clients and customers with our lead Management System. It helps to keep follow up with customers. Co-operative bank add-ons We Provide add on services for banking applications like ATM interface , Customer Portal ,SMS Integration POS Application For Restaurants Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place Clinic Management System Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity Flex Data Flex Data is fully Customizable survey application. can create survey with payment option without any hassle. My Fin My fin is a simple application to track bank deposit rates , corporate actions in single place . Native Mobile Applications Native applications can be run in multiple platform. with short period of time can convert web applications into a native mobile application. Tender Application Empower your business with Tender-APP, the cutting-edge solution for seamless tender management Messenger Ultimate communication solution, whether you're managing a community, organizing events, or overseeing projects Issue Tracker An issue tracker is a software tool designed to facilitate the management of tasks, bugs, and other items related to a project Form Builder A tool that empowers you to effortlessly design, deploy, and collect data with minimal effort. Form Builder Name is more than just a form builder; it's your partner in efficiency, providing a straightforward solution to your data collection needs. Transa Money offers a streamlined and secure way for customers to manage their banking activities using their mobile devices. This application provides a range of features designed to enhance user convenience and accessibility. Website Development We employ the latest technologies and best practices to ensure optimal performance, security, and scalability. Oracle Forms We have developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms. Job Portal Are you tired of the complexities of job hunting and recruitment? Look no further! Job Portal is the all-in-one job portal app Organization Management System Organization Management System is a comprehensive organization management application that enables users to establish organizations and invite others to join them."
+    },
+    {
+      "section_id": "features_RAC",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Rental Agreements",
+        "Vehicle Wise Reports",
+        "Cloud Based Solution",
+        "Maintain Records",
+        "Multiple Branches",
+        "Multi Language Support",
+        "Our Key Features",
+        "Invoice Print",
+        "Live Reports & Tracking",
+        "Additional Features",
+        "Dashboard",
+        "Master Screens",
+        "Custom Themes",
+        "Data Backup",
+        "Reports",
+        "Fine Finder"
+      ],
+      "paragraphs": [
+        "Advanced car rental solution software",
+        "The Rental Agreement is the key part of the software which helps to collect and store all required information for car rental and also supports car replacement. Even with damage marking in and out.",
+        "You can directly get an invoice from the rental agreement page.",
+        "You can start tracking your report from the dashboard once the agreement is created.",
+        "It helps to keep track of the Maintenance history and Maintenance cost history of the vehicle.",
+        "If you want to transfer your car to another branch, you can use the branch transfer section. It will automatically update the branch of the car after the transfer is done.",
+        "If your car taken by staff or yourself and if it's non-revenue it can be entered into a Non Revenue Agreement",
+        "You can access every information from the dashboard ,vehicle count, branch wise count and many more ...",
+        "The app supports 20+ Master screens. You can enter common information in masters, and it can be selected in agreement. So you don't have to type everything again and again.",
+        "You can personalize the look and feel of the applications",
+        "We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+        "You Can generate 20+ reports from the application Fleet Related Reports, Agreement Reports, Revenue Reports, Vehicle Maintenance Reports, Non Revenue Reports, Booking Report. It helps to keep track of everything you need.",
+        "If you received a fine, no problem, you can search by vehicle number and fine date to find the customer details."
+      ],
+      "bullet_points": [
+        "Rental Agreements",
+        "Workshop Tickets",
+        "Branch Transfer",
+        "Non Revenue Agreement"
+      ],
+      "structured_items": [
+        {
+          "title": "Rental Agreements",
+          "description": "Rental Agreements",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Vehicle Wise Reports",
+          "description": "Vehicle Wise Reports",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Cloud Based Solution",
+          "description": "Cloud Based Solution",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Maintain Records",
+          "description": "Maintain Records",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multiple Branches",
+          "description": "Multiple Branches",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multi Language Support",
+          "description": "Multi Language Support",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Invoice Print",
+          "description": "Invoice Print",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Live Reports & Tracking",
+          "description": "Live Reports & Tracking",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Dashboard",
+          "description": "Dashboard You can access every information from the dashboard ,vehicle count, branch wise count and many more ...",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Master Screens",
+          "description": "Master Screens The app supports 20+ Master screens. You can enter common information in masters, and it can be selected in agreement. So you don't have to type everything again and again.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Custom Themes",
+          "description": "Custom Themes You can personalize the look and feel of the applications",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Data Backup",
+          "description": "Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Reports",
+          "description": "Reports You Can generate 20+ reports from the application Fleet Related Reports, Agreement Reports, Revenue Reports, Vehicle Maintenance Reports, Non Revenue Reports, Booking Report. It helps to keep track of everything you need.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Fine Finder",
+          "description": "Fine Finder If you received a fine, no problem, you can search by vehicle number and fine date to find the customer details.",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-3.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Advanced car rental solution software",
+          "href": "https://rac.accuratesoftware.online/"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://rac.accuratesoftware.online/"
+        },
+        {
+          "text": "Rental Agreements",
+          "href": "https://arcanum.ae/#tab1"
+        },
+        {
+          "text": "Workshop Tickets",
+          "href": "https://arcanum.ae/#tab2"
+        },
+        {
+          "text": "Branch Transfer",
+          "href": "https://arcanum.ae/#tab3"
+        },
+        {
+          "text": "Non Revenue Agreement",
+          "href": "https://arcanum.ae/#tab4"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://rac.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Features Advanced car rental solution software Rental Agreements Vehicle Wise Reports Cloud Based Solution Maintain Records Multiple Branches Multi Language Support Try it Now Our Key Features Rental Agreements Workshop Tickets Branch Transfer Non Revenue Agreement The Rental Agreement is the key part of the software which helps to collect and store all required information for car rental and also supports car replacement. Even with damage marking in and out. Invoice Print You can directly get an invoice from the rental agreement page. Live Reports & Tracking You can start tracking your report from the dashboard once the agreement is created. It helps to keep track of the Maintenance history and Maintenance cost history of the vehicle. If you want to transfer your car to another branch, you can use the branch transfer section. It will automatically update the branch of the car after the transfer is done. If your car taken by staff or yourself and if it's non-revenue it can be entered into a Non Revenue Agreement Additional Features Dashboard You can access every information from the dashboard ,vehicle count, branch wise count and many more ... Master Screens The app supports 20+ Master screens. You can enter common information in masters, and it can be selected in agreement. So you don't have to type everything again and again. Custom Themes You can personalize the look and feel of the applications Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens. Reports You Can generate 20+ reports from the application Fleet Related Reports, Agreement Reports, Revenue Reports, Vehicle Maintenance Reports, Non Revenue Reports, Booking Report. It helps to keep track of everything you need. Fine Finder If you received a fine, no problem, you can search by vehicle number and fine date to find the customer details. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://rac.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://rac.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_ACCSCB",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Customer banking",
+        "Internal and External Transactions",
+        "Employee access",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Banking",
+        "You can use this app as a complete banking app for doing internal and external transfer,viewing the current status of bank account,transaction details etc,. through this application",
+        "our application is more user friendly as any one can use simply and the data is also securely managed",
+        "Employees of the bank can use this application for collecting money from clients,and other functions efficiently"
+      ],
+      "bullet_points": [
+        "Customer Side Banking",
+        "Employee Banking"
+      ],
+      "structured_items": [
+        {
+          "title": "Customer banking",
+          "description": "Customer banking",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Internal and External Transactions",
+          "description": "Internal and External Transactions",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Employee access",
+          "description": "Employee access",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Customer Side Banking Employee Banking You can use this app as a complete banking app for doing internal and external transfer,viewing the current status of bank account,transaction details etc,. through this application our application is more user friendly as any one can use simply and the data is also securely managed Employees of the bank can use this application for collecting money from clients,and other functions efficiently",
+          "list_items": [
+            "Customer Side Banking",
+            "Employee Banking"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://scbmob.accuratesoftware.online/"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/acc-banking.html"
+        },
+        {
+          "text": "Customer Side Banking",
+          "href": "https://arcanum.ae/#customer"
+        },
+        {
+          "text": "Employee Banking",
+          "href": "https://arcanum.ae/#employee"
+        },
+        {
+          "text": "",
+          "href": "https://arcanum.ae/#new"
+        }
+      ],
+      "raw_text": "Features Banking Customer banking Internal and External Transactions Employee access Try it Now Demo Our Key Features Customer Side Banking Employee Banking You can use this app as a complete banking app for doing internal and external transfer,viewing the current status of bank account,transaction details etc,. through this application our application is more user friendly as any one can use simply and the data is also securely managed Employees of the bank can use this application for collecting money from clients,and other functions efficiently"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://scbmob.accuratesoftware.online/"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/acc-banking.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "features_JOB",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Candidate-Centric Features",
+        "Employer-Focused Solutions",
+        "Admin Management Tools",
+        "Advanced Candidate Filtering",
+        "",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Job Portal",
+        "Job Portal is the all-in-one job portal app designed to streamline the job search process for candidates and simplify talent acquisition for employers.",
+        "With powerful features for Admins,Candidates, and Employers, we bring together the perfect combination of convenience and efficiency.",
+        "Access thousands of job listings across various industries and locations, all in one place From entry-level positions to executive roles, we have opportunities for everyone.",
+        "Our intelligent matching algorithm presents you with job openings that align with your skills",
+        "Gain access to a vast database of qualified candidates, ensuring you find the right fit for your organization.",
+        "Efficiently manage user accounts, permissions, and access levels. Access valuable data and analytics to gain insights into user activity and app performance",
+        "Provide prompt support to both candidates and employers, ensuring a seamless experience for all users."
+      ],
+      "bullet_points": [
+        "Overview",
+        "Candidates and Employees",
+        "Admins"
+      ],
+      "structured_items": [
+        {
+          "title": "Candidate-Centric Features",
+          "description": "Candidate-Centric Features",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Employer-Focused Solutions",
+          "description": "Employer-Focused Solutions",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Admin Management Tools",
+          "description": "Admin Management Tools",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Advanced Candidate Filtering",
+          "description": "Advanced Candidate Filtering",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Overview Candidates and Employees Admins Job Portal is the all-in-one job portal app designed to streamline the job search process for candidates and simplify talent acquisition for employers. With powerful features for Admins,Candidates, and Employers, we bring together the perfect combination of convenience and efficiency. Access thousands of job listings across various industries and locations, all in one place From entry-level positions to executive roles, we have opportunities for everyone. Our intelligent matching algorithm presents you with job openings that align with your skills Gain access to a vast database of qualified candidates, ensuring you find the right fit for your organization. Efficiently manage user accounts, permissions, and access levels. Access valuable data and analytics to gain insights into user activity and app performance Provide prompt support to both candidates and employers, ensuring a seamless experience for all users.",
+          "list_items": [
+            "Overview",
+            "Candidates and Employees",
+            "Admins"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "More Info",
+          "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf"
+        },
+        {
+          "text": "Overview",
+          "href": "https://arcanum.ae/#overview"
+        },
+        {
+          "text": "Candidates and Employees",
+          "href": "https://arcanum.ae/#candidates"
+        },
+        {
+          "text": "Admins",
+          "href": "https://arcanum.ae/#admins"
+        },
+        {
+          "text": "",
+          "href": "https://arcanum.ae/#new"
+        }
+      ],
+      "raw_text": "Features Job Portal Candidate-Centric Features Employer-Focused Solutions Admin Management Tools Advanced Candidate Filtering More Info Our Key Features Overview Candidates and Employees Admins Job Portal is the all-in-one job portal app designed to streamline the job search process for candidates and simplify talent acquisition for employers. With powerful features for Admins,Candidates, and Employers, we bring together the perfect combination of convenience and efficiency. Access thousands of job listings across various industries and locations, all in one place From entry-level positions to executive roles, we have opportunities for everyone. Our intelligent matching algorithm presents you with job openings that align with your skills Gain access to a vast database of qualified candidates, ensuring you find the right fit for your organization. Efficiently manage user accounts, permissions, and access levels. Access valuable data and analytics to gain insights into user activity and app performance Provide prompt support to both candidates and employers, ensuring a seamless experience for all users."
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "More Info",
+          "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf"
+        }
+      ],
+      "raw_text": "More Info"
+    },
+    {
+      "section_id": "features_ERP",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "ERP Transactions",
+        "Reports",
+        "Cloud Based Solution",
+        "Multiple Branch Selection",
+        "Multi Language Support",
+        "Our Key Features",
+        "Report Print",
+        "Additional Features",
+        "Dashboard",
+        "Master Screens",
+        "Custom Themes",
+        "Data Backup",
+        "Reports"
+      ],
+      "paragraphs": [
+        "Advanced ERP software",
+        "Administration Module for creating users, adding menu and control menu rights for individual User. Can also administrate company, division, branch etc.",
+        "The finance module in an ERP system manages financial transactions and processes such as general ledger, accounts payable, accounts receivable, cash management, and fixed assets. It provides accurate financial reporting, ensures compliance with accounting standards, and enables better financial decision-making. Report Print",
+        "The ERP inventory and procurement module provides businesses with a comprehensive solution managing inventory levels and procurement processes. It enables real-time inventory insights, automated alerts, and notifications for restocking and purchasing. The module is customizable and integrates with other ERP modules for seamless end-to-end supply chain management.",
+        "User can raise issues and queries through support chat, chat box for interaction with the development team",
+        "You can access every information from the dashboard, Financial Reports, Report wise count and many more â¦",
+        "The app supports 15+ Master screens. You can enter common information in masters, and it can be selected in Finance Transactions. So you don't have to type everything again and again.",
+        "You can personalize the look and feel of the applications",
+        "We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+        "You can generate reports from the application and print reports with different filter conditions"
+      ],
+      "bullet_points": [
+        "Administration",
+        "Finance",
+        "Inventory",
+        "Support & Chat"
+      ],
+      "structured_items": [
+        {
+          "title": "ERP Transactions",
+          "description": "ERP Transactions",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Reports",
+          "description": "Reports",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Cloud Based Solution",
+          "description": "Cloud Based Solution",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multiple Branch Selection",
+          "description": "Multiple Branch Selection",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multi Language Support",
+          "description": "Multi Language Support",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Report Print",
+          "description": "Report Print",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Dashboard",
+          "description": "Dashboard You can access every information from the dashboard, Financial Reports, Report wise count and many more â¦",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Master Screens",
+          "description": "Master Screens The app supports 15+ Master screens. You can enter common information in masters, and it can be selected in Finance Transactions. So you don't have to type everything again and again.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Custom Themes",
+          "description": "Custom Themes You can personalize the look and feel of the applications",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Data Backup",
+          "description": "Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Reports",
+          "description": "Reports You can generate reports from the application and print reports with different filter conditions",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-3.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Advanced ERP software",
+          "href": "https://erp.accuratesoftware.online/"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://erp.accuratesoftware.online/"
+        },
+        {
+          "text": "Administration",
+          "href": "https://arcanum.ae/#tab1_erp"
+        },
+        {
+          "text": "Finance",
+          "href": "https://arcanum.ae/#tab2_erp"
+        },
+        {
+          "text": "Inventory",
+          "href": "https://arcanum.ae/#tab3_erp"
+        },
+        {
+          "text": "Support & Chat",
+          "href": "https://arcanum.ae/#tab4_erp"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://erp.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Features Advanced ERP software ERP Transactions Reports Cloud Based Solution Multiple Branch Selection Multi Language Support Try it Now Our Key Features Administration Finance Inventory Support & Chat Administration Module for creating users, adding menu and control menu rights for individual User. Can also administrate company, division, branch etc. The finance module in an ERP system manages financial transactions and processes such as general ledger, accounts payable, accounts receivable, cash management, and fixed assets. It provides accurate financial reporting, ensures compliance with accounting standards, and enables better financial decision-making. Report Print The ERP inventory and procurement module provides businesses with a comprehensive solution managing inventory levels and procurement processes. It enables real-time inventory insights, automated alerts, and notifications for restocking and purchasing. The module is customizable and integrates with other ERP modules for seamless end-to-end supply chain management. User can raise issues and queries through support chat, chat box for interaction with the development team Additional Features Dashboard You can access every information from the dashboard, Financial Reports, Report wise count and many more â¦ Master Screens The app supports 15+ Master screens. You can enter common information in masters, and it can be selected in Finance Transactions. So you don't have to type everything again and again. Custom Themes You can personalize the look and feel of the applications Data Backup We provide a database backup option to the customer. Customers can directly download backup from settings. It can be used to recover if something happens. Reports You can generate reports from the application and print reports with different filter conditions Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://erp.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://erp.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_PAYROLL",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "User-Friendly Interface",
+        "Automated Payroll Processing",
+        "Full Compliance",
+        "Customization and Flexibility",
+        "Comprehensive Reporting",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Advanced Payroll software",
+        "The Payroll Application Administrator Module allows the admin to create and manage user accounts, configure payroll settings, and run monthly payroll calculations. Admins can also update company information and set up essential payroll details to ensure accurate and secure processing.",
+        "In the Masters Module, the admin can perform CRUD (Create, Read, Update, Delete) operations on all lists of values, allowing full control over reference data such as Category, departments, and other essential configurations. This ensures that the system remains flexible and up-to-date with the latest information.",
+        "In the Transactions Module, the admin can perform tasks such as salary prerun, add allowances and deductions, update monthly salary information, and manage LWA (Leave Without Allowance) entries. This helps ensure accurate salary calculations and adjustments for employees on leave without allowances.",
+        "In the Transactions Module, the admin can also generate payroll reports and print them, providing a detailed overview of salary calculations, allowances, deductions, and leave adjustments. These reports ensure transparency and help in auditing and record-keeping of payroll information."
+      ],
+      "bullet_points": [
+        "Administration",
+        "Masters",
+        "Transactions",
+        "Reports"
+      ],
+      "structured_items": [
+        {
+          "title": "User-Friendly Interface",
+          "description": "User-Friendly Interface",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Automated Payroll Processing",
+          "description": "Automated Payroll Processing",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Full Compliance",
+          "description": "Full Compliance",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customization and Flexibility",
+          "description": "Customization and Flexibility",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Comprehensive Reporting",
+          "description": "Comprehensive Reporting",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Administration Masters Transactions Reports The Payroll Application Administrator Module allows the admin to create and manage user accounts, configure payroll settings, and run monthly payroll calculations. Admins can also update company information and set up essential payroll details to ensure accurate and secure processing. In the Masters Module, the admin can perform CRUD (Create, Read, Update, Delete) operations on all lists of values, allowing full control over reference data such as Category, departments, and other essential configurations. This ensures that the system remains flexible and up-to-date with the latest information. In the Transactions Module, the admin can perform tasks such as salary prerun, add allowances and deductions, update monthly salary information, and manage LWA (Leave Without Allowance) entries. This helps ensure accurate salary calculations and adjustments for employees on leave without allowances. In the Transactions Module, the admin can also generate payroll reports and print them, providing a detailed overview of salary calculations, allowances, deductions, and leave adjustments. These reports ensure transparency and help in auditing and record-keeping of payroll information.",
+          "list_items": [
+            "Administration",
+            "Masters",
+            "Transactions",
+            "Reports"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Advanced Payroll software",
+          "href": "https://payrolltest.accuratesoftware.online/"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://payrolltest.accuratesoftware.online/"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/payroll.html"
+        },
+        {
+          "text": "Administration",
+          "href": "https://arcanum.ae/#tab1_payroll"
+        },
+        {
+          "text": "Masters",
+          "href": "https://arcanum.ae/#tab2_payroll"
+        },
+        {
+          "text": "Transactions",
+          "href": "https://arcanum.ae/#tab3_payroll"
+        },
+        {
+          "text": "Reports",
+          "href": "https://arcanum.ae/#tab4_payroll"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://payrolltest.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Features Advanced Payroll software User-Friendly Interface Automated Payroll Processing Full Compliance Customization and Flexibility Comprehensive Reporting Try it Now Demo Our Key Features Administration Masters Transactions Reports The Payroll Application Administrator Module allows the admin to create and manage user accounts, configure payroll settings, and run monthly payroll calculations. Admins can also update company information and set up essential payroll details to ensure accurate and secure processing. In the Masters Module, the admin can perform CRUD (Create, Read, Update, Delete) operations on all lists of values, allowing full control over reference data such as Category, departments, and other essential configurations. This ensures that the system remains flexible and up-to-date with the latest information. In the Transactions Module, the admin can perform tasks such as salary prerun, add allowances and deductions, update monthly salary information, and manage LWA (Leave Without Allowance) entries. This helps ensure accurate salary calculations and adjustments for employees on leave without allowances. In the Transactions Module, the admin can also generate payroll reports and print them, providing a detailed overview of salary calculations, allowances, deductions, and leave adjustments. These reports ensure transparency and help in auditing and record-keeping of payroll information. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://payrolltest.accuratesoftware.online/"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/payroll.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://payrolltest.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_LMS",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Customizable Menu data",
+        "Connect with customers for their inquiries",
+        "Customizable form fields",
+        "Our Key Features",
+        "Additional Features",
+        "Home",
+        "Master Screens",
+        "Custom Themes",
+        "Reports"
+      ],
+      "paragraphs": [
+        "Advanced LMS software",
+        "You can generate a link for specific criteria and then share it in your advertising medium. The people those who are interested in the ads can get a form to fill up while clicking the link. Thus, the process of connecting with customers becomes easy.",
+        "When the customer fills and submits the form, the inquiry will be sent to the database of this software and can be viewed in the software.",
+        "We can customize for what all fields can be viewed by the inquirer for submitting the inquiry.",
+        "You can see all the inquiries that have been raised till the current date on your home screen.",
+        "You can enter common information in master screens, so that it can be reused in other screens.",
+        "You can personalize the look and feel of the applications",
+        "You can export the data displayed in some master screens as PDF, excel or CSV format."
+      ],
+      "bullet_points": [
+        "generate and share inquiry links",
+        "Customizable form fields"
+      ],
+      "structured_items": [
+        {
+          "title": "Customizable Menu data",
+          "description": "Customizable Menu data",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Connect with customers for their inquiries",
+          "description": "Connect with customers for their inquiries",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customizable form fields",
+          "description": "Customizable form fields",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features generate and share inquiry links Customizable form fields You can generate a link for specific criteria and then share it in your advertising medium. The people those who are interested in the ads can get a form to fill up while clicking the link. Thus, the process of connecting with customers becomes easy. When the customer fills and submits the form, the inquiry will be sent to the database of this software and can be viewed in the software. We can customize for what all fields can be viewed by the inquirer for submitting the inquiry.",
+          "list_items": [
+            "generate and share inquiry links",
+            "Customizable form fields"
+          ],
+          "images": []
+        },
+        {
+          "title": "Home",
+          "description": "Home You can see all the inquiries that have been raised till the current date on your home screen.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Master Screens",
+          "description": "Master Screens You can enter common information in master screens, so that it can be reused in other screens.",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Custom Themes",
+          "description": "Custom Themes You can personalize the look and feel of the applications",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Reports",
+          "description": "Reports You can export the data displayed in some master screens as PDF, excel or CSV format.",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-3.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://lms.accuratesoftware.online/#/registration"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/lms.html"
+        },
+        {
+          "text": "generate and share inquiry links",
+          "href": "https://arcanum.ae/#generateLink"
+        },
+        {
+          "text": "Customizable form fields",
+          "href": "https://arcanum.ae/#customFormField"
+        },
+        {
+          "text": "",
+          "href": "https://arcanum.ae/#new"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://lms.accuratesoftware.online/#/registration"
+        }
+      ],
+      "raw_text": "Features Advanced LMS software Customizable Menu data Connect with customers for their inquiries Customizable form fields Try it Now Demo Our Key Features generate and share inquiry links Customizable form fields You can generate a link for specific criteria and then share it in your advertising medium. The people those who are interested in the ads can get a form to fill up while clicking the link. Thus, the process of connecting with customers becomes easy. When the customer fills and submits the form, the inquiry will be sent to the database of this software and can be viewed in the software. We can customize for what all fields can be viewed by the inquirer for submitting the inquiry. Try it Now Additional Features Home You can see all the inquiries that have been raised till the current date on your home screen. Master Screens You can enter common information in master screens, so that it can be reused in other screens. Custom Themes You can personalize the look and feel of the applications Reports You can export the data displayed in some master screens as PDF, excel or CSV format."
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://lms.accuratesoftware.online/#/registration"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/lms.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://lms.accuratesoftware.online/#/registration"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_SLS",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Customer Master",
+        "Invoice Generation",
+        "Customer Payments",
+        "Customer Statements",
+        "Customer Balance",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Sales App",
+        "With bulk printing, you can now print multiple invoices, receipts, or any other sales documents all at once. This saves you time and effort compared to printing each document individually, making it a great option for businesses with high-volume sales or frequent invoicing needs.",
+        "The customer statement and balance feature allows users to view customer's account status including outstanding balances, recent payments, and overall financial standing with the company. It enables businesses to analyze their cash flow, manage receivables and minimize bad debts."
+      ],
+      "bullet_points": [
+        "Invoice Bulk Print",
+        "Customer Statement & Balance"
+      ],
+      "structured_items": [
+        {
+          "title": "Customer Master",
+          "description": "Customer Master",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Invoice Generation",
+          "description": "Invoice Generation",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customer Payments",
+          "description": "Customer Payments",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customer Statements",
+          "description": "Customer Statements",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customer Balance",
+          "description": "Customer Balance",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Invoice Bulk Print Customer Statement & Balance With bulk printing, you can now print multiple invoices, receipts, or any other sales documents all at once. This saves you time and effort compared to printing each document individually, making it a great option for businesses with high-volume sales or frequent invoicing needs. The customer statement and balance feature allows users to view customer's account status including outstanding balances, recent payments, and overall financial standing with the company. It enables businesses to analyze their cash flow, manage receivables and minimize bad debts.",
+          "list_items": [
+            "Invoice Bulk Print",
+            "Customer Statement & Balance"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/sales.avif",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://lms.accuratesoftware.online/#/registration"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/sales.html"
+        },
+        {
+          "text": "Invoice Bulk Print",
+          "href": "https://arcanum.ae/#invoicePrint"
+        },
+        {
+          "text": "Customer Statement & Balance",
+          "href": "https://arcanum.ae/#customer"
+        },
+        {
+          "text": "",
+          "href": "https://arcanum.ae/#new"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://sales.accuratesoftware.online"
+        }
+      ],
+      "raw_text": "Features Sales App Customer Master Invoice Generation Customer Payments Customer Statements Customer Balance Try it Now Demo Our Key Features Invoice Bulk Print Customer Statement & Balance With bulk printing, you can now print multiple invoices, receipts, or any other sales documents all at once. This saves you time and effort compared to printing each document individually, making it a great option for businesses with high-volume sales or frequent invoicing needs. The customer statement and balance feature allows users to view customer's account status including outstanding balances, recent payments, and overall financial standing with the company. It enables businesses to analyze their cash flow, manage receivables and minimize bad debts. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://lms.accuratesoftware.online/#/registration"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/sales.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://sales.accuratesoftware.online"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_POS",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Take Orders",
+        "Customizable item menu",
+        "Split Bill",
+        "Combine Bill",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Advanced POS software for restaurants",
+        "while dining in restaurants, we may have come across some situations where we would like to pay for another customer. The software allows you to combine those bills into one bill.",
+        "On some occasions, we may dine out with friends in a restaurant and since we are low on money, we will decide to split the bills so that everyone can pay for what they had. The software also provides the option to split a bill of a table.",
+        "In a growing restaurant/hotel, the menu of food items that they serve may change over time. So there is a need to customize the menu items when some new items are introduced or when some existing items are removed. The Software has the master screens that allows one user to edit the item details."
+      ],
+      "bullet_points": [
+        "Combine Bill",
+        "Split Bills",
+        "Customize Menu"
+      ],
+      "structured_items": [
+        {
+          "title": "Take Orders",
+          "description": "Take Orders",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customizable item menu",
+          "description": "Customizable item menu",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Split Bill",
+          "description": "Split Bill",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Combine Bill",
+          "description": "Combine Bill",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Combine Bill Split Bills Customize Menu while dining in restaurants, we may have come across some situations where we would like to pay for another customer. The software allows you to combine those bills into one bill. On some occasions, we may dine out with friends in a restaurant and since we are low on money, we will decide to split the bills so that everyone can pay for what they had. The software also provides the option to split a bill of a table. In a growing restaurant/hotel, the menu of food items that they serve may change over time. So there is a need to customize the menu items when some new items are introduced or when some existing items are removed. The Software has the master screens that allows one user to edit the item details.",
+          "list_items": [
+            "Combine Bill",
+            "Split Bills",
+            "Customize Menu"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://pos.accuratesoftware.online/auth/login"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/pos.html"
+        },
+        {
+          "text": "Combine Bill",
+          "href": "https://arcanum.ae/#combineBills"
+        },
+        {
+          "text": "Split Bills",
+          "href": "https://arcanum.ae/#splitBills"
+        },
+        {
+          "text": "Customize Menu",
+          "href": "https://arcanum.ae/#customiseMenu"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://pos.accuratesoftware.online/auth/login"
+        }
+      ],
+      "raw_text": "Features Advanced POS software for restaurants Take Orders Customizable item menu Split Bill Combine Bill Try it Now Demo Our Key Features Combine Bill Split Bills Customize Menu while dining in restaurants, we may have come across some situations where we would like to pay for another customer. The software allows you to combine those bills into one bill. On some occasions, we may dine out with friends in a restaurant and since we are low on money, we will decide to split the bills so that everyone can pay for what they had. The software also provides the option to split a bill of a table. In a growing restaurant/hotel, the menu of food items that they serve may change over time. So there is a need to customize the menu items when some new items are introduced or when some existing items are removed. The Software has the master screens that allows one user to edit the item details. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://pos.accuratesoftware.online/auth/login"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/pos.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://pos.accuratesoftware.online/auth/login"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_SIS",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Configurations for All Screen data",
+        "Admission Form for seeking admission",
+        "Report screen to summarize transactions",
+        "Print receipts of the payments made",
+        "Track payment history",
+        "Support Transactional SMS",
+        "Our Key Features",
+        "Basic Configuration",
+        "Academic Configuration",
+        "Cashier Configuration",
+        "Admission Form",
+        "Transfer Certificate",
+        "Admit Student"
+      ],
+      "paragraphs": [
+        "Advanced Student information software",
+        "There are 20+ Configuration screens that allow the user to configure the data that is needed to be displayed in other screens.",
+        "The Basic configurations for the entire application will go here.",
+        "Academic Related data that is needed for other screens to function, like Courses, syllabus, Subjects, etcâ¦ are configured from this screen.",
+        "There will be some financial transactions that are necessary to happen in every institution. This cashier configuration screen helps you to configure all the transaction related data.",
+        "This Module helps the user to record all the transactions like Transfer of students, Fee payment, Student admission, etc. that happen in educational institutions.",
+        "The application provides an application form screen which helps the user to enter the details of an admission seeking student and store this information digitally.",
+        "The Transfer Certificate screen allows the user to generate TCs and view generated TCs.",
+        "we may not be able to admit all the students who had applied to get into the institution because of many reasons. So we have to be picky and give admission to some selected students. This screen allows you to admit students to the institution.",
+        "A Report makes a complex data to be viewed in simpler format and helps us understand the data depicted more easily. This module allows one to generate reports for some specified data in a tabular form. The user will also be able to take a print of the tabular report if he or she wishes to."
+      ],
+      "bullet_points": [
+        "Master Module",
+        "Transactions Module",
+        "Report Module"
+      ],
+      "structured_items": [
+        {
+          "title": "Configurations for All Screen data",
+          "description": "Configurations for All Screen data",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Admission Form for seeking admission",
+          "description": "Admission Form for seeking admission",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Report screen to summarize transactions",
+          "description": "Report screen to summarize transactions",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Print receipts of the payments made",
+          "description": "Print receipts of the payments made",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Track payment history",
+          "description": "Track payment history",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Support Transactional SMS",
+          "description": "Support Transactional SMS",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Basic Configuration",
+          "description": "Basic Configuration",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Academic Configuration",
+          "description": "Academic Configuration",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Cashier Configuration",
+          "description": "Cashier Configuration",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Admission Form",
+          "description": "Admission Form",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Transfer Certificate",
+          "description": "Transfer Certificate",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Admit Student",
+          "description": "Admit Student",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/schoolmanagement.html"
+        },
+        {
+          "text": "Master Module",
+          "href": "https://arcanum.ae/#masterModule"
+        },
+        {
+          "text": "Transactions Module",
+          "href": "https://arcanum.ae/#transactionModule"
+        },
+        {
+          "text": "Report Module",
+          "href": "https://arcanum.ae/#reportModule"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+        }
+      ],
+      "raw_text": "Features Advanced Student information software Configurations for All Screen data Admission Form for seeking admission Report screen to summarize transactions Print receipts of the payments made Track payment history Support Transactional SMS Try it Now Demo Our Key Features Master Module Transactions Module Report Module There are 20+ Configuration screens that allow the user to configure the data that is needed to be displayed in other screens. Basic Configuration The Basic configurations for the entire application will go here. Academic Configuration Academic Related data that is needed for other screens to function, like Courses, syllabus, Subjects, etcâ¦ are configured from this screen. Cashier Configuration There will be some financial transactions that are necessary to happen in every institution. This cashier configuration screen helps you to configure all the transaction related data. This Module helps the user to record all the transactions like Transfer of students, Fee payment, Student admission, etc. that happen in educational institutions. Admission Form The application provides an application form screen which helps the user to enter the details of an admission seeking student and store this information digitally. Transfer Certificate The Transfer Certificate screen allows the user to generate TCs and view generated TCs. Admit Student we may not be able to admit all the students who had applied to get into the institution because of many reasons. So we have to be picky and give admission to some selected students. This screen allows you to admit students to the institution. A Report makes a complex data to be viewed in simpler format and helps us understand the data depicted more easily. This module allows one to generate reports for some specified data in a tabular form. The user will also be able to take a print of the tabular report if he or she wishes to. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/schoolmanagement.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_HMS",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Consultation Slot Booking",
+        "Medicine Purchase Booking",
+        "Laboratory Test Booking",
+        "Streamline front desk operations",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Advanced Clinic Management software",
+        "Receptionist can book slots for doctor, Lab test, Medicine using an application. Previous Medical records available for Receptionist. He/ She can add new Patients, other diseases in profile page. Easy and fast payment. Nearby search also available. Notify if Consultation time changes. Get laboratory results directly.Can send Whatsapp notifications on Slot Booking",
+        "Doctor can get patient consultant appointment in approval screen, according to the approval patient gets a token. Doctors can access to patient's previous medical records and daily history. Doctor get payment easily through application. Doctor/Clinic can prefer laboratory and Pharmacy. Can manage holidays and time slots easily. Get laboratory results directly.",
+        "Get Lab test instantly when Clinic / Patient book for test. Can get Payment easily through the application. Easily upload documents to patients and doctors. Daily history and Previous History available. Multiple lab assistants can log in to a single lab.",
+        "Get Medicine Order instantly when Clinic / Patient book for medicine. Can get Payment easily through the application. Daily history and Previous History available. Multiple pharmacists can log in to a single pharmacy."
+      ],
+      "bullet_points": [
+        "Receptionist Module",
+        "Doctor Module",
+        "Laboratory Module"
+      ],
+      "structured_items": [
+        {
+          "title": "Consultation Slot Booking",
+          "description": "Consultation Slot Booking",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Medicine Purchase Booking",
+          "description": "Medicine Purchase Booking",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Laboratory Test Booking",
+          "description": "Laboratory Test Booking",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Streamline front desk operations",
+          "description": "Streamline front desk operations",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Receptionist Module Doctor Module Laboratory Module Receptionist can book slots for doctor, Lab test, Medicine using an application. Previous Medical records available for Receptionist. He/ She can add new Patients, other diseases in profile page. Easy and fast payment. Nearby search also available. Notify if Consultation time changes. Get laboratory results directly.Can send Whatsapp notifications on Slot Booking Doctor can get patient consultant appointment in approval screen, according to the approval patient gets a token. Doctors can access to patient's previous medical records and daily history. Doctor get payment easily through application. Doctor/Clinic can prefer laboratory and Pharmacy. Can manage holidays and time slots easily. Get laboratory results directly. Get Lab test instantly when Clinic / Patient book for test. Can get Payment easily through the application. Easily upload documents to patients and doctors. Daily history and Previous History available. Multiple lab assistants can log in to a single lab. Get Medicine Order instantly when Clinic / Patient book for medicine. Can get Payment easily through the application. Daily history and Previous History available. Multiple pharmacists can log in to a single pharmacy.",
+          "list_items": [
+            "Receptionist Module",
+            "Doctor Module",
+            "Laboratory Module"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://play.google.com/store/apps/details?id=com.acc.hospital"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/hospital.html"
+        },
+        {
+          "text": "Receptionist Module",
+          "href": "https://arcanum.ae/#patientModule"
+        },
+        {
+          "text": "Doctor Module",
+          "href": "https://arcanum.ae/#clinicModule"
+        },
+        {
+          "text": "Laboratory Module",
+          "href": "https://arcanum.ae/#laboratoryModule"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://play.google.com/store/apps/details?id=com.acc.hospital"
+        }
+      ],
+      "raw_text": "Features Advanced Clinic Management software Consultation Slot Booking Medicine Purchase Booking Laboratory Test Booking Streamline front desk operations Try it Now Demo Our Key Features Receptionist Module Doctor Module Laboratory Module Receptionist can book slots for doctor, Lab test, Medicine using an application. Previous Medical records available for Receptionist. He/ She can add new Patients, other diseases in profile page. Easy and fast payment. Nearby search also available. Notify if Consultation time changes. Get laboratory results directly.Can send Whatsapp notifications on Slot Booking Doctor can get patient consultant appointment in approval screen, according to the approval patient gets a token. Doctors can access to patient's previous medical records and daily history. Doctor get payment easily through application. Doctor/Clinic can prefer laboratory and Pharmacy. Can manage holidays and time slots easily. Get laboratory results directly. Get Lab test instantly when Clinic / Patient book for test. Can get Payment easily through the application. Easily upload documents to patients and doctors. Daily history and Previous History available. Multiple lab assistants can log in to a single lab. Get Medicine Order instantly when Clinic / Patient book for medicine. Can get Payment easily through the application. Daily history and Previous History available. Multiple pharmacists can log in to a single pharmacy. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://play.google.com/store/apps/details?id=com.acc.hospital"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/hospital.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://play.google.com/store/apps/details?id=com.acc.hospital"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_SCB",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "ATM Interface",
+        "SMS Integration",
+        "Customer Portal",
+        "Our Add-On Services"
+      ],
+      "paragraphs": [
+        "Co-operative bank add on services",
+        "We Provide ATM Interface for banking application using latest technology. Our ATM Interface also support online transactions",
+        "We Provide SMS API For Transaction messages , one time password , balance updation etc ...",
+        "Our Customer Portal provide customer access to there account informations online using web applicatcation and mobile application . customer can track there loan installments ,fixed deposits,monthly deposits,recuring deposits,savings accounts on demand ."
+      ],
+      "bullet_points": [
+        "ATM Interface",
+        "SMS Integration",
+        "Customer Portal"
+      ],
+      "structured_items": [
+        {
+          "title": "ATM Interface",
+          "description": "ATM Interface",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "SMS Integration",
+          "description": "SMS Integration",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Customer Portal",
+          "description": "Customer Portal",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Add-On Services",
+          "description": "Our Add-On Services ATM Interface SMS Integration Customer Portal We Provide ATM Interface for banking application using latest technology. Our ATM Interface also support online transactions We Provide SMS API For Transaction messages , one time password , balance updation etc ... Our Customer Portal provide customer access to there account informations online using web applicatcation and mobile application . customer can track there loan installments ,fixed deposits,monthly deposits,recuring deposits,savings accounts on demand .",
+          "list_items": [
+            "ATM Interface",
+            "SMS Integration",
+            "Customer Portal"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Co-operative bank add on services",
+          "href": "https://scb.accuratesoftware.online/"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://scb.accuratesoftware.online/"
+        },
+        {
+          "text": "ATM Interface",
+          "href": "https://arcanum.ae/#atmInterface"
+        },
+        {
+          "text": "SMS Integration",
+          "href": "https://arcanum.ae/#smsIntegration"
+        },
+        {
+          "text": "Customer Portal",
+          "href": "https://arcanum.ae/#customerPortal"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://scb.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Features Co-operative bank add on services ATM Interface SMS Integration Customer Portal Try it Now Our Add-On Services ATM Interface SMS Integration Customer Portal We Provide ATM Interface for banking application using latest technology. Our ATM Interface also support online transactions We Provide SMS API For Transaction messages , one time password , balance updation etc ... Our Customer Portal provide customer access to there account informations online using web applicatcation and mobile application . customer can track there loan installments ,fixed deposits,monthly deposits,recuring deposits,savings accounts on demand . Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://scb.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://scb.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_MOBILE",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Clinic Management System",
+        "POS Application for Restaurants",
+        "RAC",
+        "Our Native Applications"
+      ],
+      "paragraphs": [
+        "Our Native Mobile Applications",
+        "Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity.",
+        "Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place.",
+        "Automate your business with the most advanced car rental solution software."
+      ],
+      "bullet_points": [
+        "Clinic Management System",
+        "POS Application for Restaurants",
+        "RAC"
+      ],
+      "structured_items": [
+        {
+          "title": "Clinic Management System",
+          "description": "Clinic Management System",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "POS Application for Restaurants",
+          "description": "POS Application for Restaurants",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Native Applications",
+          "description": "Our Native Applications Clinic Management System POS Application for Restaurants RAC Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity. Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place. Automate your business with the most advanced car rental solution software.",
+          "list_items": [
+            "Clinic Management System",
+            "POS Application for Restaurants",
+            "RAC"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://rac.accuratesoftware.online/"
+        },
+        {
+          "text": "Clinic Management System",
+          "href": "https://arcanum.ae/#clinicModuleApp"
+        },
+        {
+          "text": "POS Application for Restaurants",
+          "href": "https://arcanum.ae/#posApplication"
+        },
+        {
+          "text": "RAC",
+          "href": "https://arcanum.ae/#accurateRac"
+        }
+      ],
+      "raw_text": "Features Our Native Mobile Applications Clinic Management System POS Application for Restaurants RAC Demo Our Native Applications Clinic Management System POS Application for Restaurants RAC Manage Clinic, Laboratory, and Pharmacy activities online from our Clinic application. Patient, Doctor, Lab, and Pharmacy can track their medical records and activity. Manage Your orders at your fingertips and get track on order status, billing status and payment status in one place. Automate your business with the most advanced car rental solution software."
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://rac.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "features_TENDER",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Bid Handling",
+        "Multiple Login",
+        "Custom Reports",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Tender Application",
+        "Our Tender software has a well-organized and powerful administration management feature, which grants you the ability to manage users effectively, define their permission levels and manage Tenders.",
+        "Experience unparalleled control with our user management system. Tailor access rights and provisions effortlessly with role assignments such as User, Analyst, Admin, and Super Admin.",
+        "Uncover actionable insights effortlessly with our comprehensive bid reports feature. From real-time analytics to in-depth summaries, our application empowers you to dissect bid data with precision."
+      ],
+      "bullet_points": [
+        "Bid Handling",
+        "Multiple Login",
+        "Custom Reports"
+      ],
+      "structured_items": [
+        {
+          "title": "Bid Handling",
+          "description": "Bid Handling",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multiple Login",
+          "description": "Multiple Login",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Custom Reports",
+          "description": "Custom Reports",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Bid Handling Multiple Login Custom Reports Our Tender software has a well-organized and powerful administration management feature, which grants you the ability to manage users effectively, define their permission levels and manage Tenders. Experience unparalleled control with our user management system. Tailor access rights and provisions effortlessly with role assignments such as User, Analyst, Admin, and Super Admin. Uncover actionable insights effortlessly with our comprehensive bid reports feature. From real-time analytics to in-depth summaries, our application empowers you to dissect bid data with precision.",
+          "list_items": [
+            "Bid Handling",
+            "Multiple Login",
+            "Custom Reports"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Accurate-Tender.pdf"
+        },
+        {
+          "text": "Bid Handling",
+          "href": "https://arcanum.ae/#bidHandling"
+        },
+        {
+          "text": "Multiple Login",
+          "href": "https://arcanum.ae/#multiLogin"
+        },
+        {
+          "text": "Custom Reports",
+          "href": "https://arcanum.ae/#customReport"
+        },
+        {
+          "text": "Try it Now",
+          "href": ""
+        }
+      ],
+      "raw_text": "Features Tender Application Bid Handling Multiple Login Custom Reports Demo Our Key Features Bid Handling Multiple Login Custom Reports Our Tender software has a well-organized and powerful administration management feature, which grants you the ability to manage users effectively, define their permission levels and manage Tenders. Experience unparalleled control with our user management system. Tailor access rights and provisions effortlessly with role assignments such as User, Analyst, Admin, and Super Admin. Uncover actionable insights effortlessly with our comprehensive bid reports feature. From real-time analytics to in-depth summaries, our application empowers you to dissect bid data with precision. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Accurate-Tender.pdf"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": ""
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_ASM",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Efficient UI",
+        "Easy to use",
+        "Managed Chats",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Messenger",
+        "Take charge effortlessly with Messenger's intuitive admin module.",
+        "Messenger simplifies user interaction by providing unique chat links generated by administrators.",
+        "Experience smooth and efficient communication with Messenger."
+      ],
+      "bullet_points": [
+        "Admin Module",
+        "User Interaction",
+        "Efficient Communication"
+      ],
+      "structured_items": [
+        {
+          "title": "Efficient UI",
+          "description": "Efficient UI",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Easy to use",
+          "description": "Easy to use",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Managed Chats",
+          "description": "Managed Chats",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Admin Module User Interaction Efficient Communication Take charge effortlessly with Messenger's intuitive admin module. Messenger simplifies user interaction by providing unique chat links generated by administrators. Experience smooth and efficient communication with Messenger.",
+          "list_items": [
+            "Admin Module",
+            "User Interaction",
+            "Efficient Communication"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/chat.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/chat2.jpg",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Simple Messenger.pdf"
+        },
+        {
+          "text": "Admin Module",
+          "href": "https://arcanum.ae/#adminModule"
+        },
+        {
+          "text": "User Interaction",
+          "href": "https://arcanum.ae/#UserInteraction"
+        },
+        {
+          "text": "Efficient Communication",
+          "href": "https://arcanum.ae/#EffCommunication"
+        }
+      ],
+      "raw_text": "Features Messenger Efficient UI Easy to use Managed Chats Demo Our Key Features Admin Module User Interaction Efficient Communication Take charge effortlessly with Messenger's intuitive admin module. Messenger simplifies user interaction by providing unique chat links generated by administrators. Experience smooth and efficient communication with Messenger."
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Simple Messenger.pdf"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "features_AIT",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Categorization and Prioritization",
+        "Communication",
+        "Status Tracking",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Issue Tracker",
+        "The development team can categorize and prioritize issues based on their severity, impact on users, and importance to the project.",
+        "The issue tracker facilitates communication between customers and the development team.",
+        "The issue tracker maintains a record of each issue's status, including whether it's open, in progress, resolved, or closed."
+      ],
+      "bullet_points": [
+        "Categorizing",
+        "Communication",
+        "Status Tracking"
+      ],
+      "structured_items": [
+        {
+          "title": "Categorization and Prioritization",
+          "description": "Categorization and Prioritization",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Communication",
+          "description": "Communication",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Status Tracking",
+          "description": "Status Tracking",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Categorizing Communication Status Tracking The development team can categorize and prioritize issues based on their severity, impact on users, and importance to the project. The issue tracker facilitates communication between customers and the development team. The issue tracker maintains a record of each issue's status, including whether it's open, in progress, resolved, or closed.",
+          "list_items": [
+            "Categorizing",
+            "Communication",
+            "Status Tracking"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/issuetracker.jpg",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/coding.jpg",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Issue Tracker.pdf"
+        },
+        {
+          "text": "Categorizing",
+          "href": "https://arcanum.ae/#category"
+        },
+        {
+          "text": "Communication",
+          "href": "https://arcanum.ae/#Communication"
+        },
+        {
+          "text": "Status Tracking",
+          "href": "https://arcanum.ae/#StatusTracking"
+        }
+      ],
+      "raw_text": "Features Issue Tracker Categorization and Prioritization Communication Status Tracking Demo Our Key Features Categorizing Communication Status Tracking The development team can categorize and prioritize issues based on their severity, impact on users, and importance to the project. The issue tracker facilitates communication between customers and the development team. The issue tracker maintains a record of each issue's status, including whether it's open, in progress, resolved, or closed."
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Issue Tracker.pdf"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "features_FORMBUILDER",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "User-Friendly Design",
+        "Intuitive Drag-and-Drop Interface",
+        "Efficient Data Collection",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Form Builder",
+        "Our form builder is designed for ease of use, allowing you to focus on what matters most â your business goals",
+        "Streamline your workflow and spend less time on administrative tasks.",
+        "Trust  Form Builder to handle your data securely and reliably."
+      ],
+      "bullet_points": [
+        "Simplicity at its Core",
+        "Time-Saving Solutions",
+        "Reliable and Secure"
+      ],
+      "structured_items": [
+        {
+          "title": "User-Friendly Design",
+          "description": "User-Friendly Design",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Intuitive Drag-and-Drop Interface",
+          "description": "Intuitive Drag-and-Drop Interface",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Efficient Data Collection",
+          "description": "Efficient Data Collection",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Simplicity at its Core Time-Saving Solutions Reliable and Secure Our form builder is designed for ease of use, allowing you to focus on what matters most â your business goals Streamline your workflow and spend less time on administrative tasks. Trust  Form Builder to handle your data securely and reliably.",
+          "list_items": [
+            "Simplicity at its Core",
+            "Time-Saving Solutions",
+            "Reliable and Secure"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Accurate Form builder.pdf"
+        },
+        {
+          "text": "Simplicity at its Core",
+          "href": "https://arcanum.ae/#SimplicityatitsCore"
+        },
+        {
+          "text": "Time-Saving Solutions",
+          "href": "https://arcanum.ae/#TimeSavingSolutions"
+        },
+        {
+          "text": "Reliable and Secure",
+          "href": "https://arcanum.ae/#ReliableandSecure"
+        },
+        {
+          "text": "Try it Now",
+          "href": ""
+        }
+      ],
+      "raw_text": "Features Form Builder User-Friendly Design Intuitive Drag-and-Drop Interface Efficient Data Collection Demo Our Key Features Simplicity at its Core Time-Saving Solutions Reliable and Secure Our form builder is designed for ease of use, allowing you to focus on what matters most â your business goals Streamline your workflow and spend less time on administrative tasks. Trust  Form Builder to handle your data securely and reliably. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\Accurate Form builder.pdf"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": ""
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_TRANSA",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "User-Friendly Design",
+        "Account Management",
+        "Fund Transfers",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Transa Money",
+        "Security is our top priority. Transa Money employs state-of-the-art encryption and authentication mechanisms to ensure that your financial transactions and personal information remain confidential and secure",
+        "Save time by avoiding long queues and paperwork, allowing you to focus on your daily activities",
+        "Trust Transa Money to handle your Transcation data securely and reliably."
+      ],
+      "bullet_points": [
+        "Secure Transactions",
+        "Time-Saving Solutions",
+        "Reliable and Secure"
+      ],
+      "structured_items": [
+        {
+          "title": "User-Friendly Design",
+          "description": "User-Friendly Design",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Account Management",
+          "description": "Account Management",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Fund Transfers",
+          "description": "Fund Transfers",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Secure Transactions Time-Saving Solutions Reliable and Secure Security is our top priority. Transa Money employs state-of-the-art encryption and authentication mechanisms to ensure that your financial transactions and personal information remain confidential and secure Save time by avoiding long queues and paperwork, allowing you to focus on your daily activities Trust Transa Money to handle your Transcation data securely and reliably.",
+          "list_items": [
+            "Secure Transactions",
+            "Time-Saving Solutions",
+            "Reliable and Secure"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://play.google.com/store/apps/details?id=com.transa.money.bank"
+        },
+        {
+          "text": "Secure Transactions",
+          "href": "https://arcanum.ae/#SecureTransactions"
+        },
+        {
+          "text": "Time-Saving Solutions",
+          "href": "https://arcanum.ae/#TTimeSavingSolutions"
+        },
+        {
+          "text": "Reliable and Secure",
+          "href": "https://arcanum.ae/#TReliableandSecure"
+        },
+        {
+          "text": "Try it Now",
+          "href": ""
+        }
+      ],
+      "raw_text": "Features Transa Money User-Friendly Design Account Management Fund Transfers Demo Our Key Features Secure Transactions Time-Saving Solutions Reliable and Secure Security is our top priority. Transa Money employs state-of-the-art encryption and authentication mechanisms to ensure that your financial transactions and personal information remain confidential and secure Save time by avoiding long queues and paperwork, allowing you to focus on your daily activities Trust Transa Money to handle your Transcation data securely and reliably. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://play.google.com/store/apps/details?id=com.transa.money.bank"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": ""
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_WEBSITE",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "User-Friendly Design",
+        "Reliable Support",
+        "SEO optimised",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Website Development",
+        "Our websites are designed with the user in mind, ensuring easy navigation and a smooth browsing experience. We prioritize intuitive layouts and accessible features to make sure your visitors can find what they need without hassle.",
+        "We offer high-quality website development services at competitive prices. Our solutions are designed to deliver excellent value, providing you with a website that meets your needs and budget without compromising on quality."
+      ],
+      "bullet_points": [
+        "User Friendly Design",
+        "Cost Effective"
+      ],
+      "structured_items": [
+        {
+          "title": "User-Friendly Design",
+          "description": "User-Friendly Design",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Reliable Support",
+          "description": "Reliable Support",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "SEO optimised",
+          "description": "SEO optimised",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features User Friendly Design Cost Effective Our websites are designed with the user in mind, ensuring easy navigation and a smooth browsing experience. We prioritize intuitive layouts and accessible features to make sure your visitors can find what they need without hassle. We offer high-quality website development services at competitive prices. Our solutions are designed to deliver excellent value, providing you with a website that meets your needs and budget without compromising on quality.",
+          "list_items": [
+            "User Friendly Design",
+            "Cost Effective"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "More Info",
+          "href": "https://www.accuratesoftware.online/assets/files/Website%20Creation.pdf"
+        },
+        {
+          "text": "User Friendly Design",
+          "href": "https://arcanum.ae/#UserFriendly"
+        },
+        {
+          "text": "Cost Effective",
+          "href": "https://arcanum.ae/#CostEffective"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://www.accuratesoftware.online/assets/files/Website%20Creation.pdf"
+        }
+      ],
+      "raw_text": "Features Website Development User-Friendly Design Reliable Support SEO optimised More Info Our Key Features User Friendly Design Cost Effective Our websites are designed with the user in mind, ensuring easy navigation and a smooth browsing experience. We prioritize intuitive layouts and accessible features to make sure your visitors can find what they need without hassle. We offer high-quality website development services at competitive prices. Our solutions are designed to deliver excellent value, providing you with a website that meets your needs and budget without compromising on quality. Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "More Info",
+          "href": "https://www.accuratesoftware.online/assets/files/Website%20Creation.pdf"
+        }
+      ],
+      "raw_text": "More Info"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://www.accuratesoftware.online/assets/files/Website%20Creation.pdf"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_ORACLE",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "ORACLE MIGRATION",
+        "Oracle AMC",
+        "Trithala Co-Operative Bank",
+        "Our Oracle Forms Works"
+      ],
+      "paragraphs": [
+        "Our Oracle Forms Works",
+        "Arcanum has developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms 12c / Oracle Fusion Middleware. No matter what stage of the migration process you are in, Our Developer can assist in your planning and migration execution. Learn more about Migration Planning and Methodology. Once you're ready to migrate, get started with Our Developer and select our platform to migrate from.",
+        "As an Annual Maintenance Contract (AMC) Services provider, Arcanum maintains the IT infrastructure, provides dedicated man-power from offshore or on the site.",
+        "Trithala Co-Operative Bank(TSCB) is banking software made for service Co-Operative Bank in trithala including customer portal"
+      ],
+      "bullet_points": [
+        "ORACLE MIGRATION",
+        "ORACLE AMC",
+        "Co-Operative Bank"
+      ],
+      "structured_items": [
+        {
+          "title": "ORACLE MIGRATION",
+          "description": "ORACLE MIGRATION",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Oracle AMC",
+          "description": "Oracle AMC",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Trithala Co-Operative Bank",
+          "description": "Trithala Co-Operative Bank",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Oracle Forms Works",
+          "description": "Our Oracle Forms Works ORACLE MIGRATION ORACLE AMC Co-Operative Bank Arcanum has developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms 12c / Oracle Fusion Middleware. No matter what stage of the migration process you are in, Our Developer can assist in your planning and migration execution. Learn more about Migration Planning and Methodology. Once you're ready to migrate, get started with Our Developer and select our platform to migrate from. As an Annual Maintenance Contract (AMC) Services provider, Arcanum maintains the IT infrastructure, provides dedicated man-power from offshore or on the site. Trithala Co-Operative Bank(TSCB) is banking software made for service Co-Operative Bank in trithala including customer portal",
+          "list_items": [
+            "ORACLE MIGRATION",
+            "ORACLE AMC",
+            "Co-Operative Bank"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "ORACLE MIGRATION",
+          "href": "https://arcanum.ae/#oracleMigration"
+        },
+        {
+          "text": "ORACLE AMC",
+          "href": "https://arcanum.ae/#oracleAMC"
+        },
+        {
+          "text": "Co-Operative Bank",
+          "href": "https://arcanum.ae/#tscb"
+        },
+        {
+          "text": "Demo",
+          "href": "https://rac.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Features Our Oracle Forms Works ORACLE MIGRATION Oracle AMC Trithala Co-Operative Bank Our Oracle Forms Works ORACLE MIGRATION ORACLE AMC Co-Operative Bank Arcanum has developed proven methodologies for upgrading and modernizing custom applications and legacy systems to Oracle Forms 12c / Oracle Fusion Middleware. No matter what stage of the migration process you are in, Our Developer can assist in your planning and migration execution. Learn more about Migration Planning and Methodology. Once you're ready to migrate, get started with Our Developer and select our platform to migrate from. As an Annual Maintenance Contract (AMC) Services provider, Arcanum maintains the IT infrastructure, provides dedicated man-power from offshore or on the site. Trithala Co-Operative Bank(TSCB) is banking software made for service Co-Operative Bank in trithala including customer portal Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://rac.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "features_FLEX",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Payment Gateway",
+        "Multiple Services",
+        "Multiple Pages",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Flex Data",
+        "customer can create surveys with payment gateway with simple configuration and support multiple payment options like debit card ,credit card ,net banking and UPI payment options",
+        "Flex data support multiple services and can handle all of them in one place .customer can set expiry of the service and can update it also if need",
+        "Flex Data support multiple pages per service can split survey in to multiple pages . it can also handle tables and header detail data in survey"
+      ],
+      "bullet_points": [
+        "Payment Gateway",
+        "Multiple Services",
+        "Multiple Pages"
+      ],
+      "structured_items": [
+        {
+          "title": "Payment Gateway",
+          "description": "Payment Gateway",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multiple Services",
+          "description": "Multiple Services",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Multiple Pages",
+          "description": "Multiple Pages",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Payment Gateway Multiple Services Multiple Pages customer can create surveys with payment gateway with simple configuration and support multiple payment options like debit card ,credit card ,net banking and UPI payment options Flex data support multiple services and can handle all of them in one place .customer can set expiry of the service and can update it also if need Flex Data support multiple pages per service can split survey in to multiple pages . it can also handle tables and header detail data in survey",
+          "list_items": [
+            "Payment Gateway",
+            "Multiple Services",
+            "Multiple Pages"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://flexdata.accuratesoftware.online/login"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/flexdata.html"
+        },
+        {
+          "text": "Payment Gateway",
+          "href": "https://arcanum.ae/#paymentGateway"
+        },
+        {
+          "text": "Multiple Services",
+          "href": "https://arcanum.ae/#multiService"
+        },
+        {
+          "text": "Multiple Pages",
+          "href": "https://arcanum.ae/#multiPage"
+        },
+        {
+          "text": "Try it Now",
+          "href": "https://flexdata.accuratesoftware.online/login"
+        }
+      ],
+      "raw_text": "Features Flex Data Payment Gateway Multiple Services Multiple Pages Try it Now Demo Our Key Features Payment Gateway Multiple Services Multiple Pages customer can create surveys with payment gateway with simple configuration and support multiple payment options like debit card ,credit card ,net banking and UPI payment options Flex data support multiple services and can handle all of them in one place .customer can set expiry of the service and can update it also if need Flex Data support multiple pages per service can split survey in to multiple pages . it can also handle tables and header detail data in survey Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://flexdata.accuratesoftware.online/login"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/flexdata.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "https://flexdata.accuratesoftware.online/login"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_FIN",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Fixed deposit Rates",
+        "",
+        "Stock Dividents",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "My Fin",
+        "User Can get information about interest rate of fixed deposit schemes of different banks in one place. they can also compare it using graph. user can also set preference in profile screen",
+        "Stock Dividents Can be tracked using my fin application. informations like last buy date,share split,bonus,recorded dates are available in application"
+      ],
+      "bullet_points": [
+        "Fixed deposit Rates",
+        "Stock Dividents"
+      ],
+      "structured_items": [
+        {
+          "title": "Fixed deposit Rates",
+          "description": "Fixed deposit Rates",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Stock Dividents",
+          "description": "Stock Dividents",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Fixed deposit Rates Stock Dividents User Can get information about interest rate of fixed deposit schemes of different banks in one place. they can also compare it using graph. user can also set preference in profile screen Stock Dividents Can be tracked using my fin application. informations like last buy date,share split,bonus,recorded dates are available in application",
+          "list_items": [
+            "Fixed deposit Rates",
+            "Stock Dividents"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/raw/icons8-link-30.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/features-2.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "My Fin",
+          "href": "http://myfin.accuratesoftware.online/"
+        },
+        {
+          "text": "Try it Now",
+          "href": "http://myfin.accuratesoftware.online/"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/myfin.html"
+        },
+        {
+          "text": "Fixed deposit Rates",
+          "href": "https://arcanum.ae/#fixedDeosit"
+        },
+        {
+          "text": "Stock Dividents",
+          "href": "https://arcanum.ae/#stockDividents"
+        },
+        {
+          "text": "Try it Now",
+          "href": "http://myfin.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Features My Fin Fixed deposit Rates Stock Dividents Try it Now Demo Our Key Features Fixed deposit Rates Stock Dividents User Can get information about interest rate of fixed deposit schemes of different banks in one place. they can also compare it using graph. user can also set preference in profile screen Stock Dividents Can be tracked using my fin application. informations like last buy date,share split,bonus,recorded dates are available in application Try it Now"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "http://myfin.accuratesoftware.online/"
+        },
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/myfin.html"
+        }
+      ],
+      "raw_text": "Try it Now Demo"
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Try it Now",
+          "href": "http://myfin.accuratesoftware.online/"
+        }
+      ],
+      "raw_text": "Try it Now"
+    },
+    {
+      "section_id": "features_OMS",
+      "section_name": "Features",
+      "tag": "section",
+      "class": "features",
+      "heading": "Features",
+      "sub_headings": [
+        "Efficient UI",
+        "Secure Authentication and Authorization",
+        "Organization Hierarchy Management",
+        "Mobile Responsiveness",
+        "Our Key Features"
+      ],
+      "paragraphs": [
+        "Organization Management System",
+        "The organization module allows users to effortlessly create and manage organizations, streamline member invitations, and oversee hierarchical structures and collaborative activities within the platform.",
+        "user module provides robust functionality for managing user profiles, facilitating seamless onboarding, and ensuring secure authentication and authorization for all members.",
+        "Experience smooth and efficient communication with Messenger."
+      ],
+      "bullet_points": [
+        "Organization Module",
+        "User Interaction"
+      ],
+      "structured_items": [
+        {
+          "title": "Efficient UI",
+          "description": "Efficient UI",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Secure Authentication and Authorization",
+          "description": "Secure Authentication and Authorization",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Organization Hierarchy Management",
+          "description": "Organization Hierarchy Management",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Mobile Responsiveness",
+          "description": "Mobile Responsiveness",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Our Key Features",
+          "description": "Our Key Features Organization Module User Interaction The organization module allows users to effortlessly create and manage organizations, streamline member invitations, and oversee hierarchical structures and collaborative activities within the platform. user module provides robust functionality for managing user profiles, facilitating seamless onboarding, and ensuring secure authentication and authorization for all members. Experience smooth and efficient communication with Messenger.",
+          "list_items": [
+            "Organization Module",
+            "User Interaction"
+          ],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/hero-img.png",
+          "alt": "",
+          "title": ""
+        },
+        {
+          "src": "https://arcanum.ae/assets/img/chat2.jpg",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\OMS.pdf"
+        },
+        {
+          "text": "Organization Module",
+          "href": "https://arcanum.ae/#organizationModule"
+        },
+        {
+          "text": "User Interaction",
+          "href": "https://arcanum.ae/#userModule"
+        }
+      ],
+      "raw_text": "Features Organization Management System Efficient UI Secure Authentication and Authorization Organization Hierarchy Management Mobile Responsiveness Demo Our Key Features Organization Module User Interaction The organization module allows users to effortlessly create and manage organizations, streamline member invitations, and oversee hierarchical structures and collaborative activities within the platform. user module provides robust functionality for managing user profiles, facilitating seamless onboarding, and ensuring secure authentication and authorization for all members. Experience smooth and efficient communication with Messenger."
+    },
+    {
+      "section_id": "pricing_ALL",
+      "section_name": "Pricing all",
+      "tag": "section",
+      "class": "pricing text-center",
+      "heading": "",
+      "sub_headings": [],
+      "paragraphs": [],
+      "bullet_points": [],
+      "structured_items": [],
+      "images": [],
+      "links": [
+        {
+          "text": "Demo",
+          "href": "https://arcanum.ae/assets\\files\\OMS.pdf"
+        }
+      ],
+      "raw_text": "Demo"
+    },
+    {
+      "section_id": "contact",
+      "section_name": "Contact",
+      "tag": "section",
+      "class": "contact",
+      "heading": "Contact",
+      "sub_headings": [
+        "Arcanum Information Technology",
+        "Call Us",
+        "Email Us",
+        "Open Hours"
+      ],
+      "paragraphs": [
+        "Contact Us",
+        "Sarah Building - 305Al Garhoud, Dubai, UAE",
+        "04 3200657 +971 50 3911730",
+        "marketing@arcanum.ae",
+        "Monday - Friday9:00AM - 06:00PM"
+      ],
+      "bullet_points": [],
+      "structured_items": [
+        {
+          "title": "Arcanum Information Technology",
+          "description": "Arcanum Information Technology Sarah Building - 305Al Garhoud, Dubai, UAE",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Call Us",
+          "description": "Call Us 04 3200657 +971 50 3911730",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Email Us",
+          "description": "Email Us marketing@arcanum.ae",
+          "list_items": [],
+          "images": []
+        },
+        {
+          "title": "Open Hours",
+          "description": "Open Hours Monday - Friday9:00AM - 06:00PM",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [],
+      "links": [
+        {
+          "text": "04 3200657",
+          "href": "tel:+919447872867"
+        },
+        {
+          "text": "+971 50 3911730",
+          "href": "tel:+918590322609"
+        },
+        {
+          "text": "marketing@arcanum.ae",
+          "href": "mailto:marketing@arcanum.ae?subject=Enquiry form our website"
+        }
+      ],
+      "raw_text": "Contact Contact Us Arcanum Information Technology Sarah Building - 305Al Garhoud, Dubai, UAE Call Us 04 3200657 +971 50 3911730 Email Us marketing@arcanum.ae Open Hours Monday - Friday9:00AM - 06:00PM"
+    },
+    {
+      "section_id": "footer",
+      "section_name": "Arcanum Information Technology",
+      "tag": "footer",
+      "class": "footer",
+      "heading": "Arcanum Information Technology",
+      "sub_headings": [
+        "Useful Links",
+        "Our Services",
+        "Contact Us"
+      ],
+      "paragraphs": [
+        "is a professionally managed information technology(IT) company in the area of software development. The company employs highly-skilled who are capable of executing any IT related job professionally and elegantly.",
+        "Sarah Building - 305 Al Garhoud, Dubai, UAE Phone:    04 3200657 +971 50 3911730 Email: marketing@arcanum.ae"
+      ],
+      "bullet_points": [
+        "Home",
+        "Privacy policy",
+        "Business Softwares",
+        "SMS Applications",
+        "Web Development",
+        "Training Projects",
+        "ERP Softwares"
+      ],
+      "structured_items": [
+        {
+          "title": "Arcanum Information Technology",
+          "description": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. The company employs highly-skilled who are capable of executing any IT related job professionally and elegantly.",
+          "list_items": [],
+          "images": [
+            "https://arcanum.ae/assets/img/arcanum.png"
+          ]
+        },
+        {
+          "title": "Useful Links",
+          "description": "Useful Links Home Privacy policy",
+          "list_items": [
+            "Home",
+            "Privacy policy"
+          ],
+          "images": []
+        },
+        {
+          "title": "Our Services",
+          "description": "Our Services Business Softwares SMS Applications Web Development Training Projects ERP Softwares",
+          "list_items": [
+            "Business Softwares",
+            "SMS Applications",
+            "Web Development",
+            "Training Projects",
+            "ERP Softwares"
+          ],
+          "images": []
+        },
+        {
+          "title": "Contact Us",
+          "description": "Contact Us Sarah Building - 305 Al Garhoud, Dubai, UAE Phone:    04 3200657 +971 50 3911730 Email: marketing@arcanum.ae",
+          "list_items": [],
+          "images": []
+        }
+      ],
+      "images": [
+        {
+          "src": "https://arcanum.ae/assets/img/arcanum.png",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [
+        {
+          "text": "Arcanum Information Technology",
+          "href": "https://arcanum.ae/index.html#"
+        },
+        {
+          "text": "Home",
+          "href": "https://arcanum.ae/index.html#"
+        },
+        {
+          "text": "Privacy policy",
+          "href": "https://arcanum.ae/privacy-policy-new.html"
+        },
+        {
+          "text": "Business Softwares",
+          "href": "https://arcanum.ae/index.html#contact"
+        },
+        {
+          "text": "SMS Applications",
+          "href": "https://arcanum.ae/index.html#contact"
+        },
+        {
+          "text": "Web Development",
+          "href": "https://arcanum.ae/index.html#contact"
+        },
+        {
+          "text": "Training Projects",
+          "href": "https://arcanum.ae/index.html#contact"
+        },
+        {
+          "text": "ERP Softwares",
+          "href": "https://arcanum.ae/index.html#contact"
+        },
+        {
+          "text": "04 3200657",
+          "href": "tel:04 3200657"
+        },
+        {
+          "text": "+971 50 3911730",
+          "href": "tel:+971503911730"
+        },
+        {
+          "text": "marketing@arcanum.ae",
+          "href": "mailto:marketing@arcanum.ae?subject=Enquiry from website"
+        },
+        {
+          "text": "BootstrapMade",
+          "href": "https://bootstrapmade.com/"
+        }
+      ],
+      "raw_text": "Arcanum Information Technology is a professionally managed information technology(IT) company in the area of software development. The company employs highly-skilled who are capable of executing any IT related job professionally and elegantly. Useful Links Home Privacy policy Our Services Business Softwares SMS Applications Web Development Training Projects ERP Softwares Contact Us Sarah Building - 305 Al Garhoud, Dubai, UAE Phone:    04 3200657 +971 50 3911730 Email: marketing@arcanum.ae © Copyright Arcanum Information Technology. All Rights Reserved. Designed by BootstrapMade"
+    }
+  ]
+}

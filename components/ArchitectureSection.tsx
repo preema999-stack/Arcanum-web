@@ -32,7 +32,7 @@ const NODES: NodeData[] = [
   },
   {
     id: 'erp-engine',
-    name: 'Accurate ERP Ledger',
+    name: 'ARC ERP Ledger',
     category: 'Enterprise Finance',
     description: 'Real-time multi-currency double-entry ledger and automated supply chain workflow engine.',
     latency: '8ms',
@@ -127,7 +127,7 @@ export function ArchitectureSection() {
             </h2>
           </div>
           <p className="text-slate-400 text-sm max-w-md mt-4 md:mt-0 font-sans leading-relaxed">
-            Select or hover over any node in our system architecture matrix to inspect data routing, 
+            Select or hover over any node in our system architecture matrix to inspect data routing,
             latency metrics, and security protocol specs.
           </p>
         </div>
@@ -191,13 +191,12 @@ export function ArchitectureSection() {
                   >
                     {/* Node Circle Pin */}
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 shadow-md ${
-                        isSelected || isHovered
+                      className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 shadow-md ${isSelected || isHovered
                           ? 'bg-[#2384ba] text-white border-white scale-110 shadow-glow'
                           : isConnected
-                          ? 'bg-slate-900 text-[#2384ba] border-[#2384ba]'
-                          : 'bg-slate-900 text-slate-400 border-slate-700 hover:border-slate-400'
-                      }`}
+                            ? 'bg-slate-900 text-[#2384ba] border-[#2384ba]'
+                            : 'bg-slate-900 text-slate-400 border-slate-700 hover:border-slate-400'
+                        }`}
                     >
                       <Server className="w-4 h-4" />
                     </div>
@@ -205,11 +204,10 @@ export function ArchitectureSection() {
                     {/* Node Title Marker Label */}
                     <div className="mt-2 text-center pointer-events-none">
                       <span
-                        className={`text-[11px] font-mono font-medium block px-2 py-0.5 rounded backdrop-blur-md transition-colors ${
-                          isSelected || isHovered
+                        className={`text-[11px] font-mono font-medium block px-2 py-0.5 rounded backdrop-blur-md transition-colors ${isSelected || isHovered
                             ? 'bg-[#2384ba] text-white'
                             : 'bg-slate-900/90 text-slate-300 border border-slate-800'
-                        }`}
+                          }`}
                       >
                         {node.name.split(' ')[0]}
                       </span>

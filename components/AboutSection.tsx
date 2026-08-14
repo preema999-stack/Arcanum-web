@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Layers, Database, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { ARCANUM_INFO } from '@/data/arcanumData';
+import { useCms } from '@/lib/cmsContext';
 import { GsapTextSplit } from '@/components/GsapTextSplit';
 
 type IconComponent = React.ComponentType<{ className?: string }>;
@@ -89,7 +90,7 @@ function GsapCounter({ endValue, label }: { endValue: string; label: string }) {
 }
 
 // GSAP Infinite Marquee Ticker
-function GsapTextMarquee() {
+function GsapTextMarquee({ text }: { text?: string }) {
   const tickerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -106,6 +107,7 @@ function GsapTextMarquee() {
   }, []);
 
   const marqueeText =
+    text ||
     'ARCHITECTURAL PRECISION • LEGACY ORACLE FORMS REFACTORING • UAE WPS PAYROLL COMPLIANCE • ISO 8583 BANKING SWITCHES • CLINICAL EMR PROTOCOLS • SUB-12MS MICROSERVICES • ';
 
   return (
@@ -124,6 +126,12 @@ function GsapTextMarquee() {
 
 // GSAP Staggered Hub Cards
 function GsapHubCards() {
+  const { content } = useCms();
+  const hubs = content?.locations?.length ? content.locations : [
+    { city: 'Abu Dhabi', country: 'UAE', flag: '🇦🇪', role: 'Global HQ & Strategy' },
+    { city: 'Kerala', country: 'India', flag: '🇮🇳', role: 'Engineering & R&D Hub' },
+    { city: 'Gujarat', country: 'India', flag: '🇮🇳', role: 'Tech & Operations Center' },
+  ];
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -159,39 +167,30 @@ function GsapHubCards() {
 
   return (
     <div ref={containerRef} className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-      <div className="gsap-hub-card group rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md transition-all hover:border-[#2384ba]/50 hover:bg-white/10">
-        <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
-          <span className="text-sm">🇦🇪</span>
-          <span>ABU DHABI</span>
+      {hubs.map((hub, idx) => (
+        <div key={hub.city || idx} className="gsap-hub-card group rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md transition-all hover:border-[#2384ba]/50 hover:bg-white/10">
+          <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
+            <span className="text-sm">{hub.flag || '🌐'}</span>
+            <span className="uppercase">{hub.city}</span>
+          </div>
+          <div className="text-[10px] text-slate-400 font-sans group-hover:text-slate-200 transition-colors">
+            {hub.role}
+          </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-sans group-hover:text-slate-200 transition-colors">
-          Global HQ & Strategy
-        </div>
-      </div>
-      <div className="gsap-hub-card group rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md transition-all hover:border-[#2384ba]/50 hover:bg-white/10">
-        <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
-          <span className="text-sm">🇮🇳</span>
-          <span>KERALA</span>
-        </div>
-        <div className="text-[10px] text-slate-400 font-sans group-hover:text-slate-200 transition-colors">
-          Engineering & R&D Hub
-        </div>
-      </div>
-      <div className="gsap-hub-card group rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md transition-all hover:border-[#2384ba]/50 hover:bg-white/10">
-        <div className="flex items-center space-x-1.5 text-[#2384ba] font-bold mb-1">
-          <span className="text-sm">🇮🇳</span>
-          <span>GUJARAT</span>
-        </div>
-        <div className="text-[10px] text-slate-400 font-sans group-hover:text-slate-200 transition-colors">
-          Tech & Operations Center
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
 
 // GSAP Staggered Value Pillars
 function GsapValuePillars() {
+  const { content } = useCms();
+  const values = content?.values?.length ? content.values : [
+    { title: 'Architectural Precision', description: 'Clean modular codebases with strict type safety and zero technical debt.', iconName: 'Layers' },
+    { title: 'Legacy Modernization', description: 'Refactoring legacy Oracle Forms into scalable cloud microservices.', iconName: 'Database' },
+    { title: 'Statutory Compliance', description: 'UAE WPS payroll, ISO 8583 banking switches, and clinical EMR protocols.', iconName: 'ShieldCheck' },
+    { title: 'Professional Execution', description: 'Senior engineers executing complex assignments elegantly, on schedule.', iconName: 'BadgeCheck' },
+  ];
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -223,12 +222,20 @@ function GsapValuePillars() {
     );
     observer.observe(containerRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [values]);
+
+  const PILLAR_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+    Layers: Layers,
+    Database: Database,
+    ShieldCheck: ShieldCheck,
+    BadgeCheck: BadgeCheck,
+    Award: BadgeCheck,
+  };
 
   return (
     <div ref={containerRef} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {VALUES.map((v) => {
-        const Icon = v.icon;
+      {values.map((v) => {
+        const Icon = PILLAR_ICONS[v.iconName || ''] || Layers;
         return (
           <div
             key={v.title}
@@ -247,7 +254,9 @@ function GsapValuePillars() {
 }
 
 export function AboutSection() {
-  const stats = ARCANUM_INFO.stats;
+  const { content } = useCms();
+  const info = content?.info || ARCANUM_INFO;
+  const stats = info?.stats || ARCANUM_INFO.stats;
   const paragraphRef = useRef<HTMLDivElement>(null);
   const imageCardRef = useRef<HTMLDivElement>(null);
 
@@ -298,13 +307,13 @@ export function AboutSection() {
         <div className="max-w-3xl mb-14">
           <div className="inline-flex items-center space-x-2 font-mono text-xs uppercase tracking-[0.25em] text-[#2384ba] mb-3">
             <span className="inline-block h-2 w-2 rounded-full bg-[#2384ba] animate-ping" />
-            <GsapTextSplit text="02 / Who We Are" variant="chars" triggerOnScroll />
+            <GsapTextSplit text={info.aboutBadge || "02 / Who We Are"} variant="chars" triggerOnScroll />
           </div>
 
           <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
             <GsapTextSplit
-              text="An IT Engineering Firm Built on"
-              highlightText="Rigor & Reliability."
+              text={info.aboutTitle || "An IT Engineering Firm Built on"}
+              highlightText={info.aboutTitleHighlight || "Rigor & Reliability."}
               variant="heading-3d"
               triggerOnScroll
               delay={0.1}
@@ -317,10 +326,7 @@ export function AboutSection() {
           <div className="lg:col-span-6">
             <div ref={paragraphRef} className="will-change-transform">
               <p className="text-base leading-relaxed text-slate-300 mb-5">
-                Arcanum Information Technology is a professionally managed software engineering firm operating across three key global centers:{' '}
-                <strong className="text-white">Abu Dhabi (UAE)</strong>,{' '}
-                <strong className="text-white">Kerala (India)</strong>, and{' '}
-                <strong className="text-white">Gujarat (India)</strong>. We employ senior software architects and engineers delivering enterprise-grade software.
+                {info.aboutDescription1 || 'Arcanum Information Technology is a professionally managed software engineering firm headquartered in the UAE. We employ senior engineers capable of executing mission-critical IT projects with architectural precision, modular clarity, and zero technical debt.'}
               </p>
             </div>
 
@@ -358,7 +364,7 @@ export function AboutSection() {
         </div>
 
         {/* GSAP Infinite Marquee Ticker */}
-        <GsapTextMarquee />
+        <GsapTextMarquee text={info.marqueeText} />
 
         {/* Values Grid with GSAP Stagger */}
         <GsapValuePillars />

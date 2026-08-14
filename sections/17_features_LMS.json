@@ -1,0 +1,129 @@
+{
+  "section_id": "features_LMS",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Customizable Menu data",
+    "Connect with customers for their inquiries",
+    "Customizable form fields",
+    "Our Key Features",
+    "Additional Features",
+    "Home",
+    "Master Screens",
+    "Custom Themes",
+    "Reports"
+  ],
+  "paragraphs": [
+    "Advanced LMS software",
+    "You can generate a link for specific criteria and then share it in your advertising medium. The people those who are interested in the ads can get a form to fill up while clicking the link. Thus, the process of connecting with customers becomes easy.",
+    "When the customer fills and submits the form, the inquiry will be sent to the database of this software and can be viewed in the software.",
+    "We can customize for what all fields can be viewed by the inquirer for submitting the inquiry.",
+    "You can see all the inquiries that have been raised till the current date on your home screen.",
+    "You can enter common information in master screens, so that it can be reused in other screens.",
+    "You can personalize the look and feel of the applications",
+    "You can export the data displayed in some master screens as PDF, excel or CSV format."
+  ],
+  "bullet_points": [
+    "generate and share inquiry links",
+    "Customizable form fields"
+  ],
+  "structured_items": [
+    {
+      "title": "Customizable Menu data",
+      "description": "Customizable Menu data",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Connect with customers for their inquiries",
+      "description": "Connect with customers for their inquiries",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customizable form fields",
+      "description": "Customizable form fields",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features generate and share inquiry links Customizable form fields You can generate a link for specific criteria and then share it in your advertising medium. The people those who are interested in the ads can get a form to fill up while clicking the link. Thus, the process of connecting with customers becomes easy. When the customer fills and submits the form, the inquiry will be sent to the database of this software and can be viewed in the software. We can customize for what all fields can be viewed by the inquirer for submitting the inquiry.",
+      "list_items": [
+        "generate and share inquiry links",
+        "Customizable form fields"
+      ],
+      "images": []
+    },
+    {
+      "title": "Home",
+      "description": "Home You can see all the inquiries that have been raised till the current date on your home screen.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Master Screens",
+      "description": "Master Screens You can enter common information in master screens, so that it can be reused in other screens.",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Custom Themes",
+      "description": "Custom Themes You can personalize the look and feel of the applications",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Reports",
+      "description": "Reports You can export the data displayed in some master screens as PDF, excel or CSV format.",
+      "list_items": [],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-3.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://lms.accuratesoftware.online/#/registration"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/lms.html"
+    },
+    {
+      "text": "generate and share inquiry links",
+      "href": "https://arcanum.ae/#generateLink"
+    },
+    {
+      "text": "Customizable form fields",
+      "href": "https://arcanum.ae/#customFormField"
+    },
+    {
+      "text": "",
+      "href": "https://arcanum.ae/#new"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://lms.accuratesoftware.online/#/registration"
+    }
+  ],
+  "raw_text": "Features Advanced LMS software Customizable Menu data Connect with customers for their inquiries Customizable form fields Try it Now Demo Our Key Features generate and share inquiry links Customizable form fields You can generate a link for specific criteria and then share it in your advertising medium. The people those who are interested in the ads can get a form to fill up while clicking the link. Thus, the process of connecting with customers becomes easy. When the customer fills and submits the form, the inquiry will be sent to the database of this software and can be viewed in the software. We can customize for what all fields can be viewed by the inquirer for submitting the inquiry. Try it Now Additional Features Home You can see all the inquiries that have been raised till the current date on your home screen. Master Screens You can enter common information in master screens, so that it can be reused in other screens. Custom Themes You can personalize the look and feel of the applications Reports You can export the data displayed in some master screens as PDF, excel or CSV format."
+}

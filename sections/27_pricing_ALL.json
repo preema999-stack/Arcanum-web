@@ -1,0 +1,23 @@
+{
+  "section_id": "pricing_ALL",
+  "section_name": "Pricing all",
+  "tag": "section",
+  "class": "pricing text-center",
+  "heading": "",
+  "sub_headings": [],
+  "paragraphs": [],
+  "bullet_points": [],
+  "structured_items": [],
+  "images": [],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://sis.accuratesoftware.online/#/auth/login/stpauls"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/schoolmanagement.html"
+    }
+  ],
+  "raw_text": "Try it Now Demo"
+}

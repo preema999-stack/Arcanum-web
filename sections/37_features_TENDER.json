@@ -1,0 +1,89 @@
+{
+  "section_id": "features_TENDER",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Bid Handling",
+    "Multiple Login",
+    "Custom Reports",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Tender Application",
+    "Our Tender software has a well-organized and powerful administration management feature, which grants you the ability to manage users effectively, define their permission levels and manage Tenders.",
+    "Experience unparalleled control with our user management system. Tailor access rights and provisions effortlessly with role assignments such as User, Analyst, Admin, and Super Admin.",
+    "Uncover actionable insights effortlessly with our comprehensive bid reports feature. From real-time analytics to in-depth summaries, our application empowers you to dissect bid data with precision."
+  ],
+  "bullet_points": [
+    "Bid Handling",
+    "Multiple Login",
+    "Custom Reports"
+  ],
+  "structured_items": [
+    {
+      "title": "Bid Handling",
+      "description": "Bid Handling",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Multiple Login",
+      "description": "Multiple Login",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Custom Reports",
+      "description": "Custom Reports",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Bid Handling Multiple Login Custom Reports Our Tender software has a well-organized and powerful administration management feature, which grants you the ability to manage users effectively, define their permission levels and manage Tenders. Experience unparalleled control with our user management system. Tailor access rights and provisions effortlessly with role assignments such as User, Analyst, Admin, and Super Admin. Uncover actionable insights effortlessly with our comprehensive bid reports feature. From real-time analytics to in-depth summaries, our application empowers you to dissect bid data with precision.",
+      "list_items": [
+        "Bid Handling",
+        "Multiple Login",
+        "Custom Reports"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/assets\\files\\Accurate-Tender.pdf"
+    },
+    {
+      "text": "Bid Handling",
+      "href": "https://arcanum.ae/#bidHandling"
+    },
+    {
+      "text": "Multiple Login",
+      "href": "https://arcanum.ae/#multiLogin"
+    },
+    {
+      "text": "Custom Reports",
+      "href": "https://arcanum.ae/#customReport"
+    },
+    {
+      "text": "Try it Now",
+      "href": ""
+    }
+  ],
+  "raw_text": "Features Tender Application Bid Handling Multiple Login Custom Reports Demo Our Key Features Bid Handling Multiple Login Custom Reports Our Tender software has a well-organized and powerful administration management feature, which grants you the ability to manage users effectively, define their permission levels and manage Tenders. Experience unparalleled control with our user management system. Tailor access rights and provisions effortlessly with role assignments such as User, Analyst, Admin, and Super Admin. Uncover actionable insights effortlessly with our comprehensive bid reports feature. From real-time analytics to in-depth summaries, our application empowers you to dissect bid data with precision. Try it Now"
+}

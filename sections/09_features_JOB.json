@@ -1,0 +1,101 @@
+{
+  "section_id": "features_JOB",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Candidate-Centric Features",
+    "Employer-Focused Solutions",
+    "Admin Management Tools",
+    "Advanced Candidate Filtering",
+    "",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Job Portal",
+    "Job Portal is the all-in-one job portal app designed to streamline the job search process for candidates and simplify talent acquisition for employers.",
+    "With powerful features for Admins,Candidates, and Employers, we bring together the perfect combination of convenience and efficiency.",
+    "Access thousands of job listings across various industries and locations, all in one place From entry-level positions to executive roles, we have opportunities for everyone.",
+    "Our intelligent matching algorithm presents you with job openings that align with your skills",
+    "Gain access to a vast database of qualified candidates, ensuring you find the right fit for your organization.",
+    "Efficiently manage user accounts, permissions, and access levels. Access valuable data and analytics to gain insights into user activity and app performance",
+    "Provide prompt support to both candidates and employers, ensuring a seamless experience for all users."
+  ],
+  "bullet_points": [
+    "Overview",
+    "Candidates and Employees",
+    "Admins"
+  ],
+  "structured_items": [
+    {
+      "title": "Candidate-Centric Features",
+      "description": "Candidate-Centric Features",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Employer-Focused Solutions",
+      "description": "Employer-Focused Solutions",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Admin Management Tools",
+      "description": "Admin Management Tools",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Advanced Candidate Filtering",
+      "description": "Advanced Candidate Filtering",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Overview Candidates and Employees Admins Job Portal is the all-in-one job portal app designed to streamline the job search process for candidates and simplify talent acquisition for employers. With powerful features for Admins,Candidates, and Employers, we bring together the perfect combination of convenience and efficiency. Access thousands of job listings across various industries and locations, all in one place From entry-level positions to executive roles, we have opportunities for everyone. Our intelligent matching algorithm presents you with job openings that align with your skills Gain access to a vast database of qualified candidates, ensuring you find the right fit for your organization. Efficiently manage user accounts, permissions, and access levels. Access valuable data and analytics to gain insights into user activity and app performance Provide prompt support to both candidates and employers, ensuring a seamless experience for all users.",
+      "list_items": [
+        "Overview",
+        "Candidates and Employees",
+        "Admins"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/features-2.png",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "More Info",
+      "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf"
+    },
+    {
+      "text": "Overview",
+      "href": "https://arcanum.ae/#overview"
+    },
+    {
+      "text": "Candidates and Employees",
+      "href": "https://arcanum.ae/#candidates"
+    },
+    {
+      "text": "Admins",
+      "href": "https://arcanum.ae/#admins"
+    },
+    {
+      "text": "",
+      "href": "https://arcanum.ae/#new"
+    }
+  ],
+  "raw_text": "Features Job Portal Candidate-Centric Features Employer-Focused Solutions Admin Management Tools Advanced Candidate Filtering More Info Our Key Features Overview Candidates and Employees Admins Job Portal is the all-in-one job portal app designed to streamline the job search process for candidates and simplify talent acquisition for employers. With powerful features for Admins,Candidates, and Employers, we bring together the perfect combination of convenience and efficiency. Access thousands of job listings across various industries and locations, all in one place From entry-level positions to executive roles, we have opportunities for everyone. Our intelligent matching algorithm presents you with job openings that align with your skills Gain access to a vast database of qualified candidates, ensuring you find the right fit for your organization. Efficiently manage user accounts, permissions, and access levels. Access valuable data and analytics to gain insights into user activity and app performance Provide prompt support to both candidates and employers, ensuring a seamless experience for all users."
+}

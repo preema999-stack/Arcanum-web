@@ -1,0 +1,104 @@
+{
+  "section_id": "features_SLS",
+  "section_name": "Features",
+  "tag": "section",
+  "class": "features",
+  "heading": "Features",
+  "sub_headings": [
+    "Customer Master",
+    "Invoice Generation",
+    "Customer Payments",
+    "Customer Statements",
+    "Customer Balance",
+    "Our Key Features"
+  ],
+  "paragraphs": [
+    "Sales App",
+    "With bulk printing, you can now print multiple invoices, receipts, or any other sales documents all at once. This saves you time and effort compared to printing each document individually, making it a great option for businesses with high-volume sales or frequent invoicing needs.",
+    "The customer statement and balance feature allows users to view customer's account status including outstanding balances, recent payments, and overall financial standing with the company. It enables businesses to analyze their cash flow, manage receivables and minimize bad debts."
+  ],
+  "bullet_points": [
+    "Invoice Bulk Print",
+    "Customer Statement & Balance"
+  ],
+  "structured_items": [
+    {
+      "title": "Customer Master",
+      "description": "Customer Master",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Invoice Generation",
+      "description": "Invoice Generation",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customer Payments",
+      "description": "Customer Payments",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customer Statements",
+      "description": "Customer Statements",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Customer Balance",
+      "description": "Customer Balance",
+      "list_items": [],
+      "images": []
+    },
+    {
+      "title": "Our Key Features",
+      "description": "Our Key Features Invoice Bulk Print Customer Statement & Balance With bulk printing, you can now print multiple invoices, receipts, or any other sales documents all at once. This saves you time and effort compared to printing each document individually, making it a great option for businesses with high-volume sales or frequent invoicing needs. The customer statement and balance feature allows users to view customer's account status including outstanding balances, recent payments, and overall financial standing with the company. It enables businesses to analyze their cash flow, manage receivables and minimize bad debts.",
+      "list_items": [
+        "Invoice Bulk Print",
+        "Customer Statement & Balance"
+      ],
+      "images": []
+    }
+  ],
+  "images": [
+    {
+      "src": "https://arcanum.ae/assets/img/features.png",
+      "alt": "",
+      "title": ""
+    },
+    {
+      "src": "https://arcanum.ae/assets/img/sales.avif",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "links": [
+    {
+      "text": "Try it Now",
+      "href": "https://lms.accuratesoftware.online/#/registration"
+    },
+    {
+      "text": "Demo",
+      "href": "https://arcanum.ae/sales.html"
+    },
+    {
+      "text": "Invoice Bulk Print",
+      "href": "https://arcanum.ae/#invoicePrint"
+    },
+    {
+      "text": "Customer Statement & Balance",
+      "href": "https://arcanum.ae/#customer"
+    },
+    {
+      "text": "",
+      "href": "https://arcanum.ae/#new"
+    },
+    {
+      "text": "Try it Now",
+      "href": "https://sales.accuratesoftware.online"
+    }
+  ],
+  "raw_text": "Features Sales App Customer Master Invoice Generation Customer Payments Customer Statements Customer Balance Try it Now Demo Our Key Features Invoice Bulk Print Customer Statement & Balance With bulk printing, you can now print multiple invoices, receipts, or any other sales documents all at once. This saves you time and effort compared to printing each document individually, making it a great option for businesses with high-volume sales or frequent invoicing needs. The customer statement and balance feature allows users to view customer's account status including outstanding balances, recent payments, and overall financial standing with the company. It enables businesses to analyze their cash flow, manage receivables and minimize bad debts. Try it Now"
+}
