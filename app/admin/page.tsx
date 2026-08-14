@@ -272,6 +272,13 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     if (!user) return;
     fetchAnalyticsData(analyticsRange);
+
+    // Auto-refresh real-time visitor telemetry stream every 4 seconds
+    const interval = setInterval(() => {
+      fetchAnalyticsData(analyticsRange);
+    }, 4000);
+
+    return () => clearInterval(interval);
   }, [user, analyticsRange]);
 
   const handleTestTrackVisit = async () => {

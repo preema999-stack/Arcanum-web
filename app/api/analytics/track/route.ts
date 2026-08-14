@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/firebase';
-import { doc, getDoc, setDoc, increment } from 'firebase/firestore';
+import { doc, setDoc, increment } from 'firebase/firestore';
 import fs from 'fs';
 import path from 'path';
 
@@ -11,7 +11,7 @@ const LOCAL_ANALYTICS_FILE = path.join(process.cwd(), 'data', 'analytics_backup.
 interface AnalyticsBackupData {
   lifetimeVisitors?: number;
   lifetimePageViews?: number;
-  days?: Record<string, { visitors: number; pageViews: number; visitorIds: string[] }>;
+  days?: Record<string, { visitors: number; pageViews: number; visitorIds: string[]; sessionIds?: string[] }>;
 }
 
 function getLocalAnalytics(): AnalyticsBackupData {
@@ -19,7 +19,6 @@ function getLocalAnalytics(): AnalyticsBackupData {
     if (fs.existsSync(LOCAL_ANALYTICS_FILE)) {
       const raw = fs.readFileSync(LOCAL_ANALYTICS_FILE, 'utf-8');
       const parsed = JSON.parse(raw);
-      // Migration check if older format existed
       if (!parsed.days) {
         return {
           lifetimeVisitors: 0,
@@ -51,16 +50,19 @@ export async function POST(req: NextRequest) {
 
     // Read payload body if available
     let visitorId = '';
+    let sessionId = '';
     try {
       const body = await req.json();
       visitorId = body.visitorId || '';
+      sessionId = body.sessionId || '';
     } catch (e) {
-      // Body empty or invalid JSON
+      // Body empty
     }
 
     const forwarded = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '127.0.0.1';
     const clientIp = forwarded.split(',')[0].trim();
     const visitorKey = visitorId || clientIp;
+    const sessionKey = sessionId || `${visitorKey}_${todayStr}`;
 
     // 1. Update local persistent storage
     const store = getLocalAnalytics();
@@ -69,21 +71,33 @@ export async function POST(req: NextRequest) {
     let isNewVisitorToday = false;
 
     if (!store.days[todayStr]) {
-      store.days[todayStr] = { visitors: 1, pageViews: 1, visitorIds: [visitorKey] };
+      store.days[todayStr] = {
+        visitors: 1,
+        pageViews: 1,
+        visitorIds: [visitorKey],
+        sessionIds: [sessionKey],
+      };
       store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
       store.lifetimePageViews = (store.lifetimePageViews || 0) + 1;
       isNewVisitorToday = true;
     } else {
+      // Always increment page views on every page load / refresh!
       store.days[todayStr].pageViews = (store.days[todayStr].pageViews || 0) + 1;
       store.lifetimePageViews = (store.lifetimePageViews || 0) + 1;
 
       if (!store.days[todayStr].visitorIds) store.days[todayStr].visitorIds = [];
+      if (!store.days[todayStr].sessionIds) store.days[todayStr].sessionIds = [];
 
+      // Check if visitor key is new for today
       if (!store.days[todayStr].visitorIds.includes(visitorKey)) {
         store.days[todayStr].visitorIds.push(visitorKey);
         store.days[todayStr].visitors = (store.days[todayStr].visitors || 0) + 1;
         store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
         isNewVisitorToday = true;
+      }
+
+      if (!store.days[todayStr].sessionIds.includes(sessionKey)) {
+        store.days[todayStr].sessionIds.push(sessionKey);
       }
     }
 

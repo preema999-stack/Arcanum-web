@@ -20,19 +20,27 @@ export async function trackVisitorSession() {
   if (typeof window === 'undefined') return;
 
   try {
-    // Generate or retrieve persistent visitor ID in client browser
+    // Generate or retrieve persistent visitor ID in client browser (per device)
     let visitorId = localStorage.getItem('arcanum_visitor_id');
     if (!visitorId) {
       visitorId = 'v_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now();
       localStorage.setItem('arcanum_visitor_id', visitorId);
     }
 
-    // Call server endpoint
+    // Generate or retrieve session ID in browser tab
+    let sessionId = sessionStorage.getItem('arcanum_session_id');
+    if (!sessionId) {
+      sessionId = 's_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now();
+      sessionStorage.setItem('arcanum_session_id', sessionId);
+    }
+
+    // Call server endpoint to record page view and visitor session
     await fetch('/api/analytics/track', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         visitorId,
+        sessionId,
         referrer: document.referrer || 'direct',
         path: window.location.pathname,
       }),
