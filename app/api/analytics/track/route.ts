@@ -6,22 +6,36 @@ import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
-// Local backup file for analytics persistence
 const LOCAL_ANALYTICS_FILE = path.join(process.cwd(), 'data', 'analytics_backup.json');
 
-function getLocalAnalytics(): Record<string, { visitors: number; pageViews: number; ips: string[] }> {
+interface AnalyticsBackupData {
+  lifetimeVisitors?: number;
+  lifetimePageViews?: number;
+  days?: Record<string, { visitors: number; pageViews: number; visitorIds: string[] }>;
+}
+
+function getLocalAnalytics(): AnalyticsBackupData {
   try {
     if (fs.existsSync(LOCAL_ANALYTICS_FILE)) {
-      const data = fs.readFileSync(LOCAL_ANALYTICS_FILE, 'utf-8');
-      return JSON.parse(data);
+      const raw = fs.readFileSync(LOCAL_ANALYTICS_FILE, 'utf-8');
+      const parsed = JSON.parse(raw);
+      // Migration check if older format existed
+      if (!parsed.days) {
+        return {
+          lifetimeVisitors: 0,
+          lifetimePageViews: 0,
+          days: parsed,
+        };
+      }
+      return parsed;
     }
   } catch (err) {
     console.warn('[Analytics Local Read Error]', err);
   }
-  return {};
+  return { lifetimeVisitors: 0, lifetimePageViews: 0, days: {} };
 }
 
-function saveLocalAnalytics(data: Record<string, { visitors: number; pageViews: number; ips: string[] }>) {
+function saveLocalAnalytics(data: AnalyticsBackupData) {
   try {
     const dir = path.dirname(LOCAL_ANALYTICS_FILE);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -34,57 +48,85 @@ function saveLocalAnalytics(data: Record<string, { visitors: number; pageViews: 
 export async function POST(req: NextRequest) {
   try {
     const todayStr = new Date().toISOString().slice(0, 10);
+
+    // Read payload body if available
+    let visitorId = '';
+    try {
+      const body = await req.json();
+      visitorId = body.visitorId || '';
+    } catch (e) {
+      // Body empty or invalid JSON
+    }
+
     const forwarded = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '127.0.0.1';
     const clientIp = forwarded.split(',')[0].trim();
+    const visitorKey = visitorId || clientIp;
 
     // 1. Update local persistent storage
-    const localData = getLocalAnalytics();
-    if (!localData[todayStr]) {
-      localData[todayStr] = { visitors: 1, pageViews: 1, ips: [clientIp] };
+    const store = getLocalAnalytics();
+    if (!store.days) store.days = {};
+
+    let isNewVisitorToday = false;
+
+    if (!store.days[todayStr]) {
+      store.days[todayStr] = { visitors: 1, pageViews: 1, visitorIds: [visitorKey] };
+      store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
+      store.lifetimePageViews = (store.lifetimePageViews || 0) + 1;
+      isNewVisitorToday = true;
     } else {
-      localData[todayStr].pageViews = (localData[todayStr].pageViews || 0) + 1;
-      if (!localData[todayStr].ips) localData[todayStr].ips = [];
-      if (!localData[todayStr].ips.includes(clientIp)) {
-        localData[todayStr].ips.push(clientIp);
-        localData[todayStr].visitors = (localData[todayStr].visitors || 0) + 1;
+      store.days[todayStr].pageViews = (store.days[todayStr].pageViews || 0) + 1;
+      store.lifetimePageViews = (store.lifetimePageViews || 0) + 1;
+
+      if (!store.days[todayStr].visitorIds) store.days[todayStr].visitorIds = [];
+
+      if (!store.days[todayStr].visitorIds.includes(visitorKey)) {
+        store.days[todayStr].visitorIds.push(visitorKey);
+        store.days[todayStr].visitors = (store.days[todayStr].visitors || 0) + 1;
+        store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
+        isNewVisitorToday = true;
       }
     }
-    saveLocalAnalytics(localData);
 
-    const isNewVisitorToday = localData[todayStr].ips.filter((ip) => ip === clientIp).length <= 1;
+    saveLocalAnalytics(store);
 
     // 2. Sync to Firebase Firestore
     try {
+      // Daily record sync
       const docRef = doc(db, 'analytics_daily', todayStr);
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        await setDoc(
-          docRef,
-          {
-            pageViews: increment(1),
-            visitors: isNewVisitorToday ? increment(1) : increment(0),
-            updatedAt: new Date().toISOString(),
-          },
-          { merge: true }
-        );
-      } else {
-        await setDoc(docRef, {
+      await setDoc(
+        docRef,
+        {
           date: todayStr,
-          visitors: localData[todayStr].visitors || 1,
-          pageViews: localData[todayStr].pageViews || 1,
-          createdAt: new Date().toISOString(),
-        });
-      }
+          pageViews: increment(1),
+          visitors: isNewVisitorToday ? increment(1) : increment(0),
+          updatedAt: new Date().toISOString(),
+        },
+        { merge: true }
+      );
+
+      // Global totals summary sync
+      const summaryRef = doc(db, 'analytics_summary', 'global_totals');
+      await setDoc(
+        summaryRef,
+        {
+          totalPageViews: increment(1),
+          totalVisitors: isNewVisitorToday ? increment(1) : increment(0),
+          updatedAt: new Date().toISOString(),
+        },
+        { merge: true }
+      );
     } catch (firebaseErr: any) {
-      console.info('[Analytics Firestore Sync Note]', firebaseErr?.message || 'Using persistent local analytics store.');
+      console.info('[Analytics Firestore Sync Note]', firebaseErr?.message || 'Using local analytics store.');
     }
 
     return NextResponse.json({
       success: true,
       date: todayStr,
-      visitors: localData[todayStr].visitors,
-      pageViews: localData[todayStr].pageViews,
+      isNewVisitorToday,
+      todayVisitors: store.days[todayStr].visitors,
+      todayPageViews: store.days[todayStr].pageViews,
+      totalVisitors: store.lifetimeVisitors,
+      totalPageViews: store.lifetimePageViews,
     });
   } catch (error: any) {
     console.error('[API /api/analytics/track Exception]', error);

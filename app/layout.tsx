@@ -32,6 +32,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { AnalyticsTracker } from '@/components/AnalyticsTracker';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,6 +44,7 @@ export default function RootLayout({
       <body className="bg-[#0f172a] text-white antialiased selection:bg-[#2384ba]/30 selection:text-[#2384ba]">
         <AuthProvider>
           <CmsProvider>
+            <AnalyticsTracker />
             <LenisProvider>{children}</LenisProvider>
           </CmsProvider>
         </AuthProvider>

@@ -249,12 +249,19 @@ export default function AdminDashboardPage() {
 
   // Load Visitor Analytics
   const [fetchingAnalytics, setFetchingAnalytics] = useState(false);
+  const [analyticsSummary, setAnalyticsSummary] = useState<any>({
+    totalVisitors: 0,
+    totalPageViews: 0,
+    rangeVisitors: 0,
+    todayVisitors: 0,
+  });
 
   const fetchAnalyticsData = async (range: 7 | 14 | 30 = analyticsRange) => {
     setFetchingAnalytics(true);
     try {
-      const data = await getDailyAnalytics(range);
-      setAnalyticsData(data);
+      const summary = await getDailyAnalytics(range);
+      setAnalyticsSummary(summary);
+      setAnalyticsData(summary.records || []);
     } catch (err) {
       console.warn('[Analytics Load Error]', err);
     } finally {
@@ -417,8 +424,10 @@ export default function AdminDashboardPage() {
 
   if (authLoading || (!user && fetchingInquiries)) {
     return (
-      <main className="min-h-screen bg-[#070b14] flex items-center justify-center dark-technical-grid">
-        <div className="flex flex-col items-center space-y-4 font-mono text-xs text-[#2384ba] p-8 rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-2xl shadow-2xl">
+      <main className="min-h-screen bg-[#0f172a] flex items-center justify-center dark-technical-grid relative overflow-hidden">
+        {/* Glow ambient background accent */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#2384ba]/15 blur-[150px] pointer-events-none rounded-full" />
+        <div className="flex flex-col items-center space-y-4 font-mono text-xs text-[#2384ba] p-8 rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur-2xl shadow-2xl relative z-10">
           <div className="relative">
             <span className="h-10 w-10 rounded-full border-2 border-[#2384ba] border-t-transparent animate-spin block" />
             <ShieldCheck className="h-5 w-5 text-[#2384ba] absolute inset-0 m-auto" />
@@ -455,35 +464,39 @@ export default function AdminDashboardPage() {
   const inProgressCount = inquiries.filter((i) => i.status === 'in-progress').length;
   const resolvedCount = inquiries.filter((i) => i.status === 'resolved').length;
 
-  const totalVisitors = analyticsData.reduce((acc, curr) => acc + curr.visitors, 0);
-  const totalPageViews = analyticsData.reduce((acc, curr) => acc + curr.pageViews, 0);
+  const totalVisitorsFromData = analyticsData.reduce((acc, curr) => acc + curr.visitors, 0);
+  const totalPageViewsFromData = analyticsData.reduce((acc, curr) => acc + curr.pageViews, 0);
+  
+  const cumulativeTotalVisitors = Math.max(analyticsSummary.totalVisitors || 0, totalVisitorsFromData);
+  const cumulativeTotalPageViews = Math.max(analyticsSummary.totalPageViews || 0, totalPageViewsFromData);
+  const rangeVisitors = analyticsSummary.rangeVisitors || totalVisitorsFromData;
   const todayRecord = analyticsData[analyticsData.length - 1];
-  const todayVisitors = todayRecord ? todayRecord.visitors : 0;
-  const conversionRate = totalVisitors > 0
-    ? Math.min(100, (totalCount / totalVisitors) * 100).toFixed(1)
+  const todayVisitors = analyticsSummary.todayVisitors ?? (todayRecord ? todayRecord.visitors : 0);
+
+  const conversionRate = cumulativeTotalVisitors > 0
+    ? Math.min(100, (totalCount / cumulativeTotalVisitors) * 100).toFixed(1)
     : totalCount > 0 ? '100.0' : '0.0';
 
   const maxVisitsInChart = Math.max(...analyticsData.map((d) => Math.max(d.visitors, d.pageViews)), 5);
 
   return (
-    <main className="min-h-screen bg-[#070b14] text-slate-100 font-sans flex flex-col md:flex-row relative overflow-hidden dark-technical-grid selection:bg-[#2384ba]/30 selection:text-[#2384ba]">
-      {/* Subtle glowing ambient lighting in corners */}
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#2384ba]/10 blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-cyan-500/10 blur-[180px] pointer-events-none rounded-full" />
+    <main className="min-h-screen bg-[#0f172a] text-slate-100 font-sans flex flex-col md:flex-row relative dark-technical-grid selection:bg-[#2384ba]/30 selection:text-[#2384ba]">
+      {/* Signature Website Radial Background Orbs & Ambient Glow */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-[#2384ba]/15 blur-[170px] pointer-events-none rounded-full" />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-cyan-500/10 blur-[180px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-10 right-10 w-[650px] h-[650px] bg-[#2384ba]/10 blur-[180px] pointer-events-none rounded-full" />
       <div className="absolute -bottom-40 left-1/3 w-[600px] h-[600px] bg-indigo-500/10 blur-[180px] pointer-events-none rounded-full" />
 
       {/* ------------------------------------------------------------- */}
-      {/* MODULAR CYBER SIDEBAR (Left Navigation) */}
+      {/* MODULAR CYBER SIDEBAR (Left Fixed Navigation) */}
       {/* ------------------------------------------------------------- */}
-      <aside className="w-full md:w-72 bg-slate-950/90 backdrop-blur-2xl border-b md:border-b-0 md:border-r border-white/10 shrink-0 flex flex-col justify-between relative z-30">
+      <aside className="w-full md:w-72 md:fixed md:top-0 md:left-0 md:bottom-0 bg-[#090d16] border-b md:border-b-0 md:border-r border-white/10 shrink-0 flex flex-col justify-between z-30 overflow-y-auto">
         <div>
           {/* Top Brand Header */}
           <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3 text-white group">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#2384ba] to-[#124d72] p-[1px] shadow-lg shadow-[#2384ba]/20 group-hover:shadow-[#2384ba]/40 transition-all">
-                <div className="h-full w-full bg-[#0a0f1d] rounded-xl flex items-center justify-center text-[#2384ba] group-hover:bg-[#2384ba] group-hover:text-white transition-colors">
-                  <ShieldCheck className="h-5 w-5" />
-                </div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 p-1 backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#2384ba]/50 group-hover:shadow-[0_0_15px_rgba(35,132,186,0.3)]">
+                <img src="/logo.png" alt="Arcanum IT Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
               </div>
               <div>
                 <div className="flex items-center space-x-1.5">
@@ -595,9 +608,9 @@ export default function AdminDashboardPage() {
       {/* ------------------------------------------------------------- */}
       {/* MAIN COCKPIT VIEWPORT */}
       {/* ------------------------------------------------------------- */}
-      <div className="flex-1 min-w-0 overflow-y-auto pb-24 relative z-20">
+      <div className="flex-1 md:ml-72 min-w-0 min-h-screen pb-24 relative z-20">
         {/* Top Sticky Command Header */}
-        <header className="sticky top-0 z-30 bg-[#070b14]/80 backdrop-blur-2xl border-b border-white/10 py-4 px-6 sm:px-10 flex flex-wrap items-center justify-between gap-4">
+        <header className="sticky top-0 z-30 bg-[#0f172a]/80 backdrop-blur-2xl border-b border-white/10 py-4 px-6 sm:px-10 flex flex-wrap items-center justify-between gap-4">
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-mono text-xs text-[#2384ba] tracking-widest uppercase font-semibold">
@@ -616,19 +629,19 @@ export default function AdminDashboardPage() {
             <Link
               href="/"
               target="_blank"
-              className="px-3.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-white/10 flex items-center space-x-1.5 transition-all text-[11px]"
+              className="inline-flex items-center space-x-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-mono text-white backdrop-blur-md transition-colors hover:bg-white/20 shadow-sm"
             >
               <span>Public Portal</span>
-              <ExternalLink className="h-3 w-3 text-[#2384ba]" />
+              <ExternalLink className="h-3.5 w-3.5 text-[#2384ba]" />
             </Link>
 
             {isFirebaseLoaded ? (
-              <span className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold font-mono">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>FIRESTORE LIVE</span>
               </span>
             ) : (
-              <span className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-bold">
+              <span className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold font-mono">
                 <span className="h-2 w-2 rounded-full bg-amber-400" />
                 <span>LOCAL STATIC</span>
               </span>
@@ -727,13 +740,13 @@ export default function AdminDashboardPage() {
                 {/* Total Visitors */}
                 <div className="rounded-2xl border border-indigo-500/30 bg-indigo-500/5 p-5 backdrop-blur-xl relative overflow-hidden group hover:border-indigo-500/60 transition-all duration-300 shadow-xl">
                   <div className="flex items-center justify-between text-indigo-400 text-xs mb-2">
-                    <span className="tracking-wider">TOTAL VISITORS ({analyticsRange}D)</span>
+                    <span className="tracking-wider">TOTAL LIFETIME VISITORS</span>
                     <div className="h-7 w-7 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
                       <User className="h-4 w-4" />
                     </div>
                   </div>
-                  <div className="text-3xl font-bold text-indigo-300 tracking-tight">{totalVisitors}</div>
-                  <div className="text-[11px] text-indigo-400/80 mt-1">{totalPageViews} total page impressions</div>
+                  <div className="text-3xl font-bold text-indigo-300 tracking-tight">{cumulativeTotalVisitors}</div>
+                  <div className="text-[11px] text-indigo-400/80 mt-1">{cumulativeTotalPageViews} total page impressions ({rangeVisitors} in last {analyticsRange}D)</div>
                 </div>
 
                 {/* Today's Visitors */}
@@ -745,7 +758,7 @@ export default function AdminDashboardPage() {
                     </div>
                   </div>
                   <div className="text-3xl font-bold text-purple-300 tracking-tight">{todayVisitors}</div>
-                  <div className="text-[11px] text-purple-400/80 mt-1">Active site sessions today</div>
+                  <div className="text-[11px] text-purple-400/80 mt-1">Active site sessions recorded today</div>
                 </div>
 
                 {/* Conversion Rate */}
@@ -759,7 +772,7 @@ export default function AdminDashboardPage() {
                   <div className="flex items-baseline space-x-3">
                     <div className="text-3xl font-bold text-white tracking-tight">{conversionRate}%</div>
                     <span className="text-xs text-slate-400 font-sans">
-                      ({totalCount} discovery inquiries recorded out of {totalVisitors} unique visits)
+                      ({totalCount} discovery inquiries recorded out of {cumulativeTotalVisitors} unique visitors)
                     </span>
                   </div>
                   {/* Glowing progress bar */}
@@ -1128,74 +1141,33 @@ export default function AdminDashboardPage() {
                 </button>
               </div>
 
-              {/* CMS Sub-navigation Tabs (1:1 with Website Sections) */}
-              <div className="flex border-b border-white/10 font-mono text-xs space-x-2 sm:space-x-4 overflow-x-auto pb-1">
-                <button
-                  onClick={() => setActiveCmsSubTab('hero')}
-                  className={`pb-3 px-2 border-b-2 font-medium transition-all flex items-center space-x-2 whitespace-nowrap ${
-                    activeCmsSubTab === 'hero'
-                      ? 'border-[#2384ba] text-white font-bold shadow-sm'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <Zap className="h-3.5 w-3.5 text-[#2384ba]" />
-                  <span>01 / Hero Section</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsSubTab('about')}
-                  className={`pb-3 px-2 border-b-2 font-medium transition-all flex items-center space-x-2 whitespace-nowrap ${
-                    activeCmsSubTab === 'about'
-                      ? 'border-[#2384ba] text-white font-bold shadow-sm'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <Building2 className="h-3.5 w-3.5 text-[#2384ba]" />
-                  <span>02 / Who We Are</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsSubTab('solutions')}
-                  className={`pb-3 px-2 border-b-2 font-medium transition-all flex items-center space-x-2 whitespace-nowrap ${
-                    activeCmsSubTab === 'solutions'
-                      ? 'border-[#2384ba] text-white font-bold shadow-sm'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <Layers className="h-3.5 w-3.5 text-[#2384ba]" />
-                  <span>03 / Solutions & Catalog ({cmsDraft?.modules?.length || 0})</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsSubTab('locations')}
-                  className={`pb-3 px-2 border-b-2 font-medium transition-all flex items-center space-x-2 whitespace-nowrap ${
-                    activeCmsSubTab === 'locations'
-                      ? 'border-[#2384ba] text-white font-bold shadow-sm'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <Globe className="h-3.5 w-3.5 text-[#2384ba]" />
-                  <span>04 / Global Tech Hubs ({cmsDraft?.locations?.length || 3})</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsSubTab('contact')}
-                  className={`pb-3 px-2 border-b-2 font-medium transition-all flex items-center space-x-2 whitespace-nowrap ${
-                    activeCmsSubTab === 'contact'
-                      ? 'border-[#2384ba] text-white font-bold shadow-sm'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <Send className="h-3.5 w-3.5 text-[#2384ba]" />
-                  <span>05 / Contact Desk</span>
-                </button>
-                <button
-                  onClick={() => setActiveCmsSubTab('footer')}
-                  className={`pb-3 px-2 border-b-2 font-medium transition-all flex items-center space-x-2 whitespace-nowrap ${
-                    activeCmsSubTab === 'footer'
-                      ? 'border-[#2384ba] text-white font-bold shadow-sm'
-                      : 'border-transparent text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <ShieldCheck className="h-3.5 w-3.5 text-[#2384ba]" />
-                  <span>06 / Brand & Footer</span>
-                </button>
+              {/* CMS Sub-navigation Pill Tabs (Website Design System) */}
+              <div className="flex items-center space-x-2 font-mono text-xs overflow-x-auto pb-2 border-b border-white/10 scrollbar-none">
+                {[
+                  { id: 'hero', icon: Zap, label: '01 / Hero Section' },
+                  { id: 'about', icon: Building2, label: '02 / Who We Are' },
+                  { id: 'solutions', icon: Layers, label: `03 / Solutions & Catalog (${cmsDraft?.modules?.length || 0})` },
+                  { id: 'locations', icon: Globe, label: `04 / Global Tech Hubs (${cmsDraft?.locations?.length || 3})` },
+                  { id: 'contact', icon: Send, label: '05 / Contact Desk' },
+                  { id: 'footer', icon: ShieldCheck, label: '06 / Brand & Footer' },
+                ].map((tab) => {
+                  const Icon = tab.icon;
+                  const isActive = activeCmsSubTab === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveCmsSubTab(tab.id as any)}
+                      className={`px-4 py-2.5 rounded-full font-mono text-xs font-semibold transition-all duration-300 flex items-center space-x-2 whitespace-nowrap ${
+                        isActive
+                          ? 'bg-gradient-to-r from-[#2384ba] to-[#124d72] text-white shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]'
+                          : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 hover:border-white/20'
+                      }`}
+                    >
+                      <Icon className={`h-3.5 w-3.5 ${isActive ? 'text-white' : 'text-[#2384ba]'}`} />
+                      <span>{tab.label}</span>
+                    </button>
+                  );
+                })}
               </div>
 
               {/* ========================================================= */}
@@ -2254,10 +2226,10 @@ export default function AdminDashboardPage() {
       {/* INQUIRY DETAIL INSPECTOR MODAL */}
       {/* ============================================================= */}
       {isModalOpen && selectedInquiry && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070b14]/80 backdrop-blur-xl animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0f172a]/85 backdrop-blur-xl animate-fadeIn">
           <div className="w-full max-w-2xl bg-slate-950 border border-white/20 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
-            <div className="p-6 bg-slate-900 border-b border-white/10 flex items-center justify-between">
+            <div className="p-6 bg-slate-900/80 backdrop-blur border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="h-10 w-10 rounded-xl bg-[#2384ba]/20 border border-[#2384ba]/40 flex items-center justify-center text-[#2384ba]">
                   <FileText className="h-5 w-5" />

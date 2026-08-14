@@ -65,9 +65,9 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md relative z-10">
         {/* Top Brand Logo & Header */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center space-x-2 text-white group mb-3">
-            <div className="h-9 w-9 rounded-xl bg-[#2384ba]/20 border border-[#2384ba]/40 flex items-center justify-center text-[#2384ba] group-hover:bg-[#2384ba] group-hover:text-white transition-colors duration-300">
-              <ShieldCheck className="h-5 w-5" />
+          <Link href="/" className="inline-flex items-center space-x-3 text-white group mb-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 p-1 backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#2384ba]/50 group-hover:shadow-[0_0_15px_rgba(35,132,186,0.3)]">
+              <img src="/logo.png" alt="Arcanum IT Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
             </div>
             <span className="font-bold tracking-tight text-lg">ARCANUM IT</span>
           </Link>

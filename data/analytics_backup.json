@@ -1,9 +1,16 @@
 {
-  "2026-08-14": {
-    "visitors": 1,
-    "pageViews": 78,
-    "ips": [
-      "::1"
-    ]
+  "lifetimeVisitors": 1,
+  "lifetimePageViews": 12,
+  "days": {
+    "2026-08-14": {
+      "visitors": 2,
+      "pageViews": 98,
+      "ips": [
+        "::1"
+      ],
+      "visitorIds": [
+        "v_mnf5zqwm4_1786689065253"
+      ]
+    }
   }
 }
