@@ -62,13 +62,13 @@ export async function POST(req: NextRequest) {
     const forwarded = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '127.0.0.1';
     const clientIp = forwarded.split(',')[0].trim();
     const visitorKey = visitorId || clientIp;
-    const sessionKey = sessionId || `${visitorKey}_${todayStr}`;
+    const sessionKey = sessionId || `sess_${visitorKey}_${Date.now()}_${Math.random()}`;
 
     // 1. Update local persistent storage
     const store = getLocalAnalytics();
     if (!store.days) store.days = {};
 
-    let isNewVisitorToday = false;
+    let isNewSessionToday = false;
 
     if (!store.days[todayStr]) {
       store.days[todayStr] = {
@@ -79,25 +79,25 @@ export async function POST(req: NextRequest) {
       };
       store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
       store.lifetimePageViews = (store.lifetimePageViews || 0) + 1;
-      isNewVisitorToday = true;
+      isNewSessionToday = true;
     } else {
-      // Always increment page views on every page load / refresh!
+      // Always increment page views on every page view or refresh!
       store.days[todayStr].pageViews = (store.days[todayStr].pageViews || 0) + 1;
       store.lifetimePageViews = (store.lifetimePageViews || 0) + 1;
 
       if (!store.days[todayStr].visitorIds) store.days[todayStr].visitorIds = [];
       if (!store.days[todayStr].sessionIds) store.days[todayStr].sessionIds = [];
 
-      // Check if visitor key is new for today
-      if (!store.days[todayStr].visitorIds.includes(visitorKey)) {
-        store.days[todayStr].visitorIds.push(visitorKey);
-        store.days[todayStr].visitors = (store.days[todayStr].visitors || 0) + 1;
-        store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
-        isNewVisitorToday = true;
-      }
-
+      // Check if session is new for today or device is new
       if (!store.days[todayStr].sessionIds.includes(sessionKey)) {
         store.days[todayStr].sessionIds.push(sessionKey);
+        store.days[todayStr].visitors = (store.days[todayStr].visitors || 0) + 1;
+        store.lifetimeVisitors = (store.lifetimeVisitors || 0) + 1;
+        isNewSessionToday = true;
+      }
+
+      if (!store.days[todayStr].visitorIds.includes(visitorKey)) {
+        store.days[todayStr].visitorIds.push(visitorKey);
       }
     }
 
@@ -112,7 +112,7 @@ export async function POST(req: NextRequest) {
         {
           date: todayStr,
           pageViews: increment(1),
-          visitors: isNewVisitorToday ? increment(1) : increment(0),
+          visitors: isNewSessionToday ? increment(1) : increment(0),
           updatedAt: new Date().toISOString(),
         },
         { merge: true }
@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
         summaryRef,
         {
           totalPageViews: increment(1),
-          totalVisitors: isNewVisitorToday ? increment(1) : increment(0),
+          totalVisitors: isNewSessionToday ? increment(1) : increment(0),
           updatedAt: new Date().toISOString(),
         },
         { merge: true }
@@ -136,7 +136,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       date: todayStr,
-      isNewVisitorToday,
+      isNewSessionToday,
       todayVisitors: store.days[todayStr].visitors,
       todayPageViews: store.days[todayStr].pageViews,
       totalVisitors: store.lifetimeVisitors,

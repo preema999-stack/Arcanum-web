@@ -1,15 +1,20 @@
 {
-  "lifetimeVisitors": 1,
-  "lifetimePageViews": 12,
+  "lifetimeVisitors": 6,
+  "lifetimePageViews": 122,
   "days": {
     "2026-08-14": {
-      "visitors": 2,
-      "pageViews": 98,
-      "ips": [
-        "::1"
-      ],
+      "visitors": 6,
+      "pageViews": 122,
       "visitorIds": [
-        "v_mnf5zqwm4_1786689065253"
+        "v_mnf5zqwm4_1786689065253",
+        "v_cbu0mqtq6_1786691675197"
+      ],
+      "sessionIds": [
+        "s_init_session",
+        "s_hfplr98n1_1786691561064",
+        "s_u9i4f7tdt_1786691562658",
+        "s_m19m2y4dl_1786691675197",
+        "s_7t0xee98z_1786691692441"
       ]
     }
   }
