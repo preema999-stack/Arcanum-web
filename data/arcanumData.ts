@@ -104,7 +104,7 @@ export interface SiteInfo {
 
 /**
  * Synchronized Arcanum Enterprise Data
- * Last Synced with Firebase: 2026-08-14T05:57:48.758Z
+ * Last Synced with Firebase: 2026-08-17T09:49:11.373Z
  */
 export const ARCANUM_INFO: SiteInfo = {
   "name": "Arcanum Information Technology",
