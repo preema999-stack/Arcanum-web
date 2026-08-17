@@ -104,7 +104,7 @@ export interface SiteInfo {
 
 /**
  * Synchronized Arcanum Enterprise Data
- * Last Synced with Firebase: 2026-08-17T09:49:11.373Z
+ * Last Synced with Firebase: 2026-08-17T10:26:40.341Z
  */
 export const ARCANUM_INFO: SiteInfo = {
   "name": "Arcanum Information Technology",
@@ -127,7 +127,7 @@ export const ARCANUM_INFO: SiteInfo = {
   "aboutDescription1": "Arcanum Information Technology is a professionally managed software engineering firm operating across three key global centers: Abu Dhabi (UAE), Kerala (India), and Gujarat (India). We employ senior software architects and engineers delivering enterprise-grade software.",
   "aboutDescription2": "Professionally managed software development firm delivering secure enterprise software across ERP, Banking, Healthcare, Education, and Cloud Infrastructure.",
   "marqueeText": "ARCHITECTURAL PRECISION • LEGACY ORACLE FORMS REFACTORING • UAE WPS PAYROLL COMPLIANCE • ISO 8583 BANKING SWITCHES • CLINICAL EMR PROTOCOLS • SUB-12MS MICROSERVICES • ZERO DATA LOSS GUARANTEE • ",
-  "heroBadgeLabel": "GLOBAL HUBS:",
+  "heroBadgeLabel": "GLOBAL HUBS:ddd",
   "heroCta1": "Start Your Project",
   "heroCta2": "Explore Enterprise Catalog",
   "solutionsBadge": "03 / Flagship Solutions",
