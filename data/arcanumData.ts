@@ -108,7 +108,7 @@ export interface SiteInfo {
  */
 export const ARCANUM_INFO: SiteInfo = {
   "name": "Arcanum Information Technology",
-  "shortName": "Arcanum IT",
+  "shortName": "Arcanum",
   "tagline": "Enterprise Software Engineering & Digital Architecture",
   "heroHeadline": "If You Have an Idea,",
   "heroHeadlineHighlight": "Reality.",
