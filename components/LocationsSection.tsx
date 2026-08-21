@@ -147,7 +147,7 @@ export function LocationsSection({ onOpenContact, selectedHubId, onSelectHub }: 
           <div>
             <div className="inline-flex items-center space-x-2 font-mono text-xs tracking-widest text-[#2384ba] uppercase mb-3">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>{info?.locationsBadge || 'GLOBAL FOOTPRINT & ENGINEERING NODES'}</span>
+              <span>{info?.locationsBadge || '05 / Global Engineering Hubs'}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               <GsapTextSplit

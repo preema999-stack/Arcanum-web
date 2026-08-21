@@ -28,8 +28,11 @@ console.log(`  Mode: ${mode.toUpperCase()}`);
 console.log(`======================================================\n`);
 
 function generateFileString(data) {
-  return `export interface ModuleItem {
+  return `import type { ProductDetailItem } from './productDetailsData';
+
+export interface ModuleItem {
   id: string;
+  slug?: string;
   title: string;
   category: 'Enterprise' | 'Banking' | 'Healthcare' | 'Education' | 'Infrastructure' | 'Workspace';
   subtitle: string;
@@ -40,6 +43,24 @@ function generateFileString(data) {
   badge?: string;
   techStack?: string[];
   imageSrc?: string;
+  pageDetails?: ProductDetailItem;
+}
+
+export interface ShowcaseItem {
+  id: string;
+  tabLabel: string;
+  title: string;
+  category: string;
+  subtitle: string;
+  description: string;
+  imageSrc: string;
+  techStack: string[];
+  metrics: { label: string; value: string }[];
+  capabilities: {
+    title: string;
+    description: string;
+    iconName?: string;
+  }[];
 }
 
 export interface BrochureItem {
@@ -105,9 +126,14 @@ export interface SiteInfo {
   aboutDescription1?: string;
   aboutDescription2?: string;
   marqueeText?: string;
+  showcaseBadge?: string;
+  showcaseTitle?: string;
+  showcaseTitleHighlight?: string;
+  showcaseDescription?: string;
   solutionsBadge?: string;
   solutionsTitle?: string;
   solutionsTitleHighlight?: string;
+  flagshipModuleIds?: string[];
   catalogBadge?: string;
   locationsBadge?: string;
   locationsTitle?: string;
@@ -143,6 +169,10 @@ export const ARCANUM_VALUES: ValuePillar[] = ${JSON.stringify(data.values, null,
 export const ARCANUM_LOCATION_HUBS: LocationHubItem[] = ${JSON.stringify(data.locations, null, 2)};
 
 export const ARCANUM_CAPABILITIES: TechnicalCapability[] = ${JSON.stringify(data.capabilities, null, 2)};
+
+export const DEFAULT_SHOWCASE_ITEMS: ShowcaseItem[] = ${JSON.stringify(data.showcaseItems || [], null, 2)};
+
+export const ARCANUM_SHOWCASE_ITEMS: ShowcaseItem[] = ${JSON.stringify(data.showcaseItems || [], null, 2)};
 
 export const ARCANUM_MODULES: ModuleItem[] = ${JSON.stringify(data.modules, null, 2)};
 

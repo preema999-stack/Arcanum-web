@@ -10,12 +10,14 @@ import {
   ARCANUM_CAPABILITIES,
   ARCANUM_MODULES,
   BROCHURES_LIST,
+  DEFAULT_SHOWCASE_ITEMS,
   SiteInfo,
   ValuePillar,
   LocationHubItem,
   TechnicalCapability,
   ModuleItem,
   BrochureItem,
+  ShowcaseItem,
 } from '@/data/arcanumData';
 
 export const dynamic = 'force-dynamic';
@@ -27,6 +29,7 @@ interface CmsPayload {
   values: ValuePillar[];
   locations: LocationHubItem[];
   capabilities: TechnicalCapability[];
+  showcaseItems?: ShowcaseItem[];
   modules: ModuleItem[];
   brochures: BrochureItem[];
   updatedAt?: string;
@@ -57,8 +60,11 @@ function saveLocalBackup(data: CmsPayload) {
 function updateLocalDataFile(data: CmsPayload) {
   try {
     const dataFilePath = path.join(process.cwd(), 'data', 'arcanumData.ts');
-    const fileContent = `export interface ModuleItem {
+    const fileContent = `import type { ProductDetailItem } from './productDetailsData';
+
+export interface ModuleItem {
   id: string;
+  slug?: string;
   title: string;
   category: 'Enterprise' | 'Banking' | 'Healthcare' | 'Education' | 'Infrastructure' | 'Workspace';
   subtitle: string;
@@ -69,6 +75,25 @@ function updateLocalDataFile(data: CmsPayload) {
   badge?: string;
   techStack?: string[];
   imageSrc?: string;
+  pageDetails?: ProductDetailItem;
+}
+
+export interface ShowcaseItem {
+  id: string;
+  tabLabel: string;
+  title: string;
+  category: string;
+  subtitle: string;
+  description: string;
+  imageSrc: string;
+  techStack: string[];
+  metrics: { label: string; value: string }[];
+  capabilities: {
+    title: string;
+    description: string;
+    iconName?: string;
+  }[];
+  iconName?: string;
 }
 
 export interface BrochureItem {
@@ -134,9 +159,14 @@ export interface SiteInfo {
   aboutDescription1?: string;
   aboutDescription2?: string;
   marqueeText?: string;
+  showcaseBadge?: string;
+  showcaseTitle?: string;
+  showcaseTitleHighlight?: string;
+  showcaseDescription?: string;
   solutionsBadge?: string;
   solutionsTitle?: string;
   solutionsTitleHighlight?: string;
+  flagshipModuleIds?: string[];
   catalogBadge?: string;
   locationsBadge?: string;
   locationsTitle?: string;
@@ -173,6 +203,10 @@ export const ARCANUM_LOCATION_HUBS: LocationHubItem[] = ${JSON.stringify(data.lo
 
 export const ARCANUM_CAPABILITIES: TechnicalCapability[] = ${JSON.stringify(data.capabilities || ARCANUM_CAPABILITIES, null, 2)};
 
+export const DEFAULT_SHOWCASE_ITEMS: ShowcaseItem[] = ${JSON.stringify(data.showcaseItems || DEFAULT_SHOWCASE_ITEMS, null, 2)};
+
+export const ARCANUM_SHOWCASE_ITEMS: ShowcaseItem[] = ${JSON.stringify(data.showcaseItems || DEFAULT_SHOWCASE_ITEMS, null, 2)};
+
 export const ARCANUM_MODULES: ModuleItem[] = ${JSON.stringify(data.modules || ARCANUM_MODULES, null, 2)};
 
 export const BROCHURES_LIST: BrochureItem[] = ${JSON.stringify(data.brochures || BROCHURES_LIST, null, 2)};
@@ -191,6 +225,7 @@ export async function GET() {
       values: ARCANUM_VALUES,
       locations: ARCANUM_LOCATION_HUBS,
       capabilities: ARCANUM_CAPABILITIES,
+      showcaseItems: DEFAULT_SHOWCASE_ITEMS,
       modules: ARCANUM_MODULES,
       brochures: BROCHURES_LIST,
     };
@@ -206,8 +241,9 @@ export async function GET() {
           values: Array.isArray(firestoreDoc.values) && firestoreDoc.values.length > 0 ? firestoreDoc.values : ARCANUM_VALUES,
           locations: Array.isArray(firestoreDoc.locations) && firestoreDoc.locations.length > 0 ? firestoreDoc.locations : ARCANUM_LOCATION_HUBS,
           capabilities: Array.isArray(firestoreDoc.capabilities) && firestoreDoc.capabilities.length > 0 ? firestoreDoc.capabilities : ARCANUM_CAPABILITIES,
-          modules: Array.isArray(firestoreDoc.modules) && firestoreDoc.modules.length > 0 ? firestoreDoc.modules : ARCANUM_MODULES,
-          brochures: Array.isArray(firestoreDoc.brochures) && firestoreDoc.brochures.length > 0 ? firestoreDoc.brochures : BROCHURES_LIST,
+          showcaseItems: Array.isArray(firestoreDoc.showcaseItems) ? firestoreDoc.showcaseItems : DEFAULT_SHOWCASE_ITEMS,
+          modules: Array.isArray(firestoreDoc.modules) ? firestoreDoc.modules : ARCANUM_MODULES,
+          brochures: Array.isArray(firestoreDoc.brochures) ? firestoreDoc.brochures : BROCHURES_LIST,
           updatedAt: firestoreDoc.updatedAt,
         };
         // Keep local backup in sync
@@ -237,11 +273,12 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const payload: CmsPayload = {
       info: body.info ? { ...ARCANUM_INFO, ...body.info } : ARCANUM_INFO,
-      values: Array.isArray(body.values) && body.values.length > 0 ? body.values : ARCANUM_VALUES,
-      locations: Array.isArray(body.locations) && body.locations.length > 0 ? body.locations : ARCANUM_LOCATION_HUBS,
-      capabilities: Array.isArray(body.capabilities) && body.capabilities.length > 0 ? body.capabilities : ARCANUM_CAPABILITIES,
-      modules: Array.isArray(body.modules) && body.modules.length > 0 ? body.modules : ARCANUM_MODULES,
-      brochures: Array.isArray(body.brochures) && body.brochures.length > 0 ? body.brochures : BROCHURES_LIST,
+      values: Array.isArray(body.values) ? body.values : ARCANUM_VALUES,
+      locations: Array.isArray(body.locations) ? body.locations : ARCANUM_LOCATION_HUBS,
+      capabilities: Array.isArray(body.capabilities) ? body.capabilities : ARCANUM_CAPABILITIES,
+      showcaseItems: Array.isArray(body.showcaseItems) ? body.showcaseItems : DEFAULT_SHOWCASE_ITEMS,
+      modules: Array.isArray(body.modules) ? body.modules : ARCANUM_MODULES,
+      brochures: Array.isArray(body.brochures) ? body.brochures : BROCHURES_LIST,
       updatedAt: new Date().toISOString(),
     };
 
@@ -254,7 +291,7 @@ export async function POST(req: NextRequest) {
     // 3. Save to Firebase Firestore
     try {
       const docRef = doc(db, 'cms_content', 'arcanum_site_data');
-      await setDoc(docRef, payload, { merge: true });
+      await setDoc(docRef, payload);
     } catch (fsErr) {
       console.warn('[Firestore CMS Save Warning]:', fsErr);
     }

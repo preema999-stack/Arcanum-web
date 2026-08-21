@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, FileText, CheckCircle2, ArrowRight, ShieldCheck, ExternalLink } from 'lucide-react';
 import { ARCANUM_MODULES, ModuleItem } from '@/data/arcanumData';
@@ -58,9 +59,11 @@ export function SolutionsCatalog({ onOpenBrochures }: SolutionsCatalogProps) {
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#2384ba] transition-colors font-display mb-2">
-                  {module.title}
-                </h3>
+                <Link href={`/solutions/${module.id}`}>
+                  <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#2384ba] transition-colors font-display mb-2">
+                    {module.title}
+                  </h3>
+                </Link>
                 <p className="text-xs font-mono text-slate-500 mb-4">{module.subtitle}</p>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6 font-sans">
                   {module.description}
@@ -89,41 +92,16 @@ export function SolutionsCatalog({ onOpenBrochures }: SolutionsCatalogProps) {
                   </a>
                 )}
 
-                <button
-                  onClick={() => setSelectedModule(module)}
+                <Link
+                  href={`/solutions/${module.slug || module.id}`}
                   className="text-xs font-mono font-medium text-[#2384ba] hover:underline flex items-center space-x-1"
                 >
                   <span>Inspect Architecture</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Brochure Vault Banner Callout */}
-        <div className="bg-[#0f172a] text-slate-100 rounded-lg p-8 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="flex items-center space-x-4">
-            <div className="w-10 h-10 rounded bg-[#2384ba]/20 text-[#2384ba] flex items-center justify-center shrink-0">
-              <FileText className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-white font-display mb-1">
-                Looking for the Complete 22-Module Solution Catalog?
-              </h4>
-              <p className="text-xs text-slate-400 font-sans">
-                Access our technical brochure vault containing documentation for Scholar SIS, LMS, Clinic HMS, POS, Transa Money, Flex Data, and Job Portal.
-              </p>
-            </div>
-          </div>
-
-          <button
-            onClick={onOpenBrochures}
-            className="px-6 py-3 bg-[#2384ba] hover:bg-[#196ca0] text-white text-xs font-mono font-medium uppercase tracking-wider rounded transition-colors shrink-0 flex items-center space-x-2"
-          >
-            <Download className="w-4 h-4" />
-            <span>Open Brochure Vault (19 PDFs)</span>
-          </button>
         </div>
 
         {/* Detailed Modal Spec Viewer */}

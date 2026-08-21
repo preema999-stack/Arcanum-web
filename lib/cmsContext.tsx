@@ -10,12 +10,14 @@ import {
   ARCANUM_CAPABILITIES,
   ARCANUM_MODULES,
   BROCHURES_LIST,
+  DEFAULT_SHOWCASE_ITEMS,
   SiteInfo,
   ValuePillar,
   LocationHubItem,
   TechnicalCapability,
   ModuleItem,
   BrochureItem,
+  ShowcaseItem,
 } from '@/data/arcanumData';
 
 export interface SiteContentData {
@@ -23,6 +25,7 @@ export interface SiteContentData {
   values: ValuePillar[];
   locations: LocationHubItem[];
   capabilities: TechnicalCapability[];
+  showcaseItems?: ShowcaseItem[];
   modules: ModuleItem[];
   brochures: BrochureItem[];
   updatedAt?: string;
@@ -43,6 +46,7 @@ export const defaultContent: SiteContentData = {
   values: ARCANUM_VALUES,
   locations: ARCANUM_LOCATION_HUBS,
   capabilities: ARCANUM_CAPABILITIES,
+  showcaseItems: DEFAULT_SHOWCASE_ITEMS,
   modules: ARCANUM_MODULES,
   brochures: BROCHURES_LIST,
 };
@@ -73,8 +77,9 @@ export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             values: Array.isArray(json.data.values) && json.data.values.length > 0 ? json.data.values : ARCANUM_VALUES,
             locations: Array.isArray(json.data.locations) && json.data.locations.length > 0 ? json.data.locations : ARCANUM_LOCATION_HUBS,
             capabilities: Array.isArray(json.data.capabilities) && json.data.capabilities.length > 0 ? json.data.capabilities : ARCANUM_CAPABILITIES,
-            modules: Array.isArray(json.data.modules) && json.data.modules.length > 0 ? json.data.modules : ARCANUM_MODULES,
-            brochures: Array.isArray(json.data.brochures) && json.data.brochures.length > 0 ? json.data.brochures : BROCHURES_LIST,
+            showcaseItems: Array.isArray(json.data.showcaseItems) ? json.data.showcaseItems : DEFAULT_SHOWCASE_ITEMS,
+            modules: Array.isArray(json.data.modules) ? json.data.modules : ARCANUM_MODULES,
+            brochures: Array.isArray(json.data.brochures) ? json.data.brochures : BROCHURES_LIST,
             updatedAt: json.data.updatedAt,
           });
           setIsFirebaseLoaded(true);
@@ -104,8 +109,9 @@ export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children 
               values: Array.isArray(data.values) && data.values.length > 0 ? data.values : ARCANUM_VALUES,
               locations: Array.isArray(data.locations) && data.locations.length > 0 ? data.locations : ARCANUM_LOCATION_HUBS,
               capabilities: Array.isArray(data.capabilities) && data.capabilities.length > 0 ? data.capabilities : ARCANUM_CAPABILITIES,
-              modules: Array.isArray(data.modules) && data.modules.length > 0 ? data.modules : ARCANUM_MODULES,
-              brochures: Array.isArray(data.brochures) && data.brochures.length > 0 ? data.brochures : BROCHURES_LIST,
+              showcaseItems: Array.isArray(data.showcaseItems) ? data.showcaseItems : DEFAULT_SHOWCASE_ITEMS,
+              modules: Array.isArray(data.modules) ? data.modules : ARCANUM_MODULES,
+              brochures: Array.isArray(data.brochures) ? data.brochures : BROCHURES_LIST,
               updatedAt: data.updatedAt,
             });
             setIsFirebaseLoaded(true);
@@ -150,11 +156,12 @@ export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         values: newContent.values,
         locations: newContent.locations,
         capabilities: newContent.capabilities,
+        showcaseItems: newContent.showcaseItems || DEFAULT_SHOWCASE_ITEMS,
         modules: newContent.modules,
         brochures: newContent.brochures,
         updatedAt: new Date().toISOString(),
       };
-      await setDoc(docRef, payload, { merge: true });
+      await setDoc(docRef, payload);
       setContent(payload);
       setIsFirebaseLoaded(true);
       return true;

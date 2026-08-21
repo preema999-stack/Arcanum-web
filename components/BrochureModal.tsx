@@ -1,14 +1,35 @@
-'use client';
-
 import React from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, Download, X, ExternalLink, ShieldCheck } from 'lucide-react';
-import { BROCHURES_LIST } from '@/data/arcanumData';
+import { FileText, Download, X, ExternalLink, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { BROCHURES_LIST, ARCANUM_MODULES } from '@/data/arcanumData';
 
 interface BrochureModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const BROCHURE_TO_MODULE_MAP: Record<string, string> = {
+  'Organization Management System (OMS)': 'oms',
+  'ARC ERP System': 'erp',
+  'Accurate PAYROLL System': 'payroll',
+  'Scholar School Management System': 'sis',
+  'Accurate Clinic Management': 'hms',
+  'Accurate Sales & Invoicing': 'sales',
+  'Accurate LMS (Lead Management)': 'lms',
+  'Simple Messenger Platform': 'messenger',
+  'Issue Tracker Documentation': 'ait',
+  'Flex Data Survey Engine': 'flex',
+  'Point of Sales (POS)': 'pos',
+  'Accurate My-FIN Suite': 'fin',
+  'Accurate Tender Application': 'tender',
+  'Website Creation Guidelines': 'website',
+  'Accurate Form Builder': 'formbuilder',
+  'Transa Money Application': 'transa',
+  'Oracle Forms Modernization': 'oracle',
+  'Co-Operative Bank Add-ons': 'scb',
+  'Accurate Job Portal': 'job',
+};
 
 export function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
   React.useEffect(() => {
@@ -72,30 +93,50 @@ export function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
         <div
           className="px-4 sm:px-6 py-4 sm:py-6 space-y-2.5 flex-1 min-w-0"
         >
-          {BROCHURES_LIST.map((b) => (
-            <div
-              key={b.title}
-              className="bg-slate-900/90 p-3 sm:p-4 rounded-xl border border-slate-800 hover:border-[#2384ba]/50 transition-colors flex items-center justify-between gap-3 min-w-0"
-            >
-              <div className="flex items-center space-x-3 min-w-0 flex-1 overflow-hidden">
-                <FileText className="w-4 h-4 text-[#2384ba] shrink-0" />
-                <div className="min-w-0 flex-1">
-                  <h4 className="text-xs sm:text-sm font-semibold text-white font-display truncate">{b.title}</h4>
-                  <span className="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase block truncate">{b.category}</span>
+          {BROCHURES_LIST.map((b) => {
+            const moduleId = BROCHURE_TO_MODULE_MAP[b.title] || 'oms';
+            return (
+              <div
+                key={b.title}
+                className="bg-slate-900/90 p-3 sm:p-4 rounded-xl border border-slate-800 hover:border-[#2384ba]/50 transition-colors flex items-center justify-between gap-3 min-w-0"
+              >
+                <div className="flex items-center space-x-3 min-w-0 flex-1 overflow-hidden">
+                  <FileText className="w-4 h-4 text-[#2384ba] shrink-0" />
+                  <div className="min-w-0 flex-1">
+                    <Link
+                      href={`/solutions/${moduleId}`}
+                      onClick={onClose}
+                      className="text-xs sm:text-sm font-semibold text-white hover:text-[#2384ba] transition-colors font-display truncate block"
+                    >
+                      {b.title}
+                    </Link>
+                    <span className="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase block truncate">{b.category}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 shrink-0">
+                  <Link
+                    href={`/solutions/${moduleId}`}
+                    onClick={onClose}
+                    className="hidden sm:inline-flex items-center space-x-1 px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-[#2384ba] hover:text-white text-xs font-mono rounded transition-colors border border-white/5"
+                  >
+                    <span>Product Page</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </Link>
+
+                  <a
+                    href={b.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center space-x-1.5 px-3 py-1.5 bg-[#2384ba] hover:bg-[#1b6ca1] text-white text-xs font-mono rounded transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>PDF</span>
+                  </a>
                 </div>
               </div>
-
-              <a
-                href={b.href}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center space-x-1.5 px-3 py-1.5 bg-[#2384ba] hover:bg-[#1b6ca1] text-white text-xs font-mono rounded transition-colors"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>PDF</span>
-              </a>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Footer - sticky so the footer actions stay reachable while scrolling */}
