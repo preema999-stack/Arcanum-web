@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowDownRight, Download, ShieldCheck, Activity } from 'lucide-react';
 import { ARCANUM_INFO } from '@/data/arcanumData';
@@ -76,19 +77,19 @@ export function HeroSection({ onOpenContact, onOpenBrochures }: HeroSectionProps
             <div className="flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenContact}
-                className="group flex items-center space-x-2.5 px-6 py-3.5 bg-[#0f172a] hover:bg-[#2384ba] text-white text-xs font-mono font-medium uppercase tracking-wider rounded transition-all duration-300 shadow-md"
+                className="group flex items-center space-x-2.5 px-6 py-3.5 bg-[#0f172a] hover:bg-[#2384ba] text-white text-xs font-mono font-medium uppercase tracking-wider rounded transition-all duration-300 shadow-md cursor-pointer"
               >
                 <span>Initiate Technical Review</span>
                 <ArrowDownRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </button>
 
-              <button
-                onClick={onOpenBrochures}
-                className="flex items-center space-x-2 px-5 py-3.5 border border-slate-300 hover:border-[#2384ba]/60 text-slate-800 hover:text-[#2384ba] text-xs font-mono font-medium rounded bg-white transition-all shadow-sm"
+              <Link
+                href="/demo"
+                className="flex items-center space-x-2 px-5 py-3.5 border border-slate-300 hover:border-[#2384ba]/60 text-slate-800 hover:text-[#2384ba] text-xs font-mono font-medium rounded bg-white transition-all shadow-sm cursor-pointer"
               >
-                <Download className="w-4 h-4 text-[#2384ba]" />
-                <span>Explore Technical PDF Vault</span>
-              </button>
+                <span>Book Dedicated Demo</span>
+                <span className="text-[#2384ba]">→</span>
+              </Link>
             </div>
 
             {/* Stats Row */}

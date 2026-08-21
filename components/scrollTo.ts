@@ -18,7 +18,12 @@ declare global {
  */
 export function scrollToId(id: string) {
   const el = document.getElementById(id);
-  if (!el) return;
+  if (!el) {
+    if (typeof window !== 'undefined') {
+      window.location.href = `/#${id}`;
+    }
+    return;
+  }
 
   const lenis = window.__lenis;
   if (lenis && typeof lenis.scrollTo === 'function') {

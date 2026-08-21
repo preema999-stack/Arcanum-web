@@ -9,9 +9,10 @@ import { useCms } from '@/lib/cmsContext';
 interface ContactProps {
   isOpenModal?: boolean;
   onCloseModal?: () => void;
+  initialModule?: string;
 }
 
-export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
+export function ContactSection({ isOpenModal, onCloseModal, initialModule }: ContactProps) {
   const { content: cmsContent } = useCms();
   const info = cmsContent?.info || ARCANUM_INFO;
   const hubs = cmsContent?.locations || [];
@@ -21,9 +22,15 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    module: 'Organization Management System (OMS)',
+    module: initialModule || cmsContent?.modules?.[0]?.title || 'Organization Management System (OMS)',
     message: '',
   });
+
+  React.useEffect(() => {
+    if (initialModule) {
+      setFormData((prev) => ({ ...prev, module: initialModule }));
+    }
+  }, [initialModule]);
 
   React.useEffect(() => {
     if (!isOpenModal) return;
@@ -91,7 +98,7 @@ export function ContactSection({ isOpenModal, onCloseModal }: ContactProps) {
       {/* Section Header */}
       <div className="max-w-3xl mb-12">
         <span className="text-[#2384ba] font-mono text-xs tracking-widest uppercase block mb-2">
-          {info.contactBadge || '08 / INITIATE ENGAGEMENT'}
+          {info.contactBadge || '06 / Technical Discovery'}
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0f172a] font-display">
           {info.contactTitle || 'Schedule Technical Architecture Discovery'}

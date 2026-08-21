@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { HeroTopSection } from '@/components/HeroTopSection';
 import { AboutSection } from '@/components/AboutSection';
+import { ProductShowcaseSection } from '@/components/ProductShowcaseSection';
 import { SolutionsSection } from '@/components/SolutionsSection';
 import { LocationsSection, LOCATION_HUBS } from '@/components/LocationsSection';
 import { scrollToId } from '@/components/scrollTo';
@@ -42,6 +43,8 @@ export default function Home() {
 
       <AboutSection />
 
+      <ProductShowcaseSection />
+
       <SolutionsSection onOpenBrochures={() => setBrochuresOpen(true)} />
 
       <LocationsSection
@@ -60,8 +63,6 @@ export default function Home() {
 
       {/* Floating Theme-Matched WhatsApp Widget */}
       <WhatsAppWidget />
-
-      <BrochureModal isOpen={brochuresOpen} onClose={() => setBrochuresOpen(false)} />
 
       {contactOpen && (
         <ContactSection isOpenModal onCloseModal={() => setContactOpen(false)} />

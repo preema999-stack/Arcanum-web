@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import { useCms } from '@/lib/cmsContext';
 import { scrollToId } from '@/components/scrollTo';
@@ -13,8 +14,9 @@ interface FooterProps {
 
 const LINKS = [
   { label: 'Who We Are', id: 'about' },
-  { label: 'Flagship Solutions', id: 'solutions' },
+  { label: 'Product Showcase', id: 'showcase' },
   { label: 'Product Catalog', id: 'catalog' },
+  { label: 'Global Hubs', id: 'locations' },
   { label: 'Contact', id: 'contact' },
 ];
 
@@ -91,13 +93,13 @@ export function Footer({ onOpenBrochures, onOpenContact, onSelectHub }: FooterPr
               Documentation & Contact
             </span>
             <div className="space-y-2 font-mono text-xs">
-              <button
-                onClick={onOpenBrochures}
+              <Link
+                href="/demo"
                 className="flex w-full items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3 text-slate-200 transition-colors hover:bg-white/10"
               >
-                <span>Download PDF Brochures</span>
+                <span>Book Enterprise Demo</span>
                 <ArrowUpRight className="h-4 w-4 text-[#2384ba]" />
-              </button>
+              </Link>
               <button
                 onClick={onOpenContact}
                 className="flex w-full items-center justify-between rounded-lg bg-[#2384ba] p-3 font-medium text-white transition-colors hover:bg-[#1b6ca1]"

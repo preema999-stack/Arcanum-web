@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/authContext';
 import { db } from '@/lib/firebase';
@@ -55,11 +56,19 @@ import {
   Shield,
   Radio,
   ArrowUpRight,
+  Palette,
+  Code,
+  HelpCircle,
+  SlidersHorizontal,
+  Upload,
 } from 'lucide-react';
 import Link from 'next/link';
 import { useCms, SiteContentData } from '@/lib/cmsContext';
 import { ModuleItem } from '@/data/arcanumData';
+import { getProductDetails, ProductDetailItem } from '@/data/productDetailsData';
 import { getDailyAnalytics, DailyAnalyticsRecord } from '@/lib/analyticsService';
+import { ProductPageView } from '@/components/ProductPageView';
+import { IconPickerModal, getModuleIcon } from '@/components/IconPickerModal';
 
 export interface InquiryRecord {
   id: string;
@@ -110,12 +119,69 @@ export default function AdminDashboardPage() {
   const [cmsSaving, setCmsSaving] = useState(false);
   const [cmsNotice, setCmsNotice] = useState('');
 
+  // Module Delete Confirmation Modal State
+  const [moduleToDelete, setModuleToDelete] = useState<{ module: ModuleItem; index: number } | null>(null);
+  const [isDeletingModule, setIsDeletingModule] = useState(false);
+
+  // Module Icon Picker Modal State
+  const [iconPickerTarget, setIconPickerTarget] = useState<{ moduleIndex: number; iconName: string; title: string } | null>(null);
+
   // Keep draft in sync with live CMS state
   useEffect(() => {
     if (content) {
       setCmsDraft(content);
     }
   }, [content]);
+
+  // Client-side hydration flag for portal mounting
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (isModalOpen || moduleToDelete) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isModalOpen, moduleToDelete]);
+
+  const handleAddNewModule = () => {
+    const uniqueId = `mod-${Date.now()}`;
+    const defaultTitle = 'New Enterprise Solution';
+    const defaultSlug = 'new-enterprise-solution';
+    const newMod: ModuleItem = {
+      id: uniqueId,
+      slug: defaultSlug,
+      title: defaultTitle,
+      category: 'Enterprise',
+      subtitle: 'Custom Architecture Subsystem',
+      description: 'Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.',
+      features: ['Modular Architecture', 'High Throughput API', 'Strict RBAC Security'],
+      iconName: 'Building2',
+      techStack: ['TypeScript', 'Next.js', 'PostgreSQL'],
+      pageDetails: getProductDetails({
+        id: uniqueId,
+        title: defaultTitle,
+        category: 'Enterprise',
+        description: 'Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.',
+        features: ['Modular Architecture', 'High Throughput API', 'Strict RBAC Security'],
+        techStack: ['TypeScript', 'Next.js', 'PostgreSQL'],
+      }),
+    };
+    const updated = [...(cmsDraft.modules || []), newMod];
+    setCmsDraft({ ...cmsDraft, modules: updated });
+    // Navigate to the dedicated designer page for the newly added module
+    router.push(`/admin/designer/${uniqueId}`);
+  };
 
 
 
@@ -427,6 +493,44 @@ export default function AdminDashboardPage() {
     }
   };
 
+  // Actions: Confirm and execute module deletion with Firestore purge
+  const handleConfirmDeleteModule = async () => {
+    if (!moduleToDelete) return;
+    setIsDeletingModule(true);
+
+    const { module: mod, index: idx } = moduleToDelete;
+    const updatedModules = (cmsDraft.modules || []).filter((m, i) => i !== idx && m.id !== mod.id);
+
+    const updatedDraft: SiteContentData = {
+      ...cmsDraft,
+      modules: updatedModules,
+    };
+
+    // 1. Delete associated product page from Firestore if exists
+    try {
+      const pageId = mod.slug || mod.id;
+      await deleteDoc(doc(db, 'productPages', pageId));
+      if (mod.id && mod.id !== pageId) {
+        await deleteDoc(doc(db, 'productPages', mod.id));
+      }
+    } catch (err) {
+      console.warn('[Delete ProductPage Firestore Warning]:', err);
+    }
+
+    // 2. Persist updated modules to Firestore & Local Data
+    setCmsDraft(updatedDraft);
+    const success = await updateCmsContent(updatedDraft);
+
+    setIsDeletingModule(false);
+    setModuleToDelete(null);
+
+    if (success) {
+      setCmsNotice(`Module "${mod.title}" deleted and permanently purged from Firebase.`);
+    } else {
+      setCmsNotice(`Module "${mod.title}" removed from current session.`);
+    }
+  };
+
 
 
   if (authLoading || (!user && fetchingInquiries)) {
@@ -586,6 +690,19 @@ export default function AdminDashboardPage() {
               </div>
               <span className="text-[10px] text-[#2384ba] font-bold">FIREBASE</span>
             </button>
+
+            <Link
+              href="/admin/showcase-designer"
+              className="w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group text-cyan-300 hover:text-white hover:bg-cyan-950/40 border border-cyan-500/20 hover:border-cyan-500/40 bg-cyan-950/20"
+            >
+              <div className="flex items-center space-x-3">
+                <Sparkles className="h-4 w-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span>Showcase Visual Designer</span>
+              </div>
+              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                WIX
+              </span>
+            </Link>
           </nav>
         </div>
 
@@ -1153,7 +1270,7 @@ export default function AdminDashboardPage() {
                 {[
                   { id: 'hero', icon: Zap, label: '01 / Hero Section' },
                   { id: 'about', icon: Building2, label: '02 / Who We Are' },
-                  { id: 'solutions', icon: Layers, label: `03 / Solutions & Catalog (${cmsDraft?.modules?.length || 0})` },
+                  { id: 'solutions', icon: Layers, label: `03 / Modules Catalog (${cmsDraft?.modules?.length || 0})` },
                   { id: 'locations', icon: Globe, label: `04 / Global Tech Hubs (${cmsDraft?.locations?.length || 3})` },
                   { id: 'contact', icon: Send, label: '05 / Contact Desk' },
                   { id: 'footer', icon: ShieldCheck, label: '06 / Brand & Footer' },
@@ -1481,240 +1598,52 @@ export default function AdminDashboardPage() {
               )}
 
               {/* ========================================================= */}
-              {/* SUBTAB 3: 03 / SOLUTIONS & PRODUCT CATALOG */}
+              {/* SUBTAB 3: 04 / ENTERPRISE MODULES & FULL CATALOG */}
               {/* ========================================================= */}
               {activeCmsSubTab === 'solutions' && (
                 <div className="rounded-2xl border border-white/10 bg-slate-950/80 p-6 sm:p-8 space-y-6 shadow-2xl">
                   <div className="border-b border-white/10 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
                       <h4 className="font-mono text-xs text-[#2384ba] uppercase font-bold tracking-wider">
-                        SECTIONS 03 & 04: FLAGSHIP SOLUTIONS & FULL PRODUCT CATALOG
+                        SECTION 04: ENTERPRISE MODULES & PRODUCT CATALOG
                       </h4>
-                      <p className="text-slate-400 text-xs mt-1">Configure flagship solution titles, catalog badges, and all enterprise module entries.</p>
+                      <p className="text-slate-400 text-xs mt-1">Configure catalog section badge and manage all enterprise module entries, screenshots, and visual sub-pages.</p>
                     </div>
 
                     <button
-                      onClick={() => {
-                        const newMod: ModuleItem = {
-                          id: `mod-${Date.now()}`,
-                          title: 'New Enterprise Solution',
-                          category: 'Enterprise',
-                          subtitle: 'Custom Architecture Subsystem',
-                          description: 'Description of technical capabilities and specifications.',
-                          features: ['Modular Architecture', 'High Throughput API'],
-                          iconName: 'Building2',
-                          techStack: ['TypeScript', 'Next.js', 'PostgreSQL'],
-                        };
-                        setCmsDraft({ ...cmsDraft, modules: [...(cmsDraft.modules || []), newMod] });
-                      }}
+                      onClick={handleAddNewModule}
                       className="px-4 py-2 bg-[#2384ba] hover:bg-[#1b6ca1] text-white rounded-xl font-mono text-xs font-bold flex items-center space-x-1.5 transition-all shadow-md shrink-0"
                     >
                       <Plus className="h-4 w-4" />
-                      <span>Add Catalog Module</span>
+                      <span>Add New Enterprise Module</span>
                     </button>
                   </div>
 
-                  {/* Flagship Solutions Headings */}
-                  <div className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 space-y-4">
-                    <span className="font-mono text-[10px] text-[#2384ba] font-bold uppercase block">SECTION 03: FLAGSHIP SOLUTIONS HEADINGS</span>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <label className="block text-[11px] font-mono text-slate-300 mb-1">BADGE</label>
-                        <input
-                          type="text"
-                          value={cmsDraft?.info?.solutionsBadge || ''}
-                          onChange={(e) => setCmsDraft({ ...cmsDraft, info: { ...cmsDraft.info, solutionsBadge: e.target.value } })}
-                          className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#2384ba]"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[11px] font-mono text-slate-300 mb-1">TITLE PREFIX</label>
-                        <input
-                          type="text"
-                          value={cmsDraft?.info?.solutionsTitle || ''}
-                          onChange={(e) => setCmsDraft({ ...cmsDraft, info: { ...cmsDraft.info, solutionsTitle: e.target.value } })}
-                          className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#2384ba]"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[11px] font-mono text-slate-300 mb-1">TITLE HIGHLIGHT</label>
-                        <input
-                          type="text"
-                          value={cmsDraft?.info?.solutionsTitleHighlight || ''}
-                          onChange={(e) => setCmsDraft({ ...cmsDraft, info: { ...cmsDraft.info, solutionsTitleHighlight: e.target.value } })}
-                          className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-cyan-300 font-bold focus:outline-none focus:border-[#2384ba]"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 4 Flagship Cards Dedicated Editor */}
-                  <div className="p-5 rounded-2xl bg-slate-900/60 border border-[#2384ba]/30 space-y-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
-                      <div>
-                        <span className="font-mono text-xs text-[#2384ba] font-bold uppercase tracking-wider block">
-                          ⭐ 4 FEATURED FLAGSHIP SOLUTION CARDS (SECTION 03 ON LIVE SITE)
+                  {/* Dedicated Showcase Visual Designer Launch Card */}
+                  <div className="p-6 rounded-2xl bg-gradient-to-r from-cyan-950/60 via-slate-900/90 to-[#2384ba]/20 border border-cyan-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+                        <span className="font-mono text-xs font-bold text-cyan-300 uppercase tracking-wider">
+                          Flagship Product Showcase Visual Designer
                         </span>
-                        <p className="text-slate-400 text-xs mt-0.5">
-                          Configure the 4 flagship solution cards showcased in the 4-column grid on the live homepage.
-                        </p>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                          WYSIWYG
+                        </span>
                       </div>
-                      <span className="font-mono text-[10px] px-2.5 py-1 rounded bg-[#2384ba]/20 text-[#2384ba] border border-[#2384ba]/40 font-bold self-start sm:self-auto">
-                        4 CARDS ACTIVE
-                      </span>
+                      <p className="text-xs text-slate-300 max-w-xl">
+                        To customize Section 03 (Flagship Product Showcase) interactive tabs, live mockups, telemetry chips, and capability cards, open the dedicated visual designer.
+                      </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      {[
-                        { id: 'oms', label: 'FLAGSHIP CARD 01 • OMS', defaultImg: '/hero-topsection/ezgif-frame-105.jpg' },
-                        { id: 'erp', label: 'FLAGSHIP CARD 02 • ARC ERP', defaultImg: '/hero_infrastructure.png' },
-                        { id: 'banking', label: 'FLAGSHIP CARD 03 • CORE BANKING', defaultImg: '/banking_fintech.png' },
-                        { id: 'oracle', label: 'FLAGSHIP CARD 04 • ORACLE FORMS', defaultImg: '/oracle_modernization.png' },
-                      ].map((fCard, cIdx) => {
-                        const modIdx = cmsDraft?.modules?.findIndex((m) => m.id === fCard.id);
-                        const mod = modIdx !== undefined && modIdx !== -1 ? cmsDraft?.modules?.[modIdx] : null;
-
-                        if (!mod || modIdx === undefined || modIdx === -1) {
-                          return (
-                            <div key={fCard.id} className="p-5 bg-slate-950/60 rounded-2xl border border-dashed border-white/10 text-center space-y-2">
-                              <span className="font-mono text-xs text-slate-400">Card '{fCard.id}' not found in modules catalog.</span>
-                              <button
-                                onClick={() => {
-                                  const newFlagship: ModuleItem = {
-                                    id: fCard.id,
-                                    title: fCard.label,
-                                    category: 'Enterprise',
-                                    subtitle: 'Flagship Solution Engine',
-                                    description: 'Enterprise grade module specifications.',
-                                    features: ['High Throughput', 'Cloud Scalable', 'Enterprise Support'],
-                                    iconName: 'Building2',
-                                    imageSrc: fCard.defaultImg,
-                                  };
-                                  setCmsDraft({ ...cmsDraft, modules: [...(cmsDraft.modules || []), newFlagship] });
-                                }}
-                                className="px-3 py-1.5 bg-[#2384ba]/20 text-[#2384ba] border border-[#2384ba]/40 rounded-lg text-xs font-mono"
-                              >
-                                Restore {fCard.id.toUpperCase()} Card
-                              </button>
-                            </div>
-                          );
-                        }
-
-                        return (
-                          <div
-                            key={fCard.id}
-                            className="p-5 bg-slate-950 rounded-2xl border border-[#2384ba]/30 space-y-4 shadow-xl relative group hover:border-[#2384ba] transition-all"
-                          >
-                            <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                              <div className="flex items-center space-x-2">
-                                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                                <span className="font-mono text-xs text-[#2384ba] font-bold tracking-wider">
-                                  {fCard.label}
-                                </span>
-                              </div>
-                              <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">
-                                ID: {fCard.id}
-                              </span>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                              <div>
-                                <label className="block text-[10px] font-mono text-slate-400 mb-1">CARD TITLE</label>
-                                <input
-                                  type="text"
-                                  value={mod.title}
-                                  onChange={(e) => {
-                                    const updated = [...cmsDraft.modules];
-                                    updated[modIdx].title = e.target.value;
-                                    setCmsDraft({ ...cmsDraft, modules: updated });
-                                  }}
-                                  className="w-full bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-semibold focus:outline-none focus:border-[#2384ba]"
-                                />
-                              </div>
-
-                              <div>
-                                <label className="block text-[10px] font-mono text-slate-400 mb-1">CATEGORY</label>
-                                <select
-                                  value={mod.category}
-                                  onChange={(e) => {
-                                    const updated = [...cmsDraft.modules];
-                                    updated[modIdx].category = e.target.value as any;
-                                    setCmsDraft({ ...cmsDraft, modules: updated });
-                                  }}
-                                  className="w-full bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#2384ba]"
-                                >
-                                  <option value="Enterprise">Enterprise</option>
-                                  <option value="Banking">Banking</option>
-                                  <option value="Healthcare">Healthcare</option>
-                                  <option value="Education">Education</option>
-                                  <option value="Infrastructure">Infrastructure</option>
-                                  <option value="Workspace">Workspace</option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div>
-                              <label className="block text-[10px] font-mono text-slate-400 mb-1">CARD DESCRIPTION</label>
-                              <textarea
-                                rows={2}
-                                value={mod.description}
-                                onChange={(e) => {
-                                  const updated = [...cmsDraft.modules];
-                                  updated[modIdx].description = e.target.value;
-                                  setCmsDraft({ ...cmsDraft, modules: updated });
-                                }}
-                                className="w-full bg-slate-900 border border-white/10 rounded-xl p-2.5 text-xs text-slate-300 leading-relaxed focus:outline-none focus:border-[#2384ba]"
-                              />
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                              <div>
-                                <label className="block text-[10px] font-mono text-slate-400 mb-1">CARD IMAGE (URL / PATH)</label>
-                                <input
-                                  type="text"
-                                  placeholder={fCard.defaultImg}
-                                  value={mod.imageSrc || ''}
-                                  onChange={(e) => {
-                                    const updated = [...cmsDraft.modules];
-                                    updated[modIdx].imageSrc = e.target.value;
-                                    setCmsDraft({ ...cmsDraft, modules: updated });
-                                  }}
-                                  className="w-full bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono focus:outline-none focus:border-[#2384ba]"
-                                />
-                              </div>
-
-                              <div>
-                                <label className="block text-[10px] font-mono text-slate-400 mb-1">BROCHURE PDF LINK</label>
-                                <input
-                                  type="text"
-                                  value={mod.brochureUrl || ''}
-                                  onChange={(e) => {
-                                    const updated = [...cmsDraft.modules];
-                                    updated[modIdx].brochureUrl = e.target.value;
-                                    setCmsDraft({ ...cmsDraft, modules: updated });
-                                  }}
-                                  className="w-full bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono focus:outline-none focus:border-[#2384ba]"
-                                />
-                              </div>
-                            </div>
-
-                            <div>
-                              <label className="block text-[10px] font-mono text-slate-400 mb-1">3 FEATURE BULLETS (COMMA SEPARATED)</label>
-                              <input
-                                type="text"
-                                value={mod.features?.join(', ') || ''}
-                                onChange={(e) => {
-                                  const updated = [...cmsDraft.modules];
-                                  updated[modIdx].features = e.target.value.split(',').map((f) => f.trim());
-                                  setCmsDraft({ ...cmsDraft, modules: updated });
-                                }}
-                                className="w-full bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-cyan-300 font-mono focus:outline-none focus:border-[#2384ba]"
-                              />
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
+                    <Link
+                      href="/admin/showcase-designer"
+                      className="px-5 py-3 rounded-xl bg-gradient-to-r from-[#2384ba] to-cyan-500 hover:from-[#1a648e] hover:to-cyan-400 text-white font-mono text-xs font-bold flex items-center gap-2 transition-all shadow-lg shadow-[#2384ba]/30 hover:scale-[1.02] shrink-0"
+                    >
+                      <Sparkles className="w-4 h-4 text-cyan-200" />
+                      <span>Launch Showcase Designer</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
                   </div>
 
                   {/* Section 04: Product Catalog Badge */}
@@ -1725,6 +1654,7 @@ export default function AdminDashboardPage() {
                       <input
                         type="text"
                         value={cmsDraft?.info?.catalogBadge || ''}
+                        placeholder="04 / Full Product Catalog"
                         onChange={(e) => setCmsDraft({ ...cmsDraft, info: { ...cmsDraft.info, catalogBadge: e.target.value } })}
                         className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#2384ba]"
                       />
@@ -1733,107 +1663,205 @@ export default function AdminDashboardPage() {
 
                   {/* All Modules List */}
                   <div className="space-y-4">
-                    <span className="font-mono text-xs text-[#2384ba] font-bold uppercase block">
-                      ALL {cmsDraft?.modules?.length || 0} ENTERPRISE MODULES
-                    </span>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <span className="font-mono text-xs text-[#2384ba] font-bold uppercase block">
+                        ALL {cmsDraft?.modules?.length || 0} ENTERPRISE MODULES IN CATALOG
+                      </span>
+                      <button
+                        onClick={handleAddNewModule}
+                        className="px-3.5 py-1.5 bg-[#2384ba] hover:bg-[#1b6ca1] text-white rounded-lg font-mono text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm self-start sm:self-auto"
+                      >
+                        <Plus className="h-3.5 w-3.5" />
+                        <span>Add New Module</span>
+                      </button>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      {cmsDraft?.modules?.map((mod, idx) => (
-                        <div key={mod.id || idx} className="p-5 bg-slate-900/70 rounded-2xl border border-white/10 space-y-3.5 relative group hover:border-[#2384ba]/50 transition-all">
-                          <div className="flex items-center justify-between">
-                            <span className="font-mono text-[10px] px-2.5 py-1 bg-[#2384ba]/15 text-[#2384ba] rounded-lg border border-[#2384ba]/30 font-bold uppercase">
-                              {mod.category}
-                            </span>
-                            <button
-                              onClick={() => {
-                                const updated = cmsDraft.modules.filter((_, i) => i !== idx);
-                                setCmsDraft({ ...cmsDraft, modules: updated });
-                              }}
-                              className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
-                              title="Delete Module"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
-                          </div>
+                      {cmsDraft?.modules?.map((mod, idx) => {
+                        const currentSlug = mod.slug || mod.id;
+                        const ModuleIcon = getModuleIcon(mod.iconName, mod.category);
+                        return (
+                          <div
+                            key={mod.id || idx}
+                            className="p-5 bg-slate-900/70 rounded-2xl border border-white/10 space-y-3.5 relative group hover:border-[#2384ba]/50 transition-all flex flex-col justify-between"
+                          >
+                            <div className="space-y-3.5">
+                              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2.5">
+                                <div className="flex items-center gap-2">
+                                  <button
+                                    type="button"
+                                    onClick={() => setIconPickerTarget({ moduleIndex: idx, iconName: mod.iconName || 'Building2', title: mod.title })}
+                                    className="flex items-center gap-1.5 px-2.5 py-1 bg-[#2384ba]/15 hover:bg-[#2384ba]/25 text-[#2384ba] rounded-lg border border-[#2384ba]/30 font-mono text-[10px] font-bold transition-all cursor-pointer group/iconbtn"
+                                    title="Click to change module icon"
+                                  >
+                                    <ModuleIcon className="w-3.5 h-3.5" />
+                                    <span>{mod.iconName || 'Building2'}</span>
+                                    <span className="text-[9px] text-[#2384ba]/70 group-hover/iconbtn:text-[#2384ba]">▾</span>
+                                  </button>
+                                  <span className="font-mono text-[10px] px-2.5 py-1 bg-slate-800 text-slate-300 rounded-lg border border-white/10 font-bold uppercase">
+                                    {mod.category}
+                                  </span>
+                                </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                              <label className="block text-[10px] font-mono text-slate-400 mb-1">MODULE TITLE</label>
-                              <input
-                                type="text"
-                                value={mod.title}
-                                onChange={(e) => {
-                                  const updated = [...cmsDraft.modules];
-                                  updated[idx].title = e.target.value;
-                                  setCmsDraft({ ...cmsDraft, modules: updated });
-                                }}
-                                className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-medium focus:outline-none focus:border-[#2384ba]"
-                              />
+                                <div className="flex items-center gap-2">
+                                  <a
+                                    href={`/solutions/${currentSlug}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="px-2.5 py-1 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 hover:text-white border border-white/10 text-[10px] font-mono flex items-center gap-1 transition-colors"
+                                  >
+                                    <span>Live Page</span>
+                                    <ExternalLink className="w-3 h-3 text-[#2384ba]" />
+                                  </a>
+                                  <Link
+                                    href={`/admin/designer/${mod.slug || mod.id}`}
+                                    className="px-2.5 py-1 bg-[#2384ba]/20 hover:bg-[#2384ba] text-[#2384ba] hover:text-white border border-[#2384ba]/40 rounded-lg text-[10px] font-mono font-bold flex items-center gap-1 transition-all"
+                                  >
+                                    <Palette className="w-3 h-3" />
+                                    <span>Design Page</span>
+                                  </Link>
+                                  <button
+                                    onClick={() => setModuleToDelete({ module: mod, index: idx })}
+                                    className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
+                                    title="Delete Module"
+                                  >
+                                    <Trash2 className="h-4 w-4" />
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <div className="sm:col-span-2">
+                                  <label className="block text-[10px] font-mono text-slate-400 mb-1">MODULE TITLE</label>
+                                  <input
+                                    type="text"
+                                    value={mod.title}
+                                    onChange={(e) => {
+                                      const updated = [...cmsDraft.modules];
+                                      updated[idx].title = e.target.value;
+                                      setCmsDraft({ ...cmsDraft, modules: updated });
+                                    }}
+                                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white font-medium focus:outline-none focus:border-[#2384ba]"
+                                  />
+                                </div>
+
+                                <div>
+                                  <label className="block text-[10px] font-mono text-slate-400 mb-1">CATEGORY</label>
+                                  <select
+                                    value={mod.category}
+                                    onChange={(e) => {
+                                      const updated = [...cmsDraft.modules];
+                                      updated[idx].category = e.target.value as any;
+                                      setCmsDraft({ ...cmsDraft, modules: updated });
+                                    }}
+                                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#2384ba]"
+                                  >
+                                    <option value="Enterprise">Enterprise</option>
+                                    <option value="Banking">Banking</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Infrastructure">Infrastructure</option>
+                                    <option value="Workspace">Workspace</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <div>
+                                  <label className="block text-[10px] font-mono text-slate-400 mb-1">MODULE ICON</label>
+                                  <button
+                                    type="button"
+                                    onClick={() => setIconPickerTarget({ moduleIndex: idx, iconName: mod.iconName || 'Building2', title: mod.title })}
+                                    className="w-full bg-slate-950 hover:bg-slate-900 border border-white/10 hover:border-[#2384ba]/60 rounded-xl px-3 py-1.5 text-xs text-white flex items-center justify-between transition-all cursor-pointer group/btn"
+                                  >
+                                    <div className="flex items-center gap-2 min-w-0">
+                                      <div className="w-6 h-6 rounded-lg bg-[#2384ba]/20 border border-[#2384ba]/40 text-[#2384ba] flex items-center justify-center shrink-0">
+                                        <ModuleIcon className="w-3.5 h-3.5" />
+                                      </div>
+                                      <span className="font-mono text-xs text-cyan-300 font-semibold truncate">
+                                        {mod.iconName || 'Building2'}
+                                      </span>
+                                    </div>
+                                    <span className="text-[10px] font-mono text-slate-400 group-hover/btn:text-[#2384ba] transition-colors shrink-0 ml-1">
+                                      Pick ▾
+                                    </span>
+                                  </button>
+                                </div>
+
+                                <div>
+                                  <label className="block text-[10px] font-mono text-slate-400 mb-1">URL SLUG (/solutions/[slug])</label>
+                                  <input
+                                    type="text"
+                                    placeholder={mod.id}
+                                    value={mod.slug || ''}
+                                    onChange={(e) => {
+                                      const updated = [...cmsDraft.modules];
+                                      updated[idx].slug = e.target.value.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
+                                      setCmsDraft({ ...cmsDraft, modules: updated });
+                                    }}
+                                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-cyan-300 font-mono focus:outline-none focus:border-[#2384ba]"
+                                  />
+                                </div>
+
+                                <div>
+                                  <label className="block text-[10px] font-mono text-slate-400 mb-1">BROCHURE PDF LINK</label>
+                                  <input
+                                    type="text"
+                                    value={mod.brochureUrl || ''}
+                                    onChange={(e) => {
+                                      const updated = [...cmsDraft.modules];
+                                      updated[idx].brochureUrl = e.target.value;
+                                      setCmsDraft({ ...cmsDraft, modules: updated });
+                                    }}
+                                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono focus:outline-none focus:border-[#2384ba]"
+                                  />
+                                </div>
+                              </div>
+
+                              <div>
+                                <label className="block text-[10px] font-mono text-slate-400 mb-1">DESCRIPTION</label>
+                                <textarea
+                                  rows={2}
+                                  value={mod.description}
+                                  onChange={(e) => {
+                                    const updated = [...cmsDraft.modules];
+                                    updated[idx].description = e.target.value;
+                                    setCmsDraft({ ...cmsDraft, modules: updated });
+                                  }}
+                                  className="w-full bg-slate-950 border border-white/10 rounded-xl p-2.5 text-xs text-slate-300 focus:outline-none focus:border-[#2384ba]"
+                                />
+                              </div>
+
+                              <div>
+                                <label className="block text-[10px] font-mono text-slate-400 mb-1">FEATURE BULLETS (COMMA SEPARATED)</label>
+                                <input
+                                  type="text"
+                                  value={mod.features?.join(', ') || ''}
+                                  onChange={(e) => {
+                                    const updated = [...cmsDraft.modules];
+                                    updated[idx].features = e.target.value.split(',').map((f) => f.trim());
+                                    setCmsDraft({ ...cmsDraft, modules: updated });
+                                  }}
+                                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono focus:outline-none focus:border-[#2384ba]"
+                                />
+                              </div>
                             </div>
 
-                            <div>
-                              <label className="block text-[10px] font-mono text-slate-400 mb-1">CATEGORY</label>
-                              <select
-                                value={mod.category}
-                                onChange={(e) => {
-                                  const updated = [...cmsDraft.modules];
-                                  updated[idx].category = e.target.value as any;
-                                  setCmsDraft({ ...cmsDraft, modules: updated });
-                                }}
-                                className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#2384ba]"
+                            <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+                              <span className="text-[10px] font-mono text-slate-400">
+                                {mod.pageDetails ? '✨ Custom Page Designed' : '⚡ Default Mock Page Active'}
+                              </span>
+                              <Link
+                                href={`/admin/designer/${mod.slug || mod.id}`}
+                                className="text-xs font-mono font-bold text-[#2384ba] hover:underline flex items-center gap-1"
                               >
-                                <option value="Enterprise">Enterprise</option>
-                                <option value="Banking">Banking</option>
-                                <option value="Healthcare">Healthcare</option>
-                                <option value="Education">Education</option>
-                                <option value="Infrastructure">Infrastructure</option>
-                                <option value="Workspace">Workspace</option>
-                              </select>
+                                <Palette className="w-3.5 h-3.5" />
+                                <span>Edit Inner Design</span>
+                              </Link>
                             </div>
                           </div>
-
-                          <div>
-                            <label className="block text-[10px] font-mono text-slate-400 mb-1">DESCRIPTION</label>
-                            <textarea
-                              rows={2}
-                              value={mod.description}
-                              onChange={(e) => {
-                                const updated = [...cmsDraft.modules];
-                                updated[idx].description = e.target.value;
-                                setCmsDraft({ ...cmsDraft, modules: updated });
-                              }}
-                              className="w-full bg-slate-950 border border-white/10 rounded-xl p-2.5 text-xs text-slate-300 focus:outline-none focus:border-[#2384ba]"
-                            />
-                          </div>
-
-                          <div>
-                            <label className="block text-[10px] font-mono text-slate-400 mb-1">BROCHURE PDF LINK (OR /brochures/...)</label>
-                            <input
-                              type="text"
-                              value={mod.brochureUrl || ''}
-                              onChange={(e) => {
-                                const updated = [...cmsDraft.modules];
-                                updated[idx].brochureUrl = e.target.value;
-                                setCmsDraft({ ...cmsDraft, modules: updated });
-                              }}
-                              className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono focus:outline-none focus:border-[#2384ba]"
-                            />
-                          </div>
-
-                          <div>
-                            <label className="block text-[10px] font-mono text-slate-400 mb-1">FEATURE BULLETS (COMMA SEPARATED)</label>
-                            <input
-                              type="text"
-                              value={mod.features?.join(', ') || ''}
-                              onChange={(e) => {
-                                const updated = [...cmsDraft.modules];
-                                updated[idx].features = e.target.value.split(',').map((f) => f.trim());
-                                setCmsDraft({ ...cmsDraft, modules: updated });
-                              }}
-                              className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono focus:outline-none focus:border-[#2384ba]"
-                            />
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -2232,8 +2260,8 @@ export default function AdminDashboardPage() {
       {/* ============================================================= */}
       {/* INQUIRY DETAIL INSPECTOR MODAL */}
       {/* ============================================================= */}
-      {isModalOpen && selectedInquiry && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0f172a]/85 backdrop-blur-xl animate-fadeIn">
+      {isModalOpen && selectedInquiry && mounted && typeof document !== 'undefined' && createPortal(
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-4 bg-[#0f172a]/85 backdrop-blur-xl animate-fadeIn">
           <div className="w-full max-w-2xl bg-slate-950 border border-white/20 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
             <div className="p-6 bg-slate-900/80 backdrop-blur border-b border-white/10 flex items-center justify-between">
@@ -2256,18 +2284,18 @@ export default function AdminDashboardPage() {
 
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+                className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Modal Body */}
-            <div className="p-6 space-y-6 overflow-y-auto">
-              {/* Status and Actions Ribbon */}
-              <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-xl bg-slate-900 border border-white/10 font-mono text-xs">
-                <div className="flex items-center space-x-2">
-                  <span className="text-slate-400">STATE:</span>
+            {/* Modal Scrollable Body */}
+            <div className="p-6 overflow-y-auto space-y-6 flex-1">
+              {/* Status Transition Control */}
+              <div className="flex items-center justify-between p-4 bg-slate-900/50 rounded-xl border border-white/5">
+                <div>
+                  <span className="text-xs font-mono text-slate-400 block mb-1">CURRENT TRIAGE STATUS</span>
                   <span
                     className={`px-3 py-1 rounded-lg text-xs font-bold uppercase ${
                       selectedInquiry.status === 'new'
@@ -2401,7 +2429,99 @@ export default function AdminDashboardPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
+      )}
+
+      {/* Module Delete Confirmation Modal Portal */}
+      {mounted && moduleToDelete && createPortal(
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
+          <div className="w-full max-w-md bg-slate-900 border border-rose-500/30 rounded-2xl p-6 shadow-2xl space-y-5 relative overflow-hidden">
+            {/* Ambient Danger Glow */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-rose-500/20 blur-[60px] pointer-events-none rounded-full" />
+
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-400 shrink-0">
+                <AlertCircle className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-base font-bold text-white font-display">
+                  Delete Enterprise Module?
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                  Are you sure you want to delete <strong className="text-white">&ldquo;{moduleToDelete.module.title}&rdquo;</strong>?
+                </p>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-white/10 font-mono text-[11px] space-y-1.5 text-slate-400">
+              <div className="flex justify-between">
+                <span>Module ID:</span>
+                <span className="text-cyan-300 font-bold">{moduleToDelete.module.id}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Category:</span>
+                <span className="text-white">{moduleToDelete.module.category}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Target Slug:</span>
+                <span className="text-slate-300">/solutions/{moduleToDelete.module.slug || moduleToDelete.module.id}</span>
+              </div>
+              <div className="pt-2 border-t border-white/5 text-[10px] text-rose-400 font-semibold">
+                ⚠️ This will immediately remove the module from the catalog and purge its custom pages from Firebase Firestore.
+              </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-3 pt-2">
+              <button
+                type="button"
+                disabled={isDeletingModule}
+                onClick={() => setModuleToDelete(null)}
+                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-mono text-xs transition-colors cursor-pointer disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                disabled={isDeletingModule}
+                onClick={handleConfirmDeleteModule}
+                className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-lg shadow-rose-600/30 transition-all cursor-pointer disabled:opacity-50"
+              >
+                {isDeletingModule ? (
+                  <>
+                    <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                    <span>Deleting from Firebase...</span>
+                  </>
+                ) : (
+                  <>
+                    <Trash2 className="w-3.5 h-3.5" />
+                    <span>Yes, Delete Module</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {/* Module Icon Picker Modal */}
+      {mounted && (
+        <IconPickerModal
+          isOpen={!!iconPickerTarget}
+          onClose={() => setIconPickerTarget(null)}
+          selectedIconName={iconPickerTarget?.iconName}
+          moduleTitle={iconPickerTarget?.title}
+          onSelectIcon={(newIconName) => {
+            if (iconPickerTarget) {
+              const updated = [...(cmsDraft.modules || [])];
+              if (updated[iconPickerTarget.moduleIndex]) {
+                updated[iconPickerTarget.moduleIndex].iconName = newIconName;
+                setCmsDraft({ ...cmsDraft, modules: updated });
+              }
+            }
+          }}
+        />
       )}
     </main>
   );

@@ -10,6 +10,7 @@ import {
   ARCANUM_CAPABILITIES,
   ARCANUM_MODULES,
   BROCHURES_LIST,
+  DEFAULT_SHOWCASE_ITEMS,
 } from '@/data/arcanumData';
 
 export const dynamic = 'force-dynamic';
@@ -28,6 +29,7 @@ export async function POST(req: NextRequest) {
         values: ARCANUM_VALUES,
         locations: ARCANUM_LOCATION_HUBS,
         capabilities: ARCANUM_CAPABILITIES,
+        showcaseItems: DEFAULT_SHOWCASE_ITEMS,
         modules: ARCANUM_MODULES,
         brochures: BROCHURES_LIST,
         updatedAt: new Date().toISOString(),
@@ -48,6 +50,7 @@ export async function POST(req: NextRequest) {
       let valuesData = ARCANUM_VALUES;
       let locationsData = ARCANUM_LOCATION_HUBS;
       let capabilitiesData = ARCANUM_CAPABILITIES;
+      let showcaseData = DEFAULT_SHOWCASE_ITEMS;
       let modulesData = ARCANUM_MODULES;
       let brochuresData = BROCHURES_LIST;
 
@@ -62,6 +65,9 @@ export async function POST(req: NextRequest) {
         }
         if (Array.isArray(firestoreData.capabilities) && firestoreData.capabilities.length > 0) {
           capabilitiesData = firestoreData.capabilities;
+        }
+        if (Array.isArray(firestoreData.showcaseItems) && firestoreData.showcaseItems.length > 0) {
+          showcaseData = firestoreData.showcaseItems;
         }
         if (Array.isArray(firestoreData.modules) && firestoreData.modules.length > 0) {
           modulesData = firestoreData.modules;
@@ -146,6 +152,15 @@ export interface SiteInfo {
   aboutDescription1: string;
   aboutDescription2: string;
   marqueeText: string;
+  showcaseBadge?: string;
+  showcaseTitle?: string;
+  showcaseTitleHighlight?: string;
+  showcaseDescription?: string;
+  solutionsBadge?: string;
+  solutionsTitle?: string;
+  solutionsTitleHighlight?: string;
+  flagshipModuleIds?: string[];
+  catalogBadge?: string;
   stats: { label: string; value: string; change: string }[];
   contact: {
     address: string;
@@ -173,6 +188,10 @@ export const ARCANUM_VALUES: ValuePillar[] = ${JSON.stringify(valuesData, null, 
 export const ARCANUM_LOCATION_HUBS: LocationHubItem[] = ${JSON.stringify(locationsData, null, 2)};
 
 export const ARCANUM_CAPABILITIES: TechnicalCapability[] = ${JSON.stringify(capabilitiesData, null, 2)};
+
+export const DEFAULT_SHOWCASE_ITEMS: ShowcaseItem[] = ${JSON.stringify(showcaseData, null, 2)};
+
+export const ARCANUM_SHOWCASE_ITEMS: ShowcaseItem[] = ${JSON.stringify(showcaseData, null, 2)};
 
 export const ARCANUM_MODULES: ModuleItem[] = ${JSON.stringify(modulesData, null, 2)};
 

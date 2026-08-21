@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, FileText, Menu, X } from 'lucide-react';
 import { scrollToId } from '@/components/scrollTo';
@@ -13,7 +14,7 @@ interface HeaderProps {
 
 const NAV = [
   { label: 'Who We Are', id: 'about' },
-  { label: 'Solutions', id: 'solutions' },
+  { label: 'Showcase', id: 'showcase' },
   { label: 'Global Hubs', id: 'locations' },
   { label: 'Catalog', id: 'catalog' },
   { label: 'Contact', id: 'contact' },
@@ -41,7 +42,7 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Brand */}
-          <a href="#" className="group flex items-center gap-3 focus:outline-none" aria-label="Arcanum">
+          <Link href="/" className="group flex items-center gap-3 focus:outline-none" aria-label="Arcanum">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 p-1 backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#2384ba]/50 group-hover:shadow-[0_0_15px_rgba(35,132,186,0.3)]">
               <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
             </div>
@@ -53,7 +54,7 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
                 Information Technology
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-8 md:flex">
@@ -70,13 +71,13 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
 
           {/* Desktop actions */}
           <div className="hidden items-center gap-3 lg:flex">
-            <button
-              onClick={onOpenBrochures}
+            <Link
+              href="/demo"
               className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-mono text-xs text-white backdrop-blur-md transition-colors hover:bg-white/20"
             >
-              <FileText className="h-3.5 w-3.5 text-[#2384ba]" />
-              Brochures
-            </button>
+              Book a Demo
+              <ArrowUpRight className="h-3.5 w-3.5 text-[#2384ba]" />
+            </Link>
             <button
               onClick={onOpenContact}
               className="inline-flex items-center gap-1.5 rounded-full bg-[#2384ba] px-4 py-2 font-mono text-xs font-semibold text-white shadow-lg shadow-[#2384ba]/25 transition-colors hover:bg-[#1b6ca1]"
@@ -120,16 +121,14 @@ export function Header({ onOpenBrochures, onOpenContact }: HeaderProps) {
                 </button>
               ))}
               <div className="flex flex-col gap-2 border-t border-white/10 pt-4">
-                <button
-                  onClick={() => {
-                    setMenuOpen(false);
-                    onOpenBrochures();
-                  }}
+                <Link
+                  href="/demo"
+                  onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 py-2.5 font-mono text-xs text-white"
                 >
-                  <FileText className="h-4 w-4 text-[#2384ba]" />
-                  Brochures
-                </button>
+                  Book a Demo
+                  <ArrowUpRight className="h-3.5 w-3.5 text-[#2384ba]" />
+                </Link>
                 <button
                   onClick={() => {
                     setMenuOpen(false);
