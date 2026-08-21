@@ -96,7 +96,7 @@ export function GsapPreloader({ onComplete }: { onComplete?: () => void }) {
       <div className="w-full max-w-7xl flex items-center justify-between font-mono text-xs text-slate-400 border-b border-white/10 pb-4">
         <div className="flex items-center space-x-2">
           <span className="h-2 w-2 rounded-full bg-[#2384ba] animate-pulse" />
-          <span className="text-white font-bold tracking-widest uppercase">ARCANUM IT</span>
+          <span className="text-white font-bold tracking-widest uppercase">ARCANUM INFORMATION TECHNOLOGY</span>
         </div>
         <div className="hidden sm:block text-[11px] tracking-wider text-slate-400">
           GLOBAL HUBS: 🇦🇪 ABU DHABI • 🇮🇳 KERALA • 🇮🇳 GUJARAT

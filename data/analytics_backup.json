@@ -1,6 +1,6 @@
 {
-  "lifetimeVisitors": 23,
-  "lifetimePageViews": 577,
+  "lifetimeVisitors": 26,
+  "lifetimePageViews": 617,
   "days": {
     "2026-08-14": {
       "visitors": 6,
@@ -61,6 +61,19 @@
         "s_0tco55z0r_1787213780141",
         "s_78ux61qqu_1787219053529",
         "s_8t0f4b4eg_1787227520921"
+      ]
+    },
+    "2026-08-21": {
+      "visitors": 3,
+      "pageViews": 40,
+      "visitorIds": [
+        "v_89dlujvr0_1787286181606",
+        "v_mnf5zqwm4_1786689065253"
+      ],
+      "sessionIds": [
+        "s_sa7upjenf_1787286181606",
+        "s_2jy4jp6ps_1787286207596",
+        "s_yjhyzz0wu_1787286211963"
       ]
     }
   }

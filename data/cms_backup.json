@@ -36,19 +36,19 @@
     "contactDescription": "Speak directly with our senior software architects. Whether you need custom ERP implementation, Oracle Forms refactoring, or co-operative banking integration, we deliver enterprise certainty.",
     "stats": [
       {
+        "change": "+4 this year",
         "value": "22+",
-        "label": "Enterprise Applications",
-        "change": "+4 this year"
+        "label": "Enterprise Applications"
       },
       {
-        "change": "Zero critical downtime",
         "label": "System Uptime SLA",
-        "value": "99.99%"
+        "value": "99.99%",
+        "change": "Zero critical downtime"
       },
       {
-        "change": "Optimized execution",
+        "label": "Microservice Latency",
         "value": "< 12ms",
-        "label": "Microservice Latency"
+        "change": "Optimized execution"
       },
       {
         "value": "150K+",
@@ -57,17 +57,17 @@
       }
     ],
     "contact": {
-      "workingHours": "Mon - Fri: 08:30 AM - 06:00 PM (GST)",
       "poBox": "P.O. Box 45000, Abu Dhabi, UAE",
-      "website": "https://arcanum.ae",
-      "phone": "+971 4 000 0000",
+      "workingHours": "Mon - Fri: 08:30 AM - 06:00 PM (GST)",
       "address": "Abu Dhabi (UAE) • Kerala (India) • Gujarat (India)",
-      "email": "info@arcanum.ae"
+      "email": "info@arcanum.ae",
+      "website": "https://arcanum.ae",
+      "phone": "+971 4 000 0000"
     },
     "socialLinks": {
-      "linkedin": "https://linkedin.com/company/arcanum-it",
       "email": "info@arcanum.ae",
-      "whatsapp": "+9714000000"
+      "whatsapp": "+9714000000",
+      "linkedin": "https://linkedin.com/company/arcanum-it"
     },
     "showcaseBadge": "03 / Flagship Product Showcase",
     "showcaseTitle": "Enterprise Software We",
@@ -76,38 +76,33 @@
   },
   "values": [
     {
-      "iconName": "Cpu",
       "title": "Architectural Precision",
       "description": "Clean modular codebases with strict type safety, zero-trust security layers, and zero technical debt.",
+      "iconName": "Cpu",
       "id": "precision"
     },
     {
-      "description": "Methodologies for refactoring heavy legacy Oracle Forms applications into scalable cloud microservices.",
       "iconName": "Database",
-      "title": "Legacy Modernization",
-      "id": "modernization"
+      "description": "Methodologies for refactoring heavy legacy Oracle Forms applications into scalable cloud microservices.",
+      "id": "modernization",
+      "title": "Legacy Modernization"
     },
     {
+      "id": "compliance",
       "iconName": "ShieldCheck",
       "description": "Native adherence to UAE WPS payroll standards, ISO 8583 banking switches, and clinical EMR protocols.",
-      "title": "Statutory Compliance",
-      "id": "compliance"
+      "title": "Statutory Compliance"
     },
     {
       "iconName": "Award",
-      "id": "execution",
+      "description": "Employing highly-skilled senior engineers who execute complex IT assignments elegantly and on schedule.",
       "title": "Professional Execution",
-      "description": "Employing highly-skilled senior engineers who execute complex IT assignments elegantly and on schedule."
+      "id": "execution"
     }
   ],
   "locations": [
     {
-      "country": "United Arab Emirates",
-      "coordinates": {
-        "y": 44,
-        "x": 42
-      },
-      "city": "Abu Dhabi",
+      "latLng": "24.4539° N, 54.3773° E",
       "stats": [
         {
           "value": "99.99%",
@@ -122,41 +117,39 @@
           "label": "Regional Focus"
         }
       ],
-      "latLng": "24.4539° N, 54.3773° E",
-      "id": "abudhabi",
       "flag": "🇦🇪",
-      "role": "Global Headquarters & Executive Hub",
-      "description": "Strategic corporate headquarters directing global enterprise operations, client advisory, financial technology governance, and regional Middle East deployments.",
-      "gmtOffset": 4,
+      "country": "United Arab Emirates",
+      "city": "Abu Dhabi",
+      "coordinates": {
+        "y": 44,
+        "x": 42
+      },
       "timezone": "GST (Gulf Standard Time)",
+      "role": "Global Headquarters & Executive Hub",
+      "address": "Arcanum Information Technology, Abu Dhabi, United Arab Emirates",
+      "gmtOffset": 4,
+      "description": "Strategic corporate headquarters directing global enterprise operations, client advisory, financial technology governance, and regional Middle East deployments.",
+      "id": "abudhabi",
+      "isHq": true,
       "focusDomains": [
         "Enterprise ERP",
         "Core Banking Integrations",
         "Client Strategy"
-      ],
-      "address": "Arcanum Information Technology, Abu Dhabi, United Arab Emirates",
-      "isHq": true
+      ]
     },
     {
-      "coordinates": {
-        "x": 74,
-        "y": 64
-      },
-      "city": "Kerala",
-      "latLng": "10.8505° N, 76.2711° E",
-      "country": "India",
-      "flag": "🇮🇳",
-      "id": "kerala",
       "role": "Engineering & Core R&D Hub",
+      "description": "Primary software architecture and product innovation center specializing in full-stack engineering, Oracle Forms modernizations, and scalable cloud microservices.",
+      "country": "India",
+      "timezone": "IST (Indian Standard Time)",
+      "id": "kerala",
       "focusDomains": [
         "Oracle Forms Refactoring",
         "School Management (Scholar)",
         "Clinic Systems",
         "Microservices"
       ],
-      "description": "Primary software architecture and product innovation center specializing in full-stack engineering, Oracle Forms modernizations, and scalable cloud microservices.",
-      "timezone": "IST (Indian Standard Time)",
-      "gmtOffset": 5.5,
+      "city": "Kerala",
       "stats": [
         {
           "value": "Senior R&D",
@@ -171,20 +164,34 @@
           "label": "Quality Audit"
         }
       ],
-      "address": "Arcanum Engineering Center, Tech Hub, Kerala, India"
+      "address": "Arcanum Engineering Center, Tech Hub, Kerala, India",
+      "flag": "🇮🇳",
+      "coordinates": {
+        "x": 74,
+        "y": 64
+      },
+      "gmtOffset": 5.5,
+      "latLng": "10.8505° N, 76.2711° E"
     },
     {
-      "country": "India",
+      "id": "gujarat",
+      "city": "Gujarat",
+      "flag": "🇮🇳",
       "timezone": "IST (Indian Standard Time)",
       "latLng": "22.2587° N, 71.1924° E",
-      "description": "High-performance operations and enterprise systems unit delivering automated payroll processing, custom web applications, and round-the-clock technical support.",
+      "address": "Arcanum Tech & Operations Hub, Gujarat, India",
+      "coordinates": {
+        "x": 68,
+        "y": 48
+      },
       "focusDomains": [
         "Accurate PAYROLL (WPS)",
         "Restaurant POS",
         "Dynamic Forms",
         "Enterprise Support"
       ],
-      "id": "gujarat",
+      "description": "High-performance operations and enterprise systems unit delivering automated payroll processing, custom web applications, and round-the-clock technical support.",
+      "gmtOffset": 5.5,
       "stats": [
         {
           "value": "150K+",
@@ -199,58 +206,50 @@
           "label": "Support Window"
         }
       ],
-      "city": "Gujarat",
-      "address": "Arcanum Tech & Operations Hub, Gujarat, India",
-      "coordinates": {
-        "y": 48,
-        "x": 68
-      },
-      "flag": "🇮🇳",
-      "gmtOffset": 5.5,
+      "country": "India",
       "role": "Tech & Operations Center"
     }
   ],
   "capabilities": [
     {
       "description": "Proven methodologies for extracting legacy PL/SQL business logic and refactoring heavy Oracle Forms 12c monoliths into decoupled microservice architecture.",
-      "id": "oracle",
-      "title": "Legacy Oracle Forms Modernization",
-      "tag": "INFRASTRUCTURE REFACTORING",
       "details": [
         "PL/SQL Logic Isolation",
         "Containerized Deployment",
         "Zero Data-Loss Guarantee"
       ],
-      "iconName": "Database"
+      "title": "Legacy Oracle Forms Modernization",
+      "id": "oracle",
+      "iconName": "Database",
+      "tag": "INFRASTRUCTURE REFACTORING"
     },
     {
-      "iconName": "Lock",
-      "tag": "ISO 8583 & ATM SWITCH",
       "title": "Banking & Financial Core Integrations",
       "details": [
         "ATM Switch Interface",
         "HSM Cryptographic Hardware",
         "Real-time Transaction Audit"
       ],
+      "id": "banking",
       "description": "Custom interface modules for co-operative and retail banks including ISO 8583 ATM switch bridging, automated SMS notifications, and secure customer portals.",
-      "id": "banking"
+      "iconName": "Lock",
+      "tag": "ISO 8583 & ATM SWITCH"
     },
     {
-      "iconName": "Smartphone",
+      "tag": "CROSS-PLATFORM ENGINEERING",
+      "title": "Native Mobile & Web Engine",
+      "description": "Converting complex enterprise web platforms into high-speed native iOS and Android applications with offline sync, biometric auth, and push notifications.",
       "details": [
         "Native iOS / Android Runtimes",
         "Biometric SSO Authentication",
         "Offline Storage Engine"
       ],
-      "title": "Native Mobile & Web Engine",
-      "tag": "CROSS-PLATFORM ENGINEERING",
       "id": "mobile",
-      "description": "Converting complex enterprise web platforms into high-speed native iOS and Android applications with offline sync, biometric auth, and push notifications."
+      "iconName": "Smartphone"
     }
   ],
   "showcaseItems": [
     {
-      "imageSrc": "/hero_erp.jpg",
       "metrics": [
         {
           "label": "TRANSACTION LATENCY",
@@ -265,7 +264,9 @@
           "value": "UAE VAT & WPS"
         }
       ],
-      "description": "Integrate finance, inventory, multi-warehouse logistics, procurement, and asset tracking into a synchronized ledger. Enforces dual-authorization, strict audit trails, and automated UAE VAT tax filing.",
+      "id": "erp",
+      "title": "ARC Enterprise Resource Planning (ERPs)",
+      "category": "Enterprise & Finance",
       "techStack": [
         "PostgreSQL",
         "TypeScript",
@@ -276,44 +277,32 @@
       ],
       "capabilities": [
         {
-          "title": "Double-Entry Financial Ledger",
           "iconName": "ShieldCheck",
+          "title": "Double-Entry Financial Ledger",
           "description": "Multi-currency ledger with real-time balance validation and immutable audit trails."
         },
         {
-          "iconName": "Zap",
+          "title": "Multi-Warehouse Supply Chain",
           "description": "Automated stock re-order triggers, serial/batch tracking, and inventory valuation.",
-          "title": "Multi-Warehouse Supply Chain"
+          "iconName": "Zap"
         },
         {
-          "iconName": "Server",
           "description": "End-to-end RFQ, PO generation, goods receipt notes (GRN), and 3-way invoice matching.",
-          "title": "Procurement & Vendor Portal"
+          "title": "Procurement & Vendor Portal",
+          "iconName": "Server"
         },
         {
-          "title": "Asset Lifecycle Management",
           "description": "Depreciation calculation engine, maintenance tracking, and RFID asset tagging.",
-          "iconName": "Cpu"
+          "iconName": "Cpu",
+          "title": "Asset Lifecycle Management"
         }
       ],
-      "category": "Enterprise & Finance",
-      "id": "erp",
-      "title": "ARC Enterprise Resource Planning (ERPs)",
-      "subtitle": "Multi-Currency Financial Ledger & Real-Time Supply Chain Core",
-      "tabLabel": "ARC ERPs"
+      "description": "Integrate finance, inventory, multi-warehouse logistics, procurement, and asset tracking into a synchronized ledger. Enforces dual-authorization, strict audit trails, and automated UAE VAT tax filing.",
+      "tabLabel": "ARC ERPs",
+      "imageSrc": "/hero_erp.jpg",
+      "subtitle": "Multi-Currency Financial Ledger & Real-Time Supply Chain Core"
     },
     {
-      "title": "Organization Management System (OMS)",
-      "tabLabel": "OMS Suite",
-      "subtitle": "Multi-Tenant Entity Structure, RBAC & Enterprise Identity Mesh",
-      "techStack": [
-        "Node.js",
-        "PostgreSQL",
-        "OAuth2 / SAML",
-        "Docker",
-        "Redis",
-        "gRPC"
-      ],
       "category": "Enterprise Governance",
       "capabilities": [
         {
@@ -322,9 +311,9 @@
           "title": "Hierarchical Entity Topology"
         },
         {
-          "description": "Configurable multi-stage approval matrix based on transaction threshold limits.",
           "iconName": "Zap",
-          "title": "Dynamic Approval Workflows"
+          "title": "Dynamic Approval Workflows",
+          "description": "Configurable multi-stage approval matrix based on transaction threshold limits."
         },
         {
           "iconName": "ShieldCheck",
@@ -332,10 +321,18 @@
           "description": "SAML 2.0, OAuth2, and Active Directory integration with hardware MFA."
         },
         {
-          "iconName": "Server",
+          "description": "Immutable logging of every user action, privilege escalation, and data mutation.",
           "title": "Central Audit & Telemetry",
-          "description": "Immutable logging of every user action, privilege escalation, and data mutation."
+          "iconName": "Server"
         }
+      ],
+      "techStack": [
+        "Node.js",
+        "PostgreSQL",
+        "OAuth2 / SAML",
+        "Docker",
+        "Redis",
+        "gRPC"
       ],
       "metrics": [
         {
@@ -351,12 +348,16 @@
           "label": "ACCESS CONTROL"
         }
       ],
+      "title": "Organization Management System (OMS)",
+      "tabLabel": "OMS Suite",
+      "id": "oms",
       "description": "A master governance engine enabling multi-company group management, dynamic organizational trees, automated approval workflows, and centralized identity & access management (IAM).",
       "imageSrc": "/hero-topsection/ezgif-frame-105.jpg",
-      "id": "oms"
+      "subtitle": "Multi-Tenant Entity Structure, RBAC & Enterprise Identity Mesh"
     },
     {
-      "title": "Core Banking Engine & Financial Switch",
+      "imageSrc": "/banking_fintech.png",
+      "subtitle": "ISO 8583 Message Routing, ATM Gateway & Mobile Banking",
       "capabilities": [
         {
           "title": "ISO 8583 Message Switch",
@@ -364,25 +365,32 @@
           "iconName": "Cpu"
         },
         {
-          "iconName": "Zap",
+          "description": "Biometric consumer banking app for funds transfer, utility payments, and statement downloads.",
           "title": "Transa Mobile Banking",
-          "description": "Biometric consumer banking app for funds transfer, utility payments, and statement downloads."
+          "iconName": "Zap"
         },
         {
-          "iconName": "Server",
+          "title": "Co-Operative Bank Add-Ons",
           "description": "Specialized modules for loan underwriting, term deposits, dividend distribution, and locker management.",
-          "title": "Co-Operative Bank Add-Ons"
+          "iconName": "Server"
         },
         {
+          "title": "Hardware Cryptographic Vault",
           "iconName": "ShieldCheck",
-          "description": "Integration with HSM appliances for PIN block translation and end-to-end data encryption.",
-          "title": "Hardware Cryptographic Vault"
+          "description": "Integration with HSM appliances for PIN block translation and end-to-end data encryption."
         }
       ],
-      "description": "Engineered for retail and co-operative banks. Features high-throughput ISO 8583 message switching, biometric ATM interfacing, automated SMS gateways, and secure consumer banking applications.",
       "tabLabel": "Core Banking",
-      "subtitle": "ISO 8583 Message Routing, ATM Gateway & Mobile Banking",
-      "imageSrc": "/banking_fintech.png",
+      "id": "banking",
+      "techStack": [
+        "Java Spring Boot",
+        "Kafka",
+        "HSM Hardware Vault",
+        "PostgreSQL",
+        "ISO 8583"
+      ],
+      "title": "Core Banking Engine & Financial Switch",
+      "description": "Engineered for retail and co-operative banks. Features high-throughput ISO 8583 message switching, biometric ATM interfacing, automated SMS gateways, and secure consumer banking applications.",
       "metrics": [
         {
           "label": "SWITCH SPEED",
@@ -397,14 +405,6 @@
           "label": "PROTOCOLS"
         }
       ],
-      "techStack": [
-        "Java Spring Boot",
-        "Kafka",
-        "HSM Hardware Vault",
-        "PostgreSQL",
-        "ISO 8583"
-      ],
-      "id": "banking",
       "category": "Banking & FinTech"
     },
     {
@@ -415,31 +415,9 @@
         "Thermal ESC/POS",
         "PWA"
       ],
-      "category": "Hospitality & Retail",
-      "imageSrc": "/hero_restaurant.jpg",
+      "tabLabel": "Restaurant POS",
+      "id": "pos",
       "description": "High-speed POS designed for fine dining, multi-branch franchises, and fast-casual cafes. Features real-time Kitchen Display System (KDS) synchronization, QR table ordering, and recipe inventory cost tracking.",
-      "capabilities": [
-        {
-          "iconName": "UtensilsCrossed",
-          "title": "Interactive Floorplan & Tables",
-          "description": "Visual table management with seat-level splitting, merge bills, and reservation timelines."
-        },
-        {
-          "title": "Real-Time Kitchen Display (KDS)",
-          "description": "Color-coded cook times, preparation timers, and station-based routing for culinary efficiency.",
-          "iconName": "Zap"
-        },
-        {
-          "iconName": "Server",
-          "description": "Automatic deduction of raw inventory down to the gram as orders are punched.",
-          "title": "Recipe & Ingredient Costing"
-        },
-        {
-          "description": "Keeps punching orders and printing kitchen tickets even if internet connection drops.",
-          "title": "Offline Resilient Engine",
-          "iconName": "ShieldCheck"
-        }
-      ],
       "metrics": [
         {
           "value": "Instant (WebSocket)",
@@ -454,48 +432,38 @@
           "value": "Multi-Branch KDS"
         }
       ],
-      "subtitle": "Table Ordering, Floorplan Engine & Cloud Kitchen Management",
-      "tabLabel": "Restaurant POS",
-      "id": "pos",
-      "title": "CulinaryOS Restaurant POS & Kitchen Display"
-    },
-    {
-      "title": "AuraCare Clinic & Hospital Management (HMS)",
-      "techStack": [
-        "HL7 / FHIR",
-        "PostgreSQL",
-        "Next.js",
-        "DICOM Viewer",
-        "AES-256 Encrypted"
-      ],
-      "description": "HIPAA-ready clinical platform connecting patient registration, doctor consultations, digital prescription writing, ICD-10 medical coding, pharmacy stock, and pathology lab report workflows.",
-      "subtitle": "Electronic Medical Records, Pharmacy Dispensing & Lab Diagnostics",
-      "tabLabel": "Clinical Care",
       "capabilities": [
         {
-          "description": "Custom consultation templates, ICD-10 diagnostic coding, and digital e-prescriptions.",
-          "title": "Doctor EMR & Digital Prescriptions",
-          "iconName": "HeartPulse"
+          "description": "Visual table management with seat-level splitting, merge bills, and reservation timelines.",
+          "title": "Interactive Floorplan & Tables",
+          "iconName": "UtensilsCrossed"
         },
         {
-          "title": "Integrated Pharmacy System",
-          "description": "Batch and expiry tracking, automatic drug interaction alerts, and POS dispensation.",
-          "iconName": "Server"
+          "title": "Real-Time Kitchen Display (KDS)",
+          "description": "Color-coded cook times, preparation timers, and station-based routing for culinary efficiency.",
+          "iconName": "Zap"
         },
         {
-          "title": "Laboratory Diagnostic Workflow",
-          "iconName": "Zap",
-          "description": "Sample barcode tracking, equipment interfacing, and automated patient report delivery via WhatsApp/Email."
+          "iconName": "Server",
+          "title": "Recipe & Ingredient Costing",
+          "description": "Automatic deduction of raw inventory down to the gram as orders are punched."
         },
         {
-          "iconName": "Users",
-          "description": "Online patient booking with token display screens in waiting lobbies.",
-          "title": "Appointment Booking & Queue TV"
+          "iconName": "ShieldCheck",
+          "description": "Keeps punching orders and printing kitchen tickets even if internet connection drops.",
+          "title": "Offline Resilient Engine"
         }
       ],
-      "id": "hms",
+      "subtitle": "Table Ordering, Floorplan Engine & Cloud Kitchen Management",
+      "imageSrc": "/hero_restaurant.jpg",
+      "title": "CulinaryOS Restaurant POS & Kitchen Display",
+      "category": "Hospitality & Retail"
+    },
+    {
+      "description": "HIPAA-ready clinical platform connecting patient registration, doctor consultations, digital prescription writing, ICD-10 medical coding, pharmacy stock, and pathology lab report workflows.",
+      "title": "AuraCare Clinic & Hospital Management (HMS)",
       "imageSrc": "/hero_clinic.jpg",
-      "category": "Healthcare & EMR",
+      "subtitle": "Electronic Medical Records, Pharmacy Dispensing & Lab Diagnostics",
       "metrics": [
         {
           "value": "HL7 & FHIR Standard",
@@ -509,9 +477,42 @@
           "value": "Instant Digital PDF",
           "label": "PRESCRIPTION"
         }
+      ],
+      "id": "hms",
+      "tabLabel": "Clinical Care",
+      "techStack": [
+        "HL7 / FHIR",
+        "PostgreSQL",
+        "Next.js",
+        "DICOM Viewer",
+        "AES-256 Encrypted"
+      ],
+      "category": "Healthcare & EMR",
+      "capabilities": [
+        {
+          "description": "Custom consultation templates, ICD-10 diagnostic coding, and digital e-prescriptions.",
+          "title": "Doctor EMR & Digital Prescriptions",
+          "iconName": "HeartPulse"
+        },
+        {
+          "description": "Batch and expiry tracking, automatic drug interaction alerts, and POS dispensation.",
+          "iconName": "Server",
+          "title": "Integrated Pharmacy System"
+        },
+        {
+          "iconName": "Zap",
+          "title": "Laboratory Diagnostic Workflow",
+          "description": "Sample barcode tracking, equipment interfacing, and automated patient report delivery via WhatsApp/Email."
+        },
+        {
+          "description": "Online patient booking with token display screens in waiting lobbies.",
+          "title": "Appointment Booking & Queue TV",
+          "iconName": "Users"
+        }
       ]
     },
     {
+      "category": "Sales & Revenue",
       "techStack": [
         "Next.js",
         "PostgreSQL",
@@ -519,35 +520,10 @@
         "SendGrid",
         "Docker"
       ],
-      "imageSrc": "/hero_crm.jpg",
-      "title": "Aether Enterprise CRM & Lead Pipeline",
-      "category": "Sales & Revenue",
-      "description": "Close deals faster with unified pipeline management. Ingest leads from web forms, WhatsApp, and email, track follow-ups, generate professional PDF quotations, and monitor sales rep quotas.",
-      "id": "sls",
-      "subtitle": "Omnichannel Lead Capture, Quotation Engine & WhatsApp Automation",
       "tabLabel": "Aether CRM",
-      "capabilities": [
-        {
-          "iconName": "LineChart",
-          "description": "Visual deal management with customizable deal stages, win probabilities, and deal aging.",
-          "title": "Multi-Stage Kanban Pipeline"
-        },
-        {
-          "title": "Instant Quotation & Invoicing",
-          "description": "1-click conversion from deal to PDF quotation with multi-currency VAT calculation.",
-          "iconName": "Zap"
-        },
-        {
-          "title": "Automated WhatsApp & Email Triggers",
-          "description": "Send automated follow-ups, payment reminders, and status notifications directly to leads.",
-          "iconName": "Server"
-        },
-        {
-          "iconName": "ShieldCheck",
-          "description": "Executive dashboards showing conversion rates, revenue forecasts, and rep performance.",
-          "title": "Sales Performance Analytics"
-        }
-      ],
+      "id": "sls",
+      "description": "Close deals faster with unified pipeline management. Ingest leads from web forms, WhatsApp, and email, track follow-ups, generate professional PDF quotations, and monitor sales rep quotas.",
+      "subtitle": "Omnichannel Lead Capture, Quotation Engine & WhatsApp Automation",
       "metrics": [
         {
           "value": "Real-Time Kanban",
@@ -561,33 +537,57 @@
           "value": "WhatsApp & Email",
           "label": "INTEGRATIONS"
         }
-      ]
-    },
-    {
+      ],
+      "imageSrc": "/hero_crm.jpg",
       "capabilities": [
         {
-          "iconName": "Database",
-          "title": "PL/SQL Business Logic Decoupling",
-          "description": "Extract stored procedures and triggers into lightweight, containerized REST / gRPC microservices."
+          "description": "Visual deal management with customizable deal stages, win probabilities, and deal aging.",
+          "iconName": "LineChart",
+          "title": "Multi-Stage Kanban Pipeline"
         },
         {
-          "iconName": "Zap",
-          "title": "Web-Native User Experience",
-          "description": "Replace cumbersome Oracle Form applets with lightning-fast, keyboard-shortcut-enabled web screens."
+          "description": "1-click conversion from deal to PDF quotation with multi-currency VAT calculation.",
+          "title": "Instant Quotation & Invoicing",
+          "iconName": "Zap"
         },
         {
-          "description": "Phased migration strategies allowing legacy and modern interfaces to run concurrently on the same database.",
+          "iconName": "Server",
+          "title": "Automated WhatsApp & Email Triggers",
+          "description": "Send automated follow-ups, payment reminders, and status notifications directly to leads."
+        },
+        {
+          "description": "Executive dashboards showing conversion rates, revenue forecasts, and rep performance.",
           "iconName": "ShieldCheck",
+          "title": "Sales Performance Analytics"
+        }
+      ],
+      "title": "Aether Enterprise CRM & Lead Pipeline"
+    },
+    {
+      "category": "Legacy Modernization",
+      "capabilities": [
+        {
+          "description": "Extract stored procedures and triggers into lightweight, containerized REST / gRPC microservices.",
+          "iconName": "Database",
+          "title": "PL/SQL Business Logic Decoupling"
+        },
+        {
+          "title": "Web-Native User Experience",
+          "description": "Replace cumbersome Oracle Form applets with lightning-fast, keyboard-shortcut-enabled web screens.",
+          "iconName": "Zap"
+        },
+        {
+          "iconName": "ShieldCheck",
+          "description": "Phased migration strategies allowing legacy and modern interfaces to run concurrently on the same database.",
           "title": "Zero Downtime Parallel Cutover"
         },
         {
           "iconName": "Server",
-          "description": "Open up legacy systems to modern 3rd-party integrations, mobile apps, and cloud analytics.",
-          "title": "Modern API Layer & Webhooks"
+          "title": "Modern API Layer & Webhooks",
+          "description": "Open up legacy systems to modern 3rd-party integrations, mobile apps, and cloud analytics."
         }
       ],
-      "tabLabel": "Oracle Modernizer",
-      "subtitle": "PL/SQL Refactoring to Resilient Cloud Microservices",
+      "id": "oracle",
       "metrics": [
         {
           "label": "ZERO DATA LOSS",
@@ -602,11 +602,6 @@
           "label": "INTERFACE"
         }
       ],
-      "description": "Turn obsolete Oracle Forms 6i/11g/12c systems into responsive web applications. Preserve your battle-tested PL/SQL database packages while replacing outdated Java applets with modern Next.js interfaces.",
-      "category": "Legacy Modernization",
-      "id": "oracle",
-      "imageSrc": "/oracle_modernization.png",
-      "title": "Legacy Oracle Forms Modernization Suite",
       "techStack": [
         "Oracle DB 19c",
         "PL/SQL",
@@ -614,28 +609,47 @@
         "Node.js",
         "gRPC",
         "Docker"
-      ]
+      ],
+      "tabLabel": "Oracle Modernizer",
+      "subtitle": "PL/SQL Refactoring to Resilient Cloud Microservices",
+      "title": "Legacy Oracle Forms Modernization Suite",
+      "description": "Turn obsolete Oracle Forms 6i/11g/12c systems into responsive web applications. Preserve your battle-tested PL/SQL database packages while replacing outdated Java applets with modern Next.js interfaces.",
+      "imageSrc": "/oracle_modernization.png"
     }
   ],
   "modules": [
     {
+      "imageSrc": "/hero_erp.jpg",
+      "id": "mod-1787214297073",
       "subtitle": "Custom Architecture Subsystem",
-      "features": [
-        "Modular Architecture",
-        "High Throughput API",
-        "Strict RBAC Security"
-      ],
+      "title": "Enterprise Solution",
+      "description": "Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.",
+      "iconName": "Layers",
+      "category": "Enterprise",
       "pageDetails": {
-        "heroHeadline": "Enterprise Solution — Enterprise",
-        "ctaSecondaryUrl": "",
-        "theme": "enterprise-erp",
-        "id": "mod-1787214297073",
-        "heroHighlight": "Architecture & System Specs.",
+        "sectionVisibility": {
+          "submodules": true,
+          "compliance": true,
+          "metrics": true,
+          "faqs": true,
+          "hero": true,
+          "widget": true,
+          "industries": true,
+          "related": true,
+          "secondaryCta": true
+        },
+        "complianceList": [
+          "ISO 27001 Security Standard",
+          "UAE Regulatory Guidelines",
+          "SOC 2 Architecture Ready",
+          "GDPR Article 32 Compliant"
+        ],
+        "ctaSecondaryText": "Download PDF Spec",
         "metrics": [
           {
-            "trend": "Continuous Delivery",
+            "value": "99.99%",
             "label": "System SLA Uptime",
-            "value": "99.99%"
+            "trend": "Continuous Delivery"
           },
           {
             "label": "Microservice Latency",
@@ -643,82 +657,119 @@
             "trend": "Optimized Throughput"
           },
           {
-            "value": "100%",
+            "trend": "AES-256 & TLS 1.3",
             "label": "Data Encryption",
-            "trend": "AES-256 & TLS 1.3"
+            "value": "100%"
           },
           {
-            "value": "24/7",
             "label": "Dedicated Support",
+            "value": "24/7",
             "trend": "Senior Architects"
           }
         ],
-        "executiveSummary": "Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.",
-        "architecture": {
-          "security": "End-to-end encryption, strict RBAC, automated vulnerability scans",
-          "database": "PostgreSQL / TimescaleDB with Redis caching layer",
-          "scalability": "Containerized Docker & Kubernetes horizontal auto-scaling",
-          "messaging": "Kafka / RabbitMQ distributed event message bus",
-          "runtime": "TypeScript, Next.js, PostgreSQL, Docker",
-          "latency": "< 12ms average transaction execution"
-        },
+        "ctaPrimaryText": "Book a Demo / Discovery",
+        "heroSubtitle": "Custom Architecture Subsystem",
+        "faqs": [
+          {
+            "answer": "We offer flexible deployment options including private cloud, on-premises bare-metal installations, or hybrid multi-datacenter configurations.",
+            "question": "How is Enterprise Solution deployed within our existing enterprise IT infrastructure?"
+          },
+          {
+            "question": "What level of technical support and SLA guarantees are provided?",
+            "answer": "All enterprise deployments come with a 99.99% uptime guarantee, 24/7 incident response from senior software architects, and ongoing performance optimizations."
+          },
+          {
+            "question": "Can this solution be customized to meet our organization's unique workflows?",
+            "answer": "Yes. The modular architecture is designed to be adapted to custom business logic, third-party ERP integrations, and specific regulatory requirements."
+          }
+        ],
+        "theme": "enterprise-erp",
         "deploymentModes": [
           "Managed Sovereign Cloud",
           "On-Premises Dedicated Server",
           "Hybrid High-Availability Cluster"
         ],
-        "showSecondaryCta": true,
-        "ctaSecondaryText": "Download PDF Spec",
-        "heroSubtitle": "Custom Architecture Subsystem",
         "targetIndustry": [
           "Commercial Enterprises",
           "Financial Organizations",
           "Government Entities",
           "Technology Providers"
         ],
-        "accentColor": "blue",
+        "id": "mod-1787214297073",
+        "architecture": {
+          "database": "PostgreSQL / TimescaleDB with Redis caching layer",
+          "messaging": "Kafka / RabbitMQ distributed event message bus",
+          "scalability": "Containerized Docker & Kubernetes horizontal auto-scaling",
+          "security": "End-to-end encryption, strict RBAC, automated vulnerability scans",
+          "runtime": "TypeScript, Next.js, PostgreSQL, Docker",
+          "latency": "< 12ms average transaction execution"
+        },
         "customTitles": {},
-        "interactiveWidget": "workflow-pipeline",
-        "complianceList": [
-          "ISO 27001 Security Standard",
-          "UAE Regulatory Guidelines",
-          "SOC 2 Architecture Ready",
-          "GDPR Article 32 Compliant"
-        ],
-        "heroStyle": "split-console",
+        "heroImage": "/hero_erp.jpg",
+        "accentColor": "blue",
         "mockData": {
           "records": [
             {
               "timestamp": "Committed 1m ago",
-              "id": "MOD-1787214297073-901",
+              "tag": "PRODUCTION",
               "meta": "Distributed Cluster • UAE Region",
-              "status": "ACTIVE",
+              "id": "MOD-1787214297073-901",
               "title": "Enterprise Solution Primary Operational Node",
-              "tag": "PRODUCTION"
+              "status": "ACTIVE"
             },
             {
-              "tag": "INSPECTED",
-              "id": "MOD-1787214297073-902",
               "timestamp": "Committed 4m ago",
-              "status": "VERIFIED",
+              "id": "MOD-1787214297073-902",
+              "tag": "INSPECTED",
+              "title": "High-Throughput Ingestion Queue",
               "meta": "Batch verification completed with 0 errors",
-              "title": "High-Throughput Ingestion Queue"
+              "status": "VERIFIED"
             },
             {
-              "meta": "Cryptographic hash verified across nodes",
-              "title": "Audit Trail & Compliance Ledger",
-              "timestamp": "Committed 12m ago",
               "tag": "SEALED",
+              "meta": "Cryptographic hash verified across nodes",
+              "id": "MOD-1787214297073-903",
+              "timestamp": "Committed 12m ago",
               "status": "COMPLIANT",
-              "id": "MOD-1787214297073-903"
+              "title": "Audit Trail & Compliance Ledger"
             },
             {
-              "tag": "TELEMETRY",
+              "title": "Analytics & Reporting Synthesis",
+              "id": "MOD-1787214297073-904",
               "timestamp": "Committed 18m ago",
               "status": "SYNCHRONIZED",
-              "meta": "Real-time telemetry updated to dashboard",
-              "id": "MOD-1787214297073-904",
-              "title": "Analytics & Reporting Synthesis"
+              "tag": "TELEMETRY",
+              "meta": "Real-time telemetry updated to dashboard"
+            }
+          ],
+          "workflowSteps": [
+            {
+              "step": "01",
+              "status": "VALIDATED",
+              "desc": "Secure payload ingestion via TLS 1.3 gateway",
+              "title": "Data Ingestion & Auth",
+              "latency": "2.4ms"
+            },
+            {
+              "status": "PASS",
+              "latency": "4.1ms",
+              "desc": "Granular policy evaluation and schema verification",
+              "step": "02",
+              "title": "Validation & Rule Engine"
+            },
+            {
+              "status": "COMMITTED",
+              "title": "Execution & Settlement",
+              "desc": "Distributed microservice transaction commit",
+              "latency": "5.8ms",
+              "step": "03"
+            },
+            {
+              "status": "SEALED",
+              "title": "Audit Ledger Recording",
+              "desc": "Cryptographic hash sealing across operational nodes",
+              "step": "04",
+              "latency": "1.2ms"
             }
           ],
           "systemLogs": [
@@ -727,42 +778,11 @@
             "[MOD-1787214297073:PERF] Sub-12ms response commit achieved across analytical pipeline",
             "[MOD-1787214297073:AUDIT] Scheduled automated backup snapshot completed successfully"
           ],
-          "workflowSteps": [
-            {
-              "desc": "Secure payload ingestion via TLS 1.3 gateway",
-              "title": "Data Ingestion & Auth",
-              "step": "01",
-              "status": "VALIDATED",
-              "latency": "2.4ms"
-            },
-            {
-              "status": "PASS",
-              "desc": "Granular policy evaluation and schema verification",
-              "latency": "4.1ms",
-              "title": "Validation & Rule Engine",
-              "step": "02"
-            },
-            {
-              "status": "COMMITTED",
-              "desc": "Distributed microservice transaction commit",
-              "title": "Execution & Settlement",
-              "latency": "5.8ms",
-              "step": "03"
-            },
-            {
-              "title": "Audit Ledger Recording",
-              "desc": "Cryptographic hash sealing across operational nodes",
-              "status": "SEALED",
-              "latency": "1.2ms",
-              "step": "04"
-            }
-          ],
-          "tabTitle": "Enterprise Solution — Live System Telemetry & Operations Hub",
           "codeDiff": {
-            "targetLang": "Arcanum Modern Microservices",
-            "sourceCode": "// Legacy Monolithic Handler\nPROCEDURE Process_Module(\n  p_id IN NUMBER\n) IS\nBEGIN\n  -- Hardcoded monolithic logic\n  UPDATE legacy_records SET status = 'DONE' WHERE id = p_id;\n  COMMIT;\nEND;",
             "targetCode": "// Modern Distributed Microservice\nexport async function handleModuleExecution(ctx: Context, id: string) {\n  const res = await serviceBus.dispatch('module.execute', { id, ts: Date.now() });\n  return { ok: true, hash: res.signature };\n}",
-            "sourceLang": "Legacy / Monolith Architecture"
+            "targetLang": "Arcanum Modern Microservices",
+            "sourceLang": "Legacy / Monolith Architecture",
+            "sourceCode": "// Legacy Monolithic Handler\nPROCEDURE Process_Module(\n  p_id IN NUMBER\n) IS\nBEGIN\n  -- Hardcoded monolithic logic\n  UPDATE legacy_records SET status = 'DONE' WHERE id = p_id;\n  COMMIT;\nEND;"
           },
           "recordsHeader": [
             "Record / Transaction ID",
@@ -770,36 +790,13 @@
             "Metadata / Parameters",
             "Status",
             "Execution Code"
-          ]
+          ],
+          "tabTitle": "Enterprise Solution — Live System Telemetry & Operations Hub"
         },
-        "ctaPrimaryText": "Book a Demo / Discovery",
-        "brochureUrl": "",
-        "heroImage": "/hero_erp.jpg",
-        "faqs": [
-          {
-            "question": "How is Enterprise Solution deployed within our existing enterprise IT infrastructure?",
-            "answer": "We offer flexible deployment options including private cloud, on-premises bare-metal installations, or hybrid multi-datacenter configurations."
-          },
-          {
-            "question": "What level of technical support and SLA guarantees are provided?",
-            "answer": "All enterprise deployments come with a 99.99% uptime guarantee, 24/7 incident response from senior software architects, and ongoing performance optimizations."
-          },
-          {
-            "answer": "Yes. The modular architecture is designed to be adapted to custom business logic, third-party ERP integrations, and specific regulatory requirements.",
-            "question": "Can this solution be customized to meet our organization's unique workflows?"
-          }
-        ],
-        "sectionVisibility": {
-          "industries": true,
-          "compliance": true,
-          "related": true,
-          "secondaryCta": true,
-          "faqs": true,
-          "hero": true,
-          "widget": true,
-          "metrics": true,
-          "submodules": true
-        },
+        "interactiveWidget": "workflow-pipeline",
+        "executiveSummary": "Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.",
+        "slaGuarantee": "99.99% Production Uptime SLA • Enterprise Support Guaranteed",
+        "showSecondaryCta": true,
         "subModules": [
           {
             "name": "Modular Architecture",
@@ -812,66 +809,69 @@
             "badge": "Core Module 01"
           },
           {
-            "description": "Engineered to deliver high throughput, automated workflow execution, and robust audit compliance across distributed systems.",
+            "name": "High Throughput API",
             "points": [
               "Zero technical debt implementation",
               "Full API orchestration & event webhooks",
               "Strict role-based access validation"
             ],
-            "badge": "Core Module 02",
-            "name": "High Throughput API"
+            "description": "Engineered to deliver high throughput, automated workflow execution, and robust audit compliance across distributed systems.",
+            "badge": "Core Module 02"
           },
           {
+            "badge": "Core Module 03",
             "description": "Engineered to deliver high throughput, automated workflow execution, and robust audit compliance across distributed systems.",
             "name": "Strict RBAC Security",
             "points": [
               "Zero technical debt implementation",
               "Full API orchestration & event webhooks",
               "Strict role-based access validation"
-            ],
-            "badge": "Core Module 03"
+            ]
           }
         ],
-        "slaGuarantee": "99.99% Production Uptime SLA • Enterprise Support Guaranteed"
+        "brochureUrl": "",
+        "ctaSecondaryUrl": "",
+        "heroHighlight": "Architecture & System Specs.",
+        "heroHeadline": "Enterprise Solution — Enterprise",
+        "heroStyle": "split-console"
       },
-      "id": "mod-1787214297073",
-      "iconName": "Layers",
-      "category": "Enterprise",
-      "title": "Enterprise Solution",
-      "imageSrc": "/hero_erp.jpg",
-      "slug": "erp",
-      "description": "Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows."
+      "features": [
+        "Modular Architecture",
+        "High Throughput API",
+        "Strict RBAC Security"
+      ],
+      "slug": "erp"
     }
   ],
   "brochures": [
     {
+      "href": "https://arcanum.ae/assets/files/OMS.pdf",
       "category": "Enterprise",
-      "title": "Organization Management System (OMS)",
-      "href": "https://arcanum.ae/assets/files/OMS.pdf"
+      "title": "Organization Management System (OMS)"
     },
     {
       "href": "https://arcanum.ae/assets/files/ARC ERP.pdf",
-      "category": "Enterprise",
-      "title": "ARC ERP System"
+      "title": "ARC ERP System",
+      "category": "Enterprise"
     },
     {
       "title": "Accurate PAYROLL System",
-      "category": "Enterprise",
-      "href": "https://arcanum.ae/assets/files/Accurate PAYROLL.pdf"
+      "href": "https://arcanum.ae/assets/files/Accurate PAYROLL.pdf",
+      "category": "Enterprise"
     },
     {
-      "category": "Education",
       "title": "Scholar School Management System",
+      "category": "Education",
       "href": "https://arcanum.ae/assets/files/Scholar School Management System.pdf"
     },
     {
-      "href": "https://arcanum.ae/assets/files/Accurate Clinic Management.pdf",
       "title": "Accurate Clinic Management",
-      "category": "Healthcare"
+      "category": "Healthcare",
+      "href": "https://arcanum.ae/assets/files/Accurate Clinic Management.pdf"
     },
     {
-      "href": "https://arcanum.ae/assets/files/Accurate Sales.pdf",
       "title": "Accurate Sales & Invoicing",
+      "href": "https://arcanum.ae/assets/files/Accurate Sales.pdf",
       "category": "Workspace"
     },
     {
@@ -880,28 +880,28 @@
       "category": "Workspace"
     },
     {
-      "href": "https://arcanum.ae/assets/files/Simple Messenger.pdf",
       "category": "Workspace",
+      "href": "https://arcanum.ae/assets/files/Simple Messenger.pdf",
       "title": "Simple Messenger Platform"
     },
     {
-      "category": "Infrastructure",
       "href": "https://arcanum.ae/assets/files/Issue Tracker.pdf",
-      "title": "Issue Tracker Documentation"
+      "title": "Issue Tracker Documentation",
+      "category": "Infrastructure"
     },
     {
-      "title": "Flex Data Survey Engine",
       "category": "Workspace",
+      "title": "Flex Data Survey Engine",
       "href": "https://arcanum.ae/assets/files/Flex Data.pdf"
     },
     {
       "category": "Workspace",
-      "href": "https://arcanum.ae/assets/files/Point of sales.pdf",
-      "title": "Point of Sales (POS)"
+      "title": "Point of Sales (POS)",
+      "href": "https://arcanum.ae/assets/files/Point of sales.pdf"
     },
     {
-      "title": "Accurate My-FIN Suite",
       "category": "Banking",
+      "title": "Accurate My-FIN Suite",
       "href": "https://arcanum.ae/assets/files/Accurate My FIN.pdf"
     },
     {
@@ -910,13 +910,13 @@
       "category": "Enterprise"
     },
     {
+      "href": "https://arcanum.ae/assets/files/Website%20Creation.pdf",
       "category": "Infrastructure",
-      "title": "Website Creation Guidelines",
-      "href": "https://arcanum.ae/assets/files/Website%20Creation.pdf"
+      "title": "Website Creation Guidelines"
     },
     {
-      "href": "https://arcanum.ae/assets/files/Accurate Form builder.pdf",
       "title": "Accurate Form Builder",
+      "href": "https://arcanum.ae/assets/files/Accurate Form builder.pdf",
       "category": "Workspace"
     },
     {
@@ -925,19 +925,19 @@
       "href": "https://arcanum.ae/assets/files/Transa Money.pdf"
     },
     {
-      "href": "https://arcanum.ae/assets/files/Oracle Forms.pdf",
       "category": "Infrastructure",
+      "href": "https://arcanum.ae/assets/files/Oracle Forms.pdf",
       "title": "Oracle Forms Modernization"
     },
     {
-      "category": "Banking",
       "href": "https://arcanum.ae/assets/files/SCB Add ons-new.pdf",
-      "title": "Co-Operative Bank Add-ons"
+      "title": "Co-Operative Bank Add-ons",
+      "category": "Banking"
     },
     {
+      "category": "Workspace",
       "title": "Accurate Job Portal",
-      "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf",
-      "category": "Workspace"
+      "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf"
     }
   ],
   "updatedAt": "2026-08-20T08:47:36.031Z"
