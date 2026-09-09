@@ -1,4 +1,4 @@
-import { db } from './firebase';
+import { db, auth } from './firebase';
 import { collection, addDoc, serverTimestamp, getDocs, query, orderBy, limit } from 'firebase/firestore';
 
 export interface InquiryPayload {
@@ -17,6 +17,22 @@ export interface NotificationLogPayload {
   subject: string;
   status: 'sent' | 'failed' | 'queued';
   details?: Record<string, any>;
+}
+
+/**
+ * Build Authorization headers with the current Firebase ID token
+ * for calling protected /api/admin/* endpoints.
+ */
+export async function getAuthHeaders(): Promise<Record<string, string>> {
+  try {
+    const user = auth?.currentUser;
+    if (!user) return {};
+    const token = await user.getIdToken();
+    return { Authorization: `Bearer ${token}` };
+  } catch (err) {
+    console.warn('[Auth Headers] Failed to retrieve ID token:', err);
+    return {};
+  }
 }
 
 /**

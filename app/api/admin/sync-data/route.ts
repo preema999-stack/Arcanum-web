@@ -12,10 +12,14 @@ import {
   BROCHURES_LIST,
   DEFAULT_SHOWCASE_ITEMS,
 } from '@/data/arcanumData';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/serverAuth';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+  const adminUser = await verifyAdminRequest(req);
+  if (!adminUser) return unauthorizedResponse();
+
   try {
     const body = await req.json().catch(() => ({ action: 'pull' }));
     const action = body.action || 'pull';

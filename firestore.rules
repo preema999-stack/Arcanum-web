@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 1. Allow CMS content read & write
+    match /cms_content/{document=**} {
+      allow read, write: if true;
+    }
+
+    // 2. Allow Inquiries
+    match /inquiries/{inquiryId} {
+      allow create, read, update, delete: if true;
+    }
+    
+    // 3. Allow Notification logs
+    match /notification_logs/{logId} {
+      allow create, read, update, delete: if true;
+    }
+
+    // 4. Allow Analytics
+    match /daily_analytics/{docId} {
+      allow read, write: if true;
+    }
+
+    // 5. Allow Staff Directory & Profiles
+    match /staff/{staffId} {
+      allow read, write: if true;
+    }
+
+    // 6. Allow Attendance Punch Records
+    match /attendance/{attendanceId} {
+      allow read, write: if true;
+    }
+
+    // 7. Allow Attendance Adjustments & Audit Trail
+    match /attendanceAdjustments/{adjustmentId} {
+      allow read, write: if true;
+    }
+
+    // 8. Allow Office & Shift Timing Settings
+    match /officeSettings/{settingId} {
+      allow read, write: if true;
+    }
+
+    // 9. Allow Location-Specific Shifts (Kerala, Dubai, etc.)
+    match /shifts/{shiftId} {
+      allow read, write: if true;
+    }
+
+  }
+}

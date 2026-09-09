@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { db } from './firebase';
 import { doc, onSnapshot, setDoc } from 'firebase/firestore';
+import { getAuthHeaders } from './firebaseService';
 import {
   ARCANUM_INFO,
   ARCANUM_VALUES,
@@ -136,7 +137,7 @@ export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       // 1. Call server-side API to update Firestore, backup JSON, and arcanumData.ts
       const res = await fetch('/api/admin/cms', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...(await getAuthHeaders()) },
         body: JSON.stringify(newContent),
       });
 
@@ -180,7 +181,7 @@ export const CmsProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     try {
       const res = await fetch('/api/admin/sync-data', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...(await getAuthHeaders()) },
         body: JSON.stringify({ action: 'pull' }),
       });
       const data = await res.json();

@@ -3,6 +3,7 @@ import { db } from '@/lib/firebase';
 import { collection, getDocs, doc, getDoc, query, orderBy, limit } from 'firebase/firestore';
 import fs from 'fs';
 import path from 'path';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/serverAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,6 +36,9 @@ function getLocalAnalytics(): LocalBackupSchema {
 }
 
 export async function GET(req: NextRequest) {
+  const adminUser = await verifyAdminRequest(req);
+  if (!adminUser) return unauthorizedResponse();
+
   try {
     const { searchParams } = new URL(req.url);
     const daysCount = parseInt(searchParams.get('days') || '14', 10);

@@ -1,3 +1,5 @@
+import { getAuthHeaders } from './firebaseService';
+
 export interface DailyAnalyticsRecord {
   date: string; // YYYY-MM-DD
   visitors: number;
@@ -57,6 +59,7 @@ export async function getDailyAnalytics(daysCount = 14): Promise<AnalyticsSummar
   try {
     const res = await fetch(`/api/admin/analytics?days=${daysCount}`, {
       cache: 'no-store',
+      headers: await getAuthHeaders(),
     });
     if (res.ok) {
       const data = await res.json();

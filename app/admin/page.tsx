@@ -67,8 +67,17 @@ import { useCms, SiteContentData } from '@/lib/cmsContext';
 import { ModuleItem } from '@/data/arcanumData';
 import { getProductDetails, ProductDetailItem } from '@/data/productDetailsData';
 import { getDailyAnalytics, DailyAnalyticsRecord } from '@/lib/analyticsService';
+import { getAuthHeaders } from '@/lib/firebaseService';
 import { ProductPageView } from '@/components/ProductPageView';
 import { IconPickerModal, getModuleIcon } from '@/components/IconPickerModal';
+import { Users, Monitor, Award } from 'lucide-react';
+import { StaffManagementView } from '@/components/admin/StaffManagementView';
+import { AttendanceMatrixView } from '@/components/admin/AttendanceMatrixView';
+import { OfficeDeskLiveView } from '@/components/admin/OfficeDeskLiveView';
+import { StaffKpiOverview } from '@/components/admin/StaffKpiOverview';
+import { AttendanceAuditView } from '@/components/admin/AttendanceAuditView';
+import { OfficeSettingsView } from '@/components/admin/OfficeSettingsView';
+import { Settings } from 'lucide-react';
 
 export interface InquiryRecord {
   id: string;
@@ -82,7 +91,7 @@ export interface InquiryRecord {
   notes?: string;
 }
 
-type AdminTab = 'overview' | 'inquiries' | 'cms';
+type AdminTab = 'overview' | 'inquiries' | 'cms' | 'staff' | 'attendance' | 'office_desk' | 'kpis' | 'office_settings' | 'audit';
 
 export default function AdminDashboardPage() {
   const { user, loading: authLoading, logout } = useAuth();
@@ -90,8 +99,64 @@ export default function AdminDashboardPage() {
 
   const { content, updateCmsContent, isFirebaseLoaded } = useCms();
 
-  // Active navigation tab
+  // Active navigation tab synchronized with URL (?tab=...) and localStorage
   const [activeTab, setActiveTab] = useState<AdminTab>('overview');
+
+  const handleTabChange = (tab: AdminTab) => {
+    setActiveTab(tab);
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('arcanum_admin_active_tab', tab);
+        const url = new URL(window.location.href);
+        url.searchParams.set('tab', tab);
+        window.history.replaceState(null, '', url.toString());
+      } catch (e) {}
+    }
+  };
+
+  // Restore and maintain active module on page load, refresh, or back/forward navigation
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const VALID_TABS: AdminTab[] = [
+        'overview',
+        'inquiries',
+        'cms',
+        'office_desk',
+        'attendance',
+        'staff',
+        'kpis',
+        'office_settings',
+        'audit',
+      ];
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get('tab') as AdminTab | null;
+
+      if (tabParam && VALID_TABS.includes(tabParam)) {
+        setActiveTab(tabParam);
+        localStorage.setItem('arcanum_admin_active_tab', tabParam);
+      } else {
+        const saved = localStorage.getItem('arcanum_admin_active_tab') as AdminTab | null;
+        if (saved && VALID_TABS.includes(saved)) {
+          setActiveTab(saved);
+          const url = new URL(window.location.href);
+          url.searchParams.set('tab', saved);
+          window.history.replaceState(null, '', url.toString());
+        }
+      }
+
+      const handlePopState = () => {
+        const currentParams = new URLSearchParams(window.location.search);
+        const currentTab = currentParams.get('tab') as AdminTab | null;
+        if (currentTab && VALID_TABS.includes(currentTab)) {
+          setActiveTab(currentTab);
+        }
+      };
+
+      window.addEventListener('popstate', handlePopState);
+      return () => window.removeEventListener('popstate', handlePopState);
+    }
+  }, []);
 
   // Inquiries State
   const [inquiries, setInquiries] = useState<InquiryRecord[]>([]);
@@ -226,7 +291,10 @@ export default function AdminDashboardPage() {
   const fetchInquiries = async () => {
     setFetchingInquiries(true);
     try {
-      const res = await fetch('/api/admin/inquiries');
+      const res = await fetch('/api/admin/inquiries', {
+        cache: 'no-store',
+        headers: await getAuthHeaders(),
+      });
       const apiData = await res.json();
       if (apiData.success && Array.isArray(apiData.inquiries) && apiData.inquiries.length > 0) {
         setInquiries(apiData.inquiries);
@@ -641,7 +709,7 @@ export default function AdminDashboardPage() {
 
           <nav className="px-3 space-y-1.5 font-mono text-xs">
             <button
-              onClick={() => setActiveTab('overview')}
+              onClick={() => handleTabChange('overview')}
               className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
                 activeTab === 'overview'
                   ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
@@ -656,7 +724,7 @@ export default function AdminDashboardPage() {
             </button>
 
             <button
-              onClick={() => setActiveTab('inquiries')}
+              onClick={() => handleTabChange('inquiries')}
               className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
                 activeTab === 'inquiries'
                   ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
@@ -677,7 +745,7 @@ export default function AdminDashboardPage() {
             </button>
 
             <button
-              onClick={() => setActiveTab('cms')}
+              onClick={() => handleTabChange('cms')}
               className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
                 activeTab === 'cms'
                   ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
@@ -690,6 +758,109 @@ export default function AdminDashboardPage() {
               </div>
               <span className="text-[10px] text-[#2384ba] font-bold">FIREBASE</span>
             </button>
+
+            {/* NEW ATTENDANCE & STAFF COCKPIT MODULES */}
+            <div className="pt-2 pb-1 px-1">
+              <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-slate-500 font-semibold block">
+                STAFF & ATTENDANCE
+              </span>
+            </div>
+
+            <button
+              onClick={() => handleTabChange('office_desk')}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
+                activeTab === 'office_desk'
+                  ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-semibold shadow-lg shadow-emerald-500/20 border border-emerald-500/50'
+                  : 'text-emerald-300 hover:text-white hover:bg-emerald-950/20 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <Monitor className={`h-4 w-4 ${activeTab === 'office_desk' ? 'text-white' : 'text-emerald-400'}`} />
+                <span>Live Office Desks</span>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+            </button>
+
+            <button
+              onClick={() => handleTabChange('attendance')}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
+                activeTab === 'attendance'
+                  ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <Calendar className={`h-4 w-4 ${activeTab === 'attendance' ? 'text-white' : 'text-[#2384ba] group-hover:text-white'}`} />
+                <span>Attendance Matrix</span>
+              </div>
+              <ChevronRight className={`h-3.5 w-3.5 opacity-60 ${activeTab === 'attendance' ? 'translate-x-0.5' : ''}`} />
+            </button>
+
+            <button
+              onClick={() => handleTabChange('staff')}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
+                activeTab === 'staff'
+                  ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <Users className={`h-4 w-4 ${activeTab === 'staff' ? 'text-white' : 'text-[#2384ba] group-hover:text-white'}`} />
+                <span>Staff Management</span>
+              </div>
+              <ChevronRight className={`h-3.5 w-3.5 opacity-60 ${activeTab === 'staff' ? 'translate-x-0.5' : ''}`} />
+            </button>
+
+            <button
+              onClick={() => handleTabChange('kpis')}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
+                activeTab === 'kpis'
+                  ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <Award className={`h-4 w-4 ${activeTab === 'kpis' ? 'text-white' : 'text-[#2384ba] group-hover:text-white'}`} />
+                <span>Staff KPIs & Metrics</span>
+              </div>
+              <ChevronRight className={`h-3.5 w-3.5 opacity-60 ${activeTab === 'kpis' ? 'translate-x-0.5' : ''}`} />
+            </button>
+
+            <button
+              onClick={() => handleTabChange('office_settings')}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
+                activeTab === 'office_settings'
+                  ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <Settings className={`h-4 w-4 ${activeTab === 'office_settings' ? 'text-white' : 'text-[#2384ba] group-hover:text-white'}`} />
+                <span>Office Time Settings</span>
+              </div>
+              <ChevronRight className={`h-3.5 w-3.5 opacity-60 ${activeTab === 'office_settings' ? 'translate-x-0.5' : ''}`} />
+            </button>
+
+            <button
+              onClick={() => handleTabChange('audit')}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl transition-all duration-200 group ${
+                activeTab === 'audit'
+                  ? 'bg-gradient-to-r from-[#2384ba] to-[#1a648e] text-white font-semibold shadow-lg shadow-[#2384ba]/30 border border-[#2384ba]/50'
+                  : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <ShieldCheck className={`h-4 w-4 ${activeTab === 'audit' ? 'text-white' : 'text-[#2384ba] group-hover:text-white'}`} />
+                <span>Audit & Adjustments</span>
+              </div>
+              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-slate-400">LOG</span>
+            </button>
+
+            <div className="pt-2 pb-1 px-1">
+              <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-slate-500 font-semibold block">
+                EXTERNAL TOOLS
+              </span>
+            </div>
 
             <Link
               href="/admin/showcase-designer"
@@ -738,13 +909,19 @@ export default function AdminDashboardPage() {
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-mono text-xs text-[#2384ba] tracking-widest uppercase font-semibold">
-                [ 0{activeTab === 'overview' ? 1 : activeTab === 'inquiries' ? 2 : 3} // CONTROL TERMINAL ]
+                [ {activeTab.toUpperCase().replace('_', ' ')} // CONTROL TERMINAL ]
               </span>
             </div>
             <h1 className="text-xl sm:text-2xl font-bold text-white font-display tracking-tight mt-0.5">
               {activeTab === 'overview' && 'Overview & Traffic Intelligence'}
               {activeTab === 'inquiries' && 'Technical Discovery Inquiries'}
               {activeTab === 'cms' && 'Dynamic CMS Section Editor'}
+              {activeTab === 'office_desk' && 'Live Office Workstations & Presence'}
+              {activeTab === 'attendance' && 'Monthly Attendance Matrix & Query Master'}
+              {activeTab === 'staff' && 'Staff Directory & Profile Management'}
+              {activeTab === 'kpis' && 'Staff KPIs & Performance Metrics'}
+              {activeTab === 'office_settings' && 'Office Timing & Shift Configuration'}
+              {activeTab === 'audit' && 'Attendance Adjustments & Audit Trail'}
             </h1>
           </div>
 
@@ -2253,6 +2430,48 @@ export default function AdminDashboardPage() {
                 </div>
               )}
             </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 4: LIVE OFFICE WORKSTATIONS & PRESENCE */}
+          {/* ========================================================= */}
+          {activeTab === 'office_desk' && (
+            <OfficeDeskLiveView />
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 5: MONTHLY ATTENDANCE MATRIX & QUERIES */}
+          {/* ========================================================= */}
+          {activeTab === 'attendance' && (
+            <AttendanceMatrixView adminEmail={user?.email || 'admin@arcanum.ae'} />
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 6: STAFF DIRECTORY & MANAGEMENT */}
+          {/* ========================================================= */}
+          {activeTab === 'staff' && (
+            <StaffManagementView />
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 7: STAFF KPIS & BENCHMARKS */}
+          {/* ========================================================= */}
+          {activeTab === 'kpis' && (
+            <StaffKpiOverview />
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 8: OFFICE TIMING & SHIFT SETTINGS */}
+          {/* ========================================================= */}
+          {activeTab === 'office_settings' && (
+            <OfficeSettingsView adminEmail={user?.email || 'admin@arcanum.ae'} />
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 9: AUDIT TRAIL & ADJUSTMENTS HISTORY */}
+          {/* ========================================================= */}
+          {activeTab === 'audit' && (
+            <AttendanceAuditView />
           )}
         </div>
       </div>

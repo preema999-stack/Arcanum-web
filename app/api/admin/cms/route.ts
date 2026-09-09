@@ -19,6 +19,7 @@ import {
   BrochureItem,
   ShowcaseItem,
 } from '@/data/arcanumData';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/serverAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -267,8 +268,11 @@ export async function GET() {
   }
 }
 
-// POST /api/admin/cms — Update CMS document on Firestore and persist
+// POST /api/admin/cms — Update CMS document on Firestore and persist (auth required)
 export async function POST(req: NextRequest) {
+  const adminUser = await verifyAdminRequest(req);
+  if (!adminUser) return unauthorizedResponse();
+
   try {
     const body = await req.json();
     const payload: CmsPayload = {
