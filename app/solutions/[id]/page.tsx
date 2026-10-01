@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ARCANUM_MODULES, ModuleItem } from '@/data/arcanumData';
+import { ARCANUM_MODULES, ModuleItem, DEFAULT_SHOWCASE_ITEMS, ShowcaseItem } from '@/data/arcanumData';
 import { useCms } from '@/lib/cmsContext';
 import { getProductDetails, ProductDetailItem } from '@/data/productDetailsData';
 import { Header } from '@/components/Header';
@@ -24,7 +24,9 @@ export default function ProductDetailPage() {
 
   const fallbackModule: ModuleItem = {
     id: rawId || 'custom-solution',
-    title: 'Enterprise Solution',
+    title: rawId
+      ? rawId.replace(/^product-/, '').split(/[-_]/).map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
+      : 'Enterprise Solution',
     category: 'Enterprise',
     subtitle: 'Custom Architecture Subsystem',
     description: 'Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.',
@@ -33,21 +35,209 @@ export default function ProductDetailPage() {
   };
 
   const modulesList = Array.isArray(content?.modules) && content.modules.length > 0 ? content.modules : ARCANUM_MODULES;
+  const showcaseList: ShowcaseItem[] =
+    Array.isArray(content?.showcaseItems) && content.showcaseItems.length > 0
+      ? content.showcaseItems
+      : DEFAULT_SHOWCASE_ITEMS;
+
+  // 1. Check if rawId matches a solution module in content.modules or ARCANUM_MODULES
+  const matchedFromModules = modulesList.find(
+    (m) =>
+      m.id?.toLowerCase() === rawId?.toLowerCase() ||
+      m.slug?.toLowerCase() === rawId?.toLowerCase() ||
+      m.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-') === rawId?.toLowerCase()
+  );
+
+  const matchedFromArcanum = !matchedFromModules
+    ? ARCANUM_MODULES.find(
+        (m) =>
+          m.id?.toLowerCase() === rawId?.toLowerCase() ||
+          m.slug?.toLowerCase() === rawId?.toLowerCase()
+      )
+    : null;
+
+  // 2. Check if rawId matches a showcase item (e.g. newly created/edited showcase projects)
+  const matchedShowcase =
+    !matchedFromModules && !matchedFromArcanum
+      ? showcaseList.find(
+          (s) =>
+            s.id?.toLowerCase() === rawId?.toLowerCase() ||
+            s.tabLabel?.toLowerCase().replace(/[^a-z0-9]+/g, '-') === rawId?.toLowerCase() ||
+            s.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-') === rawId?.toLowerCase()
+        )
+      : null;
+
+  let showcaseAsModule: ModuleItem | null = null;
+  if (matchedShowcase) {
+    const featureNames = matchedShowcase.capabilities?.map((c) => c.title) || [];
+    const metricSubmodules =
+      matchedShowcase.capabilities?.map((cap, i) => ({
+        name: cap.title,
+        badge: `Core Capability 0${i + 1}`,
+        description: cap.description,
+        points: [
+          `High-performance ${cap.title.toLowerCase()} implementation`,
+          'End-to-end integration and API-driven orchestration',
+          'Continuous operational reliability and telemetry monitoring',
+        ],
+      })) || [];
+
+    const generatedPageDetails: ProductDetailItem = {
+      id: matchedShowcase.id,
+      heroHeadline: matchedShowcase.title,
+      heroHighlight: matchedShowcase.subtitle || 'Architecture & System Specs',
+      heroSubtitle: matchedShowcase.subtitle || 'Empower Teams. Deliver Better.',
+      executiveSummary:
+        matchedShowcase.description ||
+        'Enterprise-grade software system engineered with architectural precision, modular microservices, and dedicated security layers for mission-critical operations.',
+      heroImage: matchedShowcase.imageSrc || '/hero_erp.jpg',
+      theme: 'saas-modern',
+      accentColor: 'blue',
+      heroStyle: 'split-console',
+      interactiveWidget: 'workflow-pipeline',
+      targetIndustry: ['Commercial Enterprises', 'Digital Businesses', 'Global Organizations', 'Technology Teams'],
+      deploymentModes: ['Managed Sovereign Cloud', 'Dedicated High-Availability Cluster', 'On-Premises Infrastructure'],
+      slaGuarantee: '99.99% Uptime SLA • Enterprise Zero Data Loss Guarantee',
+      metrics:
+        matchedShowcase.metrics?.map((m) => ({
+          label: m.label,
+          value: m.value,
+          trend: 'Optimized Target',
+        })) || [
+          { label: 'System SLA', value: '99.99%', trend: 'Continuous Delivery' },
+          { label: 'Microservice Latency', value: '< 10ms', trend: 'Sub-millisecond' },
+          { label: 'Security Layer', value: 'Zero-Trust', trend: 'Enterprise Grade' },
+        ],
+      subModules:
+        metricSubmodules.length > 0
+          ? metricSubmodules
+          : [
+              {
+                name: 'Core System Engine',
+                badge: 'Core Engine 01',
+                description: matchedShowcase.description,
+                points: ['Modular architecture', 'High throughput API', 'Strict RBAC security'],
+              },
+            ],
+      architecture: {
+        runtime: (matchedShowcase.techStack && matchedShowcase.techStack.join(', ')) || 'TypeScript, Next.js, Node.js',
+        database: 'PostgreSQL & Redis Caching Layer',
+        security: 'End-to-end TLS 1.3, AES-256 encryption at rest, strict RBAC',
+        messaging: 'Distributed event bus & Kafka/RabbitMQ streams',
+        latency: matchedShowcase.metrics?.find((m) => m.label.toLowerCase().includes('latency'))?.value || '< 10ms latency',
+        scalability: 'Horizontally auto-scaled containerized microservices',
+      },
+      complianceList: [
+        'Enterprise Security Standards',
+        'Role-Based Access Control',
+        'High-Availability Architecture',
+        'Zero-Trust Security Posture',
+      ],
+      mockData: {
+        tabTitle: `${matchedShowcase.title} — System Telemetry & Operations`,
+        recordsHeader: ['Entity / Task ID', 'Component', 'Parameters', 'Status', 'Audit Code'],
+        records: [
+          {
+            id: `${matchedShowcase.id.slice(0, 8).toUpperCase()}-101`,
+            title: `${matchedShowcase.title} Primary Cluster`,
+            meta: 'Operational • UAE Region',
+            status: 'ACTIVE',
+            tag: 'PRODUCTION',
+            timestamp: 'Committed 1m ago',
+          },
+          {
+            id: `${matchedShowcase.id.slice(0, 8).toUpperCase()}-102`,
+            title: 'Real-Time Ingestion Pipeline',
+            meta: 'Synchronized across distributed nodes',
+            status: 'VERIFIED',
+            tag: 'INSPECTED',
+            timestamp: 'Committed 3m ago',
+          },
+          {
+            id: `${matchedShowcase.id.slice(0, 8).toUpperCase()}-103`,
+            title: 'Security & Access Ledger',
+            meta: 'Cryptographic policy verified',
+            status: 'COMPLIANT',
+            tag: 'SEALED',
+            timestamp: 'Committed 7m ago',
+          },
+        ],
+        systemLogs: [
+          `[${matchedShowcase.title.toUpperCase()}:CORE] Microservices cluster operational with 0 errors`,
+          `[${matchedShowcase.title.toUpperCase()}:AUTH] Secure session validation completed across active endpoints`,
+          `[${matchedShowcase.title.toUpperCase()}:TELEMETRY] Metrics synchronized to centralized monitoring dashboard`,
+        ],
+        workflowSteps:
+          matchedShowcase.capabilities?.map((c, i) => ({
+            step: `0${i + 1}`,
+            title: c.title,
+            desc: c.description,
+            latency: `${(i + 1) * 1.8}ms`,
+            status: 'COMMITTED',
+          })) || [
+            { step: '01', title: 'Data Ingestion & Auth', desc: 'Secure payload ingestion via TLS 1.3 gateway', latency: '2.4ms', status: 'VALIDATED' },
+            { step: '02', title: 'Workflow Processing', desc: 'Granular policy evaluation and schema verification', latency: '4.1ms', status: 'PASS' },
+            { step: '03', title: 'Commit & Distribution', desc: 'Distributed microservice transaction commit', latency: '5.8ms', status: 'COMMITTED' },
+          ],
+        codeDiff: {
+          sourceLang: 'Legacy / Manual Process',
+          sourceCode: `// Legacy Unoptimized Implementation\nfunction processWorkflow(data) {\n  // Synchronous bottleneck\n  legacyDb.save(data);\n  notifyTeamManual(data);\n}`,
+          targetLang: 'Arcanum Modern Cloud Architecture',
+          targetCode: `// High-Performance Event-Driven Implementation\nexport async function handleWorkflowExecution(ctx: Context, payload: WorkflowData) {\n  const res = await serviceBus.dispatch('workflow.execute', { payload, ts: Date.now() });\n  return { ok: true, hash: res.signature };\n}`,
+        },
+      },
+      faqs: [
+        {
+          question: `How does ${matchedShowcase.title} integrate with our current systems?`,
+          answer: 'Our platform provides standardized REST and GraphQL APIs, event webhooks, and secure authentication to connect directly with your existing infrastructure.',
+        },
+        {
+          question: 'What is the deployment timeframe and hosting model?',
+          answer: 'Deployments can be provisioned in sovereign cloud environments, on-premises datacenters, or dedicated multi-region clusters with comprehensive 24/7 technical support.',
+        },
+        {
+          question: 'Can capabilities and role permissions be customized for our team?',
+          answer: "Yes, full role-based access control and configurable workflow rules are tailored to your organization's hierarchy and operational requirements.",
+        },
+      ],
+      showSecondaryCta: false,
+      ctaPrimaryText: 'Book a Demo / Discovery',
+      sectionVisibility: {
+        hero: true,
+        secondaryCta: false,
+        metrics: true,
+        widget: true,
+        submodules: true,
+        industries: true,
+        compliance: true,
+        faqs: true,
+        related: true,
+      },
+      ...((matchedShowcase as any).pageDetails || {}),
+    };
+
+    showcaseAsModule = {
+      id: matchedShowcase.id,
+      slug: matchedShowcase.tabLabel?.toLowerCase().replace(/[^a-z0-9]+/g, '-') || matchedShowcase.id,
+      title: matchedShowcase.title,
+      category: (matchedShowcase.category as any) || 'Enterprise',
+      subtitle: matchedShowcase.subtitle || 'Custom Architecture Subsystem',
+      description: matchedShowcase.description,
+      features: featureNames.length > 0 ? featureNames : ['Modular Architecture', 'High Throughput API', 'Strict RBAC Security'],
+      techStack: matchedShowcase.techStack || ['TypeScript', 'Next.js', 'PostgreSQL', 'Docker'],
+      imageSrc: matchedShowcase.imageSrc || '/hero_erp.jpg',
+      iconName: matchedShowcase.iconName || 'Zap',
+      badge: 'Flagship Showcase',
+      pageDetails: generatedPageDetails,
+    };
+  }
+
+  // 3. Fallback resolution: NEVER blindly default to modulesList[0] when rawId is provided
   const currentModule: ModuleItem =
-    (modulesList && modulesList.find(
-      (m) =>
-        m.id?.toLowerCase() === rawId?.toLowerCase() ||
-        m.slug?.toLowerCase() === rawId?.toLowerCase() ||
-        m.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-') === rawId?.toLowerCase()
-    )) ||
-    (ARCANUM_MODULES && ARCANUM_MODULES.find(
-      (m) =>
-        m.id?.toLowerCase() === rawId?.toLowerCase() ||
-        m.slug?.toLowerCase() === rawId?.toLowerCase()
-    )) ||
-    (modulesList && modulesList[0]) ||
-    (ARCANUM_MODULES && ARCANUM_MODULES[0]) ||
-    fallbackModule;
+    matchedFromModules ||
+    matchedFromArcanum ||
+    showcaseAsModule ||
+    (rawId ? fallbackModule : modulesList[0] || ARCANUM_MODULES[0] || fallbackModule);
 
   const defaultDetails = getProductDetails(currentModule);
   const productDetails: ProductDetailItem = currentModule.pageDetails
