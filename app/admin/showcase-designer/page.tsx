@@ -10,6 +10,8 @@ import {
   DEFAULT_SHOWCASE_ITEMS,
   ShowcaseItem,
   SiteInfo,
+  ModuleItem,
+  ARCANUM_MODULES,
 } from '@/data/arcanumData';
 import {
   ArrowLeft,
@@ -220,10 +222,69 @@ export default function ShowcaseDesignerPage() {
         ...headerInfo,
       } as SiteInfo;
 
+      // Automatically keep catalog modules synchronized with showcase items
+      const existingModules: ModuleItem[] =
+        Array.isArray(content?.modules) && content.modules.length > 0
+          ? [...content.modules]
+          : [...ARCANUM_MODULES];
+
+      items.forEach((item) => {
+        const existingIndex = existingModules.findIndex(
+          (m) =>
+            m.id?.toLowerCase() === item.id?.toLowerCase() ||
+            m.slug?.toLowerCase() === item.id?.toLowerCase() ||
+            (m.title && item.title && m.title.toLowerCase() === item.title.toLowerCase())
+        );
+
+        const moduleFeatures = item.capabilities?.map((c) => c.title) || [];
+
+        if (existingIndex >= 0) {
+          const prev = existingModules[existingIndex];
+          existingModules[existingIndex] = {
+            ...prev,
+            title: item.title || prev.title,
+            subtitle: item.subtitle || prev.subtitle,
+            description: item.description || prev.description,
+            category: (item.category as any) || prev.category,
+            techStack: item.techStack || prev.techStack,
+            imageSrc: item.imageSrc || prev.imageSrc,
+            iconName: item.iconName || prev.iconName,
+            features: moduleFeatures.length > 0 ? moduleFeatures : prev.features,
+          };
+        } else {
+          existingModules.push({
+            id: item.id,
+            slug: item.id,
+            title: item.title || item.tabLabel,
+            category: (item.category as any) || 'Enterprise',
+            subtitle: item.subtitle || '',
+            description: item.description || '',
+            features:
+              moduleFeatures.length > 0
+                ? moduleFeatures
+                : ['Modular Architecture', 'High Throughput API', 'Strict RBAC Security'],
+            techStack: item.techStack || ['TypeScript', 'Next.js', 'PostgreSQL', 'Docker'],
+            imageSrc: item.imageSrc || '/hero_erp.jpg',
+            iconName: item.iconName || 'Zap',
+            badge: 'Flagship Solution',
+          });
+        }
+      });
+
+      // Remove any custom product-* modules that were deleted from showcase items
+      const activeItemIds = new Set(items.map((i) => i.id.toLowerCase()));
+      const cleanedModules = existingModules.filter((m) => {
+        if (m.id.startsWith('product-')) {
+          return activeItemIds.has(m.id.toLowerCase());
+        }
+        return true;
+      });
+
       const success = await updateCmsContent({
         ...content,
         info: updatedInfo,
         showcaseItems: items,
+        modules: cleanedModules,
       });
 
       if (success) {

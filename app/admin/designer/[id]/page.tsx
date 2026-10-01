@@ -71,10 +71,43 @@ export default function ProductDesignerPage() {
   }), [rawId]);
 
   const modulesList = useMemo(() => {
-    return Array.isArray(content?.modules) && content.modules.length > 0
-      ? content.modules
-      : (ARCANUM_MODULES && ARCANUM_MODULES.length > 0 ? ARCANUM_MODULES : [fallbackModule]);
-  }, [content?.modules, fallbackModule]);
+    const base: ModuleItem[] =
+      Array.isArray(content?.modules) && content.modules.length > 0
+        ? content.modules
+        : ARCANUM_MODULES && ARCANUM_MODULES.length > 0
+        ? ARCANUM_MODULES
+        : [fallbackModule];
+
+    const showcases = Array.isArray(content?.showcaseItems) ? content.showcaseItems : [];
+    const extra: ModuleItem[] = [];
+
+    showcases.forEach((s) => {
+      const exists = base.some(
+        (m) =>
+          m.id?.toLowerCase() === s.id?.toLowerCase() ||
+          m.slug?.toLowerCase() === s.id?.toLowerCase() ||
+          (m.title && s.title && m.title.toLowerCase() === s.title.toLowerCase())
+      );
+
+      if (!exists) {
+        extra.push({
+          id: s.id,
+          slug: s.id,
+          title: s.title || s.tabLabel,
+          category: (s.category as any) || 'Enterprise',
+          subtitle: s.subtitle || '',
+          description: s.description || '',
+          features: s.capabilities?.map((c) => c.title) || [],
+          techStack: s.techStack || ['TypeScript', 'Next.js', 'PostgreSQL', 'Docker'],
+          imageSrc: s.imageSrc || '/hero_erp.jpg',
+          iconName: s.iconName || 'Zap',
+          badge: 'Flagship Solution',
+        });
+      }
+    });
+
+    return [...base, ...extra];
+  }, [content?.modules, content?.showcaseItems, fallbackModule]);
 
   // Find module index
   const activeModuleIndex = useMemo(() => {

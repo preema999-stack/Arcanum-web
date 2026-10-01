@@ -1,13 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowUpRight,
   Boxes,
 } from 'lucide-react';
-import { ARCANUM_MODULES } from '@/data/arcanumData';
+import { ARCANUM_MODULES, ModuleItem, ShowcaseItem } from '@/data/arcanumData';
 import { useCms } from '@/lib/cmsContext';
 import { getModuleIcon } from '@/components/IconPickerModal';
 
@@ -18,7 +18,47 @@ interface SolutionsSectionProps {
 export function SolutionsSection({ onOpenBrochures }: SolutionsSectionProps) {
   const { content } = useCms();
   const info = content?.info;
-  const modulesList = Array.isArray(content?.modules) ? content.modules : ARCANUM_MODULES;
+
+  // Automatically link catalog modules with any showcase items not yet in catalog
+  const modulesList: ModuleItem[] = useMemo(() => {
+    const base: ModuleItem[] =
+      Array.isArray(content?.modules) && content.modules.length > 0
+        ? content.modules
+        : ARCANUM_MODULES;
+
+    const showcases: ShowcaseItem[] = Array.isArray(content?.showcaseItems)
+      ? content.showcaseItems
+      : [];
+
+    const extraFromShowcase: ModuleItem[] = [];
+
+    showcases.forEach((s) => {
+      const exists = base.some(
+        (m) =>
+          m.id?.toLowerCase() === s.id?.toLowerCase() ||
+          m.slug?.toLowerCase() === s.id?.toLowerCase() ||
+          (m.title && s.title && m.title.toLowerCase() === s.title.toLowerCase())
+      );
+
+      if (!exists) {
+        extraFromShowcase.push({
+          id: s.id,
+          slug: s.id,
+          title: s.title || s.tabLabel,
+          category: (s.category as any) || 'Enterprise',
+          subtitle: s.subtitle || '',
+          description: s.description || '',
+          features: s.capabilities?.map((c) => c.title) || [],
+          techStack: s.techStack || ['TypeScript', 'Next.js', 'PostgreSQL', 'Docker'],
+          imageSrc: s.imageSrc || '/hero_erp.jpg',
+          iconName: s.iconName || 'Zap',
+          badge: 'Flagship Solution',
+        });
+      }
+    });
+
+    return [...base, ...extraFromShowcase];
+  }, [content?.modules, content?.showcaseItems]);
 
   return (
     <section id="catalog" className="relative bg-[#0f172a] py-16 md:py-24 overflow-hidden scroll-mt-24">
