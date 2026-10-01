@@ -8,18 +8,18 @@
     "heroHeadlineSuffix": "We Will Make It a",
     "heroPhase2Title": "From Bold Vision to",
     "heroPhase2Highlight": "Enterprise Reality.",
-    "heroPhase2Description": "We engineer custom ERPs, core banking engines, clinical platforms, and cloud infrastructure — built with architectural rigor.",
+    "heroPhase2Description": "We engineer custom ERPs, bespoke web platforms, and cloud infrastructure — built with architectural rigor.",
     "heroPhase3Title": "And We Build Systems",
     "heroPhase3Highlight": "That Endure.",
     "heroPhase3Description": "Secure, scalable, and backed by senior engineers across the UAE — so your software keeps evolving as your business grows.",
-    "heroDescription": "Arcanum Information Technology is a professionally managed software development firm in the UAE. We engineer high-performance ERPs, banking integrations, clinical management systems, and legacy Oracle Forms modernizations with enterprise-grade security and reliability.",
+    "heroDescription": "Arcanum Information Technology is a professionally managed software development firm in the UAE. We engineer high-performance ERPs, restaurant POS systems, bespoke web platforms, and legacy Oracle Forms modernizations with enterprise-grade security and reliability.",
     "established": "UAE & India",
     "aboutBadge": "02 / Who We Are",
     "aboutTitle": "An IT Engineering Firm Built on",
     "aboutTitleHighlight": "Rigor & Reliability.",
     "aboutDescription1": "Arcanum Information Technology is a professionally managed software engineering firm operating across three key global centers: Abu Dhabi (UAE), Kerala (India), and Gujarat (India). We employ senior software architects and engineers delivering enterprise-grade software.",
     "aboutDescription2": "Professionally managed software development firm delivering secure enterprise software across ERP, Banking, Healthcare, Education, and Cloud Infrastructure.",
-    "marqueeText": "ARCHITECTURAL PRECISION • LEGACY ORACLE FORMS REFACTORING • UAE WPS PAYROLL COMPLIANCE • ISO 8583 BANKING SWITCHES • CLINICAL EMR PROTOCOLS • SUB-12MS MICROSERVICES • ZERO DATA LOSS GUARANTEE • ",
+    "marqueeText": "ARCHITECTURAL PRECISION • LEGACY ORACLE FORMS REFACTORING • UAE WPS PAYROLL COMPLIANCE • MOTION-DRIVEN WEB EXPERIENCES • SUB-12MS MICROSERVICES • ZERO DATA LOSS GUARANTEE • ALL-IN-ONE ERP SOLUTIONS •",
     "heroBadgeLabel": "GLOBAL HUBS:123",
     "heroCta1": "Start Your Project",
     "heroCta2": "Explore Enterprise Catalog",
@@ -33,17 +33,17 @@
     "locationsDescription": "Strategically distributed across Abu Dhabi, Kerala, and Gujarat to deliver 24/7 enterprise engineering, client strategy, and mission-critical system continuity.",
     "contactBadge": "06 / INITIATE ENGAGEMENT",
     "contactTitle": "Schedule Technical Architecture Discovery",
-    "contactDescription": "Speak directly with our senior software architects. Whether you need custom ERP implementation, Oracle Forms refactoring, or co-operative banking integration, we deliver enterprise certainty.",
+    "contactDescription": "Speak directly with our senior software architects. Whether you need custom ERP implementation, Oracle Forms refactoring, or a bespoke web platform, we deliver enterprise certainty.",
     "stats": [
       {
-        "change": "+4 this year",
         "value": "22+",
+        "change": "+4 this year",
         "label": "Enterprise Applications"
       },
       {
         "label": "System Uptime SLA",
-        "value": "99.99%",
-        "change": "Zero critical downtime"
+        "change": "Zero critical downtime",
+        "value": "99.99%"
       },
       {
         "label": "Microservice Latency",
@@ -52,22 +52,22 @@
       },
       {
         "value": "150K+",
-        "label": "Active Enterprise Users",
-        "change": "Cross-platform users"
+        "change": "Cross-platform users",
+        "label": "Active Enterprise Users"
       }
     ],
     "contact": {
-      "poBox": "P.O. Box 45000, Abu Dhabi, UAE",
-      "workingHours": "Mon - Fri: 08:30 AM - 06:00 PM (GST)",
       "address": "Abu Dhabi (UAE) • Kerala (India) • Gujarat (India)",
       "email": "info@arcanum.ae",
+      "workingHours": "Mon - Fri: 08:30 AM - 06:00 PM (GST)",
+      "phone": "+971 4 000 0000",
       "website": "https://arcanum.ae",
-      "phone": "+971 4 000 0000"
+      "poBox": "P.O. Box 45000, Abu Dhabi, UAE"
     },
     "socialLinks": {
+      "linkedin": "https://linkedin.com/company/arcanum-it",
       "email": "info@arcanum.ae",
-      "whatsapp": "+9714000000",
-      "linkedin": "https://linkedin.com/company/arcanum-it"
+      "whatsapp": "+9714000000"
     },
     "showcaseBadge": "03 / Flagship Product Showcase",
     "showcaseTitle": "Enterprise Software We",
@@ -76,10 +76,10 @@
   },
   "values": [
     {
-      "title": "Architectural Precision",
-      "description": "Clean modular codebases with strict type safety, zero-trust security layers, and zero technical debt.",
       "iconName": "Cpu",
-      "id": "precision"
+      "id": "precision",
+      "description": "Clean modular codebases with strict type safety, zero-trust security layers, and zero technical debt.",
+      "title": "Architectural Precision"
     },
     {
       "iconName": "Database",
@@ -88,21 +88,38 @@
       "title": "Legacy Modernization"
     },
     {
-      "id": "compliance",
-      "iconName": "ShieldCheck",
       "description": "Native adherence to UAE WPS payroll standards, ISO 8583 banking switches, and clinical EMR protocols.",
-      "title": "Statutory Compliance"
+      "title": "Statutory Compliance",
+      "id": "compliance",
+      "iconName": "ShieldCheck"
     },
     {
-      "iconName": "Award",
       "description": "Employing highly-skilled senior engineers who execute complex IT assignments elegantly and on schedule.",
       "title": "Professional Execution",
+      "iconName": "Award",
       "id": "execution"
     }
   ],
   "locations": [
     {
+      "focusDomains": [
+        "Enterprise ERP",
+        "Custom Web Platforms",
+        "Client Strategy"
+      ],
+      "address": "Arcanum Information Technology, Abu Dhabi, United Arab Emirates",
+      "role": "Global Headquarters & Executive Hub",
       "latLng": "24.4539° N, 54.3773° E",
+      "timezone": "GST (Gulf Standard Time)",
+      "coordinates": {
+        "x": 42,
+        "y": 44
+      },
+      "city": "Abu Dhabi",
+      "country": "United Arab Emirates",
+      "gmtOffset": 4,
+      "id": "abudhabi",
+      "description": "Strategic corporate headquarters directing global enterprise operations, client advisory, financial technology governance, and regional Middle East deployments.",
       "stats": [
         {
           "value": "99.99%",
@@ -118,42 +135,13 @@
         }
       ],
       "flag": "🇦🇪",
-      "country": "United Arab Emirates",
-      "city": "Abu Dhabi",
-      "coordinates": {
-        "y": 44,
-        "x": 42
-      },
-      "timezone": "GST (Gulf Standard Time)",
-      "role": "Global Headquarters & Executive Hub",
-      "address": "Arcanum Information Technology, Abu Dhabi, United Arab Emirates",
-      "gmtOffset": 4,
-      "description": "Strategic corporate headquarters directing global enterprise operations, client advisory, financial technology governance, and regional Middle East deployments.",
-      "id": "abudhabi",
-      "isHq": true,
-      "focusDomains": [
-        "Enterprise ERP",
-        "Core Banking Integrations",
-        "Client Strategy"
-      ]
+      "isHq": true
     },
     {
-      "role": "Engineering & Core R&D Hub",
-      "description": "Primary software architecture and product innovation center specializing in full-stack engineering, Oracle Forms modernizations, and scalable cloud microservices.",
-      "country": "India",
-      "timezone": "IST (Indian Standard Time)",
-      "id": "kerala",
-      "focusDomains": [
-        "Oracle Forms Refactoring",
-        "School Management (Scholar)",
-        "Clinic Systems",
-        "Microservices"
-      ],
-      "city": "Kerala",
       "stats": [
         {
-          "value": "Senior R&D",
-          "label": "Core Engineers"
+          "label": "Core Engineers",
+          "value": "Senior R&D"
         },
         {
           "value": "Continuous CI/CD",
@@ -164,38 +152,35 @@
           "label": "Quality Audit"
         }
       ],
+      "gmtOffset": 5.5,
+      "city": "Kerala",
+      "latLng": "10.8505° N, 76.2711° E",
+      "timezone": "IST (Indian Standard Time)",
+      "id": "kerala",
+      "focusDomains": [
+        "Oracle Forms Refactoring",
+        "School Management (Scholar)",
+        "Hospitality & Retail Systems",
+        "Microservices"
+      ],
+      "role": "Engineering & Core R&D Hub",
+      "description": "Primary software architecture and product innovation center specializing in full-stack engineering, Oracle Forms modernizations, and scalable cloud microservices.",
+      "coordinates": {
+        "y": 64,
+        "x": 74
+      },
       "address": "Arcanum Engineering Center, Tech Hub, Kerala, India",
       "flag": "🇮🇳",
-      "coordinates": {
-        "x": 74,
-        "y": 64
-      },
-      "gmtOffset": 5.5,
-      "latLng": "10.8505° N, 76.2711° E"
+      "country": "India"
     },
     {
+      "gmtOffset": 5.5,
       "id": "gujarat",
       "city": "Gujarat",
-      "flag": "🇮🇳",
-      "timezone": "IST (Indian Standard Time)",
-      "latLng": "22.2587° N, 71.1924° E",
-      "address": "Arcanum Tech & Operations Hub, Gujarat, India",
-      "coordinates": {
-        "x": 68,
-        "y": 48
-      },
-      "focusDomains": [
-        "Accurate PAYROLL (WPS)",
-        "Restaurant POS",
-        "Dynamic Forms",
-        "Enterprise Support"
-      ],
-      "description": "High-performance operations and enterprise systems unit delivering automated payroll processing, custom web applications, and round-the-clock technical support.",
-      "gmtOffset": 5.5,
       "stats": [
         {
-          "value": "150K+",
-          "label": "Active Users"
+          "label": "Active Users",
+          "value": "150K+"
         },
         {
           "value": "100% Automated",
@@ -206,67 +191,72 @@
           "label": "Support Window"
         }
       ],
+      "role": "Tech & Operations Center",
+      "coordinates": {
+        "x": 68,
+        "y": 48
+      },
       "country": "India",
-      "role": "Tech & Operations Center"
+      "timezone": "IST (Indian Standard Time)",
+      "description": "High-performance operations and enterprise systems unit delivering automated payroll processing, custom web applications, and round-the-clock technical support.",
+      "latLng": "22.2587° N, 71.1924° E",
+      "address": "Arcanum Tech & Operations Hub, Gujarat, India",
+      "focusDomains": [
+        "Accurate PAYROLL (WPS)",
+        "Restaurant POS",
+        "Dynamic Forms",
+        "Enterprise Support"
+      ],
+      "flag": "🇮🇳"
     }
   ],
   "capabilities": [
     {
+      "title": "Legacy Oracle Forms Modernization",
       "description": "Proven methodologies for extracting legacy PL/SQL business logic and refactoring heavy Oracle Forms 12c monoliths into decoupled microservice architecture.",
+      "tag": "INFRASTRUCTURE REFACTORING",
+      "iconName": "Database",
       "details": [
         "PL/SQL Logic Isolation",
         "Containerized Deployment",
         "Zero Data-Loss Guarantee"
       ],
-      "title": "Legacy Oracle Forms Modernization",
-      "id": "oracle",
-      "iconName": "Database",
-      "tag": "INFRASTRUCTURE REFACTORING"
+      "id": "oracle"
     },
     {
-      "title": "Banking & Financial Core Integrations",
+      "id": "custom-web",
+      "iconName": "Code",
+      "description": "Bespoke full-stack web platforms and cinematic motion-driven sites, engineered with secure REST/GraphQL APIs, granular RBAC, and automated CI/CD cloud deployment.",
+      "tag": "BESPOKE ENGINEERING",
+      "title": "Custom Web & Motion-Driven Platforms",
       "details": [
-        "ATM Switch Interface",
-        "HSM Cryptographic Hardware",
-        "Real-time Transaction Audit"
-      ],
-      "id": "banking",
-      "description": "Custom interface modules for co-operative and retail banks including ISO 8583 ATM switch bridging, automated SMS notifications, and secure customer portals.",
-      "iconName": "Lock",
-      "tag": "ISO 8583 & ATM SWITCH"
+        "Full-Stack Next.js / Node.js",
+        "REST / GraphQL API Engineering",
+        "Motion & WebGL Experience Design",
+        "CI/CD & Cloud Deployment"
+      ]
     },
     {
-      "tag": "CROSS-PLATFORM ENGINEERING",
-      "title": "Native Mobile & Web Engine",
-      "description": "Converting complex enterprise web platforms into high-speed native iOS and Android applications with offline sync, biometric auth, and push notifications.",
       "details": [
         "Native iOS / Android Runtimes",
         "Biometric SSO Authentication",
         "Offline Storage Engine"
       ],
+      "description": "Converting complex enterprise web platforms into high-speed native iOS and Android applications with offline sync, biometric auth, and push notifications.",
       "id": "mobile",
-      "iconName": "Smartphone"
+      "iconName": "Smartphone",
+      "tag": "CROSS-PLATFORM ENGINEERING",
+      "title": "Native Mobile & Web Engine"
     }
   ],
   "showcaseItems": [
     {
-      "metrics": [
-        {
-          "label": "TRANSACTION LATENCY",
-          "value": "< 8ms"
-        },
-        {
-          "value": "99.99%",
-          "label": "SYSTEM SLA"
-        },
-        {
-          "label": "COMPLIANCE",
-          "value": "UAE VAT & WPS"
-        }
-      ],
-      "id": "erp",
       "title": "ARC Enterprise Resource Planning (ERPs)",
+      "subtitle": "Multi-Currency Financial Ledger & Real-Time Supply Chain Core",
+      "description": "Integrate finance, inventory, multi-warehouse logistics, procurement, and asset tracking into a synchronized ledger. Enforces dual-authorization, strict audit trails, and automated UAE VAT tax filing.",
       "category": "Enterprise & Finance",
+      "id": "erp",
+      "tabLabel": "ARC ERPs",
       "techStack": [
         "PostgreSQL",
         "TypeScript",
@@ -275,6 +265,21 @@
         "GraphQL",
         "TLS 1.3"
       ],
+      "imageSrc": "/hero_erp.jpg",
+      "metrics": [
+        {
+          "value": "< 8ms",
+          "label": "TRANSACTION LATENCY"
+        },
+        {
+          "label": "SYSTEM SLA",
+          "value": "99.99%"
+        },
+        {
+          "value": "UAE VAT & WPS",
+          "label": "COMPLIANCE"
+        }
+      ],
       "capabilities": [
         {
           "iconName": "ShieldCheck",
@@ -282,8 +287,8 @@
           "description": "Multi-currency ledger with real-time balance validation and immutable audit trails."
         },
         {
-          "title": "Multi-Warehouse Supply Chain",
           "description": "Automated stock re-order triggers, serial/batch tracking, and inventory valuation.",
+          "title": "Multi-Warehouse Supply Chain",
           "iconName": "Zap"
         },
         {
@@ -297,117 +302,33 @@
           "title": "Asset Lifecycle Management"
         }
       ],
-      "description": "Integrate finance, inventory, multi-warehouse logistics, procurement, and asset tracking into a synchronized ledger. Enforces dual-authorization, strict audit trails, and automated UAE VAT tax filing.",
-      "tabLabel": "ARC ERPs",
-      "imageSrc": "/hero_erp.jpg",
-      "subtitle": "Multi-Currency Financial Ledger & Real-Time Supply Chain Core"
+      "iconName": "Receipt"
     },
     {
-      "category": "Enterprise Governance",
+      "tabLabel": "Restaurant POS",
+      "imageSrc": "/hero_restaurant.jpg",
       "capabilities": [
         {
-          "iconName": "Building2",
-          "description": "Establish holding companies, subsidiaries, branch locations, and departments.",
-          "title": "Hierarchical Entity Topology"
+          "title": "Interactive Floorplan & Tables",
+          "description": "Visual table management with seat-level splitting, merge bills, and reservation timelines.",
+          "iconName": "UtensilsCrossed"
         },
         {
+          "title": "Real-Time Kitchen Display (KDS)",
           "iconName": "Zap",
-          "title": "Dynamic Approval Workflows",
-          "description": "Configurable multi-stage approval matrix based on transaction threshold limits."
+          "description": "Color-coded cook times, preparation timers, and station-based routing for culinary efficiency."
+        },
+        {
+          "description": "Automatic deduction of raw inventory down to the gram as orders are punched.",
+          "iconName": "Server",
+          "title": "Recipe & Ingredient Costing"
         },
         {
           "iconName": "ShieldCheck",
-          "title": "Enterprise SSO & IAM",
-          "description": "SAML 2.0, OAuth2, and Active Directory integration with hardware MFA."
-        },
-        {
-          "description": "Immutable logging of every user action, privilege escalation, and data mutation.",
-          "title": "Central Audit & Telemetry",
-          "iconName": "Server"
+          "title": "Offline Resilient Engine",
+          "description": "Keeps punching orders and printing kitchen tickets even if internet connection drops."
         }
       ],
-      "techStack": [
-        "Node.js",
-        "PostgreSQL",
-        "OAuth2 / SAML",
-        "Docker",
-        "Redis",
-        "gRPC"
-      ],
-      "metrics": [
-        {
-          "label": "AUTH LATENCY",
-          "value": "< 3ms"
-        },
-        {
-          "label": "TENANCY",
-          "value": "Unlimited Orgs"
-        },
-        {
-          "value": "Granular RBAC",
-          "label": "ACCESS CONTROL"
-        }
-      ],
-      "title": "Organization Management System (OMS)",
-      "tabLabel": "OMS Suite",
-      "id": "oms",
-      "description": "A master governance engine enabling multi-company group management, dynamic organizational trees, automated approval workflows, and centralized identity & access management (IAM).",
-      "imageSrc": "/hero-topsection/ezgif-frame-105.jpg",
-      "subtitle": "Multi-Tenant Entity Structure, RBAC & Enterprise Identity Mesh"
-    },
-    {
-      "imageSrc": "/banking_fintech.png",
-      "subtitle": "ISO 8583 Message Routing, ATM Gateway & Mobile Banking",
-      "capabilities": [
-        {
-          "title": "ISO 8583 Message Switch",
-          "description": "Sub-millisecond packet routing connecting ATM networks, POS terminals, and core ledgers.",
-          "iconName": "Cpu"
-        },
-        {
-          "description": "Biometric consumer banking app for funds transfer, utility payments, and statement downloads.",
-          "title": "Transa Mobile Banking",
-          "iconName": "Zap"
-        },
-        {
-          "title": "Co-Operative Bank Add-Ons",
-          "description": "Specialized modules for loan underwriting, term deposits, dividend distribution, and locker management.",
-          "iconName": "Server"
-        },
-        {
-          "title": "Hardware Cryptographic Vault",
-          "iconName": "ShieldCheck",
-          "description": "Integration with HSM appliances for PIN block translation and end-to-end data encryption."
-        }
-      ],
-      "tabLabel": "Core Banking",
-      "id": "banking",
-      "techStack": [
-        "Java Spring Boot",
-        "Kafka",
-        "HSM Hardware Vault",
-        "PostgreSQL",
-        "ISO 8583"
-      ],
-      "title": "Core Banking Engine & Financial Switch",
-      "description": "Engineered for retail and co-operative banks. Features high-throughput ISO 8583 message switching, biometric ATM interfacing, automated SMS gateways, and secure consumer banking applications.",
-      "metrics": [
-        {
-          "label": "SWITCH SPEED",
-          "value": "Sub-12ms"
-        },
-        {
-          "label": "SECURITY",
-          "value": "HSM Vault Enforced"
-        },
-        {
-          "value": "ISO 8583 / REST",
-          "label": "PROTOCOLS"
-        }
-      ],
-      "category": "Banking & FinTech"
-    },
-    {
       "techStack": [
         "Next.js",
         "WebSockets",
@@ -415,9 +336,9 @@
         "Thermal ESC/POS",
         "PWA"
       ],
-      "tabLabel": "Restaurant POS",
+      "title": "CulinaryOS Restaurant POS & Kitchen Display",
+      "subtitle": "Table Ordering, Floorplan Engine & Cloud Kitchen Management",
       "id": "pos",
-      "description": "High-speed POS designed for fine dining, multi-branch franchises, and fast-casual cafes. Features real-time Kitchen Display System (KDS) synchronization, QR table ordering, and recipe inventory cost tracking.",
       "metrics": [
         {
           "value": "Instant (WebSocket)",
@@ -428,178 +349,50 @@
           "label": "OFFLINE MODE"
         },
         {
-          "label": "SUPPORT",
-          "value": "Multi-Branch KDS"
+          "value": "Multi-Branch KDS",
+          "label": "SUPPORT"
         }
       ],
-      "capabilities": [
-        {
-          "description": "Visual table management with seat-level splitting, merge bills, and reservation timelines.",
-          "title": "Interactive Floorplan & Tables",
-          "iconName": "UtensilsCrossed"
-        },
-        {
-          "title": "Real-Time Kitchen Display (KDS)",
-          "description": "Color-coded cook times, preparation timers, and station-based routing for culinary efficiency.",
-          "iconName": "Zap"
-        },
-        {
-          "iconName": "Server",
-          "title": "Recipe & Ingredient Costing",
-          "description": "Automatic deduction of raw inventory down to the gram as orders are punched."
-        },
-        {
-          "iconName": "ShieldCheck",
-          "description": "Keeps punching orders and printing kitchen tickets even if internet connection drops.",
-          "title": "Offline Resilient Engine"
-        }
-      ],
-      "subtitle": "Table Ordering, Floorplan Engine & Cloud Kitchen Management",
-      "imageSrc": "/hero_restaurant.jpg",
-      "title": "CulinaryOS Restaurant POS & Kitchen Display",
+      "description": "High-speed POS designed for fine dining, multi-branch franchises, and fast-casual cafes. Features real-time Kitchen Display System (KDS) synchronization, QR table ordering, and recipe inventory cost tracking.",
       "category": "Hospitality & Retail"
     },
     {
-      "description": "HIPAA-ready clinical platform connecting patient registration, doctor consultations, digital prescription writing, ICD-10 medical coding, pharmacy stock, and pathology lab report workflows.",
-      "title": "AuraCare Clinic & Hospital Management (HMS)",
-      "imageSrc": "/hero_clinic.jpg",
-      "subtitle": "Electronic Medical Records, Pharmacy Dispensing & Lab Diagnostics",
+      "imageSrc": "/oracle_modernization.png",
       "metrics": [
         {
-          "value": "HL7 & FHIR Standard",
-          "label": "EMR PROTOCOL"
+          "value": "Guaranteed",
+          "label": "ZERO DATA LOSS"
         },
         {
-          "value": "Zero-Trust HIPAA",
-          "label": "DATA SECURITY"
-        },
-        {
-          "value": "Instant Digital PDF",
-          "label": "PRESCRIPTION"
-        }
-      ],
-      "id": "hms",
-      "tabLabel": "Clinical Care",
-      "techStack": [
-        "HL7 / FHIR",
-        "PostgreSQL",
-        "Next.js",
-        "DICOM Viewer",
-        "AES-256 Encrypted"
-      ],
-      "category": "Healthcare & EMR",
-      "capabilities": [
-        {
-          "description": "Custom consultation templates, ICD-10 diagnostic coding, and digital e-prescriptions.",
-          "title": "Doctor EMR & Digital Prescriptions",
-          "iconName": "HeartPulse"
-        },
-        {
-          "description": "Batch and expiry tracking, automatic drug interaction alerts, and POS dispensation.",
-          "iconName": "Server",
-          "title": "Integrated Pharmacy System"
-        },
-        {
-          "iconName": "Zap",
-          "title": "Laboratory Diagnostic Workflow",
-          "description": "Sample barcode tracking, equipment interfacing, and automated patient report delivery via WhatsApp/Email."
-        },
-        {
-          "description": "Online patient booking with token display screens in waiting lobbies.",
-          "title": "Appointment Booking & Queue TV",
-          "iconName": "Users"
-        }
-      ]
-    },
-    {
-      "category": "Sales & Revenue",
-      "techStack": [
-        "Next.js",
-        "PostgreSQL",
-        "WhatsApp Cloud API",
-        "SendGrid",
-        "Docker"
-      ],
-      "tabLabel": "Aether CRM",
-      "id": "sls",
-      "description": "Close deals faster with unified pipeline management. Ingest leads from web forms, WhatsApp, and email, track follow-ups, generate professional PDF quotations, and monitor sales rep quotas.",
-      "subtitle": "Omnichannel Lead Capture, Quotation Engine & WhatsApp Automation",
-      "metrics": [
-        {
-          "value": "Real-Time Kanban",
-          "label": "PIPELINE TRACKING"
-        },
-        {
-          "label": "QUOTE CREATION",
-          "value": "Under 60 Seconds"
-        },
-        {
-          "value": "WhatsApp & Email",
-          "label": "INTEGRATIONS"
-        }
-      ],
-      "imageSrc": "/hero_crm.jpg",
-      "capabilities": [
-        {
-          "description": "Visual deal management with customizable deal stages, win probabilities, and deal aging.",
-          "iconName": "LineChart",
-          "title": "Multi-Stage Kanban Pipeline"
-        },
-        {
-          "description": "1-click conversion from deal to PDF quotation with multi-currency VAT calculation.",
-          "title": "Instant Quotation & Invoicing",
-          "iconName": "Zap"
-        },
-        {
-          "iconName": "Server",
-          "title": "Automated WhatsApp & Email Triggers",
-          "description": "Send automated follow-ups, payment reminders, and status notifications directly to leads."
-        },
-        {
-          "description": "Executive dashboards showing conversion rates, revenue forecasts, and rep performance.",
-          "iconName": "ShieldCheck",
-          "title": "Sales Performance Analytics"
-        }
-      ],
-      "title": "Aether Enterprise CRM & Lead Pipeline"
-    },
-    {
-      "category": "Legacy Modernization",
-      "capabilities": [
-        {
-          "description": "Extract stored procedures and triggers into lightweight, containerized REST / gRPC microservices.",
-          "iconName": "Database",
-          "title": "PL/SQL Business Logic Decoupling"
-        },
-        {
-          "title": "Web-Native User Experience",
-          "description": "Replace cumbersome Oracle Form applets with lightning-fast, keyboard-shortcut-enabled web screens.",
-          "iconName": "Zap"
-        },
-        {
-          "iconName": "ShieldCheck",
-          "description": "Phased migration strategies allowing legacy and modern interfaces to run concurrently on the same database.",
-          "title": "Zero Downtime Parallel Cutover"
-        },
-        {
-          "iconName": "Server",
-          "title": "Modern API Layer & Webhooks",
-          "description": "Open up legacy systems to modern 3rd-party integrations, mobile apps, and cloud analytics."
-        }
-      ],
-      "id": "oracle",
-      "metrics": [
-        {
-          "label": "ZERO DATA LOSS",
-          "value": "Guaranteed"
-        },
-        {
-          "value": "Preserved 100%",
-          "label": "DB INTEGRITY"
+          "label": "DB INTEGRITY",
+          "value": "Preserved 100%"
         },
         {
           "value": "Responsive Web",
           "label": "INTERFACE"
+        }
+      ],
+      "tabLabel": "Oracle Modernizer",
+      "capabilities": [
+        {
+          "iconName": "Database",
+          "title": "PL/SQL Business Logic Decoupling",
+          "description": "Extract stored procedures and triggers into lightweight, containerized REST / gRPC microservices."
+        },
+        {
+          "description": "Replace cumbersome Oracle Form applets with lightning-fast, keyboard-shortcut-enabled web screens.",
+          "iconName": "Zap",
+          "title": "Web-Native User Experience"
+        },
+        {
+          "description": "Phased migration strategies allowing legacy and modern interfaces to run concurrently on the same database.",
+          "iconName": "ShieldCheck",
+          "title": "Zero Downtime Parallel Cutover"
+        },
+        {
+          "description": "Open up legacy systems to modern 3rd-party integrations, mobile apps, and cloud analytics.",
+          "iconName": "Server",
+          "title": "Modern API Layer & Webhooks"
         }
       ],
       "techStack": [
@@ -610,284 +403,1641 @@
         "gRPC",
         "Docker"
       ],
-      "tabLabel": "Oracle Modernizer",
-      "subtitle": "PL/SQL Refactoring to Resilient Cloud Microservices",
-      "title": "Legacy Oracle Forms Modernization Suite",
+      "id": "oracle",
+      "category": "Legacy Modernization",
       "description": "Turn obsolete Oracle Forms 6i/11g/12c systems into responsive web applications. Preserve your battle-tested PL/SQL database packages while replacing outdated Java applets with modern Next.js interfaces.",
-      "imageSrc": "/oracle_modernization.png"
+      "title": "Legacy Oracle Forms Modernization Suite",
+      "subtitle": "PL/SQL Refactoring to Resilient Cloud Microservices"
+    },
+    {
+      "metrics": [
+        {
+          "value": "60fps",
+          "label": "ANIMATION FRAME RATE"
+        },
+        {
+          "label": "LCP LOAD TIME",
+          "value": "< 1.2s"
+        },
+        {
+          "value": "100 / 100",
+          "label": "CORE WEB VITALS"
+        }
+      ],
+      "id": "motion-driven-website",
+      "category": "Web Experience",
+      "subtitle": "Cinematic Scroll Narratives, Micro-Interactions & Real-Time Data Feeds",
+      "description": "High-impact marketing and product sites engineered around motion. Cinematic scroll-triggered scenes, 60fps micro-interactions, WebGL visuals, and CMS-driven content - all built on a Core Web Vitals-optimized Next.js foundation so the drama never costs you SEO or speed.",
+      "capabilities": [
+        {
+          "title": "Cinematic Scroll Storytelling",
+          "description": "Choreographed scroll scenes, staggered reveals, and parallax depth that guide visitors through each narrative beat.",
+          "iconName": "Sparkles"
+        },
+        {
+          "iconName": "Zap",
+          "title": "Micro-Interaction Engine",
+          "description": "Hover, tap, and drag interactions with spring physics for a tactile, premium product feel on every control."
+        },
+        {
+          "iconName": "Globe",
+          "title": "3D & WebGL Visuals",
+          "description": "Real-time 3D product visualization, immersive headers, and GPU-accelerated shaders that run smoothly on mobile."
+        },
+        {
+          "description": "Headless CMS editing plus campaign analytics and A/B testing wired directly into the motion scenes.",
+          "title": "CMS & Analytics Integration",
+          "iconName": "Cpu"
+        }
+      ],
+      "title": "Motion-Driven Marketing Website",
+      "imageSrc": "/hero-topsection/ezgif-frame-105.jpg",
+      "techStack": [
+        "Next.js",
+        "GSAP",
+        "Framer Motion",
+        "Three.js / WebGL",
+        "Tailwind CSS",
+        "Vercel"
+      ],
+      "tabLabel": "Motion-Driven Website"
+    },
+    {
+      "tabLabel": "Custom Web Applications",
+      "id": "custom-web-applications",
+      "title": "Custom Web Application Development",
+      "imageSrc": "/hero_infrastructure.png",
+      "capabilities": [
+        {
+          "iconName": "Code",
+          "title": "Bespoke Full-Stack Engineering",
+          "description": "Custom domain modeling, database schemas, and UI architecture that mirror your workflows instead of forcing templates."
+        },
+        {
+          "iconName": "ShieldCheck",
+          "title": "Enterprise Auth & RBAC",
+          "description": "Role-based access, multi-factor sign-in, SSO federation, and per-tenant data isolation baked in from day one."
+        },
+        {
+          "description": "Versioned, documented APIs with idempotency, rate limiting, webhooks, and real-time subscriptions.",
+          "title": "REST / GraphQL API Design",
+          "iconName": "Server"
+        },
+        {
+          "title": "CI/CD & Cloud Deployment",
+          "iconName": "Workflow",
+          "description": "Automated test pipelines, zero-downtime releases, and infrastructure as code on your cloud of choice."
+        }
+      ],
+      "subtitle": "Bespoke Full-Stack Platforms, Secure APIs & Scalable Architecture",
+      "description": "Bespoke web platforms designed around your exact business process. From SaaS dashboards to enterprise portals, we engineer custom React/Next.js interfaces backed by hardened Node.js APIs, relational storage, and cloud-native deployment pipelines.",
+      "techStack": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Docker",
+        "AWS / Azure"
+      ],
+      "category": "Software Engineering",
+      "metrics": [
+        {
+          "label": "DELIVERY MODEL",
+          "value": "Sprint-Based"
+        },
+        {
+          "value": "Zero-Trust",
+          "label": "SECURITY POSTURE"
+        },
+        {
+          "value": "Auto-Scale",
+          "label": "CLOUD SCALING"
+        }
+      ]
+    },
+    {
+      "category": "Workflow & Operations",
+      "capabilities": [
+        {
+          "title": "Kanban & Sprint Boards",
+          "iconName": "ClipboardList",
+          "description": "Drag-and-drop task boards with sprints, priorities, dependencies, and WIP limits across every project."
+        },
+        {
+          "description": "Timeline scheduling with workload balancing, capacity forecasting, and automatic conflict detection.",
+          "iconName": "Calendar",
+          "title": "Gantt & Resource Planning"
+        },
+        {
+          "iconName": "BarChart3",
+          "title": "Time Tracking & Invoicing",
+          "description": "Per-task time logging that flows straight into timesheets, project costing, and client invoices."
+        },
+        {
+          "description": "Rule-based notifications, status roll-ups, and executive dashboards for deadlines, risk, and burndown.",
+          "iconName": "Zap",
+          "title": "Automation & Delivery Reports"
+        }
+      ],
+      "techStack": [
+        "Next.js",
+        "PostgreSQL",
+        "WebSockets",
+        "Redis",
+        "Docker"
+      ],
+      "metrics": [
+        {
+          "label": "METHODOLOGY",
+          "value": "Agile / Scrum"
+        },
+        {
+          "value": "Multi-Project",
+          "label": "TEAM SCALE"
+        },
+        {
+          "label": "COLLABORATION",
+          "value": "Real-Time"
+        }
+      ],
+      "subtitle": "Sprint Boards, Resource Planning, Time Tracking & Delivery Reporting",
+      "title": "Enterprise Project Management Suite",
+      "id": "project-management",
+      "imageSrc": "/hero_hrms.jpg",
+      "description": "An end-to-end delivery workspace that keeps teams aligned and stakeholders informed. Agile boards, Gantt timelines, resource allocation, and time tracking feed live dashboards - so project health is always visible in real time.",
+      "tabLabel": "Project Management"
     }
   ],
   "modules": [
     {
-      "imageSrc": "/hero_erp.jpg",
-      "id": "mod-1787214297073",
-      "subtitle": "Custom Architecture Subsystem",
-      "title": "Enterprise Solution",
-      "description": "Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.",
-      "iconName": "Layers",
-      "category": "Enterprise",
+      "id": "mod-erp",
       "pageDetails": {
-        "sectionVisibility": {
-          "submodules": true,
-          "compliance": true,
-          "metrics": true,
-          "faqs": true,
-          "hero": true,
-          "widget": true,
-          "industries": true,
-          "related": true,
-          "secondaryCta": true
-        },
-        "complianceList": [
-          "ISO 27001 Security Standard",
-          "UAE Regulatory Guidelines",
-          "SOC 2 Architecture Ready",
-          "GDPR Article 32 Compliant"
+        "showSecondaryCta": false,
+        "accentColor": "blue",
+        "faqs": [
+          {
+            "question": "Which currencies does ARC ERP settle?",
+            "answer": "The ledger is fully multi-currency with real-time FX revaluation, supporting AED, USD, EUR, GBP, and any ISO 4217 currency."
+          },
+          {
+            "question": "Does it handle UAE VAT and WPS automatically?",
+            "answer": "Yes. VAT return generation and WPS payroll files are created automatically from posted transactions."
+          },
+          {
+            "answer": "Absolutely. We deploy on managed sovereign cloud, dedicated on-premises servers, or hybrid clusters.",
+            "question": "Can it run on-premises?"
+          }
         ],
-        "ctaSecondaryText": "Download PDF Spec",
-        "metrics": [
+        "heroHighlight": "Real-Time Financial Ledger.",
+        "heroImage": "/hero_erp.jpg",
+        "targetIndustry": [
+          "Commercial Enterprises",
+          "Manufacturing & Logistics",
+          "GCC Holding Groups",
+          "Trading & Distribution"
+        ],
+        "heroBadge": "High-Performance ERP Core",
+        "subModules": [
           {
-            "value": "99.99%",
-            "label": "System SLA Uptime",
-            "trend": "Continuous Delivery"
+            "points": [
+              "Dual-authorization transaction approval",
+              "Real-time FX revaluation and settlement",
+              "UAE VAT & WPS automated filing"
+            ],
+            "description": "Multi-currency ledger with real-time balance validation and immutable audit trails.",
+            "badge": "Core Module 01",
+            "name": "Double-Entry Financial Ledger"
           },
           {
-            "label": "Microservice Latency",
-            "value": "< 12ms",
-            "trend": "Optimized Throughput"
+            "badge": "Core Module 02",
+            "description": "Automated stock re-order triggers, serial/batch tracking, and inventory valuation.",
+            "points": [
+              "Cross-warehouse stock movement",
+              "Serial & batch lot traceability",
+              "Zero-drift inventory valuation"
+            ],
+            "name": "Multi-Warehouse Supply Chain"
           },
           {
-            "trend": "AES-256 & TLS 1.3",
-            "label": "Data Encryption",
-            "value": "100%"
+            "name": "Procurement & Vendor Portal",
+            "badge": "Core Module 03",
+            "description": "End-to-end RFQ, PO generation, goods receipt notes (GRN), and 3-way invoice matching.",
+            "points": [
+              "Automatic PO from re-order level",
+              "3-way invoice matching engine",
+              "Vendor scorecards and contracts"
+            ]
           },
           {
-            "label": "Dedicated Support",
-            "value": "24/7",
-            "trend": "Senior Architects"
+            "description": "Depreciation calculation engine, maintenance tracking, and RFID asset tagging.",
+            "badge": "Core Module 04",
+            "points": [
+              "IFRS depreciation schedules",
+              "Preventive maintenance calendar",
+              "RFID & QR asset tagging"
+            ],
+            "name": "Asset Lifecycle Management"
           }
         ],
         "ctaPrimaryText": "Book a Demo / Discovery",
-        "heroSubtitle": "Custom Architecture Subsystem",
-        "faqs": [
+        "theme": "enterprise-erp",
+        "architecture": {
+          "latency": "< 8ms average ledger execution",
+          "scalability": "Containerized Docker & Kubernetes horizontal auto-scaling",
+          "security": "TLS 1.3, end-to-end encryption, granular RBAC, immutable audit seals",
+          "messaging": "Kafka / RabbitMQ distributed event bus",
+          "runtime": "PostgreSQL, TypeScript, GraphQL, Docker",
+          "database": "PostgreSQL with Redis caching layer"
+        },
+        "ctaSecondaryText": "Download Technical Details",
+        "executiveSummary": "ARC ERP unifies finance, inventory, multi-warehouse logistics, procurement, and asset tracking into one synchronized ledger. It enforces dual-authorization, immutable audit trails, automated UAE VAT filing, and strict compliance workflows for high-transaction enterprises.",
+        "sectionVisibility": {
+          "faqs": true,
+          "industries": true,
+          "submodules": true,
+          "compliance": true,
+          "metrics": true,
+          "hero": true,
+          "secondaryCta": false,
+          "widget": true,
+          "related": true
+        },
+        "metrics": [
           {
-            "answer": "We offer flexible deployment options including private cloud, on-premises bare-metal installations, or hybrid multi-datacenter configurations.",
-            "question": "How is Enterprise Solution deployed within our existing enterprise IT infrastructure?"
+            "trend": "Real-Time Ledger",
+            "label": "Transaction Latency",
+            "value": "< 8ms"
           },
           {
-            "question": "What level of technical support and SLA guarantees are provided?",
-            "answer": "All enterprise deployments come with a 99.99% uptime guarantee, 24/7 incident response from senior software architects, and ongoing performance optimizations."
+            "label": "System SLA",
+            "trend": "Continuous Delivery",
+            "value": "99.99%"
           },
           {
-            "question": "Can this solution be customized to meet our organization's unique workflows?",
-            "answer": "Yes. The modular architecture is designed to be adapted to custom business logic, third-party ERP integrations, and specific regulatory requirements."
+            "label": "Compliance",
+            "trend": "Automated Filing",
+            "value": "UAE VAT"
+          },
+          {
+            "label": "Dedicated Support",
+            "trend": "Senior Architects",
+            "value": "24/7"
           }
         ],
-        "theme": "enterprise-erp",
-        "deploymentModes": [
-          "Managed Sovereign Cloud",
-          "On-Premises Dedicated Server",
-          "Hybrid High-Availability Cluster"
-        ],
-        "targetIndustry": [
-          "Commercial Enterprises",
-          "Financial Organizations",
-          "Government Entities",
-          "Technology Providers"
-        ],
-        "id": "mod-1787214297073",
-        "architecture": {
-          "database": "PostgreSQL / TimescaleDB with Redis caching layer",
-          "messaging": "Kafka / RabbitMQ distributed event message bus",
-          "scalability": "Containerized Docker & Kubernetes horizontal auto-scaling",
-          "security": "End-to-end encryption, strict RBAC, automated vulnerability scans",
-          "runtime": "TypeScript, Next.js, PostgreSQL, Docker",
-          "latency": "< 12ms average transaction execution"
-        },
-        "customTitles": {},
-        "heroImage": "/hero_erp.jpg",
-        "accentColor": "blue",
+        "slaGuarantee": "99.99% Production Uptime SLA • Enterprise Support Guaranteed",
         "mockData": {
           "records": [
             {
-              "timestamp": "Committed 1m ago",
-              "tag": "PRODUCTION",
-              "meta": "Distributed Cluster • UAE Region",
-              "id": "MOD-1787214297073-901",
-              "title": "Enterprise Solution Primary Operational Node",
-              "status": "ACTIVE"
-            },
-            {
-              "timestamp": "Committed 4m ago",
-              "id": "MOD-1787214297073-902",
-              "tag": "INSPECTED",
-              "title": "High-Throughput Ingestion Queue",
-              "meta": "Batch verification completed with 0 errors",
-              "status": "VERIFIED"
-            },
-            {
-              "tag": "SEALED",
-              "meta": "Cryptographic hash verified across nodes",
-              "id": "MOD-1787214297073-903",
-              "timestamp": "Committed 12m ago",
-              "status": "COMPLIANT",
-              "title": "Audit Trail & Compliance Ledger"
-            },
-            {
-              "title": "Analytics & Reporting Synthesis",
-              "id": "MOD-1787214297073-904",
-              "timestamp": "Committed 18m ago",
+              "meta": "FX Settlement • Central Ledger",
+              "title": "Corporate Treasury Revaluation - USD/AED",
+              "id": "JV-2026-904",
+              "tag": "FINANCE",
               "status": "SYNCHRONIZED",
-              "tag": "TELEMETRY",
-              "meta": "Real-time telemetry updated to dashboard"
+              "timestamp": "Posted 1m ago"
+            },
+            {
+              "id": "PO-2026-118",
+              "status": "VERIFIED",
+              "timestamp": "Approved 6m ago",
+              "tag": "PROCUREMENT",
+              "meta": "Vendor: Al-Ain Systems LLC",
+              "title": "Industrial Server Hardware Procurement"
+            },
+            {
+              "id": "GRN-44910",
+              "title": "Raw Material Lot Batch #B-992 Receipt",
+              "tag": "INVENTORY",
+              "status": "ACTIVE",
+              "meta": "Main Port Warehouse Bay #4",
+              "timestamp": "Verified 14m ago"
+            },
+            {
+              "timestamp": "Dispatched 22m ago",
+              "id": "INV-77301",
+              "meta": "Tax Invoice with QR Verification",
+              "status": "COMPLIANT",
+              "title": "Enterprise Billing - GCC Distribution Node",
+              "tag": "VAT READY"
             }
           ],
           "workflowSteps": [
             {
               "step": "01",
-              "status": "VALIDATED",
-              "desc": "Secure payload ingestion via TLS 1.3 gateway",
-              "title": "Data Ingestion & Auth",
-              "latency": "2.4ms"
+              "latency": "2.4ms",
+              "desc": "TLS 1.3 payload ingestion with dual-authorization checks",
+              "title": "Secure Ingestion & Auth",
+              "status": "VALIDATED"
             },
             {
+              "desc": "Synchronous double-entry verification across accounts",
               "status": "PASS",
-              "latency": "4.1ms",
-              "desc": "Granular policy evaluation and schema verification",
-              "step": "02",
-              "title": "Validation & Rule Engine"
+              "latency": "3.1ms",
+              "title": "Ledger Validation & Posting",
+              "step": "02"
             },
             {
+              "desc": "Inventory + procurement microservice transaction commit",
+              "title": "Supply Chain Settlement",
+              "step": "03",
               "status": "COMMITTED",
-              "title": "Execution & Settlement",
-              "desc": "Distributed microservice transaction commit",
-              "latency": "5.8ms",
-              "step": "03"
+              "latency": "5.8ms"
             },
             {
-              "status": "SEALED",
-              "title": "Audit Ledger Recording",
-              "desc": "Cryptographic hash sealing across operational nodes",
+              "desc": "Cryptographic hash sealing and tax package generation",
               "step": "04",
+              "status": "SEALED",
+              "title": "Audit & VAT Sealing",
               "latency": "1.2ms"
             }
           ],
-          "systemLogs": [
-            "[MOD-1787214297073:CORE] Microservices cluster initialized with 0 startup warnings",
-            "[MOD-1787214297073:SECURITY] Cryptographic token authorization validated via secure gateway",
-            "[MOD-1787214297073:PERF] Sub-12ms response commit achieved across analytical pipeline",
-            "[MOD-1787214297073:AUDIT] Scheduled automated backup snapshot completed successfully"
-          ],
-          "codeDiff": {
-            "targetCode": "// Modern Distributed Microservice\nexport async function handleModuleExecution(ctx: Context, id: string) {\n  const res = await serviceBus.dispatch('module.execute', { id, ts: Date.now() });\n  return { ok: true, hash: res.signature };\n}",
-            "targetLang": "Arcanum Modern Microservices",
-            "sourceLang": "Legacy / Monolith Architecture",
-            "sourceCode": "// Legacy Monolithic Handler\nPROCEDURE Process_Module(\n  p_id IN NUMBER\n) IS\nBEGIN\n  -- Hardcoded monolithic logic\n  UPDATE legacy_records SET status = 'DONE' WHERE id = p_id;\n  COMMIT;\nEND;"
-          },
           "recordsHeader": [
-            "Record / Transaction ID",
-            "Subsystem Name",
-            "Metadata / Parameters",
+            "Transaction ID",
+            "Subsystem",
+            "Metadata",
             "Status",
             "Execution Code"
           ],
-          "tabTitle": "Enterprise Solution — Live System Telemetry & Operations Hub"
+          "codeDiff": {
+            "sourceCode": "// Legacy Handler\nPROCEDURE Process_Journal(\n  p_id IN NUMBER,\n  p_amount IN NUMBER\n) IS\nBEGIN\n  SELECT balance INTO v_bal FROM accounts WHERE id = p_id FOR UPDATE;\n  IF v_bal >= p_amount THEN\n    UPDATE accounts SET balance = balance - p_amount WHERE id = p_id;\n    COMMIT;\n  END IF;\nEND;",
+            "sourceLang": "Legacy / Monolithic Architecture",
+            "targetLang": "Arcanum Cloud Native TypeScript",
+            "targetCode": "// Modern Resilient Microservice\nexport async function processJournal(ctx: Context, tx: TxPayload) {\n  const txn = await db.beginTransaction({ isolation: 'SERIALIZABLE' });\n  const ledger = await txn.ledger.verifyAndDebit(tx.id, tx.amount);\n  await eventBus.publish('tx.committed', { txId: ledger.id, latency: ctx.elapsed });\n  return { success: true, ref: ledger.hash };\n}"
+          },
+          "tabTitle": "ARC ERP — Live Ledger & Supply Chain Telemetry",
+          "systemLogs": [
+            "[LEDGER] ● Foreign exchange revaluation locked @ 3.6725 AED/USD",
+            "[PROCUREMENT] ● 3-way match validated for PO-2026-118",
+            "[INVENTORY] ● Re-order trigger fired for warehouse DBX-04",
+            "[VAT] ● Q2 filing package generated & sealed"
+          ]
         },
-        "interactiveWidget": "workflow-pipeline",
-        "executiveSummary": "Comprehensive enterprise-grade solution engineered with modular microservices and automated workflows.",
-        "slaGuarantee": "99.99% Production Uptime SLA • Enterprise Support Guaranteed",
-        "showSecondaryCta": true,
+        "heroStyle": "split-console",
+        "heroHeadline": "ARC Enterprise Resource Planning &",
+        "interactiveWidget": "live-telemetry",
+        "id": "mod-erp",
+        "heroSubtitle": "Multi-Currency Financial Ledger & Real-Time Supply Chain Core",
+        "complianceList": [
+          "UAE VAT & ESR Regulations",
+          "WPS Payroll Compliance",
+          "ISO 27001 Security Standard",
+          "SOC 2 Architecture Ready"
+        ],
+        "deploymentModes": [
+          "Managed Sovereign Cloud",
+          "On-Premises Dedicated Server",
+          "Hybrid High-Availability Cluster"
+        ]
+      },
+      "features": [
+        "Double-Entry Financial Ledger",
+        "Multi-Warehouse Supply Chain",
+        "Procurement & Vendor Portal",
+        "Asset Lifecycle Management"
+      ],
+      "techStack": [
+        "PostgreSQL",
+        "TypeScript",
+        "Docker",
+        "Redis",
+        "GraphQL",
+        "TLS 1.3"
+      ],
+      "slug": "erp",
+      "iconName": "Layers",
+      "brochureUrl": "",
+      "subtitle": "Multi-Currency Financial Ledger & Real-Time Supply Chain Core",
+      "title": "ARC Enterprise Resource Planning (ERPs)",
+      "badge": "Enterprise ERP Core",
+      "category": "Enterprise",
+      "description": "Integrate finance, inventory, multi-warehouse logistics, procurement, and asset tracking into a synchronized ledger. Enforces dual-authorization, strict audit trails, and automated UAE VAT tax filing.",
+      "imageSrc": "/hero_erp.jpg"
+    },
+    {
+      "pageDetails": {
+        "complianceList": [
+          "PCI DSS Compliant Card Handling",
+          "UAE Food Safety Traceability",
+          "GDPR Article 32 Compliant"
+        ],
+        "deploymentModes": [
+          "Cloud Multi-Branch (WebSocket)",
+          "Local Server with Cloud Sync",
+          "Hybrid Offline-First Cluster"
+        ],
+        "executiveSummary": "CulinaryOS is a high-speed POS built for fine dining, multi-branch franchises, and fast-casual cafes. It keeps floorplan tables, kitchen display stations, recipe inventory, and cloud billing perfectly synchronized over WebSockets - and keeps taking orders even when the internet drops.",
+        "slaGuarantee": "99.95% Order Sync SLA • 100% Offline Resilient Operations",
+        "theme": "saas-modern",
+        "heroHeadline": "CulinaryOS Restaurant POS &",
+        "metrics": [
+          {
+            "value": "Instant",
+            "trend": "WebSocket Push",
+            "label": "Order Sync"
+          },
+          {
+            "value": "100%",
+            "trend": "Resilient Engine",
+            "label": "Offline Mode"
+          },
+          {
+            "value": "Multi-Branch",
+            "label": "KDS Support",
+            "trend": "Station Routing"
+          },
+          {
+            "label": "Inventory Costing",
+            "trend": "Auto Deduction",
+            "value": "Gram-Level"
+          }
+        ],
+        "heroSubtitle": "Table Ordering, Floorplan Engine & Cloud Kitchen Management",
+        "heroStyle": "command-hud",
+        "id": "mod-pos",
+        "showSecondaryCta": false,
+        "heroImage": "/hero_restaurant.jpg",
+        "ctaPrimaryText": "Book a Demo / Discovery",
+        "accentColor": "emerald",
+        "faqs": [
+          {
+            "question": "Can the POS work without internet?",
+            "answer": "Yes. Orders, tablets, and kitchen tickets run on a local-first engine and auto-sync the moment the connection returns."
+          },
+          {
+            "question": "Does it support multi-branch franchises?",
+            "answer": "Every branch runs its own node with centralized menu, pricing, and analytics in the cloud."
+          },
+          {
+            "question": "Can customers order from tables?",
+            "answer": "Yes via QR table ordering with optional payment at the table."
+          }
+        ],
         "subModules": [
           {
-            "name": "Modular Architecture",
-            "description": "Engineered to deliver high throughput, automated workflow execution, and robust audit compliance across distributed systems.",
+            "name": "Interactive Floorplan & Tables",
+            "description": "Visual table management with seat-level splitting, merge bills, and reservation timelines.",
             "points": [
-              "Zero technical debt implementation",
-              "Full API orchestration & event webhooks",
-              "Strict role-based access validation"
+              "Drag-and-drop table occupancy",
+              "Seat-level bill splitting",
+              "Reservation and waitlist timeline"
             ],
             "badge": "Core Module 01"
           },
           {
-            "name": "High Throughput API",
+            "description": "Color-coded cook times, preparation timers, and station-based routing.",
+            "badge": "Core Module 02",
+            "name": "Real-Time Kitchen Display (KDS)",
             "points": [
-              "Zero technical debt implementation",
-              "Full API orchestration & event webhooks",
-              "Strict role-based access validation"
+              "Station-based ticket routing",
+              "Cook-time color indicators",
+              "Course sequencing and modifiers"
+            ]
+          },
+          {
+            "description": "Automatic raw inventory deduction down to the gram as orders are punched.",
+            "badge": "Core Module 03",
+            "points": [
+              "Gram-level inventory deduction",
+              "Live recipe variance reports",
+              "Supplier re-order triggers"
             ],
-            "description": "Engineered to deliver high throughput, automated workflow execution, and robust audit compliance across distributed systems.",
-            "badge": "Core Module 02"
+            "name": "Recipe & Ingredient Costing"
+          },
+          {
+            "description": "Keeps punching orders and printing kitchen tickets even if the internet drops.",
+            "points": [
+              "Local-first order queue",
+              "Auto-sync on reconnect",
+              "Fault-tolerant ticket printing"
+            ],
+            "badge": "Core Module 04",
+            "name": "Offline Resilient Engine"
+          }
+        ],
+        "sectionVisibility": {
+          "metrics": true,
+          "compliance": true,
+          "hero": true,
+          "widget": true,
+          "related": true,
+          "industries": true,
+          "faqs": true,
+          "submodules": true,
+          "secondaryCta": false
+        },
+        "mockData": {
+          "workflowSteps": [
+            {
+              "desc": "Barcode/QR floor order captured with modifiers",
+              "latency": "30ms",
+              "title": "Order Punch",
+              "status": "PUNCHED",
+              "step": "01"
+            },
+            {
+              "step": "02",
+              "title": "Kitchen Routing",
+              "desc": "WebSocket ticket routed to correct KDS station",
+              "status": "ROUTED",
+              "latency": "45ms"
+            },
+            {
+              "desc": "Ingredient costs deducted from live inventory",
+              "status": "COSTED",
+              "step": "03",
+              "latency": "12ms",
+              "title": "Recipe Deduction"
+            },
+            {
+              "step": "04",
+              "status": "SETTLED",
+              "title": "Billing & Cloud Sync",
+              "desc": "Split/merge settlement synced to cloud ledger",
+              "latency": "120ms"
+            }
+          ],
+          "recordsHeader": [
+            "Order Ref",
+            "Table / Station",
+            "Items",
+            "Status",
+            "Kitchen Node"
+          ],
+          "tabTitle": "CulinaryOS — Live Floorplan & Kitchen Telemetry",
+          "systemLogs": [
+            "[FLOORPLAN] ● Table 12 occupancy changed to FULL",
+            "[KDS] ● Ticket dispatched to Grills station",
+            "[INVENTORY] ● 180g ribeye deducted from cold store",
+            "[SYNC] ● Branch DBX-02 reconciled · 0 loss"
+          ],
+          "records": [
+            {
+              "tag": "HOT RAIL",
+              "meta": "4 Items • Lamb Shank, Grilled Sea Bream",
+              "title": "Table 12 · Seats 1-3",
+              "id": "ORD-44120",
+              "status": "PUNCHED",
+              "timestamp": "Sent 34s ago"
+            },
+            {
+              "status": "COOKING",
+              "tag": "FIRE-05",
+              "id": "ORD-44121",
+              "title": "KDS Station · Grills",
+              "timestamp": "Started 2m ago",
+              "meta": "2 Items • Wagyu Steak (Medium Rare)"
+            },
+            {
+              "timestamp": "Plated 1m ago",
+              "status": "READY",
+              "meta": "3 Items • Margherita, Tiramisu",
+              "id": "ORD-44122",
+              "title": "Table 04 · Takeaway",
+              "tag": "PACKAGING"
+            },
+            {
+              "status": "DISPATCHED",
+              "tag": "RIDER",
+              "id": "ORD-44123",
+              "title": "Online · Talabat",
+              "meta": "5 Items • Hot Mix Platter",
+              "timestamp": "Picked Up 4m ago"
+            }
+          ]
+        },
+        "heroHighlight": "Cloud Kitchen Display System.",
+        "targetIndustry": [
+          "Fine Dining & Hospitality",
+          "Multi-Branch Franchises",
+          "Fast-Casual Cafes",
+          "Cloud Kitchens"
+        ],
+        "interactiveWidget": "live-telemetry",
+        "architecture": {
+          "security": "Role-scoped staff access, encrypted sync, audit logs",
+          "scalability": "Horizontal branch nodes with central cloud aggregation",
+          "runtime": "Next.js, Node.js, WebSockets, PWA",
+          "messaging": "WebSocket real-time event channel",
+          "database": "SQLite local-first with cloud sync",
+          "latency": "Instant order broadcast (< 50ms)"
+        },
+        "ctaSecondaryText": "Download Technical Details",
+        "heroBadge": "Real-Time Kitchen Command Hub"
+      },
+      "imageSrc": "/hero_restaurant.jpg",
+      "category": "Hospitality & Retail",
+      "brochureUrl": "",
+      "subtitle": "Table Ordering, Floorplan Engine & Cloud Kitchen Management",
+      "techStack": [
+        "Next.js",
+        "WebSockets",
+        "SQLite / Cloud Sync",
+        "Thermal ESC/POS",
+        "PWA"
+      ],
+      "iconName": "UtensilsCrossed",
+      "id": "mod-pos",
+      "slug": "pos",
+      "badge": "Restaurant POS & KDS",
+      "features": [
+        "Interactive Floorplan & Tables",
+        "Real-Time Kitchen Display (KDS)",
+        "Recipe & Ingredient Costing",
+        "Offline Resilient Engine"
+      ],
+      "description": "High-speed POS designed for fine dining, multi-branch franchises, and fast-casual cafes. Features real-time Kitchen Display System (KDS) synchronization, QR table ordering, and recipe inventory cost tracking.",
+      "title": "CulinaryOS Restaurant POS & Kitchen Display"
+    },
+    {
+      "description": "Turn obsolete Oracle Forms 6i/11g/12c systems into responsive web applications. Preserve battle-tested PL/SQL database packages while replacing outdated Java applets with modern Next.js interfaces.",
+      "title": "Legacy Oracle Forms Modernization Suite",
+      "features": [
+        "PL/SQL Business Logic Decoupling",
+        "Web-Native User Experience",
+        "Zero Downtime Parallel Cutover",
+        "Modern API Layer & Webhooks"
+      ],
+      "badge": "Oracle Modernizer",
+      "techStack": [
+        "Oracle DB 19c",
+        "PL/SQL",
+        "Next.js",
+        "Node.js",
+        "gRPC",
+        "Docker"
+      ],
+      "id": "mod-oracle",
+      "slug": "oracle",
+      "iconName": "GitMerge",
+      "subtitle": "PL/SQL Refactoring to Resilient Cloud Microservices",
+      "brochureUrl": "",
+      "category": "Legacy Modernization",
+      "pageDetails": {
+        "faqs": [
+          {
+            "question": "Will legacy PL/SQL procedures be lost?",
+            "answer": "No. Database packages are preserved on Oracle 19c; only the presentation layer and logic calls are refactored into services."
+          },
+          {
+            "question": "Is there any downtime during migration?",
+            "answer": "None. Legacy and modern interfaces run in parallel on the same database until you choose full cutover."
+          },
+          {
+            "answer": "Oracle Forms 6i, 10g, 11g and 12c with Oracle DB up to 19c.",
+            "question": "Which Oracle versions are supported?"
+          }
+        ],
+        "heroSubtitle": "PL/SQL Refactoring to Resilient Cloud Microservices",
+        "accentColor": "violet",
+        "heroImage": "/oracle_modernization.png",
+        "metrics": [
+          {
+            "value": "Guaranteed",
+            "trend": "Phase-Out Strategy",
+            "label": "Zero Data Loss"
+          },
+          {
+            "value": "100%",
+            "trend": "Preserved",
+            "label": "DB Integrity"
+          },
+          {
+            "value": "REST / gRPC",
+            "trend": "Web-Exposed",
+            "label": "API Layer"
+          },
+          {
+            "value": "0 Downtime",
+            "trend": "Parallel Run",
+            "label": "Cutover"
+          }
+        ],
+        "heroHeadline": "Legacy Oracle Forms Refactoring &",
+        "executiveSummary": "Turn obsolete Oracle Forms 6i/11g/12c systems into responsive web applications. Preserve battle-tested PL/SQL database packages while replacing outdated Java applets with modern Next.js interfaces, unlocked through REST/gRPC microservices and a zero-downtime parallel cutover strategy.",
+        "complianceList": [
+          "Zero-Data-Loss Contractual Guarantee",
+          "ISO 27001 Security Standard",
+          "UAE Data Residency Requirements"
+        ],
+        "slaGuarantee": "Zero-Data-Loss Migration Guarantee • 100% DB Integrity Preserved",
+        "id": "mod-oracle",
+        "heroBadge": "AST Code Modernization & Migration HUD",
+        "targetIndustry": [
+          "Government & Public Sector",
+          "Banking & Financial Institutions",
+          "Manufacturing Enterprises",
+          "Utilities & Infrastructure"
+        ],
+        "interactiveWidget": "code-transform",
+        "architecture": {
+          "latency": "Sub-10ms service execution",
+          "scalability": "Containerized microservices with orchestrator auto-scaling",
+          "database": "Oracle Database 19c (preserved)",
+          "runtime": "Oracle DB 19c, Next.js, Node.js, gRPC, Docker",
+          "security": "Hashed audit seals, RBAC, TLS 1.3 transport",
+          "messaging": "gRPC / REST with event webhooks"
+        },
+        "mockData": {
+          "records": [
+            {
+              "id": "FMB-INVENTORY_01",
+              "tag": "REACT / NEXT.JS",
+              "timestamp": "100% Logic Parity",
+              "status": "SYNCHRONIZED",
+              "meta": "Extracted: 84 Triggers, 12 Block Hierarchies",
+              "title": "INVENTORY_MGMT.FMB (Oracle 11g)"
+            },
+            {
+              "tag": "MICROSERVICES",
+              "id": "FMB-PAYROLL_DISPATCH",
+              "status": "COMPLIANT",
+              "timestamp": "100% Logic Parity",
+              "title": "PAYROLL_CALC.FMB (Oracle 10g)",
+              "meta": "Extracted: 42 PL/SQL Packages converted"
+            },
+            {
+              "status": "ACTIVE",
+              "meta": "Extracted: 112 Validation rules & multi-currency",
+              "title": "FINANCIAL_GL.FMB (Oracle 12c)",
+              "id": "FMB-GL_JOURNAL",
+              "tag": "WEB UI COMMITTED",
+              "timestamp": "99.98% Parity Verified"
+            },
+            {
+              "tag": "REST API READY",
+              "title": "CUSTOMER_MASTER.FMB (Oracle 6i)",
+              "id": "FMB-CUSTOMER_REG",
+              "status": "VERIFIED",
+              "meta": "Legacy client-server block structures",
+              "timestamp": "100% Logic Parity"
+            }
+          ],
+          "codeDiff": {
+            "targetLang": "Arcanum TypeScript Microservice",
+            "targetCode": "// Modern REST Endpoint\nexport async function getOrganization(orgId: string) {\n  const org = await db.organizations.findUnique({ where: { id: orgId } });\n  return { organization: org, provisioned: true };\n}",
+            "sourceCode": "-- Legacy Oracle Forms Block\nPROCEDURE export_org_structure (\n  p_org_id IN NUMBER,\n  p_json OUT CLOB\n) AS\nBEGIN\n  SELECT json_object('org_id' VALUE org_id, 'name' VALUE name)\n    INTO p_json FROM organizations WHERE org_id = p_org_id;\nEND;",
+            "sourceLang": "Oracle Forms 11g / PL/SQL"
+          },
+          "tabTitle": "Oracle Modernizer — Live Migration Telemetry",
+          "systemLogs": [
+            "[PARSE] ● FMB package tree extracted · 84 triggers",
+            "[GEN] ● TypeScript service emitted for INVENTORY_MGMT",
+            "[VERIFY] ● 100% logic parity · legacy vs modern",
+            "[CUTOVER] ● Parallel run active on shared DB schema"
+          ],
+          "recordsHeader": [
+            "Form Package",
+            "Extracted Elements",
+            "Status",
+            "Target",
+            "Parity"
+          ],
+          "workflowSteps": [
+            {
+              "title": "AST Extraction",
+              "step": "01",
+              "latency": "2.1s",
+              "status": "EXTRACTED",
+              "desc": "Parse Oracle Forms FMB/PL/SQL into typed AST"
+            },
+            {
+              "title": "Service Generation",
+              "step": "02",
+              "desc": "Emit Next.js screens + Node gRPC services",
+              "status": "GENERATED",
+              "latency": "4.6s"
+            },
+            {
+              "title": "Parity Verification",
+              "status": "VERIFIED",
+              "latency": "6.2s",
+              "step": "03",
+              "desc": "Diff legacy vs modern output on identical fixtures"
+            },
+            {
+              "desc": "Route traffic gradually with rollback gates",
+              "status": "LIVE",
+              "title": "Parallel Cutover",
+              "step": "04",
+              "latency": "0ms"
+            }
+          ]
+        },
+        "theme": "developer-dev",
+        "showSecondaryCta": false,
+        "ctaPrimaryText": "Book a Demo / Discovery",
+        "ctaSecondaryText": "Download Technical Details",
+        "heroHighlight": "Cloud-Native Microservice Migration.",
+        "deploymentModes": [
+          "Parallel Run (Legacy + Modern)",
+          "Full Cutover Cloud Deployment",
+          "Hybrid Phased Migration"
+        ],
+        "heroStyle": "code-diff",
+        "subModules": [
+          {
+            "name": "PL/SQL Business Logic Decoupling",
+            "points": [
+              "AST-based PL/SQL extraction",
+              "Logic parity verification suite",
+              "Type-safe TypeScript services"
+            ],
+            "badge": "Core Module 01",
+            "description": "Extract stored procedures and triggers into lightweight, containerized REST / gRPC microservices."
+          },
+          {
+            "points": [
+              "Responsive Next.js screens",
+              "Form-applet workflow parity",
+              "Keyboard-shortcut power UX"
+            ],
+            "badge": "Core Module 02",
+            "description": "Replace cumbersome Oracle Form applets with lightning-fast, keyboard-shortcut-enabled web screens.",
+            "name": "Web-Native User Experience"
+          },
+          {
+            "description": "Phased migration allowing legacy and modern interfaces to run concurrently on the same database.",
+            "badge": "Core Module 03",
+            "points": [
+              "Legacy + modern dual runtime",
+              "Incremental data validation",
+              "Rollback-safe release gates"
+            ],
+            "name": "Zero Downtime Parallel Cutover"
+          },
+          {
+            "description": "Open up legacy systems to modern third-party integrations, mobile apps, and cloud analytics.",
+            "points": [
+              "Versioned REST/gRPC facade",
+              "Webhook event streaming",
+              "Mobile & BI integration"
+            ],
+            "badge": "Core Module 04",
+            "name": "Modern API Layer & Webhooks"
+          }
+        ],
+        "sectionVisibility": {
+          "industries": true,
+          "metrics": true,
+          "submodules": true,
+          "compliance": true,
+          "widget": true,
+          "secondaryCta": false,
+          "faqs": true,
+          "related": true,
+          "hero": true
+        }
+      },
+      "imageSrc": "/oracle_modernization.png"
+    },
+    {
+      "title": "Motion-Driven Marketing Website",
+      "iconName": "Sparkles",
+      "badge": "Cinematic Website Engine",
+      "pageDetails": {
+        "heroHeadline": "Motion-Driven Marketing Website &",
+        "heroImage": "/hero-topsection/ezgif-frame-105.jpg",
+        "executiveSummary": "High-impact marketing and product sites engineered around motion. Cinematic scroll-triggered scenes, 60fps micro-interactions, WebGL visuals, and CMS-driven content - all on a Core Web Vitals-optimized Next.js foundation so the drama never costs you SEO or speed.",
+        "complianceList": [
+          "Core Web Vitals Optimization",
+          "GDPR & Cookie Consent",
+          "WCAG AA Accessibility"
+        ],
+        "id": "mod-motion-site",
+        "heroSubtitle": "Kinetic Scroll Narratives, Micro-Interactions & Real-Time Data Feeds",
+        "theme": "saas-modern",
+        "deploymentModes": [
+          "Edge-Networked Next.js (Vercel)",
+          "Managed Static + ISR Hybrid",
+          "Headless CMS Connected"
+        ],
+        "accentColor": "rose",
+        "slaGuarantee": "99.99% Hosting Uptime • Core Web Vitals Budget Guaranteed",
+        "heroHighlight": "Cinematic Interaction Design.",
+        "heroBadge": "Cinematic Web Experience Engine",
+        "subModules": [
+          {
+            "name": "Cinematic Scroll Storytelling",
+            "badge": "Core Module 01",
+            "points": [
+              "Scroll-triggered scene timelines",
+              "Staggered reveal choreography",
+              "Parallax depth composition"
+            ],
+            "description": "Choreographed scroll scenes, staggered reveals, and parallax depth guiding visitors through narrative beats."
+          },
+          {
+            "badge": "Core Module 02",
+            "description": "Hover, tap, and drag interactions with spring physics for a tactile premium feel.",
+            "points": [
+              "Spring-physics micro-interactions",
+              "Magnetic & ripple effects",
+              "Gesture-based navigation"
+            ],
+            "name": "Micro-Interaction Engine"
           },
           {
             "badge": "Core Module 03",
-            "description": "Engineered to deliver high throughput, automated workflow execution, and robust audit compliance across distributed systems.",
-            "name": "Strict RBAC Security",
             "points": [
-              "Zero technical debt implementation",
-              "Full API orchestration & event webhooks",
-              "Strict role-based access validation"
-            ]
+              "Three.js product scenes",
+              "GPU shader effects",
+              "Progressive 3D enhancement"
+            ],
+            "name": "3D & WebGL Visuals",
+            "description": "Real-time 3D product visualization and GPU-accelerated shaders that run smoothly on mobile."
+          },
+          {
+            "points": [
+              "Headless CMS content editing",
+              "Event-tagged analytics",
+              "A/B experiment wiring"
+            ],
+            "description": "Headless CMS editing plus campaign analytics and A/B testing in the motion scenes.",
+            "name": "CMS & Analytics Integration",
+            "badge": "Core Module 04"
           }
         ],
-        "brochureUrl": "",
-        "ctaSecondaryUrl": "",
-        "heroHighlight": "Architecture & System Specs.",
-        "heroHeadline": "Enterprise Solution — Enterprise",
-        "heroStyle": "split-console"
+        "ctaPrimaryText": "Book a Demo / Discovery",
+        "showSecondaryCta": false,
+        "interactiveWidget": "live-telemetry",
+        "faqs": [
+          {
+            "question": "Will heavy animations hurt our SEO?",
+            "answer": "No. Motion is progressive and lazy-loaded; LCP budgets and Core Web Vitals are enforced as hard constraints."
+          },
+          {
+            "question": "Can we edit content ourselves?",
+            "answer": "Yes, scenes are driven by a headless CMS, so your team can edit copy and images without touching code."
+          },
+          {
+            "answer": "Yes. WebGL is progressively enhanced and scenes gracefully degrade to CSS on low-end devices.",
+            "question": "Do the animations run on mobile?"
+          }
+        ],
+        "architecture": {
+          "scalability": "Edge rendering across global POPs",
+          "database": "Headless CMS + Edge-ISR data layer",
+          "runtime": "Next.js, GSAP, Framer Motion, Three.js / WebGL",
+          "security": "Cloud WAF, TLS 1.3, signed webhooks",
+          "latency": "LCP < 1.2s on modern networks",
+          "messaging": "RSC streaming + lazy animation loads"
+        },
+        "targetIndustry": [
+          "B2B & B2C Marketing",
+          "SaaS Product Launches",
+          "Brand Campaigns",
+          "Corporate Showcase Sites"
+        ],
+        "metrics": [
+          {
+            "label": "Animation Frame Rate",
+            "trend": "GSAP / WebGL",
+            "value": "60fps"
+          },
+          {
+            "value": "< 1.2s",
+            "trend": "Optimized Bundles",
+            "label": "LCP Load Time"
+          },
+          {
+            "value": "100/100",
+            "label": "Core Web Vitals",
+            "trend": "Field-Checked"
+          },
+          {
+            "label": "Campaign Analytics",
+            "trend": "A/B Ready",
+            "value": "24/7"
+          }
+        ],
+        "sectionVisibility": {
+          "compliance": true,
+          "hero": true,
+          "related": true,
+          "widget": true,
+          "faqs": true,
+          "industries": true,
+          "submodules": true,
+          "metrics": true,
+          "secondaryCta": false
+        },
+        "ctaSecondaryText": "Download Technical Details",
+        "mockData": {
+          "tabTitle": "Motion Site — Live Rendering & Performance Telemetry",
+          "systemLogs": [
+            "[SCENE] ● Hero timeline compiled · 31 tweens",
+            "[PERF] ● 60fps maintained on 120Hz panel",
+            "[CTMS] ● A/B variant B deployed at 50% traffic",
+            "[SEO] ● CLS 0.01 · LCP 0.9s · no layout shift"
+          ],
+          "workflowSteps": [
+            {
+              "status": "SYNCED",
+              "latency": "120ms",
+              "title": "Content Sync",
+              "desc": "Headless CMS content pushed to scenes",
+              "step": "01"
+            },
+            {
+              "desc": "GSAP timelines compiled & lazy-split",
+              "status": "COMPILED",
+              "title": "Motion Compile",
+              "step": "02",
+              "latency": "640ms"
+            },
+            {
+              "step": "03",
+              "status": "COMMITTED",
+              "title": "Render Commit",
+              "latency": "80ms",
+              "desc": "Edge render with streaming refinements"
+            },
+            {
+              "title": "Analytics Fire",
+              "status": "TRACKED",
+              "step": "04",
+              "desc": "Interaction events tagged to campaign",
+              "latency": "40ms"
+            }
+          ],
+          "recordsHeader": [
+            "Scene",
+            "Animations",
+            "Frame Rate",
+            "Status",
+            "LCP"
+          ],
+          "records": [
+            {
+              "meta": "31 GSAP timelines • WebGL header",
+              "id": "SCN-HERO",
+              "tag": "60 FPS",
+              "status": "PLAYING",
+              "timestamp": "0.9s LCP",
+              "title": "Hero Cinematic Loop"
+            },
+            {
+              "title": "Feature Parallax Stack",
+              "status": "RENDERED",
+              "meta": "Staggered reveals • 24 cards",
+              "tag": "60 FPS",
+              "timestamp": "1.1s LCP",
+              "id": "SCN-FEATURES"
+            },
+            {
+              "tag": "60 FPS",
+              "timestamp": "0.8s LCP",
+              "id": "SCN-CTA",
+              "title": "Conversion CTA Scene",
+              "meta": "Glow pulse • scroll-linked fade",
+              "status": "RENDERED"
+            },
+            {
+              "title": "A/B Variant B",
+              "meta": "Alternate hero narrative cued live",
+              "status": "EXPERIMENT",
+              "tag": "TRACKED",
+              "timestamp": "Live rollout",
+              "id": "CAMPAIGN-02"
+            }
+          ]
+        },
+        "heroStyle": "command-hud"
       },
+      "brochureUrl": "",
       "features": [
-        "Modular Architecture",
-        "High Throughput API",
-        "Strict RBAC Security"
+        "Cinematic Scroll Storytelling",
+        "Micro-Interaction Engine",
+        "3D & WebGL Visuals",
+        "CMS & Analytics Integration"
       ],
-      "slug": "erp"
+      "id": "mod-motion-site",
+      "imageSrc": "/hero-topsection/ezgif-frame-105.jpg",
+      "techStack": [
+        "Next.js",
+        "GSAP",
+        "Framer Motion",
+        "Three.js / WebGL",
+        "Tailwind CSS",
+        "Vercel"
+      ],
+      "slug": "motion-driven-website",
+      "subtitle": "Kinetic Scroll Narratives, Micro-Interactions & Real-Time Data Feeds",
+      "description": "High-impact marketing sites engineered around motion. Cinematic scroll scenes, 60fps micro-interactions, WebGL visuals, and CMS-driven content on a Core Web Vitals-optimized Next.js foundation.",
+      "category": "Web Experience"
+    },
+    {
+      "title": "Custom Web Application Development",
+      "category": "Software Engineering",
+      "badge": "Bespoke Web Platform",
+      "subtitle": "Bespoke Full-Stack Platforms, Secure APIs & Scalable Architecture",
+      "imageSrc": "/hero_infrastructure.png",
+      "description": "Bespoke web platforms designed around your exact business process. Custom React/Next.js interfaces backed by hardened Node.js APIs, relational storage, and cloud-native deployment pipelines.",
+      "slug": "custom-web-applications",
+      "id": "mod-custom-apps",
+      "features": [
+        "Bespoke Full-Stack Engineering",
+        "Enterprise Auth & RBAC",
+        "REST / GraphQL API Design",
+        "CI/CD & Cloud Deployment"
+      ],
+      "pageDetails": {
+        "heroHeadline": "Custom Web Application Development &",
+        "heroImage": "/hero_infrastructure.png",
+        "executiveSummary": "Bespoke web platforms designed around your exact business process. From SaaS dashboards to enterprise portals, we engineer custom React/Next.js interfaces backed by hardened Node.js APIs, relational storage, and cloud-native deployment pipelines.",
+        "heroSubtitle": "Bespoke Full-Stack Platforms, Secure APIs & Scalable Architecture",
+        "complianceList": [
+          "ISO 27001 Security Standard",
+          "GDPR Article 32 Compliant",
+          "SOC 2 Architecture Ready"
+        ],
+        "heroBadge": "Bespoke Full-Stack Platform Builder",
+        "slaGuarantee": "99.99% Production Uptime SLA • Zero-Downtime Deploys",
+        "id": "mod-custom-apps",
+        "interactiveWidget": "live-telemetry",
+        "metrics": [
+          {
+            "trend": "Agile Execution",
+            "label": "Delivery Model",
+            "value": "Sprint-Based"
+          },
+          {
+            "label": "Security Posture",
+            "trend": "RBAC + MFA + SSO",
+            "value": "Zero-Trust"
+          },
+          {
+            "value": "Auto-Scale",
+            "label": "Cloud Scaling",
+            "trend": "Kubernetes"
+          },
+          {
+            "value": "24/7",
+            "label": "Support & SLAs",
+            "trend": "Senior Engineers"
+          }
+        ],
+        "subModules": [
+          {
+            "badge": "Core Module 01",
+            "points": [
+              "Custom domain modeling",
+              "Tailored data schema design",
+              "Workflow-first UX architecture"
+            ],
+            "description": "Custom domain modeling, schemas, and UI architecture that mirror your workflows.",
+            "name": "Bespoke Full-Stack Engineering"
+          },
+          {
+            "points": [
+              "OAuth2 / SAML SSO federation",
+              "Fine-grained RBAC policies",
+              "Per-tenant data isolation"
+            ],
+            "badge": "Core Module 02",
+            "name": "Enterprise Auth & RBAC",
+            "description": "Role-based access, MFA, SSO federation, and per-tenant data isolation."
+          },
+          {
+            "description": "Versioned, documented APIs with idempotency, rate limiting, and webhooks.",
+            "badge": "Core Module 03",
+            "points": [
+              "Versioned API contracts",
+              "Rate limiting & idempotency",
+              "Webhook event streaming"
+            ],
+            "name": "REST / GraphQL API Design"
+          },
+          {
+            "points": [
+              "Automated test & build gates",
+              "Zero-downtime rolling deploys",
+              "Infrastructure as code"
+            ],
+            "name": "CI/CD & Cloud Deployment",
+            "badge": "Core Module 04",
+            "description": "Automated test pipelines, zero-downtime releases, infrastructure as code."
+          }
+        ],
+        "faqs": [
+          {
+            "answer": "Fully bespoke. We map your workflows into custom domain models, schemas, and UI rather than forcing templates.",
+            "question": "Do you build from scratch or use templates?"
+          },
+          {
+            "answer": "Yes, via versioned REST/GraphQL APIs, webhooks, and SSO federation with your existing identity provider.",
+            "question": "Can it integrate with our existing systems?"
+          },
+          {
+            "question": "Who owns the code?",
+            "answer": "You do. The application ships with full source, documentation, and infrastructure-as-code."
+          }
+        ],
+        "architecture": {
+          "messaging": "REST / GraphQL with Kafka eventing",
+          "scalability": "Kubernetes horizontal auto-scaling",
+          "latency": "< 15ms average API round-trip",
+          "security": "Zero-trust RBAC, MFA, encrypted storage, WAF",
+          "runtime": "Next.js, React, Node.js, Docker",
+          "database": "PostgreSQL with Redis caching and search layer"
+        },
+        "ctaPrimaryText": "Book a Demo / Discovery",
+        "heroHighlight": "Secure Enterprise-Grade Architecture.",
+        "showSecondaryCta": false,
+        "accentColor": "violet",
+        "mockData": {
+          "records": [
+            {
+              "title": "Auth Service",
+              "tag": "V2.1.0",
+              "meta": "OAuth2 / SAML · MFA enabled",
+              "status": "ACTIVE",
+              "timestamp": "9ms avg",
+              "id": "SVC-AUTH"
+            },
+            {
+              "timestamp": "12ms avg",
+              "tag": "V1.8.2",
+              "title": "Billing Service",
+              "status": "ACTIVE",
+              "meta": "Rate limits enforced · webhooks live",
+              "id": "SVC-BILL"
+            },
+            {
+              "timestamp": "8ms avg",
+              "id": "SVC-DATA",
+              "status": "VERIFIED",
+              "meta": "Tenant-isolated schema · encrypted",
+              "tag": "V3.0.0",
+              "title": "Data Plane"
+            },
+            {
+              "tag": "ZERO-DOWNTIME",
+              "id": "CDN-EDGE",
+              "title": "Edge Deployment",
+              "status": "SYNCHRONIZED",
+              "timestamp": "Committed 2m ago",
+              "meta": "Rolling release · 2 regions live"
+            }
+          ],
+          "systemLogs": [
+            "[CI] ● Build #1842 passed all 1,284 tests",
+            "[DEPLOY] ● v2.1.0 rolled out · 0 errors",
+            "[AUTH] ● SSO federation validated for Azure AD",
+            "[SCALE] ● Auto-scaling added 2 replicas at 82% CPU"
+          ],
+          "codeDiff": {
+            "sourceCode": "// Before: manual spreadsheet workflow\nconst row = Excel.append({\n  sheet: 'Sales',\n  values: [name, qty, price],\n});\nconst report = Excel.summarize(row);",
+            "sourceLang": "Legacy / Spreadsheet-Driven Process",
+            "targetLang": "Arcanum Custom Web Platform",
+            "targetCode": "// After: automated SaaS pipeline\nexport async function recordSale(ctx: Context, sale: SaleInput) {\n  const idem = await idempotency.ensure(sale.reference);\n  const rec = await db.sales.create({ data: { ...sale, orgId: ctx.tenant } });\n  await events.publish('sale.recorded', { sale: rec, report: await aggregator.run() });\n  return rec;\n}"
+          },
+          "workflowSteps": [
+            {
+              "title": "Auth & Session",
+              "desc": "OAuth2/MFA session established with SSO",
+              "status": "AUTHED",
+              "latency": "140ms",
+              "step": "01"
+            },
+            {
+              "desc": "Request validated, rate-limited, idempotent",
+              "status": "VALIDATED",
+              "step": "02",
+              "title": "API Validation",
+              "latency": "9ms"
+            },
+            {
+              "step": "03",
+              "title": "Business Execution",
+              "desc": "Domain service committed on tenant schema",
+              "latency": "6ms",
+              "status": "COMMITTED"
+            },
+            {
+              "step": "04",
+              "status": "EMITTED",
+              "title": "Event Emit",
+              "latency": "4ms",
+              "desc": "Webhook/event streamed to integrators"
+            }
+          ],
+          "tabTitle": "Custom App — Live Runtime & API Telemetry",
+          "recordsHeader": [
+            "Service",
+            "Endpoint",
+            "Load",
+            "Status",
+            "Latency"
+          ]
+        },
+        "ctaSecondaryText": "Download Technical Details",
+        "heroStyle": "code-diff",
+        "theme": "saas-modern",
+        "deploymentModes": [
+          "Managed Cloud (AWS / Azure)",
+          "Private Dedicated Instances",
+          "Hybrid On-Premises + Cloud"
+        ],
+        "targetIndustry": [
+          "SaaS Companies",
+          "Enterprise Portals",
+          "Logistics & Operations",
+          "Professional Services"
+        ],
+        "sectionVisibility": {
+          "compliance": true,
+          "submodules": true,
+          "related": true,
+          "secondaryCta": false,
+          "industries": true,
+          "faqs": true,
+          "widget": true,
+          "metrics": true,
+          "hero": true
+        }
+      },
+      "techStack": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Docker",
+        "AWS / Azure"
+      ],
+      "iconName": "Code",
+      "brochureUrl": ""
+    },
+    {
+      "category": "Workflow & Operations",
+      "pageDetails": {
+        "accentColor": "amber",
+        "interactiveWidget": "live-telemetry",
+        "heroStyle": "workflow-pipeline",
+        "targetIndustry": [
+          "Professional Services",
+          "Software Delivery Teams",
+          "Engineering & Construction",
+          "PMO / Program Offices"
+        ],
+        "executiveSummary": "An end-to-end delivery workspace that keeps teams aligned and stakeholders informed. Agile boards, Gantt timelines, resource allocation, and time tracking feed live dashboards - so project health is always visible in real time.",
+        "faqs": [
+          {
+            "question": "Does it support Scrum, Kanban, and classic project plans?",
+            "answer": "Yes, all boards and Gantt timelines coexist within one workspace and a single project health model."
+          },
+          {
+            "answer": "Absolutely. Logged time rolls into costing, then into client-ready invoices with configurable rates.",
+            "question": "Can time logs drive client invoices?"
+          },
+          {
+            "question": "Is live collaboration supported?",
+            "answer": "Yes. Boards, comments, and presence update in real time over WebSockets across the whole team."
+          }
+        ],
+        "metrics": [
+          {
+            "value": "Agile / Scrum",
+            "label": "Methodology",
+            "trend": "Multi-Framework"
+          },
+          {
+            "value": "Multi-Project",
+            "trend": "Resource Pooling",
+            "label": "Team Scale"
+          },
+          {
+            "label": "Collaboration",
+            "trend": "WebSocket Live",
+            "value": "Real-Time"
+          },
+          {
+            "label": "Reporting",
+            "trend": "Executive Dashboards",
+            "value": "24/7"
+          }
+        ],
+        "deploymentModes": [
+          "Cloud SaaS Workspace",
+          "Private Tenant Deployment",
+          "On-Premises Enterprise"
+        ],
+        "architecture": {
+          "latency": "< 80ms collaborative updates",
+          "database": "PostgreSQL with Redis presence/cache layer",
+          "messaging": "WebSocket live channel + event bus",
+          "runtime": "Next.js, Node.js, WebSockets, Redis",
+          "security": "SSO, granular RBAC, audit logging",
+          "scalability": "Real-time shared state across replicas"
+        },
+        "id": "mod-project-mgmt",
+        "sectionVisibility": {
+          "industries": true,
+          "faqs": true,
+          "secondaryCta": false,
+          "submodules": true,
+          "compliance": true,
+          "hero": true,
+          "related": true,
+          "metrics": true,
+          "widget": true
+        },
+        "mockData": {
+          "tabTitle": "Project Suite — Live Program & Sprint Telemetry",
+          "workflowSteps": [
+            {
+              "latency": "0s",
+              "step": "01",
+              "status": "PLANNED",
+              "title": "Plan & Prioritize",
+              "desc": "Backlog refined, sprint capacity set"
+            },
+            {
+              "latency": "40ms",
+              "status": "IN PROGRESS",
+              "desc": "Tasks flow through board with WIP limits",
+              "title": "Execute & Track",
+              "step": "02"
+            },
+            {
+              "desc": "Logs roll into timesheets and costing",
+              "step": "03",
+              "status": "LOGGED",
+              "title": "Time & Cost",
+              "latency": "15ms"
+            },
+            {
+              "title": "Report & Decide",
+              "latency": "80ms",
+              "status": "PUBLISHED",
+              "step": "04",
+              "desc": "Live dashboards and risk roll-ups published"
+            }
+          ],
+          "systemLogs": [
+            "[BOARD] ● Task MOV-422 moved to DONE",
+            "[GANNT] ● Resource conflict auto-cleared for Beta",
+            "[TIME] ● 24h logged across Alpha team today",
+            "[PMO] ● Q3 executive risk report published"
+          ],
+          "records": [
+            {
+              "timestamp": "Live board",
+              "meta": "Sprint 12 · 34 tasks · 3 dependencies",
+              "title": "Alpha Integration",
+              "tag": "AGILE",
+              "status": "ON TRACK",
+              "id": "PRJ-ALPHA"
+            },
+            {
+              "id": "PRJ-BETA",
+              "tag": "DETAILED",
+              "status": "AT RISK",
+              "meta": "Gantt · 12 resources · 2 conflicts cleared",
+              "title": "Beta Platform Launch",
+              "timestamp": "Updated 4m ago"
+            },
+            {
+              "meta": "Time logged 1,240h · invoiced 38%",
+              "id": "PRJ-GAMMA",
+              "title": "Gamma Adoption Program",
+              "status": "ON TRACK",
+              "tag": "REVENUE",
+              "timestamp": "Updated 1m ago"
+            },
+            {
+              "meta": "7 programs · 24 projects aggregated",
+              "id": "PMO-001",
+              "title": "Q3 Portfolio Roll-Up",
+              "status": "COMPLIANT",
+              "timestamp": "Report run 12m ago",
+              "tag": "EXECUTIVE"
+            }
+          ],
+          "recordsHeader": [
+            "Project",
+            "Board / Timeline",
+            "Progress",
+            "Status",
+            "Updated"
+          ]
+        },
+        "ctaPrimaryText": "Book a Demo / Discovery",
+        "theme": "saas-modern",
+        "subModules": [
+          {
+            "points": [
+              "Drag-and-drop task workflow",
+              "Sprint planning & capacity",
+              "Dependency & WIP enforcement"
+            ],
+            "name": "Kanban & Sprint Boards",
+            "description": "Drag-and-drop task boards with sprints, priorities, dependencies, and WIP limits.",
+            "badge": "Core Module 01"
+          },
+          {
+            "badge": "Core Module 02",
+            "points": [
+              "Interactive Gantt timelines",
+              "Capacity & workload balancing",
+              "Automatic resource conflict alerts"
+            ],
+            "name": "Gantt & Resource Planning",
+            "description": "Timeline scheduling with workload balancing, capacity forecasting, and conflict detection."
+          },
+          {
+            "description": "Per-task time logging flows into timesheets, project costing, and client invoices.",
+            "name": "Time Tracking & Invoicing",
+            "points": [
+              "One-click task timers",
+              "Project cost roll-ups",
+              "Client-ready invoice export"
+            ],
+            "badge": "Core Module 03"
+          },
+          {
+            "points": [
+              "Rule-based slack/email alerts",
+              "Sprint & burndown reports",
+              "Executive risk dashboards"
+            ],
+            "name": "Automation & Delivery Reports",
+            "description": "Rule-based notifications, status roll-ups, and dashboards for deadlines and risk.",
+            "badge": "Core Module 04"
+          }
+        ],
+        "heroBadge": "Agile Delivery Control Tower",
+        "showSecondaryCta": false,
+        "slaGuarantee": "99.99% Uptime SLA • Real-Time Project Health Visibility",
+        "ctaSecondaryText": "Download Technical Details",
+        "heroHeadline": "Enterprise Project Management Suite &",
+        "heroHighlight": "Live Delivery Intelligence.",
+        "complianceList": [
+          "ISO 27001 Security Standard",
+          "GDPR Compliant",
+          "SOC 2 Architecture Ready"
+        ],
+        "heroImage": "/hero_hrms.jpg",
+        "heroSubtitle": "Sprint Boards, Resource Planning, Time Tracking & Delivery Reporting"
+      },
+      "subtitle": "Sprint Boards, Resource Planning, Time Tracking & Delivery Reporting",
+      "id": "mod-project-mgmt",
+      "title": "Enterprise Project Management Suite",
+      "imageSrc": "/hero_hrms.jpg",
+      "techStack": [
+        "Next.js",
+        "PostgreSQL",
+        "WebSockets",
+        "Redis",
+        "Docker"
+      ],
+      "brochureUrl": "",
+      "badge": "Delivery Control Tower",
+      "features": [
+        "Kanban & Sprint Boards",
+        "Gantt & Resource Planning",
+        "Time Tracking & Invoicing",
+        "Automation & Delivery Reports"
+      ],
+      "iconName": "ClipboardList",
+      "slug": "project-management",
+      "description": "An end-to-end delivery workspace that keeps teams aligned and stakeholders informed. Agile boards, Gantt timelines, resource allocation, and time tracking feed live dashboards."
     }
   ],
   "brochures": [
     {
-      "href": "https://arcanum.ae/assets/files/OMS.pdf",
       "category": "Enterprise",
-      "title": "Organization Management System (OMS)"
-    },
-    {
       "href": "https://arcanum.ae/assets/files/ARC ERP.pdf",
-      "title": "ARC ERP System",
-      "category": "Enterprise"
+      "title": "ARC ERP System"
     },
     {
+      "category": "Enterprise",
       "title": "Accurate PAYROLL System",
-      "href": "https://arcanum.ae/assets/files/Accurate PAYROLL.pdf",
-      "category": "Enterprise"
+      "href": "https://arcanum.ae/assets/files/Accurate PAYROLL.pdf"
     },
     {
-      "title": "Scholar School Management System",
       "category": "Education",
-      "href": "https://arcanum.ae/assets/files/Scholar School Management System.pdf"
-    },
-    {
-      "title": "Accurate Clinic Management",
-      "category": "Healthcare",
-      "href": "https://arcanum.ae/assets/files/Accurate Clinic Management.pdf"
+      "href": "https://arcanum.ae/assets/files/Scholar School Management System.pdf",
+      "title": "Scholar School Management System"
     },
     {
       "title": "Accurate Sales & Invoicing",
-      "href": "https://arcanum.ae/assets/files/Accurate Sales.pdf",
-      "category": "Workspace"
-    },
-    {
-      "title": "Accurate LMS (Lead Management)",
-      "href": "https://arcanum.ae/assets/files/Accurate LMS.pdf",
-      "category": "Workspace"
-    },
-    {
       "category": "Workspace",
-      "href": "https://arcanum.ae/assets/files/Simple Messenger.pdf",
-      "title": "Simple Messenger Platform"
+      "href": "https://arcanum.ae/assets/files/Accurate Sales.pdf"
     },
     {
-      "href": "https://arcanum.ae/assets/files/Issue Tracker.pdf",
+      "href": "https://arcanum.ae/assets/files/Accurate LMS.pdf",
+      "title": "Accurate LMS (Lead Management)",
+      "category": "Workspace"
+    },
+    {
+      "title": "Simple Messenger Platform",
+      "href": "https://arcanum.ae/assets/files/Simple Messenger.pdf",
+      "category": "Workspace"
+    },
+    {
+      "category": "Infrastructure",
       "title": "Issue Tracker Documentation",
-      "category": "Infrastructure"
+      "href": "https://arcanum.ae/assets/files/Issue Tracker.pdf"
     },
     {
       "category": "Workspace",
@@ -895,14 +2045,9 @@
       "href": "https://arcanum.ae/assets/files/Flex Data.pdf"
     },
     {
+      "href": "https://arcanum.ae/assets/files/Point of sales.pdf",
       "category": "Workspace",
-      "title": "Point of Sales (POS)",
-      "href": "https://arcanum.ae/assets/files/Point of sales.pdf"
-    },
-    {
-      "category": "Banking",
-      "title": "Accurate My-FIN Suite",
-      "href": "https://arcanum.ae/assets/files/Accurate My FIN.pdf"
+      "title": "Point of Sales (POS)"
     },
     {
       "href": "https://arcanum.ae/assets/files/Accurate-Tender.pdf",
@@ -915,30 +2060,20 @@
       "title": "Website Creation Guidelines"
     },
     {
-      "title": "Accurate Form Builder",
       "href": "https://arcanum.ae/assets/files/Accurate Form builder.pdf",
-      "category": "Workspace"
+      "category": "Workspace",
+      "title": "Accurate Form Builder"
     },
     {
-      "title": "Transa Money Application",
-      "category": "Banking",
-      "href": "https://arcanum.ae/assets/files/Transa Money.pdf"
-    },
-    {
-      "category": "Infrastructure",
       "href": "https://arcanum.ae/assets/files/Oracle Forms.pdf",
+      "category": "Infrastructure",
       "title": "Oracle Forms Modernization"
     },
     {
-      "href": "https://arcanum.ae/assets/files/SCB Add ons-new.pdf",
-      "title": "Co-Operative Bank Add-ons",
-      "category": "Banking"
-    },
-    {
+      "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf",
       "category": "Workspace",
-      "title": "Accurate Job Portal",
-      "href": "https://arcanum.ae/assets/files/Accurate Job Portal.pdf"
+      "title": "Accurate Job Portal"
     }
   ],
-  "updatedAt": "2026-08-20T08:47:36.031Z"
+  "updatedAt": "2026-10-01T04:16:15.665Z"
 }

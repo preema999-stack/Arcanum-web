@@ -1,6 +1,6 @@
 {
-  "lifetimeVisitors": 26,
-  "lifetimePageViews": 617,
+  "lifetimeVisitors": 27,
+  "lifetimePageViews": 629,
   "days": {
     "2026-08-14": {
       "visitors": 6,
@@ -74,6 +74,16 @@
         "s_sa7upjenf_1787286181606",
         "s_2jy4jp6ps_1787286207596",
         "s_yjhyzz0wu_1787286211963"
+      ]
+    },
+    "2026-10-01": {
+      "visitors": 1,
+      "pageViews": 12,
+      "visitorIds": [
+        "v_0tjhy4c53_1790670092993"
+      ],
+      "sessionIds": [
+        "s_4nvm4njnj_1790828546743"
       ]
     }
   }
