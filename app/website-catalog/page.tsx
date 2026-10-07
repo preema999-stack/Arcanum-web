@@ -59,6 +59,7 @@ export interface ClientCaseStudy {
   mobileImageSrc?: string;
   videoSrc?: string;
   mockUrl?: string;
+  liveUrl?: string;
   deliverables: string[];
   techStack: string[];
   metrics: { label: string; value: string }[];
@@ -188,6 +189,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     tabletImageSrc: '/capco_tablet.png',
     mobileImageSrc: '/capco_mobile.png',
     mockUrl: 'https://capcollc.ae',
+    liveUrl: 'https://capcollc.ae/',
     deliverables: [
       '5,000+ European Commercial Truck & Trailer Spare Parts Catalog',
       'Direct Head Office Dispatch & Quote Hotline (02 555 6900)',
@@ -223,6 +225,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     tabletImageSrc: '/shakespeare_tablet.png',
     mobileImageSrc: '/shakespeare_mobile.png',
     mockUrl: 'https://shakespeare.ae',
+    liveUrl: 'https://shakespeare.ae/',
     deliverables: [
       'Seasonal Summer Menus, Artisanal French Patisserie & Signature Pastas',
       'Interactive Multi-Branch Directory & Table Reservation Engine',
@@ -417,6 +420,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
   }, [selectedFilter, rmsSubFilter]);
 
   const activeProject = filteredProjects[activeIndex] || filteredProjects[0] || LUXURY_PORTFOLIO_PROJECTS[0];
+  const activeDisplayNumber = String(activeIndex + 1).padStart(2, '0');
 
   // For ERP and RMS systems (ARC RMS & ARC POS), consoles are strictly workstation / laptop interfaces
   const isLaptopOnly = activeProject.category === 'ERP' || activeProject.category === 'RMS' || activeProject.id === 'arc-rms' || activeProject.id === 'arc-pos';
@@ -724,7 +728,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* Index & Category Stamp */}
               <div className="flex items-center space-x-2.5 sm:space-x-3 font-mono text-xs flex-wrap gap-y-1">
                 <span className="text-2xl sm:text-3xl font-black text-blue-600 font-display">
-                  {activeProject.number}
+                  {activeDisplayNumber}
                 </span>
                 <div className="h-4 sm:h-5 w-px bg-slate-300" />
                 <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 uppercase text-[9px] sm:text-[10px] tracking-wider">
@@ -791,13 +795,17 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <span>Request Proposal</span>
                 </button>
 
-                <button
-                  onClick={() => setBlueprintModalOpen(true)}
-                  className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
-                >
-                  <span>System Blueprint</span>
-                  <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
-                </button>
+                {activeProject.liveUrl && (
+                  <a
+                    href={activeProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs group"
+                  >
+                    <span>Live Website</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                )}
               </div>
             </div>
 
@@ -824,7 +832,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                         </div>
                         {/* Browser Mock Screen */}
-                        <div className="relative aspect-[16/10] rounded sm:rounded-lg overflow-hidden bg-slate-950 border border-slate-200 shadow-inner">
+                        <div className="relative aspect-[16/9] rounded sm:rounded-lg overflow-hidden bg-slate-950 border border-slate-200 shadow-inner">
                           {activeProject.videoSrc ? (
                             <video
                               key={activeProject.id}
@@ -840,7 +848,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                             <img
                               src={activeProject.imageSrc}
                               alt={activeProject.title}
-                              className={`w-full h-full ${activeProject.category === 'RMS' ? 'object-contain bg-[#141416]' : 'object-cover'} object-top`}
+                              className="w-full h-full object-cover object-top"
                             />
                           )}
                           <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/90 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md">
@@ -943,7 +951,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                       <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                     </div>
                     {/* Browser Mock Screen with Scrollable Canvas */}
-                    <div className={`relative h-[210px] xs:h-[250px] sm:h-[350px] lg:h-[430px] rounded sm:rounded-lg overflow-y-auto overscroll-contain no-scrollbar ${isLaptopOnly ? 'bg-[#141416]' : 'bg-white'} border border-slate-200 shadow-inner group`}>
+                    <div className={`relative ${isLaptopOnly ? 'h-auto overflow-hidden' : 'h-[175px] xs:h-[200px] sm:h-[280px] lg:h-[340px] overflow-y-auto overscroll-contain no-scrollbar'} rounded sm:rounded-lg bg-white border border-slate-200 shadow-inner group`}>
                       {/* Sticky Top Safari Chrome */}
                       <div className="sticky top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/95 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
                         <div className="flex items-center space-x-1">
@@ -1123,7 +1131,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                 </button>
               </div>
               <span className="text-slate-700 px-1 font-bold whitespace-nowrap text-[11px] sm:text-xs">
-                PROJECT {activeProject.number} OF {filteredProjects.length}
+                PROJECT {activeDisplayNumber} OF {String(filteredProjects.length).padStart(2, '0')}
               </span>
             </div>
 
@@ -1144,7 +1152,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     }`}
                   >
                     <span className={`text-[10px] sm:text-[11px] font-bold shrink-0 ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
-                      {p.number}
+                      {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span className="text-[11px] sm:text-xs font-semibold whitespace-nowrap">
                       {p.title}
