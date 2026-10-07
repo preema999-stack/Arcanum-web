@@ -832,7 +832,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                         </div>
                         {/* Browser Mock Screen */}
-                        <div className="relative aspect-[16/9] rounded sm:rounded-lg overflow-hidden bg-slate-950 border border-slate-200 shadow-inner">
+                        <div className="relative aspect-[16/9] rounded sm:rounded-lg overflow-hidden bg-white border border-slate-200 shadow-inner">
                           {activeProject.videoSrc ? (
                             <video
                               key={activeProject.id}
@@ -951,7 +951,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                       <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                     </div>
                     {/* Browser Mock Screen with Scrollable Canvas */}
-                    <div className={`relative ${isLaptopOnly ? 'h-auto overflow-hidden' : 'h-[175px] xs:h-[200px] sm:h-[280px] lg:h-[340px] overflow-y-auto overscroll-contain no-scrollbar'} rounded sm:rounded-lg bg-white border border-slate-200 shadow-inner group`}>
+                    <div className={`relative ${isLaptopOnly || activeProject.videoSrc ? 'h-auto overflow-hidden' : 'h-[175px] xs:h-[200px] sm:h-[280px] lg:h-[340px] overflow-y-auto overscroll-contain no-scrollbar'} rounded sm:rounded-lg bg-white border border-slate-200 shadow-inner group`}>
                       {/* Sticky Top Safari Chrome */}
                       <div className="sticky top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/95 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
                         <div className="flex items-center space-x-1">
@@ -999,7 +999,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           loop
                           playsInline
                           controls
-                          className="w-full h-auto min-h-full block object-top bg-black"
+                          className="w-full h-auto block object-cover object-top"
                         />
                       ) : (
                         <img
@@ -1514,7 +1514,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* Scrollable Content Canvas */}
               <div className="flex-1 overflow-y-auto overscroll-contain p-3 sm:p-6 bg-slate-100/60 flex items-start justify-center">
                 {lightboxView === 'desktop' && (
-                  <div className={`w-full max-w-5xl ${isLaptopOnly ? 'bg-[#141416]' : 'bg-white'} rounded-xl shadow-xl border border-slate-200 overflow-hidden`}>
+                  <div className="w-full max-w-5xl bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden">
                     <div className="h-6 bg-slate-100 border-b border-slate-200 px-3 flex items-center space-x-1.5">
                       <span className="h-2 w-2 rounded-full bg-rose-400" />
                       <span className="h-2 w-2 rounded-full bg-amber-400" />
