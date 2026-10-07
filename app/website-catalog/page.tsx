@@ -77,27 +77,27 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     id: 'arc-rms',
     number: '01',
     title: 'ARC RMS',
-    client: 'Fine Dining Chains, Multi-Branch Groups & Cloud Kitchens',
+    client: 'Multi-Branch Holding Groups & Restaurant Operators',
     category: 'RMS',
     subcategory: 'RMS',
     year: '2026',
-    tagline: 'Multi-Branch Restaurant Management Console & Live Operations',
+    tagline: 'Multi-Branch Restaurant Management Console & Real-Time Operations',
     summary:
-      'Enterprise multi-branch restaurant management console featuring real-time revenue analytics across fulfillment channels (Dine-in, Delivery, Takeaway), live table status occupancy floorplans, top-selling dish tracking, and centralized branch operations.',
+      'Executive restaurant management console providing holding administrators with live fulfillment revenue breakdowns (Dine-in 42%, Delivery 20%, Takeaway 20%, Fast Counter 18%), real-time dining room table status (9 Available, 7 Occupied, 2 Reserved), top-selling menu dish tracking, and centralized multi-branch operations.',
     imageSrc: '/arc_rms_desktop.png',
     tabletImageSrc: '/arc_rms_tablet.png',
     mobileImageSrc: '/arc_rms_mobile.png',
     mockUrl: 'https://rms.arcanum.ae',
     deliverables: [
       'Multi-Branch Real-Time Sales & Fulfillment Channels (Dine, Delivery, Takeaway)',
-      'Live Table Status & Occupancy Floorplan (Available, Occupied, Reserved)',
-      'Centralized Brand Management, Kitchen Station Routing & Cash Audits',
+      'Live Table Status & Occupancy Floorplan (9 Available, 7 Occupied, 2 Reserved)',
+      'Top-Selling Menu Dish Tracking & Multi-Location Branch Controls',
     ],
     techStack: ['Next.js 14', 'WebSockets', 'PostgreSQL', 'Redis'],
     metrics: [
-      { label: 'CHANNELS', value: 'Omni-Fulfillment' },
-      { label: 'FLOORPLAN', value: 'Live Table Status' },
-      { label: 'BRANCHES', value: 'Multi-Branch' },
+      { label: 'SALES TODAY', value: '1,474.5 AED' },
+      { label: 'AVG TICKET', value: '46.08 AED' },
+      { label: 'TABLE STATUS', value: 'Live Floorplan' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
@@ -319,25 +319,25 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     id: 'arc-x1-erp',
     number: '08',
     title: 'ARC X1 ERP',
-    client: 'Enterprise Conglomerates & Multi-Entity Groups (UAE)',
+    client: 'Arcanum Company L.L.C & Regional UAE Enterprises',
     category: 'ERP',
     subcategory: 'ERP',
     year: '2026',
-    tagline: 'Multi-Entity Financial Ledger & Cloud Supply Chain',
+    tagline: 'Corporate Financial Analytics, Multi-Entity Ledger & Operations',
     summary:
-      'High-velocity enterprise platform engineered for multi-company consolidation, automated UAE VAT compliance, and multi-warehouse logistics.',
-    imageSrc: '/hero_erp.jpg',
+      'Comprehensive enterprise resource planning (ERP) platform featuring real-time executive finance dashboards, monthly balance growth tracking (+38.33% MoM), card statement reconciliations, recent transaction audit ledgers, and automated budget controls across procurement, inventory, sales, HR/payroll, and fixed assets.',
+    imageSrc: '/arc_x1_erp_desktop.png',
     mockUrl: 'https://x1-erp.arcanum.ae',
     deliverables: [
-      'Multi-Entity Ledger & Multi-Currency Consolidation',
-      'Automated UAE VAT & Corporate Tax Filing',
-      'Multi-Warehouse Logistics & Serial/Batch Tracking',
+      'Real-Time Corporate Finance Dashboard & 12-Month Growth Curves',
+      'Statement Tracking & Automated Reconciliation (Card Limit, Spent, Minimum)',
+      'Cross-Module ERP: Procurement, Inventory, Sales, HR/Payroll & Fixed Assets',
     ],
     techStack: ['Next.js 14', 'PostgreSQL', 'Redis', 'Docker'],
     metrics: [
-      { label: 'LATENCY', value: '< 6ms' },
-      { label: 'UPTIME SLA', value: '99.99%' },
-      { label: 'AUDIT', value: '100% UAE VAT' },
+      { label: 'GROWTH', value: '+38.33% MoM' },
+      { label: 'AVG INCOME', value: '45,332 AED' },
+      { label: 'AUDIT', value: '100% Automated' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
@@ -423,6 +423,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
   }, [selectedFilter, rmsSubFilter]);
 
   const activeProject = filteredProjects[activeIndex] || filteredProjects[0] || LUXURY_PORTFOLIO_PROJECTS[0];
+
+  // For ERP systems, enterprise consoles are strictly workstation / laptop interfaces
+  const effectiveDeviceMode: DeviceMode = activeProject.category === 'ERP' ? 'macbook' : deviceMode;
 
   const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'ERP' }[] = [
     { label: 'All Systems', value: 'All' },
@@ -654,59 +657,66 @@ export default function StandaloneLightWebsiteCatalogPage() {
           <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold shrink-0">
             VIEW:
           </span>
-          <div className="flex items-center p-0.5 sm:p-1 rounded-xl bg-slate-100 border border-slate-200">
-            <button
-              onClick={() => setDeviceMode('trio')}
-              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
-                deviceMode === 'trio'
-                  ? 'bg-white text-blue-600 font-bold shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-              title="Tri-Device Studio Composition"
-            >
-              <Layers className="h-3.5 w-3.5" />
-              <span className="text-[10px] sm:text-[11px]">Trio</span>
-            </button>
+          {activeProject.category === 'ERP' ? (
+            <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 font-mono text-[11px] font-bold shadow-2xs">
+              <Laptop className="h-3.5 w-3.5 text-blue-600" />
+              <span>Laptop View</span>
+            </div>
+          ) : (
+            <div className="flex items-center p-0.5 sm:p-1 rounded-xl bg-slate-100 border border-slate-200">
+              <button
+                onClick={() => setDeviceMode('trio')}
+                className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
+                  effectiveDeviceMode === 'trio'
+                    ? 'bg-white text-blue-600 font-bold shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+                title="Tri-Device Studio Composition"
+              >
+                <Layers className="h-3.5 w-3.5" />
+                <span className="text-[10px] sm:text-[11px]">Trio</span>
+              </button>
 
-            <button
-              onClick={() => setDeviceMode('macbook')}
-              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
-                deviceMode === 'macbook'
-                  ? 'bg-white text-blue-600 font-bold shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-              title="MacBook Pro Mockup"
-            >
-              <Laptop className="h-3.5 w-3.5" />
-              <span className="text-[10px] sm:text-[11px]">Laptop</span>
-            </button>
+              <button
+                onClick={() => setDeviceMode('macbook')}
+                className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
+                  effectiveDeviceMode === 'macbook'
+                    ? 'bg-white text-blue-600 font-bold shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+                title="MacBook Pro Mockup"
+              >
+                <Laptop className="h-3.5 w-3.5" />
+                <span className="text-[10px] sm:text-[11px]">Laptop</span>
+              </button>
 
-            <button
-              onClick={() => setDeviceMode('ipad')}
-              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
-                deviceMode === 'ipad'
-                  ? 'bg-white text-blue-600 font-bold shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-              title="iPad Pro Mockup"
-            >
-              <Tablet className="h-3.5 w-3.5" />
-              <span className="text-[10px] sm:text-[11px]">Tablet</span>
-            </button>
+              <button
+                onClick={() => setDeviceMode('ipad')}
+                className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
+                  effectiveDeviceMode === 'ipad'
+                    ? 'bg-white text-blue-600 font-bold shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+                title="iPad Pro Mockup"
+              >
+                <Tablet className="h-3.5 w-3.5" />
+                <span className="text-[10px] sm:text-[11px]">Tablet</span>
+              </button>
 
-            <button
-              onClick={() => setDeviceMode('iphone')}
-              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
-                deviceMode === 'iphone'
-                  ? 'bg-white text-blue-600 font-bold shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-              title="iPhone 16 Pro Mockup"
-            >
-              <Smartphone className="h-3.5 w-3.5" />
-              <span className="text-[10px] sm:text-[11px]">Phone</span>
-            </button>
-          </div>
+              <button
+                onClick={() => setDeviceMode('iphone')}
+                className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
+                  effectiveDeviceMode === 'iphone'
+                    ? 'bg-white text-blue-600 font-bold shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+                title="iPhone 16 Pro Mockup"
+              >
+                <Smartphone className="h-3.5 w-3.5" />
+                <span className="text-[10px] sm:text-[11px]">Phone</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -786,26 +796,13 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <span>Request Proposal</span>
                 </button>
 
-                {activeProject.liveStatus.includes('Delivered') ? (
-                  <a
-                    href={activeProject.mockUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
-                    title={`Visit ${activeProject.title} live website`}
-                  >
-                    <span>Visit Live Website</span>
-                    <ExternalLink className="h-3.5 w-3.5 text-emerald-700" />
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => setBlueprintModalOpen(true)}
-                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
-                  >
-                    <span>System Blueprint</span>
-                    <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
-                  </button>
-                )}
+                <button
+                  onClick={() => setBlueprintModalOpen(true)}
+                  className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
+                >
+                  <span>System Blueprint</span>
+                  <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
+                </button>
               </div>
             </div>
 
@@ -817,7 +814,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* ---------------------------------------------------- */}
               {/* OPTION A: TRI-DEVICE STUDIO COMPOSITION (Silver Metallic) */}
               {/* ---------------------------------------------------- */}
-              {deviceMode === 'trio' && (
+              {effectiveDeviceMode === 'trio' && (
                 <div className="relative w-full max-w-[680px] flex flex-col items-center justify-center py-2 sm:py-4 px-1 sm:px-2">
                   <div className="relative w-full flex items-center justify-center">
                     {/* 1. Center: Silver MacBook Pro Mockup (Clickable) */}
@@ -848,7 +845,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                             <img
                               src={activeProject.imageSrc}
                               alt={activeProject.title}
-                              className="w-full h-full object-cover object-top"
+                              className={`w-full h-full ${activeProject.category === 'RMS' ? 'object-contain bg-[#141416]' : 'object-cover'} object-top`}
                             />
                           )}
                           <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/90 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md">
@@ -857,18 +854,10 @@ export default function StandaloneLightWebsiteCatalogPage() {
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-emerald-400 inline-block" />
                             </div>
-                            <a
-                              href={activeProject.mockUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors max-w-[130px] sm:max-w-[180px] truncate"
-                              title="Visit website"
-                            >
+                            <div className="flex items-center space-x-1 bg-white px-1.5 py-0.5 rounded border border-slate-200 text-slate-600 max-w-[130px] sm:max-w-[180px] truncate">
                               <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
-                              <span className="hover:underline truncate">{activeProject.mockUrl}</span>
-                              <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
-                            </a>
+                              <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                            </div>
                             <div className="flex items-center space-x-1 sm:space-x-1.5">
                               {activeProject.videoSrc && (
                                 <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold hidden sm:inline flex items-center space-x-0.5">
@@ -909,7 +898,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <img
                             src={activeProject.tabletImageSrc || activeProject.imageSrc}
                             alt="Tablet View"
-                            className="w-full h-full object-contain bg-slate-50 object-top"
+                            className={`w-full h-full object-contain ${activeProject.category === 'RMS' ? 'bg-[#141416]' : 'bg-slate-50'} object-top`}
                           />
                           <div className="absolute top-1 left-1 text-[6px] sm:text-[7px] font-mono text-slate-700 bg-white/95 px-1 py-0.5 rounded shadow-2xs border border-slate-200 font-semibold">
                             iPad
@@ -929,7 +918,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <img
                             src={activeProject.mobileImageSrc || activeProject.imageSrc}
                             alt="Mobile View"
-                            className="w-full h-full object-contain bg-slate-50 object-top"
+                            className={`w-full h-full object-contain ${activeProject.category === 'RMS' ? 'bg-[#141416]' : 'bg-slate-50'} object-top`}
                           />
                         </div>
                       </div>
@@ -946,8 +935,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
               {/* ---------------------------------------------------- */}
               {/* OPTION B: SOLO SILVER MACBOOK PRO FOCUS (Full Scrollable & Responsive) */}
-              {/* ---------------------------------------------------- */}
-              {deviceMode === 'macbook' && (
+              {effectiveDeviceMode === 'macbook' && (
                 <div className="w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[540px] lg:max-w-[660px] shadow-2xl px-1 sm:px-2 mx-auto">
                   <div className="rounded-t-xl sm:rounded-t-2xl border-2 border-slate-300 bg-slate-100 p-1.5 sm:p-2.5 pb-0 shadow-2xl">
                     <div className="h-2.5 sm:h-3 flex items-center justify-center mb-1">
@@ -962,17 +950,10 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
                           <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-emerald-400 inline-block" />
                         </div>
-                        <a
-                          href={activeProject.mockUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors max-w-[140px] xs:max-w-[180px] sm:max-w-none truncate"
-                          title="Visit website"
-                        >
+                        <div className="flex items-center space-x-1 bg-white px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 text-slate-600 max-w-[140px] xs:max-w-[180px] sm:max-w-none truncate">
                           <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
-                          <span className="hover:underline truncate">{activeProject.mockUrl}</span>
-                          <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
-                        </a>
+                          <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                        </div>
                         <div className="flex items-center space-x-1.5">
                           {activeProject.videoSrc && (
                             <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold flex items-center space-x-1">
@@ -1032,17 +1013,10 @@ export default function StandaloneLightWebsiteCatalogPage() {
                         <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
                         <span className="font-semibold text-slate-700">iPad Pro</span>
                       </div>
-                      <a
-                        href={activeProject.mockUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200 text-slate-700 shadow-2xs text-[8px] sm:text-[9px] transition-colors max-w-[140px] xs:max-w-[170px] truncate"
-                        title="Visit website"
-                      >
+                      <div className="flex items-center space-x-1 bg-white px-2 py-0.5 rounded-full border border-slate-200 text-slate-600 shadow-2xs text-[8px] sm:text-[9px] max-w-[140px] xs:max-w-[170px] truncate">
                         <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
-                        <span className="truncate hover:underline">{activeProject.mockUrl}</span>
-                        <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
-                      </a>
+                        <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                      </div>
                       <button
                         onClick={() => {
                           setLightboxView('tablet');
@@ -1499,16 +1473,6 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
                 {/* Close Button */}
                 <div className="flex items-center space-x-2">
-                  <a
-                    href={activeProject.mockUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1.5 sm:px-2.5 sm:py-1 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-mono font-medium flex items-center space-x-1 shadow-2xs"
-                    title="Open live URL"
-                  >
-                    <ExternalLink className="h-3.5 w-3.5 text-blue-600" />
-                    <span className="hidden md:inline">Open Site</span>
-                  </a>
                   <button
                     onClick={() => setLightboxOpen(false)}
                     className="p-1.5 sm:p-2 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-slate-700 transition-colors"
@@ -1526,8 +1490,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     <div className="h-6 bg-slate-100 border-b border-slate-200 px-3 flex items-center space-x-1.5">
                       <span className="h-2 w-2 rounded-full bg-rose-400" />
                       <span className="h-2 w-2 rounded-full bg-amber-400" />
-                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                      <span className="text-[10px] font-mono text-slate-500 ml-2">{activeProject.mockUrl}</span>
+                      <span className="text-[10px] font-mono text-slate-500 ml-2">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
                     </div>
                     {activeProject.videoSrc ? (
                       <video
