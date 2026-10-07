@@ -154,7 +154,8 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     imageSrc: '/emirates_drugs_store_desktop.png',
     tabletImageSrc: '/emirates_drugs_store_tablet.png',
     mobileImageSrc: '/emirates_drugs_store_mobile.png',
-    mockUrl: 'https://emiratesdrugstore.ae',
+    mockUrl: 'https://emirates-store.vercel.app',
+    liveUrl: 'https://emirates-store.vercel.app/',
     deliverables: [
       'MOHAP Licensed & Tatmeen Regulatory Traceability',
       '24/7 Rapid Despatch for Clinical Emergency Medicine',
