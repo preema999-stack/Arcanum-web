@@ -755,65 +755,29 @@ export default function StandaloneLightWebsiteCatalogPage() {
                 </p>
               </div>
 
-              {/* Content Description */}
-              {activeProject.category === 'Websites' ? (
-                /* Ultra-clean minimal presentation for Websites */
-                <div className="space-y-3 pt-1">
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
-                    {activeProject.summary}
-                  </p>
+              {/* Minimal Content Description & Tech Stack */}
+              <div className="space-y-3 pt-1">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
+                  {activeProject.summary}
+                </p>
 
-                  {/* Clean Tech Stack */}
-                  <div className="pt-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-slate-400 tracking-wider block mb-1.5">
-                      TECH STACK
-                    </span>
-                    <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs">
-                      {activeProject.techStack.map((tech, ti) => (
-                        <span
-                          key={ti}
-                          className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 text-[10px] sm:text-[11px] font-semibold"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                /* System consoles (RMS & ERP): show operational metrics & specs */
-                <>
-                  {/* Summary */}
-                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-sans font-medium">
-                    {activeProject.summary}
-                  </p>
-
-                  {/* Key Deliverables */}
-                  <div className="space-y-1.5 sm:space-y-2 py-0.5">
-                    {activeProject.deliverables.map((item, ii) => (
-                      <div key={ii} className="flex items-start space-x-2 text-xs text-slate-800">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 shrink-0 mt-0.5" />
-                        <span className="font-semibold leading-snug">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Compact Metrics & Tech Badges */}
-                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 font-mono text-xs">
-                    {activeProject.metrics.map((m, mi) => (
-                      <span key={mi} className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg bg-white border border-slate-300 text-slate-800 font-bold shadow-2xs text-[10px] sm:text-[11px] flex items-center space-x-1.5">
-                        <strong className="text-slate-900 font-black">{m.value}</strong>
-                        <span className="text-slate-600 font-bold text-[9px] sm:text-[10px] uppercase tracking-wide">{m.label}</span>
-                      </span>
-                    ))}
-                    {activeProject.techStack.slice(0, 3).map((tech, ti) => (
-                      <span key={ti} className="px-2 py-0.5 sm:py-1 rounded-lg bg-slate-100 border border-slate-300 text-slate-800 text-[9px] sm:text-[10px] font-semibold">
+                {/* Clean Tech Stack */}
+                <div className="pt-1">
+                  <span className="text-[10px] font-mono uppercase font-bold text-slate-400 tracking-wider block mb-1.5">
+                    TECH STACK
+                  </span>
+                  <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+                    {activeProject.techStack.map((tech, ti) => (
+                      <span
+                        key={ti}
+                        className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 text-[10px] sm:text-[11px] font-semibold"
+                      >
                         {tech}
                       </span>
                     ))}
                   </div>
-                </>
-              )}
+                </div>
+              </div>
 
               {/* CTAs */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 font-mono text-xs w-full">
@@ -862,7 +826,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                         </div>
                         {/* Browser Mock Screen */}
-                        <div className="relative aspect-[16/9] rounded sm:rounded-lg overflow-hidden bg-white border border-slate-200 shadow-inner">
+                        <div className="relative aspect-[2/1] rounded sm:rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-inner">
                           {activeProject.videoSrc ? (
                             <video
                               key={activeProject.id}
@@ -872,16 +836,16 @@ export default function StandaloneLightWebsiteCatalogPage() {
                               muted
                               loop
                               playsInline
-                              className="w-full h-full object-cover object-top"
+                              className="absolute inset-0 w-full h-full object-cover object-top"
                             />
                           ) : (
                             <img
                               src={activeProject.imageSrc}
                               alt={activeProject.title}
-                              className="w-full h-full object-cover object-top"
+                              className="absolute inset-0 w-full h-full object-cover object-top"
                             />
                           )}
-                          <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/90 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md">
+                          <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/90 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md z-10">
                             <div className="flex items-center space-x-1">
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-rose-400 inline-block" />
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
@@ -980,8 +944,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     <div className="h-2.5 sm:h-3 flex items-center justify-center mb-1">
                       <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                     </div>
-                    {/* Browser Mock Screen with Scrollable Canvas */}
-                    <div className={`relative ${isLaptopOnly || activeProject.videoSrc ? 'h-auto overflow-hidden' : 'h-[175px] xs:h-[200px] sm:h-[280px] lg:h-[340px] overflow-y-auto overscroll-contain no-scrollbar'} rounded sm:rounded-lg bg-white border border-slate-200 shadow-inner group`}>
+                    {/* Browser Mock Screen with Auto-Fitting Canvas */}
+                    <div className="relative h-auto overflow-hidden rounded sm:rounded-lg bg-white border border-slate-200 shadow-inner group">
                       {/* Sticky Top Safari Chrome */}
                       <div className="sticky top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/95 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
                         <div className="flex items-center space-x-1">
