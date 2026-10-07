@@ -858,12 +858,25 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                         </div>
                         {/* Browser Mock Screen */}
-                        <div className="relative aspect-[16/10] rounded sm:rounded-lg overflow-hidden bg-white border border-slate-200 shadow-inner">
-                          <img
-                            src={activeProject.imageSrc}
-                            alt={activeProject.title}
-                            className="w-full h-full object-cover object-top"
-                          />
+                        <div className="relative aspect-[16/10] rounded sm:rounded-lg overflow-hidden bg-slate-950 border border-slate-200 shadow-inner">
+                          {activeProject.videoSrc ? (
+                            <video
+                              key={activeProject.id}
+                              src={activeProject.videoSrc}
+                              poster={activeProject.imageSrc}
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              className="w-full h-full object-cover object-top"
+                            />
+                          ) : (
+                            <img
+                              src={activeProject.imageSrc}
+                              alt={activeProject.title}
+                              className="w-full h-full object-cover object-top"
+                            />
+                          )}
                           <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/90 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md">
                             <div className="flex items-center space-x-1">
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-rose-400 inline-block" />
@@ -882,7 +895,14 @@ export default function StandaloneLightWebsiteCatalogPage() {
                               <span className="hover:underline truncate">{activeProject.mockUrl}</span>
                               <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                             </a>
-                            <span className="text-[7px] sm:text-[8px] hidden sm:inline">Safari</span>
+                            {activeProject.videoSrc ? (
+                              <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold hidden sm:inline flex items-center space-x-0.5">
+                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                <span>Live Video</span>
+                              </span>
+                            ) : (
+                              <span className="text-[7px] sm:text-[8px] hidden sm:inline">Safari</span>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -967,13 +987,34 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <span className="hover:underline truncate">{activeProject.mockUrl}</span>
                           <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                         </a>
-                        <span className="text-[7px] sm:text-[8px] text-slate-400 hidden sm:inline">Desktop View</span>
+                        {activeProject.videoSrc ? (
+                          <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold flex items-center space-x-1">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                            <span>Video Walkthrough</span>
+                          </span>
+                        ) : (
+                          <span className="text-[7px] sm:text-[8px] text-slate-400 hidden sm:inline">Desktop View</span>
+                        )}
                       </div>
-                      <img
-                        src={activeProject.imageSrc}
-                        alt={activeProject.title}
-                        className="w-full h-auto min-h-full block object-top"
-                      />
+                      {activeProject.videoSrc ? (
+                        <video
+                          key={activeProject.id}
+                          src={activeProject.videoSrc}
+                          poster={activeProject.imageSrc}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          controls
+                          className="w-full h-auto min-h-full block object-top bg-black"
+                        />
+                      ) : (
+                        <img
+                          src={activeProject.imageSrc}
+                          alt={activeProject.title}
+                          className="w-full h-auto min-h-full block object-top"
+                        />
+                      )}
                     </div>
                   </div>
                   <div className="h-3 sm:h-4 bg-gradient-to-b from-slate-200 to-slate-300 rounded-b-xl sm:rounded-b-2xl border-t border-slate-300 shadow-lg flex items-center justify-center">
