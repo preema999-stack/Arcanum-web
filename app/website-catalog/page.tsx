@@ -58,7 +58,7 @@ export interface ClientCaseStudy {
   tabletImageSrc?: string;
   mobileImageSrc?: string;
   videoSrc?: string;
-  mockUrl: string;
+  mockUrl?: string;
   deliverables: string[];
   techStack: string[];
   metrics: { label: string; value: string }[];
@@ -85,7 +85,6 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     summary:
       'Executive restaurant management console providing holding administrators with live fulfillment revenue breakdowns (Dine-in 42%, Delivery 20%, Takeaway 20%, Fast Counter 18%), real-time dining room table status (9 Available, 7 Occupied, 2 Reserved), top-selling menu dish tracking, and centralized multi-branch operations.',
     imageSrc: '/arc_rms_console.png',
-    mockUrl: 'https://rms.arcanum.ae',
     deliverables: [
       'Multi-Branch Real-Time Sales & Fulfillment Channels (Dine, Delivery, Takeaway)',
       'Live Table Status & Occupancy Floorplan (9 Available, 7 Occupied, 2 Reserved)',
@@ -120,7 +119,6 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     imageSrc: '/arc_pos_desktop.png',
     tabletImageSrc: '/arc_pos_tablet.png',
     mobileImageSrc: '/arc_pos_mobile.png',
-    mockUrl: 'https://pos.arcanum.ae',
     deliverables: [
       'Touchscreen Order Matrix with Quick Menu Categories & Modifiers',
       'One-Tap Split Check, Discount Promotions & Multi-Tender Settlement',
@@ -325,7 +323,6 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     summary:
       'Comprehensive enterprise resource planning (ERP) platform featuring real-time executive finance dashboards, monthly balance growth tracking (+38.33% MoM), card statement reconciliations, recent transaction audit ledgers, and automated budget controls across procurement, inventory, sales, HR/payroll, and fixed assets.',
     imageSrc: '/arc_x1_erp_desktop.png',
-    mockUrl: 'https://x1-erp.arcanum.ae',
     deliverables: [
       'Real-Time Corporate Finance Dashboard & 12-Month Growth Curves',
       'Statement Tracking & Automated Reconciliation (Card Limit, Spent, Minimum)',
@@ -360,7 +357,6 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     imageSrc: '/synapse_hrms_desktop.png',
     tabletImageSrc: '/synapse_hrms_tablet.jpg',
     mobileImageSrc: '/synapse_hrms_mobile.jpg',
-    mockUrl: 'https://synapse.arcanum.ae',
     deliverables: [
       'Interactive Kanban Sprint Workspace & Live Milestones',
       'Automated UAE WPS SIF Bank Generation & Payroll Engine',
@@ -853,10 +849,16 @@ export default function StandaloneLightWebsiteCatalogPage() {
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
                               <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-emerald-400 inline-block" />
                             </div>
-                            <div className="flex items-center space-x-1 bg-white px-1.5 py-0.5 rounded border border-slate-200 text-slate-600 max-w-[130px] sm:max-w-[180px] truncate">
-                              <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
-                              <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
-                            </div>
+                            {activeProject.mockUrl ? (
+                              <div className="flex items-center space-x-1 bg-white px-1.5 py-0.5 rounded border border-slate-200 text-slate-600 max-w-[130px] sm:max-w-[180px] truncate">
+                                <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
+                                <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                              </div>
+                            ) : (
+                              <div className="flex items-center space-x-1 bg-white px-1.5 py-0.5 rounded border border-slate-200 text-slate-700 font-sans font-medium max-w-[130px] sm:max-w-[180px] truncate">
+                                <span className="truncate">{activeProject.title}</span>
+                              </div>
+                            )}
                             <div className="flex items-center space-x-1 sm:space-x-1.5">
                               {activeProject.videoSrc && (
                                 <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold hidden sm:inline flex items-center space-x-0.5">
@@ -941,7 +943,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                       <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                     </div>
                     {/* Browser Mock Screen with Scrollable Canvas */}
-                    <div className="relative h-[210px] xs:h-[250px] sm:h-[350px] lg:h-[430px] rounded sm:rounded-lg overflow-y-auto overscroll-contain no-scrollbar bg-white border border-slate-200 shadow-inner group">
+                    <div className={`relative h-[210px] xs:h-[250px] sm:h-[350px] lg:h-[430px] rounded sm:rounded-lg overflow-y-auto overscroll-contain no-scrollbar ${isLaptopOnly ? 'bg-[#141416]' : 'bg-white'} border border-slate-200 shadow-inner group`}>
                       {/* Sticky Top Safari Chrome */}
                       <div className="sticky top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/95 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
                         <div className="flex items-center space-x-1">
@@ -949,10 +951,16 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
                           <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-emerald-400 inline-block" />
                         </div>
-                        <div className="flex items-center space-x-1 bg-white px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 text-slate-600 max-w-[140px] xs:max-w-[180px] sm:max-w-none truncate">
-                          <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
-                          <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
-                        </div>
+                        {activeProject.mockUrl ? (
+                          <div className="flex items-center space-x-1 bg-white px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 text-slate-600 max-w-[140px] xs:max-w-[180px] sm:max-w-none truncate">
+                            <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
+                            <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                          </div>
+                        ) : (
+                          <div className="flex items-center space-x-1 bg-white px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 text-slate-700 font-sans font-medium max-w-[140px] xs:max-w-[180px] sm:max-w-none truncate">
+                            <span className="truncate">{activeProject.title}</span>
+                          </div>
+                        )}
                         <div className="flex items-center space-x-1.5">
                           {activeProject.videoSrc && (
                             <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold flex items-center space-x-1">
@@ -989,7 +997,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                         <img
                           src={activeProject.imageSrc}
                           alt={activeProject.title}
-                          className="w-full h-auto min-h-full block object-top"
+                          className="w-full h-auto block object-top"
                         />
                       )}
                     </div>
@@ -1011,10 +1019,16 @@ export default function StandaloneLightWebsiteCatalogPage() {
                         <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
                         <span className="font-semibold text-slate-700">iPad Pro</span>
                       </div>
-                      <div className="flex items-center space-x-1 bg-white px-2 py-0.5 rounded-full border border-slate-200 text-slate-600 shadow-2xs text-[8px] sm:text-[9px] max-w-[140px] xs:max-w-[170px] truncate">
-                        <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
-                        <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
-                      </div>
+                      {activeProject.mockUrl ? (
+                        <div className="flex items-center space-x-1 bg-white px-2 py-0.5 rounded-full border border-slate-200 text-slate-600 shadow-2xs text-[8px] sm:text-[9px] max-w-[140px] xs:max-w-[170px] truncate">
+                          <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
+                          <span className="truncate">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center space-x-1 bg-white px-2 py-0.5 rounded-full border border-slate-200 text-slate-700 shadow-2xs text-[8px] sm:text-[9px] max-w-[140px] xs:max-w-[170px] truncate font-sans font-medium">
+                          <span className="truncate">{activeProject.title}</span>
+                        </div>
+                      )}
                       <button
                         onClick={() => {
                           setLightboxView('tablet');
@@ -1199,7 +1213,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <h3 className="text-2xl font-bold font-display text-slate-900">
                     {activeProject.title}
                   </h3>
-                  <p className="text-xs font-mono text-slate-500 mt-0.5">{activeProject.mockUrl}</p>
+                  {activeProject.mockUrl && (
+                    <p className="text-xs font-mono text-slate-500 mt-0.5">{activeProject.mockUrl}</p>
+                  )}
                 </div>
 
                 <button
@@ -1490,11 +1506,13 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* Scrollable Content Canvas */}
               <div className="flex-1 overflow-y-auto overscroll-contain p-3 sm:p-6 bg-slate-100/60 flex items-start justify-center">
                 {lightboxView === 'desktop' && (
-                  <div className="w-full max-w-5xl bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden">
+                  <div className={`w-full max-w-5xl ${isLaptopOnly ? 'bg-[#141416]' : 'bg-white'} rounded-xl shadow-xl border border-slate-200 overflow-hidden`}>
                     <div className="h-6 bg-slate-100 border-b border-slate-200 px-3 flex items-center space-x-1.5">
                       <span className="h-2 w-2 rounded-full bg-rose-400" />
                       <span className="h-2 w-2 rounded-full bg-amber-400" />
-                      <span className="text-[10px] font-mono text-slate-500 ml-2">{activeProject.mockUrl.replace(/^https?:\/\//, '')}</span>
+                      <span className="text-[10px] font-mono text-slate-500 ml-2">
+                        {activeProject.mockUrl ? activeProject.mockUrl.replace(/^https?:\/\//, '') : activeProject.title}
+                      </span>
                     </div>
                     {activeProject.videoSrc ? (
                       <video
