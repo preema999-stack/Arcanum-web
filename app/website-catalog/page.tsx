@@ -84,9 +84,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     tagline: 'Multi-Branch Restaurant Management Console & Real-Time Operations',
     summary:
       'Executive restaurant management console providing holding administrators with live fulfillment revenue breakdowns (Dine-in 42%, Delivery 20%, Takeaway 20%, Fast Counter 18%), real-time dining room table status (9 Available, 7 Occupied, 2 Reserved), top-selling menu dish tracking, and centralized multi-branch operations.',
-    imageSrc: '/arc_rms_desktop.png',
-    tabletImageSrc: '/arc_rms_tablet.png',
-    mobileImageSrc: '/arc_rms_mobile.png',
+    imageSrc: '/arc_rms_console.png',
     mockUrl: 'https://rms.arcanum.ae',
     deliverables: [
       'Multi-Branch Real-Time Sales & Fulfillment Channels (Dine, Delivery, Takeaway)',
@@ -424,8 +422,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
   const activeProject = filteredProjects[activeIndex] || filteredProjects[0] || LUXURY_PORTFOLIO_PROJECTS[0];
 
-  // For ERP systems, enterprise consoles are strictly workstation / laptop interfaces
-  const effectiveDeviceMode: DeviceMode = activeProject.category === 'ERP' ? 'macbook' : deviceMode;
+  // For ERP and RMS systems (ARC RMS & ARC POS), consoles are strictly workstation / laptop interfaces
+  const isLaptopOnly = activeProject.category === 'ERP' || activeProject.category === 'RMS' || activeProject.id === 'arc-rms' || activeProject.id === 'arc-pos';
+  const effectiveDeviceMode: DeviceMode = isLaptopOnly ? 'macbook' : deviceMode;
 
   const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'ERP' }[] = [
     { label: 'All Systems', value: 'All' },
@@ -657,7 +656,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
           <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold shrink-0">
             VIEW:
           </span>
-          {activeProject.category === 'ERP' ? (
+          {isLaptopOnly ? (
             <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 font-mono text-[11px] font-bold shadow-2xs">
               <Laptop className="h-3.5 w-3.5 text-blue-600" />
               <span>Laptop View</span>
@@ -1003,8 +1002,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
               {/* ---------------------------------------------------- */}
               {/* OPTION C: SOLO SILVER IPAD PRO FOCUS (Full Scrollable & Legible) */}
-              {/* ---------------------------------------------------- */}
-              {deviceMode === 'ipad' && (
+              {effectiveDeviceMode === 'ipad' && (
                 <div className="w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[480px] lg:max-w-[540px] shadow-2xl px-1 sm:px-2 mx-auto">
                   <div className="rounded-2xl sm:rounded-3xl border-2 border-slate-300 bg-slate-100 p-2 sm:p-3 shadow-2xl">
                     {/* iPadOS Header Bar */}
@@ -1049,8 +1047,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
               {/* ---------------------------------------------------- */}
               {/* OPTION D: SOLO IPHONE 16 PRO FOCUS (Full Scrollable & Legible) */}
-              {/* ---------------------------------------------------- */}
-              {deviceMode === 'iphone' && (
+              {effectiveDeviceMode === 'iphone' && (
                 <div className="w-full max-w-[280px] xs:max-w-[305px] sm:max-w-[325px] lg:max-w-[340px] shadow-2xl px-1 sm:px-2 mx-auto">
                   <div className="rounded-[36px] sm:rounded-[44px] border-4 border-slate-300 bg-slate-100 p-2 sm:p-2.5 shadow-2xl">
                     {/* iPhone Top Status Bar */}
@@ -1435,41 +1432,48 @@ export default function StandaloneLightWebsiteCatalogPage() {
                 </div>
 
                 {/* Device Selector Tabs */}
-                <div className="flex items-center space-x-1 bg-white p-1 rounded-xl border border-slate-200 shadow-2xs font-mono text-xs">
-                  <button
-                    onClick={() => setLightboxView('desktop')}
-                    className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
-                      lightboxView === 'desktop'
-                        ? 'bg-blue-600 text-white shadow-2xs'
-                        : 'text-slate-600 hover:text-slate-900'
-                    }`}
-                  >
-                    <Laptop className="h-3.5 w-3.5" />
-                    <span className="hidden sm:inline">Desktop</span>
-                  </button>
-                  <button
-                    onClick={() => setLightboxView('tablet')}
-                    className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
-                      lightboxView === 'tablet'
-                        ? 'bg-blue-600 text-white shadow-2xs'
-                        : 'text-slate-600 hover:text-slate-900'
-                    }`}
-                  >
-                    <Tablet className="h-3.5 w-3.5" />
-                    <span className="hidden sm:inline">Tablet</span>
-                  </button>
-                  <button
-                    onClick={() => setLightboxView('mobile')}
-                    className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
-                      lightboxView === 'mobile'
-                        ? 'bg-blue-600 text-white shadow-2xs'
-                        : 'text-slate-600 hover:text-slate-900'
-                    }`}
-                  >
-                    <Smartphone className="h-3.5 w-3.5" />
-                    <span className="hidden sm:inline">Mobile</span>
-                  </button>
-                </div>
+                {isLaptopOnly ? (
+                  <div className="flex items-center space-x-1.5 px-3 py-1 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 font-mono text-[11px] font-bold shadow-2xs">
+                    <Laptop className="h-3.5 w-3.5 text-blue-600" />
+                    <span>Laptop View Only</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center space-x-1 bg-white p-1 rounded-xl border border-slate-200 shadow-2xs font-mono text-xs">
+                    <button
+                      onClick={() => setLightboxView('desktop')}
+                      className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
+                        lightboxView === 'desktop'
+                          ? 'bg-blue-600 text-white shadow-2xs'
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      <Laptop className="h-3.5 w-3.5" />
+                      <span className="hidden sm:inline">Desktop</span>
+                    </button>
+                    <button
+                      onClick={() => setLightboxView('tablet')}
+                      className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
+                        lightboxView === 'tablet'
+                          ? 'bg-blue-600 text-white shadow-2xs'
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      <Tablet className="h-3.5 w-3.5" />
+                      <span className="hidden sm:inline">Tablet</span>
+                    </button>
+                    <button
+                      onClick={() => setLightboxView('mobile')}
+                      className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
+                        lightboxView === 'mobile'
+                          ? 'bg-blue-600 text-white shadow-2xs'
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      <Smartphone className="h-3.5 w-3.5" />
+                      <span className="hidden sm:inline">Mobile</span>
+                    </button>
+                  </div>
+                )}
 
                 {/* Close Button */}
                 <div className="flex items-center space-x-2">
