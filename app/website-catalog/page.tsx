@@ -430,11 +430,6 @@ export default function StandaloneLightWebsiteCatalogPage() {
             </div>
           </div>
 
-          {/* Active Projects in Build Pill */}
-          <div className="hidden xl:flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 font-mono text-xs text-amber-900">
-            <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
-            <span className="font-semibold">ACTIVE IN BUILD: ARC X1 ERP • ARC RMS • EMIRATES DRUG STORE</span>
-          </div>
         </div>
 
         {/* Navigation & Controls */}
