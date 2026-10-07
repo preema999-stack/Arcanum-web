@@ -38,6 +38,8 @@ import {
   Boxes,
   HelpCircle,
   ExternalLink,
+  Maximize2,
+  Minimize2,
 } from 'lucide-react';
 
 type DeviceMode = 'trio' | 'macbook' | 'ipad' | 'iphone';
@@ -52,6 +54,8 @@ export interface ClientCaseStudy {
   tagline: string;
   summary: string;
   imageSrc: string;
+  tabletImageSrc?: string;
+  mobileImageSrc?: string;
   mockUrl: string;
   deliverables: string[];
   techStack: string[];
@@ -70,27 +74,25 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'arc-x1-erp',
     number: '01',
-    title: 'ARC X1 ERP — Next-Gen Enterprise Resource Planning',
+    title: 'ARC X1 ERP',
     client: 'Enterprise Conglomerates & Multi-Entity Groups (UAE)',
     category: 'Enterprise & Finance Core',
     year: '2026',
-    tagline: 'Multi-Entity Financial Ledger, Supply Chain & Automated UAE VAT',
+    tagline: 'Multi-Entity Financial Ledger & Supply Chain',
     summary:
-      'The next evolution of Arcanum’s flagship ERP suite. Engineered for high transaction velocity, multi-company consolidation, dual-authorization audit trails, automated UAE VAT filing, and synchronized multi-warehouse logistics.',
+      'High-velocity enterprise platform engineered for multi-company consolidation, automated UAE VAT compliance, and multi-warehouse logistics.',
     imageSrc: '/hero_erp.jpg',
     mockUrl: 'https://x1-erp.arcanum.ae',
     deliverables: [
-      'Double-Entry Multi-Currency Financial Ledger',
-      'Automated UAE VAT Tax & Corporate Tax Filing',
+      'Multi-Entity Ledger & Multi-Currency Consolidation',
+      'Automated UAE VAT & Corporate Tax Filing',
       'Multi-Warehouse Logistics & Serial/Batch Tracking',
-      'End-to-End Procurement, RFQ & 3-Way Invoice Matching',
-      'Role-Based Dual Authorization & Immutable Audit Logs',
     ],
-    techStack: ['PostgreSQL', 'TypeScript', 'Next.js 14', 'Docker', 'Redis', 'GraphQL', 'TLS 1.3'],
+    techStack: ['Next.js 14', 'PostgreSQL', 'Redis', 'Docker'],
     metrics: [
-      { label: 'TRANSACTION LATENCY', value: '< 6ms' },
-      { label: 'SYSTEM SLA', value: '99.995%' },
-      { label: 'STATUTORY AUDIT', value: '100% UAE VAT' },
+      { label: 'LATENCY', value: '< 6ms' },
+      { label: 'UPTIME SLA', value: '99.99%' },
+      { label: 'AUDIT', value: '100% UAE VAT' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
@@ -104,27 +106,25 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'arc-rms',
     number: '02',
-    title: 'ARC RMS — Restaurant & Hospitality Management System',
+    title: 'ARC RMS',
     client: 'Fine Dining Groups, Multi-Branch Chains & Cloud Kitchens',
     category: 'Hospitality & F&B POS',
     year: '2026',
-    tagline: 'Interactive Table Floorplans, Sub-Second KDS Sync & Gram-Level Recipe Costing',
+    tagline: 'Restaurant Management & Hospitality POS',
     summary:
-      'A comprehensive, hyper-responsive restaurant and hospitality management suite. Combines visual table floorplan layouts with seat-level bill splitting, live Kitchen Display System (KDS) coordination, ingredient-level inventory deduction, and 100% offline-resilient operations.',
+      'Hyper-responsive hospitality suite combining visual table floorplans, sub-second Kitchen Display sync, recipe costing, and 100% offline resilience.',
     imageSrc: '/hero_restaurant.jpg',
     mockUrl: 'https://rms.arcanum.ae',
     deliverables: [
-      'Interactive Visual Table Floorplans & Reservations',
-      'Color-Coded Kitchen Display System (KDS)',
-      'Gram-Level Recipe & Ingredient Inventory Costing',
-      '100% Offline-Resilient POS Engine with Cloud Auto-Sync',
-      'Multi-Branch Menu Matrix & Thermal ESC/POS Printing',
+      'Interactive Table Floorplans & Seat-Level Billing',
+      'Sub-Second Kitchen Display System (KDS) Sync',
+      'Gram-Level Recipe & Inventory Costing Engine',
     ],
-    techStack: ['Next.js 14', 'WebSockets', 'SQLite Sync', 'Thermal ESC/POS', 'PostgreSQL', 'PWA'],
+    techStack: ['Next.js 14', 'WebSockets', 'SQLite Sync', 'PostgreSQL'],
     metrics: [
-      { label: 'KDS SYNC LATENCY', value: '< 20ms' },
-      { label: 'OFFLINE CONTINUITY', value: '100% Resilient' },
-      { label: 'BRANCH ARCHITECTURE', value: 'Multi-Tenant' },
+      { label: 'SYNC', value: '< 20ms' },
+      { label: 'OFFLINE', value: '100% Resilient' },
+      { label: 'BRANCHES', value: 'Multi-Tenant' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
@@ -138,27 +138,25 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'emirates-drug-store',
     number: '03',
-    title: 'Emirates Drug Store — Pharma Commerce & Supply Chain',
+    title: 'Emirates Drug Store',
     client: 'Emirates Drug Store / UAE Healthcare & Pharmacy Distributors',
     category: 'Pharma Supply Chain & Healthcare',
     year: '2026',
-    tagline: 'MOHAP-Compliant Pharmaceutical Distribution, B2B Portal & Cold-Chain Tracking',
+    tagline: 'Pharmaceutical Supply Chain & B2B Portal',
     summary:
-      'A bespoke pharmaceutical distribution and commerce platform built for the UAE healthcare sector. Features MOHAP/Tatmeen regulatory batch compliance, real-time expiry and lot tracking, temperature-controlled cold-chain logistics telemetry, automated B2B pharmacy reordering, and integrated prescription fulfilment.',
+      'Bespoke pharmaceutical commerce platform with MOHAP/Tatmeen regulatory batch serialization, cold-chain telemetry, and automated B2B pharmacy reordering.',
     imageSrc: '/hero_clinic.jpg',
     mockUrl: 'https://emiratesdrugstore.ae',
     deliverables: [
       'MOHAP & Tatmeen Serialization & Regulatory Traceability',
-      'Pharmaceutical Batch, Lot & Expiry Life-Cycle Engine',
-      'B2B Wholesale Pharmacy Ordering Portal & ERP Sync',
-      'Cold-Chain Temperature Sensor Telemetry & Alerts',
-      'Electronic Prescription Dispatch & Dispensation Flow',
+      'Pharmaceutical Batch, Lot & Expiry Lifecycle Engine',
+      'Cold-Chain Temperature Sensor Alerts & Telemetry',
     ],
-    techStack: ['Next.js 14', 'PostgreSQL', 'HL7 / FHIR', 'Node.js', 'Redis', 'Docker', 'REST / GraphQL'],
+    techStack: ['Next.js 14', 'PostgreSQL', 'HL7 / FHIR', 'Node.js'],
     metrics: [
-      { label: 'REGULATORY COMPLIANCE', value: 'MOHAP / Tatmeen' },
-      { label: 'TRACEABILITY', value: '100% Batch/Serial' },
-      { label: 'ORDER FULFILMENT', value: 'Real-Time Auto-Route' },
+      { label: 'REGULATORY', value: 'MOHAP / Tatmeen' },
+      { label: 'SERIAL TRACE', value: '100% Batch/Lot' },
+      { label: 'DISPATCH', value: 'Real-Time Auto-Route' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
@@ -170,28 +168,92 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     },
   },
   {
-    id: 'hrms',
+    id: 'al-fadli',
     number: '04',
-    title: 'Synapse Enterprise HRMS & WPS Payroll',
+    title: 'Al Fadli Printing Press',
+    client: 'Al Madina Al Eqtisadia Printing Press (Riyadh, KSA)',
+    category: 'Commercial Printing & Packaging',
+    year: '2025',
+    tagline: 'Best Printing Press in Riyadh Since 2005',
+    summary:
+      "Riyadh's go-to printing press for offset printing, packaging, event branding, and bulk corporate orders — serving businesses across Saudi Arabia since 2005 with fast turnarounds and wholesale pricing.",
+    imageSrc: '/al_fadli_desktop.png',
+    tabletImageSrc: '/al_fadli_tablet.png',
+    mobileImageSrc: '/al_fadli_mobile.png',
+    mockUrl: 'https://alfadlipress.com',
+    deliverables: [
+      'Offset Printing, Custom Packaging & Event Branding',
+      'Instant WhatsApp Inquiry & Automated Order Dispatch',
+      'Bilingual Arabic / English Commercial Web Experience',
+    ],
+    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'WhatsApp Business'],
+    metrics: [
+      { label: 'ESTABLISHED', value: 'Since 2005' },
+      { label: 'LOCATION', value: 'Riyadh, KSA' },
+      { label: 'CAPACITY', value: 'Bulk & Urgent' },
+    ],
+    liveStatus: 'Delivered • Live Website',
+    architecture: {
+      runtime: 'Next.js 14 Edge Runtime & SSR',
+      database: 'Cloudflare Edge CDN & Headless Media Assets',
+      security: 'Bilingual RTL/LTR Engine, SSL / TLS 1.3 Strict',
+      scalability: 'Global Edge Network with Sub-Second Global Load',
+    },
+  },
+  {
+    id: 'tomato-tree-digital',
+    number: '05',
+    title: 'Tomatotree Digital',
+    client: 'Tomatotree Digital (Kerala Startup Mission, Kochi)',
+    category: 'Digital Agency & Performance Marketing',
+    year: '2025',
+    tagline: 'Best Digital Marketing Agency in Kerala That Drives Measurable Growth',
+    summary:
+      'We help businesses get more customers from Google, Google Maps, and AI search through data-driven SEO, performance marketing, and content strategies tied directly to revenue.',
+    imageSrc: '/tomato_tree_desktop.png',
+    mobileImageSrc: '/tomato_tree_mobile.png',
+    mockUrl: 'https://tomatotreedigital.com',
+    deliverables: [
+      'Google SEO, Maps Visibility & AI Search Optimization',
+      'Performance Marketing & Revenue Growth Systems',
+      'Interactive Growth Audit & Multi-Channel Ingestion Funnel',
+    ],
+    techStack: ['Next.js 14', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
+    metrics: [
+      { label: 'OUTCOME', value: 'Measurable Growth' },
+      { label: 'HUB', value: 'Kochi, Kerala' },
+      { label: 'INCUBATED', value: 'KSUM Kochi' },
+    ],
+    liveStatus: 'Delivered • Live Website',
+    architecture: {
+      runtime: 'Next.js 14 App Router & Static Edge Generation',
+      database: 'Serverless Lead Ingestion & Webhook Integrations',
+      security: 'reCAPTCHA v3 & Strict CSP Security Headers',
+      scalability: '100/100 Lighthouse Performance & Mobile-First Edge',
+    },
+  },
+  {
+    id: 'hrms',
+    number: '06',
+    title: 'Synapse HRMS',
     client: 'UAE Regional Enterprises & Corporate Groups',
     category: 'Workforce & HRMS',
     year: '2026',
-    tagline: 'Automated UAE WPS SIF Generation & Employee Self-Service',
+    tagline: 'Workforce Management & WPS Payroll',
     summary:
-      'Complete workforce operations engine providing 100% automated UAE Wages Protection System (WPS) bank file generation, biometric shift attendance, and gratuity calculations.',
+      'Enterprise workforce operations suite providing 100% automated UAE WPS bank file generation, biometric attendance, and employee self-service.',
     imageSrc: '/hero_hrms.jpg',
     mockUrl: 'https://synapse.arcanum.ae',
     deliverables: [
-      'Automated UAE WPS SIF Generator',
-      'Biometric Time & Attendance Tracking',
+      'Automated UAE WPS SIF Bank Generation',
+      'Biometric Attendance & Shift Rostering',
       'Employee Self-Service (ESS) Portal',
-      'Statutory Gratuity & Leave Engine',
     ],
-    techStack: ['Next.js 14', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
+    techStack: ['Next.js 14', 'Node.js', 'PostgreSQL', 'Docker'],
     metrics: [
-      { label: 'WPS COMPLIANCE', value: '100% Automated' },
-      { label: 'ACTIVE EMPLOYEES', value: '150K+ Users' },
-      { label: 'PAYROLL PROCESSING', value: '< 2 Minutes' },
+      { label: 'WPS AUDIT', value: '100% Automated' },
+      { label: 'PROCESSING', value: '< 2 Minutes' },
+      { label: 'USERS', value: '150K+ Monthly' },
     ],
     liveStatus: 'UAE Ministry Verified',
     architecture: {
@@ -199,102 +261,6 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
       database: 'PostgreSQL with Redis Session Cache',
       security: 'Encrypted UAE National ID & Bank Data',
       scalability: '150,000+ Employee Monthly Runs',
-    },
-  },
-  {
-    id: 'sls',
-    number: '05',
-    title: 'Aether Enterprise CRM & Lead Pipeline',
-    client: 'Commercial Sales Organizations & Real Estate Firms',
-    category: 'Sales Automation & CRM',
-    year: '2026',
-    tagline: 'Real-Time Kanban Pipeline, Quotations & WhatsApp Cloud API',
-    summary:
-      'Accelerate deal closures with unified omnichannel pipeline management. Ingest leads from WhatsApp, generate instant PDF quotations, and monitor sales representative quotas in real-time.',
-    imageSrc: '/hero_crm.jpg',
-    mockUrl: 'https://aether.arcanum.ae',
-    deliverables: [
-      'Multi-Stage Visual Kanban Pipeline',
-      '1-Click PDF Quotation & Invoicing',
-      'WhatsApp Cloud API Automated Follow-ups',
-      'Executive Revenue Forecasting HUD',
-    ],
-    techStack: ['Next.js 14', 'PostgreSQL', 'WhatsApp Cloud API', 'SendGrid', 'Docker'],
-    metrics: [
-      { label: 'QUOTE CREATION', value: '< 60 Seconds' },
-      { label: 'PIPELINE TRACKING', value: 'Real-Time Stream' },
-      { label: 'FOLLOW-UP AUTOMATION', value: 'WhatsApp Cloud' },
-    ],
-    liveStatus: 'Omnichannel Active',
-    architecture: {
-      runtime: 'Next.js 14 & WebSocket Ingestion',
-      database: 'PostgreSQL & Redis Pub/Sub',
-      security: 'Webhook Signature Verification, RBAC',
-      scalability: '500,000+ Monthly WhatsApp Triggers',
-    },
-  },
-  {
-    id: 'oms',
-    number: '06',
-    title: 'Organization Management System (OMS)',
-    client: 'Holding Groups, Sovereign Entities & Multi-Branch Orgs',
-    category: 'Enterprise Governance',
-    year: '2026',
-    tagline: 'Multi-Tenant Entity Hierarchy & Granular RBAC Mesh',
-    summary:
-      'A master governance engine enabling multi-company group management, dynamic holding trees, threshold-based approval matrices, and centralized identity & access management (IAM).',
-    imageSrc: '/hero-topsection/ezgif-frame-105.jpg',
-    mockUrl: 'https://oms.arcanum.ae',
-    deliverables: [
-      'Hierarchical Entity & Subsidiary Topology',
-      'Dynamic Multi-Stage Approval Matrix',
-      'Enterprise SSO & SAML 2.0 Identity Mesh',
-      'Immutable User Activity Audit Logs',
-    ],
-    techStack: ['Node.js', 'PostgreSQL', 'OAuth2 / SAML', 'Docker', 'Redis', 'gRPC'],
-    metrics: [
-      { label: 'AUTH LATENCY', value: '< 3ms' },
-      { label: 'TENANCY SUPPORT', value: 'Unlimited Orgs' },
-      { label: 'ACCESS CONTROL', value: 'Granular RBAC' },
-    ],
-    liveStatus: 'Active Multi-Tenant',
-    architecture: {
-      runtime: 'Go & Node.js Microservices',
-      database: 'PostgreSQL Multi-Schema Sharding',
-      security: 'SAML 2.0, OAuth2, FIDO2 Hardware Keys',
-      scalability: 'Unlimited Subsidiary Hierarchies',
-    },
-  },
-  {
-    id: 'oracle',
-    number: '07',
-    title: 'Legacy Oracle Forms Modernization Suite',
-    client: 'Government Ministries & Legacy Enterprise Systems',
-    category: 'Cloud Migration & AST',
-    year: '2026',
-    tagline: 'PL/SQL Business Logic Decoupling to Cloud Microservices',
-    summary:
-      'Turn obsolete Oracle Forms 6i/11g/12c systems into responsive web applications. Preserves battle-tested PL/SQL packages while replacing outdated Java applets with modern web interfaces.',
-    imageSrc: '/oracle_modernization.png',
-    mockUrl: 'https://modernize.arcanum.ae',
-    deliverables: [
-      'PL/SQL Business Logic Extraction',
-      'Web-Native Responsive Interface',
-      'Zero Downtime Parallel Cutover',
-      'Modern GraphQL & REST API Layer',
-    ],
-    techStack: ['Oracle DB 19c', 'PL/SQL', 'Next.js 14', 'Node.js', 'gRPC', 'Docker'],
-    metrics: [
-      { label: 'ZERO DATA LOSS', value: '100% Guaranteed' },
-      { label: 'DB INTEGRITY', value: '100% Preserved' },
-      { label: 'INTERFACE SPEED', value: '10x Faster UX' },
-    ],
-    liveStatus: 'Migration Certified',
-    architecture: {
-      runtime: 'Next.js 14 Frontend & gRPC Bridge',
-      database: 'Oracle Database 19c Enterprise',
-      security: 'Legacy PL/SQL Package Preservation',
-      scalability: 'Stateless Cloud Worker Containers',
     },
   },
 ];
@@ -336,8 +302,10 @@ export default function StandaloneLightWebsiteCatalogPage() {
   const activeProject = filteredProjects[activeIndex] || filteredProjects[0] || LUXURY_PORTFOLIO_PROJECTS[0];
 
   const filterTabs = [
-    { label: 'All Systems', value: 'All' },
+    { label: 'All Projects', value: 'All' },
     { label: '🔥 Active in Build (3)', value: 'Active Build', highlight: true },
+    { label: 'Commercial Print', value: 'Printing' },
+    { label: 'Digital Agency', value: 'Agency' },
     { label: 'Enterprise ERP', value: 'Enterprise' },
     { label: 'Restaurant & POS', value: 'Hospitality' },
     { label: 'Pharma & Health', value: 'Pharma' },
@@ -402,15 +370,40 @@ export default function StandaloneLightWebsiteCatalogPage() {
     }
   };
 
+  // Fullscreen Presentation Mode State
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+      setIsFullscreen(true);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+      setIsFullscreen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-600/15 selection:text-blue-900 flex flex-col antialiased">
+    <div className="h-screen w-full bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-600/15 selection:text-blue-900 flex flex-col antialiased overflow-x-hidden overflow-y-auto lg:overflow-hidden">
       {/* Subtle Warm Studio Background Gradient */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-gradient-to-b from-blue-50/60 via-slate-100/40 to-transparent pointer-events-none rounded-full blur-3xl" />
 
       {/* ========================================================= */}
       {/* 1. STANDALONE LIGHT-MODE TOP NAVIGATION BAR */}
       {/* ========================================================= */}
-      <header className="h-20 bg-white/90 border-b border-slate-200/80 px-4 sm:px-8 flex items-center justify-between shrink-0 z-40 backdrop-blur-xl sticky top-0 shadow-sm">
+      <header className="h-16 bg-white/95 border-b border-slate-200/80 px-4 sm:px-8 lg:px-12 flex items-center justify-between shrink-0 z-40 backdrop-blur-xl shadow-xs">
         {/* Brand */}
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-3.5">
@@ -429,11 +422,29 @@ export default function StandaloneLightWebsiteCatalogPage() {
               </span>
             </div>
           </div>
-
         </div>
 
         {/* Navigation & Controls */}
         <div className="flex items-center space-x-3 font-mono text-xs">
+          {/* Fullscreen Mode Toggle */}
+          <button
+            onClick={toggleFullscreen}
+            className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 transition-colors shadow-sm font-semibold"
+            title={isFullscreen ? 'Exit Full Screen' : 'Enter Full Screen Presentation'}
+          >
+            {isFullscreen ? (
+              <>
+                <Minimize2 className="h-3.5 w-3.5 text-blue-600" />
+                <span className="hidden md:inline">Exit Full Screen</span>
+              </>
+            ) : (
+              <>
+                <Maximize2 className="h-3.5 w-3.5 text-blue-600" />
+                <span className="hidden md:inline">Full Screen</span>
+              </>
+            )}
+          </button>
+
           {/* Direct Email */}
           <a
             href="mailto:info@arcanum.ae"
@@ -457,7 +468,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
       {/* ========================================================= */}
       {/* 2. FILTER PILLS & MOCKUP SWITCHER BAR */}
       {/* ========================================================= */}
-      <div className="bg-white/80 border-b border-slate-200 px-4 sm:px-8 py-3 flex items-center justify-between gap-4 overflow-x-auto no-scrollbar font-mono text-xs backdrop-blur-md">
+      <div className="bg-white/80 border-b border-slate-200 px-4 sm:px-8 lg:px-12 py-2 flex items-center justify-between gap-4 overflow-x-auto no-scrollbar font-mono text-xs backdrop-blur-md shrink-0">
         <div className="flex items-center space-x-2 shrink-0">
           <span className="text-[10px] uppercase tracking-wider text-slate-400 mr-1 flex items-center space-x-1 font-semibold">
             <Filter className="h-3 w-3" />
@@ -549,103 +560,83 @@ export default function StandaloneLightWebsiteCatalogPage() {
       {/* ========================================================= */}
       {/* 3. SHOWROOM DISPLAY: LIGHT-MODE EDITORIAL PEDESTAL */}
       {/* ========================================================= */}
-      <main className="flex-1 flex flex-col justify-between p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+      <main className="flex-1 min-h-0 w-full px-4 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-between py-2 sm:py-3 lg:py-4 overflow-y-auto lg:overflow-visible">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center my-auto w-full">
             {/* Left Column: Project Case Study Specs */}
-            <div className="lg:col-span-5 space-y-6">
-              {/* Index & Year Stamp */}
-              <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
-                <span className="text-4xl font-black text-blue-600 font-display">
+            <div className="lg:col-span-5 space-y-4">
+              {/* Index & Category Stamp */}
+              <div className="flex items-center space-x-3 font-mono text-xs">
+                <span className="text-3xl font-black text-blue-600 font-display">
                   {activeProject.number}
                 </span>
-                <div className="h-7 w-px bg-slate-300" />
-                <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 uppercase text-[10px] tracking-wider">
+                <div className="h-5 w-px bg-slate-300" />
+                <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 uppercase text-[10px] tracking-wider">
                   {activeProject.category}
                 </span>
 
                 {activeProject.isCurrentlyBuilding && (
-                  <span className="px-3 py-1 rounded-full bg-amber-500 text-white font-bold text-[10px] flex items-center space-x-1.5 shadow-sm shadow-amber-500/20">
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-bold text-[10px] flex items-center space-x-1.5 shadow-2xs">
                     <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
                     <span>CURRENTLY BUILDING</span>
                   </span>
                 )}
               </div>
 
-              {/* Title & Client */}
+              {/* Title & Tagline */}
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 font-display leading-[1.1]">
                   {activeProject.title}
                 </h1>
-                <p className="font-mono text-xs sm:text-sm text-blue-700 mt-2 font-semibold">
+                <p className="font-mono text-xs sm:text-sm text-blue-700 mt-1.5 font-semibold">
                   {activeProject.tagline}
-                </p>
-                <p className="text-xs text-slate-500 font-mono mt-1 font-medium">
-                  Client Profile: <strong className="text-slate-800">{activeProject.client}</strong>
                 </p>
               </div>
 
               {/* Summary */}
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans font-normal">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans font-normal">
                 {activeProject.summary}
               </p>
 
-              {/* Key Metrics Strip */}
-              <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-white border border-slate-200/90 font-mono text-center shadow-sm">
-                {activeProject.metrics.map((m, mi) => (
-                  <div key={mi} className="border-r last:border-r-0 border-slate-100 px-1">
-                    <span className="text-base sm:text-lg font-bold text-slate-900 block font-display">
-                      {m.value}
-                    </span>
-                    <span className="text-[9px] text-slate-400 uppercase tracking-wider block mt-1 font-medium">
-                      {m.label}
-                    </span>
+              {/* Key Deliverables */}
+              <div className="space-y-2 py-1">
+                {activeProject.deliverables.map((item, ii) => (
+                  <div key={ii} className="flex items-center space-x-2.5 text-xs text-slate-700">
+                    <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0" />
+                    <span className="font-medium">{item}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Deliverables Checklist */}
-              <div className="space-y-2.5">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500 block font-bold">
-                  CORE DELIVERABLES &amp; CAPABILITIES:
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-sans text-xs">
-                  {activeProject.deliverables.map((item, ii) => (
-                    <div key={ii} className="flex items-center space-x-2 text-slate-700">
-                      <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0" />
-                      <span className="truncate font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Tech Stack Pills */}
-              <div className="flex flex-wrap gap-1.5 pt-2">
-                {activeProject.techStack.map((tech, ti) => (
-                  <span
-                    key={ti}
-                    className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 font-medium shadow-2xs"
-                  >
+              {/* Compact Metrics & Tech Badges */}
+              <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
+                {activeProject.metrics.map((m, mi) => (
+                  <span key={mi} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold shadow-2xs text-[11px]">
+                    <strong className="text-slate-900">{m.value}</strong> <span className="text-slate-400 text-[10px]">{m.label}</span>
+                  </span>
+                ))}
+                {activeProject.techStack.slice(0, 3).map((tech, ti) => (
+                  <span key={ti} className="px-2 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-[10px] font-medium">
                     {tech}
                   </span>
                 ))}
               </div>
 
               {/* CTAs */}
-              <div className="pt-4 flex flex-wrap items-center gap-3 font-mono text-xs">
+              <div className="pt-2 flex items-center space-x-3 font-mono text-xs">
                 <button
-                  onClick={() => setBlueprintModalOpen(true)}
-                  className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex items-center space-x-2 shadow-lg shadow-blue-600/25 group"
+                  onClick={() => setRfpModalOpen(true)}
+                  className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex items-center space-x-2 shadow-md shadow-blue-600/20"
                 >
-                  <span>Inspect System Blueprint</span>
-                  <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <Send className="h-3.5 w-3.5" />
+                  <span>Request Proposal</span>
                 </button>
 
                 <button
-                  onClick={() => setRfpModalOpen(true)}
-                  className="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold transition-colors flex items-center space-x-2 shadow-sm"
+                  onClick={() => setBlueprintModalOpen(true)}
+                  className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center space-x-1.5 shadow-2xs"
                 >
-                  <Send className="h-3.5 w-3.5 text-blue-600" />
-                  <span>Request Proposal</span>
+                  <span>System Blueprint</span>
+                  <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
                 </button>
               </div>
             </div>
@@ -699,9 +690,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     <div className="rounded-2xl border-2 border-slate-300 bg-slate-100 p-2 shadow-2xl">
                       <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-slate-200">
                         <img
-                          src={activeProject.imageSrc}
+                          src={activeProject.tabletImageSrc || activeProject.imageSrc}
                           alt="Tablet View"
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-top"
                         />
                         <div className="absolute bottom-2 left-2 text-[8px] font-mono text-slate-800 bg-white/90 px-1.5 py-0.5 rounded shadow-sm border border-slate-200">
                           iPad OS • Tablet UI
@@ -718,9 +709,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <div className="h-2 w-8 bg-slate-900 rounded-full" />
                         </div>
                         <img
-                          src={activeProject.imageSrc}
+                          src={activeProject.mobileImageSrc || activeProject.imageSrc}
                           alt="Mobile View"
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-top"
                         />
                         <div className="absolute bottom-2 inset-x-0 flex justify-center">
                           <div className="h-0.5 w-8 bg-slate-400 rounded-full" />
@@ -766,9 +757,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <div className="rounded-3xl border-2 border-slate-300 bg-slate-100 p-3 shadow-2xl">
                     <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white border border-slate-200">
                       <img
-                        src={activeProject.imageSrc}
+                        src={activeProject.tabletImageSrc || activeProject.imageSrc}
                         alt={activeProject.title}
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute bottom-4 left-4 text-xs font-mono text-slate-800 bg-white/95 px-3 py-1 rounded-md border border-slate-200 shadow-sm flex items-center space-x-1.5">
                         <Lock className="h-3 w-3 text-emerald-600" />
@@ -790,9 +781,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                         <div className="h-3.5 w-20 bg-slate-900 rounded-full" />
                       </div>
                       <img
-                        src={activeProject.imageSrc}
+                        src={activeProject.mobileImageSrc || activeProject.imageSrc}
                         alt={activeProject.title}
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute bottom-3 inset-x-0 flex justify-center">
                         <div className="h-1 w-24 bg-slate-400 rounded-full" />
@@ -845,14 +836,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     <span className={`text-[10px] font-bold ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
                       {p.number}
                     </span>
-                    <span className="text-xs truncate max-w-[120px]">
-                      {p.id === 'arc-x1-erp'
-                        ? 'ARC X1 ERP'
-                        : p.id === 'arc-rms'
-                        ? 'ARC RMS'
-                        : p.id === 'emirates-drug-store'
-                        ? 'Emirates Drug'
-                        : p.title.split(' ')[0]}
+                    <span className="text-xs truncate max-w-[130px]">
+                      {p.title}
                     </span>
                     {p.isCurrentlyBuilding && (
                       <span className="h-1.5 w-1.5 rounded-full bg-amber-300 animate-pulse" />
@@ -867,77 +852,20 @@ export default function StandaloneLightWebsiteCatalogPage() {
       {/* ========================================================= */}
       {/* 5. STANDALONE LIGHT-MODE CLIENT SHOWCASE FOOTER */}
       {/* ========================================================= */}
-      <footer className="mt-16 border-t border-slate-200/90 bg-white/95 backdrop-blur-xl shrink-0 font-sans">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start justify-between">
-            {/* Brand & Showcase Statement */}
-            <div className="md:col-span-5 space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
-                  <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain" />
-                </div>
-                <div>
-                  <span className="font-extrabold text-slate-900 tracking-tight font-display text-sm">
-                    ARCANUM CLIENT SHOWCASE
-                  </span>
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400 block font-semibold">
-                    ENTERPRISE DIGITAL ARCHITECTURE
-                  </span>
-                </div>
-              </div>
-              <p className="text-xs text-slate-500 max-w-sm leading-relaxed">
-                Dedicated client portfolio and technical showcase of production systems and custom platforms engineered by Arcanum Information Technology.
-              </p>
-              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[10px] font-mono text-slate-600">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>CONFIDENTIAL CLIENT DEMONSTRATION • UAE STATUTORY VERIFIED</span>
-              </div>
-            </div>
-
-            {/* Direct Client Contact Information */}
-            <div className="md:col-span-4 space-y-3 font-mono text-xs text-slate-600">
-              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-widest block">
-                DIRECT CLIENT COMMUNICATIONS
-              </span>
-              <div className="space-y-1.5 text-xs">
-                <div className="flex items-center space-x-2">
-                  <span className="text-slate-400">Email:</span>
-                  <a href="mailto:info@arcanum.ae" className="text-blue-600 hover:underline font-semibold">
-                    info@arcanum.ae
-                  </a>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-slate-400">Phone:</span>
-                  <a href="tel:+97143975002" className="text-slate-800 hover:text-blue-600 font-semibold">
-                    +971 4 397 5002
-                  </a>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-slate-400">HQ Office:</span>
-                  <span className="text-slate-700">P.O. Box 27150, Dubai, United Arab Emirates</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Fast Action */}
-            <div className="md:col-span-3 flex flex-col items-start md:items-end space-y-3 font-mono text-xs">
-              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">
-                PROJECT ENGAGEMENT
-              </span>
-              <button
-                onClick={() => setRfpModalOpen(true)}
-                className="w-full md:w-auto px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-md shadow-blue-600/20 flex items-center justify-center space-x-2"
-              >
-                <Send className="h-3.5 w-3.5" />
-                <span>Request Project RFP</span>
-              </button>
-            </div>
-          </div>
-
-          <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-slate-400 gap-3">
-            <span>© {new Date().getFullYear()} Arcanum Information Technology. All rights reserved.</span>
-            <span>Independent Systems &amp; Web Platform Catalog</span>
-          </div>
+      <footer className="h-10 border-t border-slate-200/90 bg-white/95 px-4 sm:px-8 lg:px-12 shrink-0 font-sans flex items-center justify-between text-[11px] font-mono text-slate-500">
+        <div className="flex items-center space-x-3">
+          <span className="font-extrabold text-slate-900 font-display text-xs">ARCANUM SHOWCASE</span>
+          <span className="text-slate-300">•</span>
+          <a href="mailto:info@arcanum.ae" className="text-blue-600 hover:underline">info@arcanum.ae</a>
+          <span className="text-slate-300">•</span>
+          <span>+971 4 397 5002</span>
+          <span className="hidden md:inline text-slate-300">•</span>
+          <span className="hidden md:inline">Dubai, UAE</span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <span className="hidden sm:inline">© {new Date().getFullYear()} Arcanum Information Technology</span>
+          <span className="text-slate-300">•</span>
+          <span className="text-blue-600 font-semibold">Independent Systems Catalog</span>
         </div>
       </footer>
 

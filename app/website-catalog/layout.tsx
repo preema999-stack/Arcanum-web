@@ -17,7 +17,7 @@ export default function WebsiteCatalogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-[#f8fafc] text-slate-900 min-h-screen selection:bg-blue-600/15 selection:text-blue-900 antialiased">
+    <div className="bg-[#f8fafc] text-slate-900 h-screen w-screen overflow-hidden selection:bg-blue-600/15 selection:text-blue-900 antialiased">
       {children}
     </div>
   );
