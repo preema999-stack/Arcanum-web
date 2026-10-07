@@ -141,14 +141,14 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'emirates-drug-store',
     number: '03',
-    title: 'Emirates Drugs Store',
-    client: 'Emirates Drugs Store LLC (Ajman, UAE)',
+    title: 'Emirates Drugs Store (EDS)',
+    client: 'Emirates Drugs Store LLC (Ajman & UAE)',
     category: 'Websites',
     subcategory: 'Websites',
     year: '2026',
     tagline: 'Connecting Global Pharmaceutical Innovators with UAE Healthcare',
     summary:
-      'Premier licensed pharmaceutical wholesaler and medicine supplier founded in 1993, empowering hospitals, clinics, and pharmacies across all 7 Emirates with temperature-controlled supply.',
+      'Premier licensed pharmaceutical wholesaler and medicine supplier founded in 1993, empowering hospitals, clinics, and pharmacies across all 7 Emirates with temperature-controlled supply chain and Tatmeen GS1 compliance.',
     imageSrc: '/emirates_drugs_store_desktop.png',
     tabletImageSrc: '/emirates_drugs_store_tablet.png',
     mobileImageSrc: '/emirates_drugs_store_mobile.png',
@@ -164,8 +164,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
       { label: 'OUTLETS', value: '450+ Outlets' },
       { label: 'VERIFIED', value: '100% Tatmeen' },
     ],
-    liveStatus: 'Active Build • Q1 2026',
-    isCurrentlyBuilding: true,
+    liveStatus: 'Live Production Website',
     architecture: {
       runtime: 'Next.js 14 & Distributed Event Microservices',
       database: 'TimescaleDB (IoT Cold-Chain) & PostgreSQL',
@@ -174,8 +173,178 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     },
   },
   {
-    id: 'arc-x1-erp',
+    id: 'capco-parts',
     number: '04',
+    title: 'Central Auto Parts Co. (CAPCO)',
+    client: 'Central Auto Parts Co. LLC (Abu Dhabi & UAE)',
+    category: 'Websites',
+    subcategory: 'Websites',
+    year: '2026',
+    tagline: 'European Truck & Commercial Trailer Spare Parts Since 1975',
+    summary:
+      'Premier UAE distributor of genuine and aftermarket European commercial vehicle spare parts (Mercedes-Benz, Volvo, Scania, MAN, BPW), supplying fleet operators, workshops, and regional dealers across UAE, GCC, and East Africa for over 50 years.',
+    imageSrc: '/capco_desktop.jpg',
+    tabletImageSrc: '/capco_tablet.jpg',
+    mobileImageSrc: '/capco_mobile.jpg',
+    mockUrl: 'https://capcollc.ae',
+    deliverables: [
+      '5,000+ SKU OEM & Aftermarket Commercial Truck Parts Catalog',
+      'Multi-Branch UAE Warehouse Inventory & Quotation Dispatch',
+      'Direct European Supply Line & Cross-Border GCC Logistics',
+    ],
+    techStack: ['Next.js 14', 'PostgreSQL', 'Algolia Search', 'Tailwind / CSS'],
+    metrics: [
+      { label: 'HERITAGE', value: 'Est. 1975' },
+      { label: 'CATALOG', value: '5,000+ SKUs' },
+      { label: 'NETWORK', value: 'UAE & GCC' },
+    ],
+    liveStatus: 'Live Production Website',
+    architecture: {
+      runtime: 'Next.js 14 Edge CDN & High-Performance Headless CMS',
+      database: 'PostgreSQL Enterprise with Elastic Parts Search Index',
+      security: 'DDoS Mitigated, TLS 1.3, Enterprise Quotation Auth',
+      scalability: 'Sub-Second SKU Query Across 50,000 Cross-References',
+    },
+  },
+  {
+    id: 'gibran-dining',
+    number: '05',
+    title: 'Gibran & Co. Fine Dining',
+    client: 'Gibran & Co. Hospitality (Dubai & UAE)',
+    category: 'Websites',
+    subcategory: 'Websites',
+    year: '2026',
+    tagline: 'Unhurried Dining, Levantine Craft & Thoughtful Hospitality',
+    summary:
+      'An immersive digital culinary experience showcasing Gibran & Co.’s seasonal farm-to-table menus, artisanal Levantine craft, private dining halls, and real-time online guest reservations.',
+    imageSrc: '/gibran_desktop.png',
+    tabletImageSrc: '/gibran_tablet.jpg',
+    mobileImageSrc: '/gibran_mobile.jpg',
+    mockUrl: 'https://gibran.ae',
+    deliverables: [
+      'Cinematic Culinary Storytelling & Interactive Seasonal Menu',
+      'Real-Time Table Reservation & Private Dining Concierge Engine',
+      'High-Performance Visual Artistry & VIP Guest Booking Portal',
+    ],
+    techStack: ['Next.js 14', 'Framer Motion', 'PostgreSQL', 'Stripe / POS Sync'],
+    metrics: [
+      { label: 'ESTABLISHED', value: '2018' },
+      { label: 'RESERVATIONS', value: 'Instant Confirm' },
+      { label: 'CUISINE', value: 'Levantine Craft' },
+    ],
+    liveStatus: 'Live Production Website',
+    architecture: {
+      runtime: 'Next.js 14 App Router & Fluid Cinematic Animation Engine',
+      database: 'Cloud PostgreSQL with Live Reservation Slot Manager',
+      security: 'PCI-DSS Compliant Deposit Processing, End-to-End Encryption',
+      scalability: 'Global CDN Acceleration with WebP & High-Res Image Pipeline',
+    },
+  },
+  {
+    id: 'platinum-fleet',
+    number: '06',
+    title: 'Platinum Luxury Concierge & Fleet',
+    client: 'Platinum Luxury Group (Dubai, UAE)',
+    category: 'Websites',
+    subcategory: 'Websites',
+    year: '2026',
+    tagline: 'The Art of Uncompromising Luxury & Supercar Concierge',
+    summary:
+      'Dubai’s most prestigious exotic supercar collection and bespoke VIP chauffeur concierge service, featuring instant availability tracking, VIP airport apron delivery, and yacht charter reservations.',
+    imageSrc: '/platinum_desktop.jpg',
+    tabletImageSrc: '/platinum_tablet.jpg',
+    mobileImageSrc: '/platinum_mobile.jpg',
+    mockUrl: 'https://platinum.ae',
+    deliverables: [
+      'Real-Time Exotic Supercar & Limousine Fleet Availability Engine',
+      'Bespoke VIP Chauffeur Booking with Flight Tracker Integration',
+      'Dark-Mode Luxury Aesthetic with Instant White-Glove WhatsApp Concierge',
+    ],
+    techStack: ['Next.js 14', 'TypeScript', 'Tailwind / CSS', 'PostgreSQL'],
+    metrics: [
+      { label: 'EXOTIC FLEET', value: '80+ Supercars' },
+      { label: 'AIRPORT SLA', value: '< 30 Mins' },
+      { label: 'CONCIERGE', value: '24/7 Dedicated' },
+    ],
+    liveStatus: 'Live Production Website',
+    architecture: {
+      runtime: 'Next.js 14 Edge Runtime with Multi-Region CDN',
+      database: 'PostgreSQL with Real-Time Vehicle Schedule Matrix',
+      security: 'Identity Document Verification & Tokenized Security Deposits',
+      scalability: 'Ultra-Fast Sub-Second Page Loads for VIP High-Net-Worth Visitors',
+    },
+  },
+  {
+    id: 'chinese-connection',
+    number: '07',
+    title: 'Chinese Connection UAE',
+    client: 'Chinese Connection Restaurant Group (Abu Dhabi & Dubai)',
+    category: 'Websites',
+    subcategory: 'Websites',
+    year: '2026',
+    tagline: 'Authentic Flavors, Contemporary Artistry & Online Ordering',
+    summary:
+      'High-end contemporary Chinese dining platform crafting authentic regional culinary traditions fresh daily, featuring seamless online banquet reservations, dim sum menu curation, and lightning-fast direct digital ordering.',
+    imageSrc: '/chinese_connection_desktop.jpg',
+    tabletImageSrc: '/chinese_connection_tablet.jpg',
+    mobileImageSrc: '/chinese_connection_mobile.jpg',
+    mockUrl: 'https://chineseconnection.ae',
+    deliverables: [
+      'Interactive Visual Dim Sum & Signature Peking Duck Digital Menu',
+      'Direct-to-Kitchen Online Ordering & Takeaway Logistics Integration',
+      'VIP Banquet Room Bookings & Multi-Branch Dine-In Reservations',
+    ],
+    techStack: ['Next.js 14', 'React', 'PostgreSQL', 'WebSockets'],
+    metrics: [
+      { label: 'LOCATIONS', value: 'Abu Dhabi & Dubai' },
+      { label: 'SPECIALTIES', value: '100+ Curated' },
+      { label: 'ORDER SPEED', value: '< 20 Seconds' },
+    ],
+    liveStatus: 'Live Production Website',
+    architecture: {
+      runtime: 'Next.js 14 with Server Actions & Edge Caching',
+      database: 'PostgreSQL Cluster with Real-Time Kitchen POS Bridge',
+      security: 'SSL TLS 1.3, Encrypted Online Payment Gateway Integration',
+      scalability: 'Elastic High-Concurrency Peak Dinner Rush Architecture',
+    },
+  },
+  {
+    id: 'shakespeare-middle-east',
+    number: '08',
+    title: 'Shakespeare Middle East',
+    client: 'Shakespeare Middle East / Shakespeare & Co. (UAE)',
+    category: 'Websites',
+    subcategory: 'Websites',
+    year: '2026',
+    tagline: 'Victorian Elegance, Artisanal Patisserie & Fine Dining Since 2004',
+    summary:
+      'Iconic UAE Victorian-chic restaurant, cafe, and French patisserie renowned for artisanal chocolates, delicate macarons, all-day dining, and bespoke event catering across the Emirates.',
+    imageSrc: '/shakespeare_desktop.jpg',
+    tabletImageSrc: '/shakespeare_tablet.jpg',
+    mobileImageSrc: '/shakespeare_mobile.jpg',
+    mockUrl: 'https://shakespeare.ae',
+    deliverables: [
+      'Artisanal French Patisserie, Macaron & Chocolate Showcase',
+      'Interactive Afternoon Tea & Table Reservation Engine',
+      'Multi-Branch UAE Restaurant Directory & Bespoke Catering Portal',
+    ],
+    techStack: ['Next.js 14', 'PostgreSQL', 'Tailwind / CSS', 'Node.js'],
+    metrics: [
+      { label: 'HERITAGE', value: 'Est. 2004' },
+      { label: 'PATISSERIE', value: '100% Handcrafted' },
+      { label: 'DINING', value: 'All-Day Classic' },
+    ],
+    liveStatus: 'Live Production Website',
+    architecture: {
+      runtime: 'Next.js 14 Edge Runtime & High-Resolution Visual CDN',
+      database: 'PostgreSQL with Real-Time Table Reservation Scheduler',
+      security: 'TLS 1.3, DDoS Shield & Secure Customer Booking Portal',
+      scalability: 'Sub-Second Global Delivery for Media-Rich Menu Assets',
+    },
+  },
+  {
+    id: 'arc-x1-erp',
+    number: '09',
     title: 'ARC X1 ERP',
     client: 'Enterprise Conglomerates & Multi-Entity Groups (UAE)',
     category: 'ERP',
@@ -208,7 +377,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   },
   {
     id: 'hrms',
-    number: '05',
+    number: '10',
     title: 'Synapse HRMS & Workspace',
     client: 'UAE Regional Enterprises & Corporate Groups',
     category: 'ERP',
@@ -449,7 +618,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
         <div className="flex items-center space-x-1.5 overflow-x-auto no-scrollbar w-full md:w-auto py-0.5">
           <span className="text-[10px] uppercase tracking-wider text-slate-400 mr-1 flex items-center space-x-1 font-semibold shrink-0">
             <Filter className="h-3 w-3" />
-            <span>FILTER:</span>
+            <span>CATEGORY:</span>
           </span>
           {filterTabs.map((tab) => {
             const isSelected = selectedFilter === tab.value;
@@ -458,6 +627,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                 key={tab.value}
                 onClick={() => {
                   setSelectedFilter(tab.value);
+                  setRmsSubFilter('All');
                   setActiveIndex(0);
                 }}
                 className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border transition-all text-xs shrink-0 font-medium whitespace-nowrap ${
@@ -470,6 +640,38 @@ export default function StandaloneLightWebsiteCatalogPage() {
               </button>
             );
           })}
+
+          {/* Subcategory Pills when RMS is selected */}
+          {selectedFilter === 'RMS' && (
+            <div className="flex items-center space-x-1 pl-2 border-l border-slate-200 ml-1 shrink-0">
+              <span className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold shrink-0">
+                IN RMS:
+              </span>
+              {[
+                { label: 'All RMS (2)', value: 'All' as const },
+                { label: 'RMS Core', value: 'RMS' as const },
+                { label: 'POS Terminal', value: 'POS' as const },
+              ].map((sub) => {
+                const isSubSelected = rmsSubFilter === sub.value;
+                return (
+                  <button
+                    key={sub.value}
+                    onClick={() => {
+                      setRmsSubFilter(sub.value);
+                      setActiveIndex(0);
+                    }}
+                    className={`px-2 py-0.5 rounded-md border text-[11px] font-semibold transition-all shrink-0 ${
+                      isSubSelected
+                        ? 'bg-blue-100 text-blue-800 border-blue-300 font-bold'
+                        : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
+                    {sub.label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Device Switcher HUD */}
@@ -546,7 +748,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                 </span>
                 <div className="h-4 sm:h-5 w-px bg-slate-300" />
                 <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 uppercase text-[9px] sm:text-[10px] tracking-wider">
-                  {activeProject.category}
+                  {activeProject.category === 'RMS' && activeProject.subcategory
+                    ? `RMS • ${activeProject.subcategory}`
+                    : activeProject.category}
                 </span>
 
                 {activeProject.isCurrentlyBuilding && (
@@ -952,7 +1156,11 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <div className="flex items-center space-x-2 font-mono text-xs text-blue-600 mb-1 font-bold">
                     <span>SYSTEM BLUEPRINT</span>
                     <span>•</span>
-                    <span>{activeProject.category}</span>
+                    <span>
+                      {activeProject.category === 'RMS' && activeProject.subcategory
+                        ? `RMS • ${activeProject.subcategory}`
+                        : activeProject.category}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold font-display text-slate-900">
                     {activeProject.title}
