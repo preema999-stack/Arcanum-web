@@ -49,8 +49,8 @@ export interface ClientCaseStudy {
   number: string;
   title: string;
   client: string;
-  category: 'RMS' | 'Websites' | 'Web Applications' | 'ERP';
-  subcategory?: 'RMS' | 'POS' | 'Websites' | 'Web Applications' | 'ERP' | 'HRMS';
+  category: 'RMS' | 'Websites' | 'Project Management' | 'ERP';
+  subcategory?: 'RMS' | 'POS' | 'Websites' | 'Project Management' | 'ERP' | 'HRMS';
   year: string;
   tagline: string;
   summary: string;
@@ -320,7 +320,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     number: '08',
     title: 'Synapse HRMS & Workspace',
     client: 'UAE Regional Enterprises & Corporate Groups',
-    category: 'Web Applications',
+    category: 'Project Management',
     subcategory: 'HRMS',
     year: '2026',
     tagline: 'Company Admin Workspace Portal & Delivery Tracking',
@@ -386,7 +386,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
   // State
   const [activeIndex, setActiveIndex] = useState(0);
   const [deviceMode, setDeviceMode] = useState<DeviceMode>('trio');
-  const [selectedFilter, setSelectedFilter] = useState<'All' | 'RMS' | 'Websites' | 'Web Applications' | 'ERP'>('All');
+  const [selectedFilter, setSelectedFilter] = useState<'All' | 'RMS' | 'Websites' | 'Project Management' | 'ERP'>('All');
   const [rmsSubFilter, setRmsSubFilter] = useState<'All' | 'RMS' | 'POS'>('All');
   const [rfpModalOpen, setRfpModalOpen] = useState(false);
   const [blueprintModalOpen, setBlueprintModalOpen] = useState(false);
@@ -427,11 +427,11 @@ export default function StandaloneLightWebsiteCatalogPage() {
   const isLaptopOnly = activeProject.category === 'ERP' || activeProject.category === 'RMS' || activeProject.id === 'arc-rms' || activeProject.id === 'arc-pos';
   const effectiveDeviceMode: DeviceMode = isLaptopOnly ? 'macbook' : deviceMode;
 
-  const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'Web Applications' | 'ERP' }[] = [
+  const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'Project Management' | 'ERP' }[] = [
     { label: 'All Systems', value: 'All' },
     { label: 'RMS', value: 'RMS' },
     { label: 'Websites', value: 'Websites' },
-    { label: 'Web Applications', value: 'Web Applications' },
+    { label: 'Project Management', value: 'Project Management' },
     { label: 'ERP', value: 'ERP' },
   ];
 
