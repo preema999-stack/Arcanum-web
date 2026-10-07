@@ -414,8 +414,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
         {/* Brand */}
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-3.5">
-            <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 p-1 flex items-center justify-center shadow-md shadow-blue-500/20">
-              <img src="/logo.png" alt="Arcanum" className="h-full w-full object-contain filter invert brightness-200" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
+              <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
@@ -873,8 +873,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
             {/* Brand & Showcase Statement */}
             <div className="md:col-span-5 space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 p-1 flex items-center justify-center shadow-md shadow-blue-500/20">
-                  <img src="/logo.png" alt="Arcanum" className="h-full w-full object-contain filter invert brightness-200" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
+                  <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain" />
                 </div>
                 <div>
                   <span className="font-extrabold text-slate-900 tracking-tight font-display text-sm">
