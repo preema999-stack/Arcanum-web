@@ -49,7 +49,8 @@ export interface ClientCaseStudy {
   number: string;
   title: string;
   client: string;
-  category: string;
+  category: 'RMS' | 'Websites' | 'ERP';
+  subcategory?: 'RMS' | 'POS' | 'Websites' | 'ERP' | 'HRMS';
   year: string;
   tagline: string;
   summary: string;
@@ -72,67 +73,69 @@ export interface ClientCaseStudy {
 
 const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
-    id: 'arc-x1-erp',
-    number: '01',
-    title: 'ARC X1 ERP',
-    client: 'Enterprise Conglomerates & Multi-Entity Groups (UAE)',
-    category: 'Enterprise & Finance Core',
-    year: '2026',
-    tagline: 'Multi-Entity Financial Ledger & Supply Chain',
-    summary:
-      'High-velocity enterprise platform engineered for multi-company consolidation, automated UAE VAT compliance, and multi-warehouse logistics.',
-    imageSrc: '/hero_erp.jpg',
-    mockUrl: 'https://x1-erp.arcanum.ae',
-    deliverables: [
-      'Multi-Entity Ledger & Multi-Currency Consolidation',
-      'Automated UAE VAT & Corporate Tax Filing',
-      'Multi-Warehouse Logistics & Serial/Batch Tracking',
-    ],
-    techStack: ['Next.js 14', 'PostgreSQL', 'Redis', 'Docker'],
-    metrics: [
-      { label: 'LATENCY', value: '< 6ms' },
-      { label: 'UPTIME SLA', value: '99.99%' },
-      { label: 'AUDIT', value: '100% UAE VAT' },
-    ],
-    liveStatus: 'Active Build • Q1 2026',
-    isCurrentlyBuilding: true,
-    architecture: {
-      runtime: 'Next.js 14 & Node.js Microservices',
-      database: 'PostgreSQL (Multi-Tenant Isolation) & Redis',
-      security: 'Dual-Authorization RBAC, TLS 1.3, AES-256',
-      scalability: 'Horizontal Kubernetes Auto-Scaling',
-    },
-  },
-  {
     id: 'arc-rms',
-    number: '02',
+    number: '01',
     title: 'ARC RMS',
-    client: 'Fine Dining Groups, Multi-Branch Chains & Cloud Kitchens',
-    category: 'Hospitality & F&B POS',
+    client: 'Fine Dining Chains, Multi-Branch Groups & Cloud Kitchens',
+    category: 'RMS',
+    subcategory: 'RMS',
     year: '2026',
-    tagline: 'Restaurant Management & Hospitality POS',
+    tagline: 'Restaurant Management System, KDS & Recipe Costing',
     summary:
-      'Hyper-responsive hospitality suite combining visual table floorplans, sub-second Kitchen Display sync, recipe costing, and 100% offline resilience.',
+      'Complete back-of-house restaurant management suite featuring sub-second Kitchen Display System (KDS) sync, gram-level recipe costing, automated supplier purchase orders, and multi-branch inventory.',
     imageSrc: '/hero_restaurant.jpg',
     mockUrl: 'https://rms.arcanum.ae',
     deliverables: [
-      'Interactive Table Floorplans & Seat-Level Billing',
       'Sub-Second Kitchen Display System (KDS) Sync',
-      'Gram-Level Recipe & Inventory Costing Engine',
+      'Gram-Level Recipe & Ingredient Costing Engine',
+      'Multi-Branch Central Commissary & Food Wastage Tracking',
     ],
-    techStack: ['Next.js 14', 'WebSockets', 'SQLite Sync', 'PostgreSQL'],
+    techStack: ['Next.js 14', 'WebSockets', 'PostgreSQL', 'Redis'],
     metrics: [
-      { label: 'SYNC', value: '< 20ms' },
-      { label: 'OFFLINE', value: '100% Resilient' },
-      { label: 'BRANCHES', value: 'Multi-Tenant' },
+      { label: 'KDS SYNC', value: '< 15ms' },
+      { label: 'RECIPES', value: 'Gram-Level' },
+      { label: 'BRANCHES', value: 'Multi-Branch' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
     architecture: {
       runtime: 'Next.js 14 Edge Runtime & WebSocket Core',
-      database: 'PostgreSQL Cluster with Local SQLite Cache',
-      security: 'Encrypted Biometric POS Auth, Role Isolation',
+      database: 'PostgreSQL Cluster with TimescaleDB Analytics',
+      security: 'Encrypted Biometric Auth, Multi-Role Isolation',
       scalability: 'Elastic Cloud Kitchen Routing',
+    },
+  },
+  {
+    id: 'arc-pos',
+    number: '02',
+    title: 'ARC POS',
+    client: 'Fine Dining Restaurants, Cafes & Fast-Casual Outlets',
+    category: 'RMS',
+    subcategory: 'POS',
+    year: '2026',
+    tagline: 'High-Velocity Table Floorplan Billing & Offline POS',
+    summary:
+      'Hyper-responsive touch point-of-sale terminal with visual table floorplans, seat-level split billing, ESC/POS thermal receipt printing, and 100% offline resilience that keeps billing when the internet drops.',
+    imageSrc: '/hero_restaurant.jpg',
+    mockUrl: 'https://pos.arcanum.ae',
+    deliverables: [
+      'Interactive Table Floorplans & Seat-Level Split Billing',
+      'Sub-Second Order Dispatch & Thermal ESC/POS Receipt Printing',
+      '100% Offline Resilience with Local SQLite Bi-Directional Sync',
+    ],
+    techStack: ['Next.js 14', 'SQLite Sync', 'WebSockets', 'ESC/POS'],
+    metrics: [
+      { label: 'CHECKOUT', value: '< 1.2s' },
+      { label: 'OFFLINE', value: '100% Resilient' },
+      { label: 'TABLES', value: 'Interactive' },
+    ],
+    liveStatus: 'Active Build • Q1 2026',
+    isCurrentlyBuilding: true,
+    architecture: {
+      runtime: 'Next.js 14 Edge Runtime & Local-First Engine',
+      database: 'Local SQLite Cache with PostgreSQL Cloud Sync',
+      security: 'Encrypted Cash Drawer & Biometric POS Auth',
+      scalability: 'Sub-Second Local Offline Resilience',
     },
   },
   {
@@ -140,7 +143,8 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     number: '03',
     title: 'Emirates Drugs Store',
     client: 'Emirates Drugs Store LLC (Ajman, UAE)',
-    category: 'Pharma Supply Chain & Healthcare',
+    category: 'Websites',
+    subcategory: 'Websites',
     year: '2026',
     tagline: 'Connecting Global Pharmaceutical Innovators with UAE Healthcare',
     summary:
@@ -170,76 +174,45 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     },
   },
   {
-    id: 'al-fadli',
+    id: 'arc-x1-erp',
     number: '04',
-    title: 'Al Fadli Printing Press',
-    client: 'Al Madina Al Eqtisadia Printing Press (Riyadh, KSA)',
-    category: 'Commercial Printing & Packaging',
-    year: '2025',
-    tagline: 'Best Printing Press in Riyadh Since 2005',
+    title: 'ARC X1 ERP',
+    client: 'Enterprise Conglomerates & Multi-Entity Groups (UAE)',
+    category: 'ERP',
+    subcategory: 'ERP',
+    year: '2026',
+    tagline: 'Multi-Entity Financial Ledger & Cloud Supply Chain',
     summary:
-      "Riyadh's go-to printing press for offset printing, packaging, event branding, and bulk corporate orders — serving businesses across Saudi Arabia since 2005 with fast turnarounds and wholesale pricing.",
-    imageSrc: '/al_fadli_desktop.png',
-    tabletImageSrc: '/al_fadli_tablet.png',
-    mobileImageSrc: '/al_fadli_mobile.png',
-    mockUrl: 'https://fadlipress.com/en/',
+      'High-velocity enterprise platform engineered for multi-company consolidation, automated UAE VAT compliance, and multi-warehouse logistics.',
+    imageSrc: '/hero_erp.jpg',
+    mockUrl: 'https://x1-erp.arcanum.ae',
     deliverables: [
-      'Offset Printing, Custom Packaging & Event Branding',
-      'Instant WhatsApp Inquiry & Automated Order Dispatch',
-      'Bilingual Arabic / English Commercial Web Experience',
+      'Multi-Entity Ledger & Multi-Currency Consolidation',
+      'Automated UAE VAT & Corporate Tax Filing',
+      'Multi-Warehouse Logistics & Serial/Batch Tracking',
     ],
-    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'WhatsApp Business'],
+    techStack: ['Next.js 14', 'PostgreSQL', 'Redis', 'Docker'],
     metrics: [
-      { label: 'ESTABLISHED', value: 'Since 2005' },
-      { label: 'LOCATION', value: 'Riyadh, KSA' },
-      { label: 'CAPACITY', value: 'Bulk & Urgent' },
+      { label: 'LATENCY', value: '< 6ms' },
+      { label: 'UPTIME SLA', value: '99.99%' },
+      { label: 'AUDIT', value: '100% UAE VAT' },
     ],
-    liveStatus: 'Delivered • Live Website',
+    liveStatus: 'Active Build • Q1 2026',
+    isCurrentlyBuilding: true,
     architecture: {
-      runtime: 'Next.js 14 Edge Runtime & SSR',
-      database: 'Cloudflare Edge CDN & Headless Media Assets',
-      security: 'Bilingual RTL/LTR Engine, SSL / TLS 1.3 Strict',
-      scalability: 'Global Edge Network with Sub-Second Global Load',
-    },
-  },
-  {
-    id: 'tomato-tree-digital',
-    number: '05',
-    title: 'Tomatotree Digital',
-    client: 'Tomatotree Digital (Kerala Startup Mission, Kochi)',
-    category: 'Digital Agency & Performance Marketing',
-    year: '2025',
-    tagline: 'Best Digital Marketing Agency in Kerala That Drives Measurable Growth',
-    summary:
-      'We help businesses get more customers from Google, Google Maps, and AI search through data-driven SEO, performance marketing, and content strategies tied directly to revenue.',
-    imageSrc: '/tomato_tree_desktop.png',
-    mobileImageSrc: '/tomato_tree_mobile.png',
-    mockUrl: 'https://tomatotreedigital.com/',
-    deliverables: [
-      'Google SEO, Maps Visibility & AI Search Optimization',
-      'Performance Marketing & Revenue Growth Systems',
-      'Interactive Growth Audit & Multi-Channel Ingestion Funnel',
-    ],
-    techStack: ['Next.js 14', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
-    metrics: [
-      { label: 'OUTCOME', value: 'Measurable Growth' },
-      { label: 'HUB', value: 'Kochi, Kerala' },
-      { label: 'INCUBATED', value: 'KSUM Kochi' },
-    ],
-    liveStatus: 'Delivered • Live Website',
-    architecture: {
-      runtime: 'Next.js 14 App Router & Static Edge Generation',
-      database: 'Serverless Lead Ingestion & Webhook Integrations',
-      security: 'reCAPTCHA v3 & Strict CSP Security Headers',
-      scalability: '100/100 Lighthouse Performance & Mobile-First Edge',
+      runtime: 'Next.js 14 & Node.js Microservices',
+      database: 'PostgreSQL (Multi-Tenant Isolation) & Redis',
+      security: 'Dual-Authorization RBAC, TLS 1.3, AES-256',
+      scalability: 'Horizontal Kubernetes Auto-Scaling',
     },
   },
   {
     id: 'hrms',
-    number: '06',
+    number: '05',
     title: 'Synapse HRMS & Workspace',
     client: 'UAE Regional Enterprises & Corporate Groups',
-    category: 'Workforce & HRMS',
+    category: 'ERP',
+    subcategory: 'HRMS',
     year: '2026',
     tagline: 'Company Admin Workspace Portal & Delivery Tracking',
     summary:
@@ -273,7 +246,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
   // State
   const [activeIndex, setActiveIndex] = useState(0);
   const [deviceMode, setDeviceMode] = useState<DeviceMode>('trio');
-  const [selectedFilter, setSelectedFilter] = useState<string>('All');
+  const [selectedFilter, setSelectedFilter] = useState<'All' | 'RMS' | 'Websites' | 'ERP'>('All');
+  const [rmsSubFilter, setRmsSubFilter] = useState<'All' | 'RMS' | 'POS'>('All');
   const [rfpModalOpen, setRfpModalOpen] = useState(false);
   const [blueprintModalOpen, setBlueprintModalOpen] = useState(false);
 
@@ -294,26 +268,23 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
   // Filtered Projects
   const filteredProjects = useMemo(() => {
-    if (selectedFilter === 'All') return LUXURY_PORTFOLIO_PROJECTS;
-    if (selectedFilter === 'Active Build') {
-      return LUXURY_PORTFOLIO_PROJECTS.filter((p) => p.isCurrentlyBuilding);
+    let list = LUXURY_PORTFOLIO_PROJECTS;
+    if (selectedFilter !== 'All') {
+      list = list.filter((p) => p.category.toLowerCase() === selectedFilter.toLowerCase());
     }
-    return LUXURY_PORTFOLIO_PROJECTS.filter((p) =>
-      p.category.toLowerCase().includes(selectedFilter.toLowerCase())
-    );
-  }, [selectedFilter]);
+    if (selectedFilter === 'RMS' && rmsSubFilter !== 'All') {
+      list = list.filter((p) => p.subcategory?.toLowerCase() === rmsSubFilter.toLowerCase());
+    }
+    return list;
+  }, [selectedFilter, rmsSubFilter]);
 
   const activeProject = filteredProjects[activeIndex] || filteredProjects[0] || LUXURY_PORTFOLIO_PROJECTS[0];
 
-  const filterTabs = [
-    { label: 'All Projects', value: 'All' },
-    { label: '🔥 Active in Build (3)', value: 'Active Build', highlight: true },
-    { label: 'Commercial Print', value: 'Printing' },
-    { label: 'Digital Agency', value: 'Agency' },
-    { label: 'Enterprise ERP', value: 'Enterprise' },
-    { label: 'Restaurant & POS', value: 'Hospitality' },
-    { label: 'Pharma & Health', value: 'Pharma' },
-    { label: 'Workforce & HRMS', value: 'Workforce' },
+  const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'ERP' }[] = [
+    { label: 'All Systems', value: 'All' },
+    { label: 'RMS', value: 'RMS' },
+    { label: 'Websites', value: 'Websites' },
+    { label: 'ERP', value: 'ERP' },
   ];
 
   const handleNext = () => {
@@ -400,28 +371,28 @@ export default function StandaloneLightWebsiteCatalogPage() {
   }, []);
 
   return (
-    <div className="h-screen w-full bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-600/15 selection:text-blue-900 flex flex-col antialiased overflow-x-hidden overflow-y-auto lg:overflow-hidden">
+    <div className="min-h-screen lg:h-screen w-full bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-600/15 selection:text-blue-900 flex flex-col antialiased overflow-x-hidden lg:overflow-hidden">
       {/* Subtle Warm Studio Background Gradient */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-gradient-to-b from-blue-50/60 via-slate-100/40 to-transparent pointer-events-none rounded-full blur-3xl" />
 
       {/* ========================================================= */}
       {/* 1. STANDALONE LIGHT-MODE TOP NAVIGATION BAR */}
       {/* ========================================================= */}
-      <header className="h-16 bg-white/95 border-b border-slate-200/80 px-4 sm:px-8 lg:px-12 flex items-center justify-between shrink-0 z-40 backdrop-blur-xl shadow-xs">
+      <header className="h-16 bg-white/95 border-b border-slate-200/80 px-3 sm:px-8 lg:px-12 flex items-center justify-between shrink-0 z-40 backdrop-blur-xl shadow-xs">
         {/* Brand */}
-        <div className="flex items-center space-x-6">
-          <div className="flex items-center space-x-3.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
+        <div className="flex items-center space-x-3 sm:space-x-6 min-w-0">
+          <div className="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0">
+            <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
               <img src="/logo.png" alt="Arcanum Logo" className="h-full w-full object-contain" />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center space-x-2">
-                <span className="font-extrabold tracking-tight text-base font-display text-slate-900">ARCANUM</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200">
-                  CLIENT SHOWCASE
+                <span className="font-extrabold tracking-tight text-sm sm:text-base font-display text-slate-900">ARCANUM</span>
+                <span className="text-[9px] sm:text-[10px] font-mono px-1.5 sm:px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 whitespace-nowrap">
+                  CATALOG
                 </span>
               </div>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 block font-medium">
+              <span className="font-mono text-[9px] uppercase tracking-wider text-slate-500 hidden sm:block font-medium">
                 INDEPENDENT SYSTEMS &amp; WEBSITE CATALOG
               </span>
             </div>
@@ -429,11 +400,11 @@ export default function StandaloneLightWebsiteCatalogPage() {
         </div>
 
         {/* Navigation & Controls */}
-        <div className="flex items-center space-x-3 font-mono text-xs">
+        <div className="flex items-center space-x-2 sm:space-x-3 font-mono text-xs shrink-0">
           {/* Fullscreen Mode Toggle */}
           <button
             onClick={toggleFullscreen}
-            className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 transition-colors shadow-sm font-semibold"
+            className="flex items-center space-x-1.5 p-2 sm:px-3 sm:py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 transition-colors shadow-sm font-semibold"
             title={isFullscreen ? 'Exit Full Screen' : 'Enter Full Screen Presentation'}
           >
             {isFullscreen ? (
@@ -461,22 +432,24 @@ export default function StandaloneLightWebsiteCatalogPage() {
           {/* Request Proposal */}
           <button
             onClick={() => setRfpModalOpen(true)}
-            className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-md shadow-blue-600/25 transition-all flex items-center space-x-2"
+            className="px-3 sm:px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-md shadow-blue-600/25 transition-all flex items-center space-x-1.5 text-xs"
           >
             <Send className="h-3.5 w-3.5" />
-            <span>Request Proposal</span>
+            <span className="hidden sm:inline">Request Proposal</span>
+            <span className="sm:hidden">Proposal</span>
           </button>
         </div>
       </header>
 
       {/* ========================================================= */}
-      {/* 2. FILTER PILLS & MOCKUP SWITCHER BAR */}
+      {/* 2. FILTER PILLS & MOCKUP SWITCHER BAR - FULLY RESPONSIVE */}
       {/* ========================================================= */}
-      <div className="bg-white/80 border-b border-slate-200 px-4 sm:px-8 lg:px-12 py-2 flex items-center justify-between gap-4 overflow-x-auto no-scrollbar font-mono text-xs backdrop-blur-md shrink-0">
-        <div className="flex items-center space-x-2 shrink-0">
-          <span className="text-[10px] uppercase tracking-wider text-slate-400 mr-1 flex items-center space-x-1 font-semibold">
+      <div className="bg-white/90 border-b border-slate-200 px-3 sm:px-8 lg:px-12 py-2 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4 font-mono text-xs backdrop-blur-md shrink-0">
+        {/* Disciplines Filter Row */}
+        <div className="flex items-center space-x-1.5 overflow-x-auto no-scrollbar w-full md:w-auto py-0.5">
+          <span className="text-[10px] uppercase tracking-wider text-slate-400 mr-1 flex items-center space-x-1 font-semibold shrink-0">
             <Filter className="h-3 w-3" />
-            <span>DISCIPLINES:</span>
+            <span>FILTER:</span>
           </span>
           {filterTabs.map((tab) => {
             const isSelected = selectedFilter === tab.value;
@@ -487,13 +460,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   setSelectedFilter(tab.value);
                   setActiveIndex(0);
                 }}
-                className={`px-3 py-1.5 rounded-lg border transition-all text-xs shrink-0 font-medium ${
+                className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border transition-all text-xs shrink-0 font-medium whitespace-nowrap ${
                   isSelected
-                    ? tab.highlight
-                      ? 'bg-amber-500 text-white border-amber-600 font-bold shadow-sm'
-                      : 'bg-blue-600 text-white border-blue-700 font-bold shadow-sm'
-                    : tab.highlight
-                    ? 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100 font-semibold'
+                    ? 'bg-blue-600 text-white border-blue-700 font-bold shadow-sm'
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
@@ -504,14 +473,14 @@ export default function StandaloneLightWebsiteCatalogPage() {
         </div>
 
         {/* Device Switcher HUD */}
-        <div className="flex items-center space-x-2 shrink-0">
-          <span className="text-[10px] text-slate-400 uppercase tracking-widest hidden md:inline font-semibold">
-            RESPONSIVE MOCKUP:
+        <div className="flex items-center justify-between md:justify-end space-x-2 shrink-0 pt-1.5 md:pt-0 border-t border-slate-100 md:border-t-0 w-full md:w-auto">
+          <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold shrink-0">
+            VIEW:
           </span>
-          <div className="flex items-center p-1 rounded-xl bg-slate-100 border border-slate-200">
+          <div className="flex items-center p-0.5 sm:p-1 rounded-xl bg-slate-100 border border-slate-200">
             <button
               onClick={() => setDeviceMode('trio')}
-              className={`flex items-center space-x-1.5 px-3 py-1 rounded-lg transition-all ${
+              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
                 deviceMode === 'trio'
                   ? 'bg-white text-blue-600 font-bold shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
@@ -519,67 +488,69 @@ export default function StandaloneLightWebsiteCatalogPage() {
               title="Tri-Device Studio Composition"
             >
               <Layers className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline text-[11px]">Trio Composition</span>
+              <span className="text-[10px] sm:text-[11px]">Trio</span>
             </button>
 
             <button
               onClick={() => setDeviceMode('macbook')}
-              className={`p-1.5 rounded-lg transition-all ${
+              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
                 deviceMode === 'macbook'
                   ? 'bg-white text-blue-600 font-bold shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
               title="MacBook Pro Mockup"
             >
-              <Laptop className="h-4 w-4" />
+              <Laptop className="h-3.5 w-3.5" />
+              <span className="text-[10px] sm:text-[11px]">Laptop</span>
             </button>
 
             <button
               onClick={() => setDeviceMode('ipad')}
-              className={`p-1.5 rounded-lg transition-all ${
+              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
                 deviceMode === 'ipad'
                   ? 'bg-white text-blue-600 font-bold shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
               title="iPad Pro Mockup"
             >
-              <Tablet className="h-4 w-4" />
+              <Tablet className="h-3.5 w-3.5" />
+              <span className="text-[10px] sm:text-[11px]">Tablet</span>
             </button>
 
             <button
               onClick={() => setDeviceMode('iphone')}
-              className={`p-1.5 rounded-lg transition-all ${
+              className={`flex items-center space-x-1 px-2 sm:px-2.5 py-1 rounded-lg transition-all ${
                 deviceMode === 'iphone'
                   ? 'bg-white text-blue-600 font-bold shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
               title="iPhone 16 Pro Mockup"
             >
-              <Smartphone className="h-4 w-4" />
+              <Smartphone className="h-3.5 w-3.5" />
+              <span className="text-[10px] sm:text-[11px]">Phone</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* ========================================================= */}
-      {/* 3. SHOWROOM DISPLAY: LIGHT-MODE EDITORIAL PEDESTAL */}
       {/* ========================================================= */}
-      <main className="flex-1 min-h-0 w-full px-4 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-between py-2 sm:py-3 lg:py-4 overflow-y-auto lg:overflow-visible">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center my-auto w-full">
+      <main className="flex-1 w-full px-3 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-between py-3 sm:py-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-14 items-center my-0 lg:my-auto w-full">
             {/* Left Column: Project Case Study Specs */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-3 sm:space-y-4">
               {/* Index & Category Stamp */}
-              <div className="flex items-center space-x-3 font-mono text-xs">
-                <span className="text-3xl font-black text-blue-600 font-display">
+              <div className="flex items-center space-x-2.5 sm:space-x-3 font-mono text-xs flex-wrap gap-y-1">
+                <span className="text-2xl sm:text-3xl font-black text-blue-600 font-display">
                   {activeProject.number}
                 </span>
-                <div className="h-5 w-px bg-slate-300" />
-                <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 uppercase text-[10px] tracking-wider">
+                <div className="h-4 sm:h-5 w-px bg-slate-300" />
+                <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 uppercase text-[9px] sm:text-[10px] tracking-wider">
                   {activeProject.category}
                 </span>
 
                 {activeProject.isCurrentlyBuilding && (
-                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-bold text-[10px] flex items-center space-x-1.5 shadow-2xs">
+                  <span className="px-2 py-0.5 rounded-full bg-amber-500 text-white font-bold text-[9px] sm:text-[10px] flex items-center space-x-1.5 shadow-2xs">
                     <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
                     <span>CURRENTLY BUILDING</span>
                   </span>
@@ -588,10 +559,10 @@ export default function StandaloneLightWebsiteCatalogPage() {
 
               {/* Title & Tagline */}
               <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 font-display leading-[1.1]">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-slate-900 font-display leading-[1.15]">
                   {activeProject.title}
                 </h1>
-                <p className="font-mono text-xs sm:text-sm text-blue-700 mt-1.5 font-semibold">
+                <p className="font-mono text-xs sm:text-sm text-blue-700 mt-1 font-semibold">
                   {activeProject.tagline}
                 </p>
               </div>
@@ -602,34 +573,34 @@ export default function StandaloneLightWebsiteCatalogPage() {
               </p>
 
               {/* Key Deliverables */}
-              <div className="space-y-2 py-1">
+              <div className="space-y-1.5 sm:space-y-2 py-0.5">
                 {activeProject.deliverables.map((item, ii) => (
-                  <div key={ii} className="flex items-center space-x-2.5 text-xs text-slate-700">
-                    <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0" />
-                    <span className="font-medium">{item}</span>
+                  <div key={ii} className="flex items-start space-x-2 text-xs text-slate-700">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 shrink-0 mt-0.5" />
+                    <span className="font-medium leading-snug">{item}</span>
                   </div>
                 ))}
               </div>
 
               {/* Compact Metrics & Tech Badges */}
-              <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 font-mono text-xs">
                 {activeProject.metrics.map((m, mi) => (
-                  <span key={mi} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold shadow-2xs text-[11px]">
-                    <strong className="text-slate-900">{m.value}</strong> <span className="text-slate-400 text-[10px]">{m.label}</span>
+                  <span key={mi} className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold shadow-2xs text-[10px] sm:text-[11px]">
+                    <strong className="text-slate-900">{m.value}</strong> <span className="text-slate-400 text-[9px] sm:text-[10px]">{m.label}</span>
                   </span>
                 ))}
                 {activeProject.techStack.slice(0, 3).map((tech, ti) => (
-                  <span key={ti} className="px-2 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-[10px] font-medium">
+                  <span key={ti} className="px-2 py-0.5 sm:py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-[9px] sm:text-[10px] font-medium">
                     {tech}
                   </span>
                 ))}
               </div>
 
               {/* CTAs */}
-              <div className="pt-2 flex items-center space-x-3 font-mono text-xs">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 font-mono text-xs w-full">
                 <button
                   onClick={() => setRfpModalOpen(true)}
-                  className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex items-center space-x-2 shadow-md shadow-blue-600/20"
+                  className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all flex items-center justify-center space-x-2 shadow-md shadow-blue-600/20"
                 >
                   <Send className="h-3.5 w-3.5" />
                   <span>Request Proposal</span>
@@ -640,7 +611,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     href={activeProject.mockUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold transition-colors flex items-center space-x-1.5 shadow-2xs"
+                    className="px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
                     title={`Visit ${activeProject.title} live website`}
                   >
                     <span>Visit Live Website</span>
@@ -649,7 +620,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                 ) : (
                   <button
                     onClick={() => setBlueprintModalOpen(true)}
-                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center space-x-1.5 shadow-2xs"
+                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center justify-center space-x-1.5 shadow-2xs"
                   >
                     <span>System Blueprint</span>
                     <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
@@ -659,117 +630,138 @@ export default function StandaloneLightWebsiteCatalogPage() {
             </div>
 
             {/* Right Column: REALISTIC LIGHT-MODE METALLIC DEVICE MOCKUP CANVAS */}
-            <div className="lg:col-span-7 flex justify-center items-center relative py-6">
+            <div className="lg:col-span-7 flex flex-col justify-center items-center relative py-2 sm:py-6 w-full overflow-hidden">
               {/* Soft Pedestal Shadow */}
-              <div className="absolute inset-x-12 bottom-6 h-12 bg-slate-400/20 blur-2xl rounded-full pointer-events-none" />
+              <div className="absolute inset-x-4 sm:inset-x-12 bottom-6 h-12 bg-slate-400/20 blur-2xl rounded-full pointer-events-none" />
 
               {/* ---------------------------------------------------- */}
               {/* OPTION A: TRI-DEVICE STUDIO COMPOSITION (Silver Metallic) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'trio' && (
-                <div className="relative w-full max-w-[680px] flex items-center justify-center py-4">
-                  {/* 1. Center: Silver MacBook Pro Mockup */}
-                  <div className="w-full max-w-[500px] z-10 transition-transform duration-500">
-                    <div className="rounded-t-2xl border-2 border-slate-300 bg-slate-100 shadow-2xl p-2.5 pb-0">
-                      {/* Top Camera Dot */}
-                      <div className="h-3 flex items-center justify-center mb-1">
-                        <div className="h-1.5 w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
-                      </div>
-                      {/* Browser Mock Screen */}
-                      <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-white border border-slate-200 shadow-inner">
-                        <img
-                          src={activeProject.imageSrc}
-                          alt={activeProject.title}
-                          className="w-full h-full object-cover object-top"
-                        />
-                        <div className="absolute top-0 inset-x-0 h-6 bg-slate-100/90 border-b border-slate-200 px-2 flex items-center justify-between text-[9px] font-mono text-slate-500 backdrop-blur-md">
-                          <div className="flex items-center space-x-1">
-                            <span className="h-1.5 w-1.5 rounded-full bg-rose-400 inline-block" />
-                            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 inline-block" />
-                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />
+                <div className="relative w-full max-w-[680px] flex flex-col items-center justify-center py-2 sm:py-4 px-1 sm:px-2">
+                  <div className="relative w-full flex items-center justify-center">
+                    {/* 1. Center: Silver MacBook Pro Mockup (Clickable) */}
+                    <div
+                      onClick={() => setDeviceMode('macbook')}
+                      className="w-full max-w-[280px] xs:max-w-[330px] sm:max-w-[440px] lg:max-w-[500px] z-10 transition-transform duration-300 cursor-pointer hover:scale-[1.01]"
+                      title="Click to focus on Laptop View"
+                    >
+                      <div className="rounded-t-xl sm:rounded-t-2xl border-2 border-slate-300 bg-slate-100 shadow-2xl p-1.5 sm:p-2.5 pb-0">
+                        {/* Top Camera Dot */}
+                        <div className="h-2 sm:h-3 flex items-center justify-center mb-1">
+                          <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
+                        </div>
+                        {/* Browser Mock Screen */}
+                        <div className="relative aspect-[16/10] rounded sm:rounded-lg overflow-hidden bg-white border border-slate-200 shadow-inner">
+                          <img
+                            src={activeProject.imageSrc}
+                            alt={activeProject.title}
+                            className="w-full h-full object-cover object-top"
+                          />
+                          <div className="absolute top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/90 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md">
+                            <div className="flex items-center space-x-1">
+                              <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-rose-400 inline-block" />
+                              <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
+                              <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-emerald-400 inline-block" />
+                            </div>
+                            <a
+                              href={activeProject.mockUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors max-w-[130px] sm:max-w-[180px] truncate"
+                              title="Visit website"
+                            >
+                              <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
+                              <span className="hover:underline truncate">{activeProject.mockUrl}</span>
+                              <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
+                            </a>
+                            <span className="text-[7px] sm:text-[8px] hidden sm:inline">Safari</span>
                           </div>
-                          <a
-                            href={activeProject.mockUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors"
-                            title="Visit website"
-                          >
-                            <Lock className="h-2.5 w-2.5 text-emerald-600" />
-                            <span className="hover:underline">{activeProject.mockUrl}</span>
-                            <ExternalLink className="h-2 w-2 text-slate-400" />
-                          </a>
-                          <span className="text-[8px]">Safari</span>
+                        </div>
+                      </div>
+                      {/* Aluminum Bottom Lip & Hinge */}
+                      <div className="h-2.5 sm:h-3.5 bg-gradient-to-b from-slate-200 to-slate-300 rounded-b-xl border-t border-slate-300 shadow-md relative flex items-center justify-center">
+                        <div className="h-0.5 sm:h-1 w-10 sm:w-14 bg-slate-400/80 rounded-b" />
+                      </div>
+                    </div>
+
+                    {/* 2. Left Foreground: Silver iPad Pro Mockup (Clickable to switch mode) */}
+                    <div
+                      onClick={() => setDeviceMode('ipad')}
+                      className="absolute left-0 sm:-left-4 md:-left-6 bottom-0 w-[76px] xs:w-[88px] sm:w-[150px] md:w-[190px] z-20 shadow-2xl transition-transform hover:scale-105 duration-300 cursor-pointer"
+                      title="Click to focus on iPad View"
+                    >
+                      <div className="rounded-xl sm:rounded-2xl border-2 border-slate-300 bg-slate-100 p-1 sm:p-2 shadow-2xl ring-1 ring-slate-200/50">
+                        <div className="relative aspect-[3/4] rounded-lg sm:rounded-xl overflow-hidden bg-white border border-slate-200">
+                          <img
+                            src={activeProject.tabletImageSrc || activeProject.imageSrc}
+                            alt="Tablet View"
+                            className="w-full h-full object-contain bg-slate-50 object-top"
+                          />
+                          <div className="absolute top-1 left-1 text-[6px] sm:text-[7px] font-mono text-slate-700 bg-white/95 px-1 py-0.5 rounded shadow-2xs border border-slate-200 font-semibold">
+                            iPad
+                          </div>
                         </div>
                       </div>
                     </div>
-                    {/* Aluminum Bottom Lip & Hinge */}
-                    <div className="h-3.5 bg-gradient-to-b from-slate-200 to-slate-300 rounded-b-xl border-t border-slate-300 shadow-md relative flex items-center justify-center">
-                      <div className="h-1 w-14 bg-slate-400/80 rounded-b" />
-                    </div>
-                  </div>
 
-                  {/* 2. Left Foreground: Silver iPad Pro Mockup */}
-                  <div className="absolute -left-2 sm:-left-6 bottom-0 w-[180px] sm:w-[220px] z-20 shadow-2xl transition-transform hover:scale-105 duration-300">
-                    <div className="rounded-2xl border-2 border-slate-300 bg-slate-100 p-2 shadow-2xl">
-                      <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-slate-200">
-                        <img
-                          src={activeProject.tabletImageSrc || activeProject.imageSrc}
-                          alt="Tablet View"
-                          className="w-full h-full object-contain bg-slate-50 object-top"
-                        />
-                        <div className="absolute top-1.5 left-1.5 text-[7px] font-mono text-slate-700 bg-white/95 px-1.5 py-0.5 rounded shadow-2xs border border-slate-200 font-semibold">
-                          iPad OS
+                    {/* 3. Right Foreground: Silver iPhone 16 Pro Mockup (Clickable to switch mode) */}
+                    <div
+                      onClick={() => setDeviceMode('iphone')}
+                      className="absolute right-0 sm:-right-2 md:-right-4 bottom-1 sm:bottom-4 w-[52px] xs:w-[60px] sm:w-[100px] md:w-[125px] z-30 shadow-2xl transition-transform hover:scale-105 duration-300 cursor-pointer"
+                      title="Click to focus on Phone View"
+                    >
+                      <div className="rounded-2xl sm:rounded-3xl border-2 border-slate-300 bg-slate-100 p-1 sm:p-1.5 shadow-2xl ring-1 ring-slate-200/50">
+                        <div className="relative aspect-[9/16] rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-slate-200">
+                          <img
+                            src={activeProject.mobileImageSrc || activeProject.imageSrc}
+                            alt="Mobile View"
+                            className="w-full h-full object-contain bg-slate-50 object-top"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* 3. Right Foreground: Silver iPhone 16 Pro Mockup */}
-                  <div className="absolute -right-2 sm:-right-4 bottom-4 w-[115px] sm:w-[135px] z-30 shadow-2xl transition-transform hover:scale-105 duration-300">
-                    <div className="rounded-3xl border-2 border-slate-300 bg-slate-100 p-1.5 shadow-2xl">
-                      <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-slate-200">
-                        <img
-                          src={activeProject.mobileImageSrc || activeProject.imageSrc}
-                          alt="Mobile View"
-                          className="w-full h-full object-contain bg-slate-50 object-top"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  {/* Tap Hint for Mobile */}
+                  <p className="text-[10px] text-slate-400 font-mono text-center mt-2.5 flex items-center justify-center space-x-1 sm:hidden">
+                    <Sparkles className="h-3 w-3 text-blue-500" />
+                    <span>Tap any device to focus full view</span>
+                  </p>
                 </div>
               )}
 
               {/* ---------------------------------------------------- */}
-              {/* OPTION B: SOLO SILVER MACBOOK PRO FOCUS (Full Scrollable) */}
+              {/* OPTION B: SOLO SILVER MACBOOK PRO FOCUS (Full Scrollable & Responsive) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'macbook' && (
-                <div className="w-full max-w-[640px] shadow-2xl">
-                  <div className="rounded-t-2xl border-2 border-slate-300 bg-slate-100 p-2.5 pb-0 shadow-2xl">
-                    <div className="h-3 flex items-center justify-center mb-1">
-                      <div className="h-1.5 w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
+                <div className="w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[540px] lg:max-w-[660px] shadow-2xl px-1 sm:px-2 mx-auto">
+                  <div className="rounded-t-xl sm:rounded-t-2xl border-2 border-slate-300 bg-slate-100 p-1.5 sm:p-2.5 pb-0 shadow-2xl">
+                    <div className="h-2.5 sm:h-3 flex items-center justify-center mb-1">
+                      <div className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                     </div>
                     {/* Browser Mock Screen with Scrollable Canvas */}
-                    <div className="relative aspect-[16/10] max-h-[460px] rounded-lg overflow-y-auto no-scrollbar bg-white border border-slate-200 shadow-inner group">
+                    <div className="relative h-[210px] xs:h-[250px] sm:h-[350px] lg:h-[430px] rounded sm:rounded-lg overflow-y-auto overscroll-contain no-scrollbar bg-white border border-slate-200 shadow-inner group">
                       {/* Sticky Top Safari Chrome */}
-                      <div className="sticky top-0 inset-x-0 h-6 bg-slate-100/95 border-b border-slate-200 px-2 flex items-center justify-between text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
+                      <div className="sticky top-0 inset-x-0 h-5 sm:h-6 bg-slate-100/95 border-b border-slate-200 px-1.5 sm:px-2 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
                         <div className="flex items-center space-x-1">
-                          <span className="h-1.5 w-1.5 rounded-full bg-rose-400 inline-block" />
-                          <span className="h-1.5 w-1.5 rounded-full bg-amber-400 inline-block" />
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />
+                          <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-rose-400 inline-block" />
+                          <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-amber-400 inline-block" />
+                          <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-emerald-400 inline-block" />
                         </div>
                         <a
                           href={activeProject.mockUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors"
+                          className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors max-w-[140px] xs:max-w-[180px] sm:max-w-none truncate"
                           title="Visit website"
                         >
-                          <Lock className="h-2.5 w-2.5 text-emerald-600" />
-                          <span className="hover:underline">{activeProject.mockUrl}</span>
-                          <ExternalLink className="h-2 w-2 text-slate-400" />
+                          <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
+                          <span className="hover:underline truncate">{activeProject.mockUrl}</span>
+                          <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                         </a>
-                        <span className="text-[8px] text-slate-400">Desktop View</span>
+                        <span className="text-[7px] sm:text-[8px] text-slate-400 hidden sm:inline">Desktop View</span>
                       </div>
                       <img
                         src={activeProject.imageSrc}
@@ -778,8 +770,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
                       />
                     </div>
                   </div>
-                  <div className="h-4 bg-gradient-to-b from-slate-200 to-slate-300 rounded-b-2xl border-t border-slate-300 shadow-lg flex items-center justify-center">
-                    <div className="h-1.5 w-20 bg-slate-400/80 rounded-b" />
+                  <div className="h-3 sm:h-4 bg-gradient-to-b from-slate-200 to-slate-300 rounded-b-xl sm:rounded-b-2xl border-t border-slate-300 shadow-lg flex items-center justify-center">
+                    <div className="h-1 sm:h-1.5 w-14 sm:w-20 bg-slate-400/80 rounded-b" />
                   </div>
                 </div>
               )}
@@ -788,30 +780,30 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* OPTION C: SOLO SILVER IPAD PRO FOCUS (Full Scrollable & Legible) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'ipad' && (
-                <div className="w-full max-w-[560px] shadow-2xl">
-                  <div className="rounded-3xl border-2 border-slate-300 bg-slate-100 p-3 shadow-2xl">
+                <div className="w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[480px] lg:max-w-[540px] shadow-2xl px-1 sm:px-2 mx-auto">
+                  <div className="rounded-2xl sm:rounded-3xl border-2 border-slate-300 bg-slate-100 p-2 sm:p-3 shadow-2xl">
                     {/* iPadOS Header Bar */}
-                    <div className="flex items-center justify-between px-2 py-1 mb-1 text-[10px] font-mono text-slate-600">
-                      <div className="flex items-center space-x-1.5">
+                    <div className="flex items-center justify-between px-1.5 sm:px-2 py-1 mb-1 text-[9px] sm:text-[10px] font-mono text-slate-600">
+                      <div className="flex items-center space-x-1">
                         <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-                        <span className="font-semibold text-slate-700">iPad Pro 12.9"</span>
+                        <span className="font-semibold text-slate-700">iPad Pro</span>
                       </div>
                       <a
                         href={activeProject.mockUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2.5 py-0.5 rounded-full border border-slate-200 text-slate-700 shadow-2xs text-[9px] transition-colors"
+                        className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200 text-slate-700 shadow-2xs text-[8px] sm:text-[9px] transition-colors max-w-[140px] xs:max-w-[170px] truncate"
                         title="Visit website"
                       >
-                        <Lock className="h-2.5 w-2.5 text-emerald-600" />
-                        <span className="truncate max-w-[200px] hover:underline">{activeProject.mockUrl}</span>
-                        <ExternalLink className="h-2 w-2 text-slate-400" />
+                        <Lock className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-emerald-600 shrink-0" />
+                        <span className="truncate hover:underline">{activeProject.mockUrl}</span>
+                        <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                       </a>
-                      <span className="text-[9px] text-slate-400 font-medium">Scrollable UI</span>
+                      <span className="text-[8px] sm:text-[9px] text-slate-400 font-medium">Scrollable</span>
                     </div>
 
-                    {/* Scrollable iPad Screen - 100% Width so zero text is cropped */}
-                    <div className="relative h-[480px] sm:h-[540px] rounded-2xl overflow-y-auto no-scrollbar bg-white border border-slate-200 shadow-inner">
+                    {/* Scrollable iPad Screen */}
+                    <div className="relative h-[340px] xs:h-[390px] sm:h-[460px] lg:h-[520px] rounded-xl sm:rounded-2xl overflow-y-auto overscroll-contain no-scrollbar bg-white border border-slate-200 shadow-inner">
                       <img
                         src={activeProject.tabletImageSrc || activeProject.imageSrc}
                         alt={activeProject.title}
@@ -820,8 +812,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     </div>
 
                     {/* Bottom Aluminum Chin Indicator */}
-                    <div className="h-2.5 flex items-center justify-center pt-1">
-                      <div className="h-1 w-24 bg-slate-300 rounded-full" />
+                    <div className="h-2 flex items-center justify-center pt-1">
+                      <div className="h-0.5 sm:h-1 w-16 sm:w-24 bg-slate-300 rounded-full" />
                     </div>
                   </div>
                 </div>
@@ -831,17 +823,17 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* OPTION D: SOLO IPHONE 16 PRO FOCUS (Full Scrollable & Legible) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'iphone' && (
-                <div className="w-full max-w-[320px] sm:max-w-[340px] shadow-2xl">
-                  <div className="rounded-[44px] border-4 border-slate-300 bg-slate-100 p-2.5 shadow-2xl">
-                    {/* iPhone Top Status Bar - Placed in bezel so screen content is NOT blocked */}
-                    <div className="h-6 flex items-center justify-between px-3 mb-1 text-[10px] font-mono text-slate-700 font-bold">
+                <div className="w-full max-w-[280px] xs:max-w-[305px] sm:max-w-[325px] lg:max-w-[340px] shadow-2xl px-1 sm:px-2 mx-auto">
+                  <div className="rounded-[36px] sm:rounded-[44px] border-4 border-slate-300 bg-slate-100 p-2 sm:p-2.5 shadow-2xl">
+                    {/* iPhone Top Status Bar */}
+                    <div className="h-5 sm:h-6 flex items-center justify-between px-2.5 sm:px-3 mb-1 text-[9px] sm:text-[10px] font-mono text-slate-700 font-bold">
                       <span>9:41</span>
-                      <div className="h-3 w-16 bg-slate-900 rounded-full" />
-                      <span className="text-[9px]">5G</span>
+                      <div className="h-2.5 sm:h-3 w-12 sm:w-16 bg-slate-900 rounded-full" />
+                      <span className="text-[8px] sm:text-[9px]">5G</span>
                     </div>
 
-                    {/* Scrollable iPhone Screen - 100% Width so zero text is cropped */}
-                    <div className="relative h-[520px] sm:h-[560px] rounded-[30px] overflow-y-auto no-scrollbar bg-white border border-slate-200 shadow-inner">
+                    {/* Scrollable iPhone Screen */}
+                    <div className="relative h-[390px] xs:h-[430px] sm:h-[480px] lg:h-[540px] rounded-[24px] sm:rounded-[30px] overflow-y-auto overscroll-contain no-scrollbar bg-white border border-slate-200 shadow-inner">
                       <img
                         src={activeProject.mobileImageSrc || activeProject.imageSrc}
                         alt={activeProject.title}
@@ -850,8 +842,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     </div>
 
                     {/* iPhone Bottom Home Indicator Bar */}
-                    <div className="h-2.5 flex items-center justify-center pt-1">
-                      <div className="h-1 w-24 bg-slate-400 rounded-full" />
+                    <div className="h-2 flex items-center justify-center pt-1">
+                      <div className="h-0.5 sm:h-1 w-16 sm:w-24 bg-slate-400 rounded-full" />
                     </div>
                   </div>
                 </div>
@@ -859,37 +851,39 @@ export default function StandaloneLightWebsiteCatalogPage() {
             </div>
           </div>
 
-          {/* Bottom Filmstrip Carousel Navigation - FULL WIDTH */}
-          <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col xl:flex-row items-center gap-3 font-mono text-xs w-full">
-            <div className="flex items-center space-x-2 shrink-0">
-              <button
-                onClick={handlePrev}
-                className="p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 transition-colors shadow-sm"
-                title="Previous Project"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 transition-colors shadow-sm"
-                title="Next Project"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-              <span className="text-slate-500 px-1 font-medium whitespace-nowrap">
-                {activeProject.number} / {filteredProjects.length}
+          {/* Bottom Filmstrip Carousel Navigation - FULLY RESPONSIVE */}
+          <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-200 flex flex-col lg:flex-row items-center gap-2.5 sm:gap-3 font-mono text-xs w-full">
+            <div className="flex items-center justify-between w-full lg:w-auto space-x-2 shrink-0">
+              <div className="flex items-center space-x-1.5">
+                <button
+                  onClick={handlePrev}
+                  className="p-2 sm:p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 transition-colors shadow-sm"
+                  title="Previous Project"
+                >
+                  <ChevronLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="p-2 sm:p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 transition-colors shadow-sm"
+                  title="Next Project"
+                >
+                  <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                </button>
+              </div>
+              <span className="text-slate-500 px-1 font-medium whitespace-nowrap text-[11px] sm:text-xs">
+                PROJECT {activeProject.number} OF {filteredProjects.length}
               </span>
             </div>
 
-            {/* Thumbnail Quick Selector Strip - FULL WIDTH RESPONSIVE GRID */}
-            <div className="w-full flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            {/* Thumbnail Quick Selector Strip - Smooth horizontal scroll on mobile, flex auto-distribution on desktop */}
+            <div className="w-full flex-1 flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1">
               {filteredProjects.map((p, idx) => {
                 const isCurrent = idx === activeIndex;
                 return (
                   <button
                     key={p.id}
                     onClick={() => setActiveIndex(idx)}
-                    className={`h-11 px-3 rounded-xl border flex items-center justify-center space-x-2 transition-all font-medium w-full text-center ${
+                    className={`h-9 sm:h-11 px-2.5 sm:px-3 rounded-xl border flex items-center justify-center space-x-1.5 transition-all font-medium shrink-0 lg:flex-1 text-center ${
                       isCurrent
                         ? p.isCurrentlyBuilding
                           ? 'bg-amber-500 text-white border-amber-600 shadow-sm ring-2 ring-amber-400/30'
@@ -897,10 +891,10 @@ export default function StandaloneLightWebsiteCatalogPage() {
                         : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300'
                     }`}
                   >
-                    <span className={`text-[11px] font-bold shrink-0 ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
+                    <span className={`text-[10px] sm:text-[11px] font-bold shrink-0 ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
                       {p.number}
                     </span>
-                    <span className="text-xs font-semibold truncate">
+                    <span className="text-[11px] sm:text-xs font-semibold whitespace-nowrap lg:truncate">
                       {p.title}
                     </span>
                     {p.isCurrentlyBuilding && (
@@ -916,19 +910,19 @@ export default function StandaloneLightWebsiteCatalogPage() {
       {/* ========================================================= */}
       {/* 5. STANDALONE LIGHT-MODE CLIENT SHOWCASE FOOTER */}
       {/* ========================================================= */}
-      <footer className="h-10 border-t border-slate-200/90 bg-white/95 px-4 sm:px-8 lg:px-12 shrink-0 font-sans flex items-center justify-between text-[11px] font-mono text-slate-500">
-        <div className="flex items-center space-x-3">
+      <footer className="min-h-[44px] py-2 border-t border-slate-200/90 bg-white/95 px-3 sm:px-8 lg:px-12 shrink-0 font-sans flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-500 gap-1 sm:gap-0">
+        <div className="flex items-center space-x-2 sm:space-x-3 flex-wrap justify-center sm:justify-start">
           <span className="font-extrabold text-slate-900 font-display text-xs">ARCANUM SHOWCASE</span>
-          <span className="text-slate-300">•</span>
+          <span className="text-slate-300 hidden sm:inline">•</span>
           <a href="mailto:info@arcanum.ae" className="text-blue-600 hover:underline">info@arcanum.ae</a>
           <span className="text-slate-300">•</span>
           <span>+971 4 397 5002</span>
           <span className="hidden md:inline text-slate-300">•</span>
           <span className="hidden md:inline">Dubai, UAE</span>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <span className="hidden sm:inline">© {new Date().getFullYear()} Arcanum Information Technology</span>
-          <span className="text-slate-300">•</span>
+          <span className="text-slate-300 hidden sm:inline">•</span>
           <span className="text-blue-600 font-semibold">Independent Systems Catalog</span>
         </div>
       </footer>
@@ -951,7 +945,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-2xl rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl z-10 space-y-6 max-h-[90vh] overflow-y-auto text-slate-900"
+              className="relative w-full max-w-2xl rounded-2xl sm:rounded-3xl bg-white border border-slate-200 p-4 sm:p-8 shadow-2xl z-10 space-y-5 sm:space-y-6 max-h-[88vh] overflow-y-auto text-slate-900"
             >
               <div className="flex items-start justify-between border-b border-slate-100 pb-4">
                 <div>
@@ -1052,7 +1046,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-lg rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl z-10 space-y-5 text-slate-900"
+              className="relative w-full max-w-lg rounded-2xl sm:rounded-3xl bg-white border border-slate-200 p-4 sm:p-8 shadow-2xl z-10 space-y-4 sm:space-y-5 text-slate-900 max-h-[88vh] overflow-y-auto"
             >
               <div className="flex items-start justify-between border-b border-slate-100 pb-4">
                 <div>
