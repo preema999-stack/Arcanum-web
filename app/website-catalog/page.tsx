@@ -57,6 +57,7 @@ export interface ClientCaseStudy {
   imageSrc: string;
   tabletImageSrc?: string;
   mobileImageSrc?: string;
+  videoSrc?: string;
   mockUrl: string;
   deliverables: string[];
   techStack: string[];
@@ -209,28 +210,29 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'gibran-dining',
     number: '05',
-    title: 'Gibran & Co. Fine Dining',
-    client: 'Gibran & Co. Hospitality (Dubai & UAE)',
+    title: 'Gibran & Co.',
+    client: 'Gibran & Co. Fine Dining (Bahrain, Abu Dhabi & Beirut)',
     category: 'Websites',
     subcategory: 'Websites',
     year: '2026',
-    tagline: 'Unhurried Dining, Levantine Craft & Thoughtful Hospitality',
+    tagline: 'More Than Just a Meal — Good Food, Good Vibes, Great Company',
     summary:
-      'An immersive digital culinary experience showcasing Gibran & Co.’s seasonal farm-to-table menus, artisanal Levantine craft, private dining halls, and real-time online guest reservations.',
+      'A sanctuary where beautiful food, thoughtful design, and warm hospitality come together to create unforgettable moments. Featuring authentic Levantine culinary craft, charcoal stone ovens, unhurried dining, tailored cellar wine pairings, and bespoke table reservations across Bahrain, Abu Dhabi & Beirut.',
     imageSrc: '/gibran_desktop.png',
     tabletImageSrc: '/gibran_tablet.jpg',
     mobileImageSrc: '/gibran_mobile.jpg',
+    videoSrc: '/gibraaan.mp4',
     mockUrl: 'https://gibran.ae',
     deliverables: [
-      'Cinematic Culinary Storytelling & Interactive Seasonal Menu',
-      'Real-Time Table Reservation & Private Dining Concierge Engine',
-      'High-Performance Visual Artistry & VIP Guest Booking Portal',
+      'Interactive Table Reservation & Sanctuary Guest Booking Engine',
+      'Dynamic Culinary Storytelling: Charcoal, Vine Cuttings & Stone Oven Craft',
+      'Tailored Cellar Wine Pairings & Seasonal Course Showcase',
     ],
-    techStack: ['Next.js 14', 'Framer Motion', 'PostgreSQL', 'Stripe / POS Sync'],
+    techStack: ['Next.js 14', 'Framer Motion', 'Tailwind / CSS', 'PostgreSQL'],
     metrics: [
-      { label: 'ESTABLISHED', value: '2018' },
-      { label: 'RESERVATIONS', value: 'Instant Confirm' },
-      { label: 'CUISINE', value: 'Levantine Craft' },
+      { label: 'EXPERIENCE', value: '12 Years' },
+      { label: 'SEASONAL', value: '40+ Dishes' },
+      { label: 'CELLAR', value: '18 Reserves' },
     ],
     liveStatus: 'Live Production Website',
     architecture: {
