@@ -176,28 +176,28 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'capco-parts',
     number: '04',
-    title: 'Central Auto Parts Co. (CAPCO)',
-    client: 'Central Auto Parts Co. LLC (Abu Dhabi & UAE)',
+    title: 'Central Auto Parts',
+    client: 'Central Auto Parts Co. LLC (Est. 1975 • Abu Dhabi, UAE)',
     category: 'Websites',
     subcategory: 'Websites',
     year: '2026',
-    tagline: 'European Truck & Commercial Trailer Spare Parts Since 1975',
+    tagline: 'Trusted European Truck Spare Parts Since 1975.',
     summary:
-      'Premier UAE distributor of genuine and aftermarket European commercial vehicle spare parts (Mercedes-Benz, Volvo, Scania, MAN, BPW), supplying fleet operators, workshops, and regional dealers across UAE, GCC, and East Africa for over 50 years.',
+      'Supplying genuine & aftermarket European truck and trailer parts across UAE, GCC and Africa — with five decades of distribution expertise.',
     imageSrc: '/capco_desktop.jpg',
     tabletImageSrc: '/capco_tablet.jpg',
-    mobileImageSrc: '/capco_mobile.jpg',
+    mobileImageSrc: '/capco_mobile.png',
     mockUrl: 'https://capcollc.ae',
     deliverables: [
-      '5,000+ SKU OEM & Aftermarket Commercial Truck Parts Catalog',
-      'Multi-Branch UAE Warehouse Inventory & Quotation Dispatch',
-      'Direct European Supply Line & Cross-Border GCC Logistics',
+      '5,000+ Product SKUs for European Commercial Trucks & Trailers',
+      'Direct Head Office Dispatch & Quote Engine (02 555 6900)',
+      'Cross-Border GCC & Africa Logistics (Import • Export • Distribution)',
     ],
     techStack: ['Next.js 14', 'PostgreSQL', 'Algolia Search', 'Tailwind / CSS'],
     metrics: [
-      { label: 'HERITAGE', value: 'Est. 1975' },
-      { label: 'CATALOG', value: '5,000+ SKUs' },
-      { label: 'NETWORK', value: 'UAE & GCC' },
+      { label: 'YEARS TRUST', value: '50+' },
+      { label: 'PRODUCT SKUS', value: '5,000+' },
+      { label: 'GLOBAL BRANDS', value: '100+' },
     ],
     liveStatus: 'Live Production Website',
     architecture: {
@@ -243,37 +243,37 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     },
   },
   {
-    id: 'platinum-fleet',
+    id: 'platinum-dining',
     number: '06',
-    title: 'Platinum Luxury Concierge & Fleet',
-    client: 'Platinum Luxury Group (Dubai, UAE)',
+    title: 'Platinum Restaurant & Lounge',
+    client: 'Platinum Restaurant & Hospitality (Dubai, UAE)',
     category: 'Websites',
     subcategory: 'Websites',
     year: '2026',
-    tagline: 'The Art of Uncompromising Luxury & Supercar Concierge',
+    tagline: 'Haute Gastronomy Meets Modern Luxury & VIP Lounge Ambiance',
     summary:
-      'Dubai’s most prestigious exotic supercar collection and bespoke VIP chauffeur concierge service, featuring instant availability tracking, VIP airport apron delivery, and yacht charter reservations.',
+      'An extraordinary neo-fusion culinary experience and immersive lounge ambiance in the heart of Dubai, featuring artfully curated tasting menus, artisanal mixology, and real-time VIP table reservations.',
     imageSrc: '/platinum_desktop.jpg',
     tabletImageSrc: '/platinum_tablet.jpg',
     mobileImageSrc: '/platinum_mobile.jpg',
     mockUrl: 'https://platinum.ae',
     deliverables: [
-      'Real-Time Exotic Supercar & Limousine Fleet Availability Engine',
-      'Bespoke VIP Chauffeur Booking with Flight Tracker Integration',
-      'Dark-Mode Luxury Aesthetic with Instant White-Glove WhatsApp Concierge',
+      'Interactive Neo-Fusion A La Carte & Chef Tasting Digital Menus',
+      'Real-Time VIP Table, Chef Table & Private Dining Booking Engine',
+      'Artisanal Mixology, Sommelier Cellar & Exclusive Nightlife Showcase',
     ],
-    techStack: ['Next.js 14', 'TypeScript', 'Tailwind / CSS', 'PostgreSQL'],
+    techStack: ['Next.js 14', 'PostgreSQL', 'Tailwind / CSS', 'Stripe'],
     metrics: [
-      { label: 'EXOTIC FLEET', value: '80+ Supercars' },
-      { label: 'AIRPORT SLA', value: '< 30 Mins' },
-      { label: 'CONCIERGE', value: '24/7 Dedicated' },
+      { label: 'CUISINE', value: 'Neo-Fusion' },
+      { label: 'BOOKINGS', value: 'Instant VIP' },
+      { label: 'AMBIANCE', value: 'Fine Dining' },
     ],
     liveStatus: 'Live Production Website',
     architecture: {
-      runtime: 'Next.js 14 Edge Runtime with Multi-Region CDN',
-      database: 'PostgreSQL with Real-Time Vehicle Schedule Matrix',
-      security: 'Identity Document Verification & Tokenized Security Deposits',
-      scalability: 'Ultra-Fast Sub-Second Page Loads for VIP High-Net-Worth Visitors',
+      runtime: 'Next.js 14 Edge Runtime & High-Performance Media Pipeline',
+      database: 'PostgreSQL with Real-Time Table & Seating Area Allocation',
+      security: 'PCI-DSS Tokenized Deposits & Encrypted VIP Guest Verification',
+      scalability: 'Sub-Second Global Cloud Routing for Media-Rich Culinary Assets',
     },
   },
   {
@@ -421,6 +421,8 @@ export default function StandaloneLightWebsiteCatalogPage() {
   const [rmsSubFilter, setRmsSubFilter] = useState<'All' | 'RMS' | 'POS'>('All');
   const [rfpModalOpen, setRfpModalOpen] = useState(false);
   const [blueprintModalOpen, setBlueprintModalOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxView, setLightboxView] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
 
   // Force Pure Light Mode on Body while in website-catalog
   React.useEffect(() => {
@@ -774,16 +776,16 @@ export default function StandaloneLightWebsiteCatalogPage() {
               </div>
 
               {/* Summary */}
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans font-normal">
+              <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-sans font-medium">
                 {activeProject.summary}
               </p>
 
               {/* Key Deliverables */}
               <div className="space-y-1.5 sm:space-y-2 py-0.5">
                 {activeProject.deliverables.map((item, ii) => (
-                  <div key={ii} className="flex items-start space-x-2 text-xs text-slate-700">
+                  <div key={ii} className="flex items-start space-x-2 text-xs text-slate-800">
                     <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 shrink-0 mt-0.5" />
-                    <span className="font-medium leading-snug">{item}</span>
+                    <span className="font-semibold leading-snug">{item}</span>
                   </div>
                 ))}
               </div>
@@ -791,12 +793,13 @@ export default function StandaloneLightWebsiteCatalogPage() {
               {/* Compact Metrics & Tech Badges */}
               <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 font-mono text-xs">
                 {activeProject.metrics.map((m, mi) => (
-                  <span key={mi} className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold shadow-2xs text-[10px] sm:text-[11px]">
-                    <strong className="text-slate-900">{m.value}</strong> <span className="text-slate-400 text-[9px] sm:text-[10px]">{m.label}</span>
+                  <span key={mi} className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg bg-white border border-slate-300 text-slate-800 font-bold shadow-2xs text-[10px] sm:text-[11px] flex items-center space-x-1.5">
+                    <strong className="text-slate-900 font-black">{m.value}</strong>
+                    <span className="text-slate-600 font-bold text-[9px] sm:text-[10px] uppercase tracking-wide">{m.label}</span>
                   </span>
                 ))}
                 {activeProject.techStack.slice(0, 3).map((tech, ti) => (
-                  <span key={ti} className="px-2 py-0.5 sm:py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-[9px] sm:text-[10px] font-medium">
+                  <span key={ti} className="px-2 py-0.5 sm:py-1 rounded-lg bg-slate-100 border border-slate-300 text-slate-800 text-[9px] sm:text-[10px] font-semibold">
                     {tech}
                   </span>
                 ))}
@@ -895,14 +898,26 @@ export default function StandaloneLightWebsiteCatalogPage() {
                               <span className="hover:underline truncate">{activeProject.mockUrl}</span>
                               <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                             </a>
-                            {activeProject.videoSrc ? (
-                              <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold hidden sm:inline flex items-center space-x-0.5">
-                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                <span>Live Video</span>
-                              </span>
-                            ) : (
-                              <span className="text-[7px] sm:text-[8px] hidden sm:inline">Safari</span>
-                            )}
+                            <div className="flex items-center space-x-1 sm:space-x-1.5">
+                              {activeProject.videoSrc && (
+                                <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold hidden sm:inline flex items-center space-x-0.5">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                  <span>Live Video</span>
+                                </span>
+                              )}
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setLightboxView('desktop');
+                                  setLightboxOpen(true);
+                                }}
+                                className="text-[7px] sm:text-[8px] text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-0.5 sm:space-x-1 bg-white hover:bg-slate-50 px-1 sm:px-1.5 py-0.5 rounded border border-slate-200 transition-colors shadow-2xs"
+                                title="Inspect high-resolution view"
+                              >
+                                <Maximize2 className="h-2 w-2 text-blue-600" />
+                                <span className="hidden xs:inline">Inspect HD</span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -987,14 +1002,25 @@ export default function StandaloneLightWebsiteCatalogPage() {
                           <span className="hover:underline truncate">{activeProject.mockUrl}</span>
                           <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                         </a>
-                        {activeProject.videoSrc ? (
-                          <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold flex items-center space-x-1">
-                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span>Video Walkthrough</span>
-                          </span>
-                        ) : (
-                          <span className="text-[7px] sm:text-[8px] text-slate-400 hidden sm:inline">Desktop View</span>
-                        )}
+                        <div className="flex items-center space-x-1.5">
+                          {activeProject.videoSrc && (
+                            <span className="text-[7px] sm:text-[8px] text-emerald-600 font-bold flex items-center space-x-1">
+                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                              <span>Video Walkthrough</span>
+                            </span>
+                          )}
+                          <button
+                            onClick={() => {
+                              setLightboxView('desktop');
+                              setLightboxOpen(true);
+                            }}
+                            className="text-[7px] sm:text-[8px] text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-1 bg-white hover:bg-slate-50 px-1.5 sm:px-2 py-0.5 rounded border border-slate-200 transition-colors shadow-2xs"
+                            title="Inspect high-resolution desktop view"
+                          >
+                            <Maximize2 className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-blue-600" />
+                            <span>Inspect HD</span>
+                          </button>
+                        </div>
                       </div>
                       {activeProject.videoSrc ? (
                         <video
@@ -1046,7 +1072,17 @@ export default function StandaloneLightWebsiteCatalogPage() {
                         <span className="truncate hover:underline">{activeProject.mockUrl}</span>
                         <ExternalLink className="h-2 w-2 text-slate-400 shrink-0" />
                       </a>
-                      <span className="text-[8px] sm:text-[9px] text-slate-400 font-medium">Scrollable</span>
+                      <button
+                        onClick={() => {
+                          setLightboxView('tablet');
+                          setLightboxOpen(true);
+                        }}
+                        className="text-[8px] sm:text-[9px] text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200 transition-colors shadow-2xs"
+                        title="Inspect high-resolution tablet view"
+                      >
+                        <Maximize2 className="h-2.5 w-2.5 text-blue-600" />
+                        <span>Inspect HD</span>
+                      </button>
                     </div>
 
                     {/* Scrollable iPad Screen */}
@@ -1076,7 +1112,20 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     <div className="h-5 sm:h-6 flex items-center justify-between px-2.5 sm:px-3 mb-1 text-[9px] sm:text-[10px] font-mono text-slate-700 font-bold">
                       <span>9:41</span>
                       <div className="h-2.5 sm:h-3 w-12 sm:w-16 bg-slate-900 rounded-full" />
-                      <span className="text-[8px] sm:text-[9px]">5G</span>
+                      <div className="flex items-center space-x-1.5">
+                        <span className="text-[8px] sm:text-[9px]">5G</span>
+                        <button
+                          onClick={() => {
+                            setLightboxView('mobile');
+                            setLightboxOpen(true);
+                          }}
+                          className="text-[8px] sm:text-[9px] text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-0.5 bg-white hover:bg-slate-50 px-1.5 py-0.5 rounded-full border border-slate-200 transition-colors shadow-2xs"
+                          title="Inspect high-resolution mobile view"
+                        >
+                          <Maximize2 className="h-2 w-2 text-blue-600" />
+                          <span>HD</span>
+                        </button>
+                      </div>
                     </div>
 
                     {/* Scrollable iPhone Screen */}
@@ -1117,7 +1166,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </button>
               </div>
-              <span className="text-slate-500 px-1 font-medium whitespace-nowrap text-[11px] sm:text-xs">
+              <span className="text-slate-700 px-1 font-bold whitespace-nowrap text-[11px] sm:text-xs">
                 PROJECT {activeProject.number} OF {filteredProjects.length}
               </span>
             </div>
@@ -1130,7 +1179,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <button
                     key={p.id}
                     onClick={() => setActiveIndex(idx)}
-                    className={`h-9 sm:h-11 px-2.5 sm:px-3 rounded-xl border flex items-center justify-center space-x-1.5 transition-all font-medium shrink-0 lg:flex-1 text-center ${
+                    className={`h-9 sm:h-11 px-2.5 sm:px-3 rounded-xl border flex items-center justify-center space-x-1.5 transition-all font-medium shrink-0 text-center ${
                       isCurrent
                         ? p.isCurrentlyBuilding
                           ? 'bg-amber-500 text-white border-amber-600 shadow-sm ring-2 ring-amber-400/30'
@@ -1141,7 +1190,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
                     <span className={`text-[10px] sm:text-[11px] font-bold shrink-0 ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
                       {p.number}
                     </span>
-                    <span className="text-[11px] sm:text-xs font-semibold whitespace-nowrap lg:truncate">
+                    <span className="text-[11px] sm:text-xs font-semibold whitespace-nowrap">
                       {p.title}
                     </span>
                     {p.isCurrentlyBuilding && (
@@ -1411,6 +1460,142 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   </div>
                 </form>
               )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ========================================================= */}
+      {/* 6. HIGH-RESOLUTION ZOOM / LIGHTBOX INSPECTOR MODAL */}
+      {/* ========================================================= */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-slate-950/80 backdrop-blur-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="relative w-full max-w-6xl max-h-[92vh] bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl overflow-hidden flex flex-col"
+            >
+              {/* Modal Top Header */}
+              <div className="px-3 sm:px-6 py-3 border-b border-slate-200 bg-slate-50/90 backdrop-blur-md flex items-center justify-between gap-2 shrink-0">
+                <div className="flex items-center space-x-2.5 min-w-0">
+                  <div className="h-2 sm:h-2.5 w-2 sm:w-2.5 rounded-full bg-blue-600 shrink-0" />
+                  <span className="font-extrabold text-sm sm:text-base text-slate-900 font-display truncate">
+                    {activeProject.title}
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200 hidden sm:inline shrink-0">
+                    HD INSPECTOR
+                  </span>
+                </div>
+
+                {/* Device Selector Tabs */}
+                <div className="flex items-center space-x-1 bg-white p-1 rounded-xl border border-slate-200 shadow-2xs font-mono text-xs">
+                  <button
+                    onClick={() => setLightboxView('desktop')}
+                    className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
+                      lightboxView === 'desktop'
+                        ? 'bg-blue-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Laptop className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">Desktop</span>
+                  </button>
+                  <button
+                    onClick={() => setLightboxView('tablet')}
+                    className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
+                      lightboxView === 'tablet'
+                        ? 'bg-blue-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Tablet className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">Tablet</span>
+                  </button>
+                  <button
+                    onClick={() => setLightboxView('mobile')}
+                    className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-all font-semibold ${
+                      lightboxView === 'mobile'
+                        ? 'bg-blue-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Smartphone className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">Mobile</span>
+                  </button>
+                </div>
+
+                {/* Close Button */}
+                <div className="flex items-center space-x-2">
+                  <a
+                    href={activeProject.mockUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 sm:px-2.5 sm:py-1 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-mono font-medium flex items-center space-x-1 shadow-2xs"
+                    title="Open live URL"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5 text-blue-600" />
+                    <span className="hidden md:inline">Open Site</span>
+                  </a>
+                  <button
+                    onClick={() => setLightboxOpen(false)}
+                    className="p-1.5 sm:p-2 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-slate-700 transition-colors"
+                    title="Close Inspector"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Scrollable Content Canvas */}
+              <div className="flex-1 overflow-y-auto overscroll-contain p-3 sm:p-6 bg-slate-100/60 flex items-start justify-center">
+                {lightboxView === 'desktop' && (
+                  <div className="w-full max-w-5xl bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden">
+                    <div className="h-6 bg-slate-100 border-b border-slate-200 px-3 flex items-center space-x-1.5">
+                      <span className="h-2 w-2 rounded-full bg-rose-400" />
+                      <span className="h-2 w-2 rounded-full bg-amber-400" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                      <span className="text-[10px] font-mono text-slate-500 ml-2">{activeProject.mockUrl}</span>
+                    </div>
+                    {activeProject.videoSrc ? (
+                      <video
+                        src={activeProject.videoSrc}
+                        controls
+                        autoPlay
+                        loop
+                        className="w-full h-auto block"
+                      />
+                    ) : (
+                      <img
+                        src={activeProject.imageSrc}
+                        alt={activeProject.title}
+                        className="w-full h-auto block object-top"
+                      />
+                    )}
+                  </div>
+                )}
+
+                {lightboxView === 'tablet' && (
+                  <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl border-2 border-slate-300 overflow-hidden p-2 bg-slate-50">
+                    <img
+                      src={activeProject.tabletImageSrc || activeProject.imageSrc}
+                      alt={`${activeProject.title} Tablet`}
+                      className="w-full h-auto block rounded-xl border border-slate-200 object-top"
+                    />
+                  </div>
+                )}
+
+                {lightboxView === 'mobile' && (
+                  <div className="w-full max-w-sm bg-white rounded-[32px] shadow-xl border-4 border-slate-300 overflow-hidden p-2 bg-slate-50">
+                    <img
+                      src={activeProject.mobileImageSrc || activeProject.imageSrc}
+                      alt={`${activeProject.title} Mobile`}
+                      className="w-full h-auto block rounded-[24px] border border-slate-200 object-top"
+                    />
+                  </div>
+                )}
+              </div>
             </motion.div>
           </div>
         )}
