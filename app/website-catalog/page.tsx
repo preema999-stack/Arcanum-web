@@ -138,33 +138,35 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'emirates-drug-store',
     number: '03',
-    title: 'Emirates Drug Store',
-    client: 'Emirates Drug Store / UAE Healthcare & Pharmacy Distributors',
+    title: 'Emirates Drugs Store',
+    client: 'Emirates Drugs Store LLC (Ajman, UAE)',
     category: 'Pharma Supply Chain & Healthcare',
     year: '2026',
-    tagline: 'Pharmaceutical Supply Chain & B2B Portal',
+    tagline: 'Connecting Global Pharmaceutical Innovators with UAE Healthcare',
     summary:
-      'Bespoke pharmaceutical commerce platform with MOHAP/Tatmeen regulatory batch serialization, cold-chain telemetry, and automated B2B pharmacy reordering.',
-    imageSrc: '/hero_clinic.jpg',
+      'Premier licensed pharmaceutical wholesaler and medicine supplier founded in 1993, empowering hospitals, clinics, and pharmacies across all 7 Emirates with temperature-controlled supply.',
+    imageSrc: '/emirates_drugs_store_desktop.png',
+    tabletImageSrc: '/emirates_drugs_store_tablet.png',
+    mobileImageSrc: '/emirates_drugs_store_mobile.png',
     mockUrl: 'https://emiratesdrugstore.ae',
     deliverables: [
-      'MOHAP & Tatmeen Serialization & Regulatory Traceability',
-      'Pharmaceutical Batch, Lot & Expiry Lifecycle Engine',
-      'Cold-Chain Temperature Sensor Alerts & Telemetry',
+      'MOHAP Licensed & Tatmeen Regulatory Traceability',
+      '24/7 Rapid Despatch for Clinical Emergency Medicine',
+      'Central Bio-Vault & Temperature-Controlled Cold Chain',
     ],
     techStack: ['Next.js 14', 'PostgreSQL', 'HL7 / FHIR', 'Node.js'],
     metrics: [
-      { label: 'REGULATORY', value: 'MOHAP / Tatmeen' },
-      { label: 'SERIAL TRACE', value: '100% Batch/Lot' },
-      { label: 'DISPATCH', value: 'Real-Time Auto-Route' },
+      { label: 'ESTABLISHED', value: '1993' },
+      { label: 'OUTLETS', value: '450+ Outlets' },
+      { label: 'VERIFIED', value: '100% Tatmeen' },
     ],
     liveStatus: 'Active Build • Q1 2026',
     isCurrentlyBuilding: true,
     architecture: {
       runtime: 'Next.js 14 & Distributed Event Microservices',
       database: 'TimescaleDB (IoT Cold-Chain) & PostgreSQL',
-      security: 'HL7 / FHIR Privacy Compliance, Audit Trail',
-      scalability: 'Nationwide Pharmacy Wholesale Grid',
+      security: 'MOHAP GDP & Tatmeen Compliance, HL7 / FHIR Security',
+      scalability: 'Nationwide Pharmacy Wholesale & Cold-Chain Grid',
     },
   },
   {
@@ -180,7 +182,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     imageSrc: '/al_fadli_desktop.png',
     tabletImageSrc: '/al_fadli_tablet.png',
     mobileImageSrc: '/al_fadli_mobile.png',
-    mockUrl: 'https://alfadlipress.com',
+    mockUrl: 'https://fadlipress.com/en/',
     deliverables: [
       'Offset Printing, Custom Packaging & Event Branding',
       'Instant WhatsApp Inquiry & Automated Order Dispatch',
@@ -212,7 +214,7 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
       'We help businesses get more customers from Google, Google Maps, and AI search through data-driven SEO, performance marketing, and content strategies tied directly to revenue.',
     imageSrc: '/tomato_tree_desktop.png',
     mobileImageSrc: '/tomato_tree_mobile.png',
-    mockUrl: 'https://tomatotreedigital.com',
+    mockUrl: 'https://tomatotreedigital.com/',
     deliverables: [
       'Google SEO, Maps Visibility & AI Search Optimization',
       'Performance Marketing & Revenue Growth Systems',
@@ -235,25 +237,27 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
   {
     id: 'hrms',
     number: '06',
-    title: 'Synapse HRMS',
+    title: 'Synapse HRMS & Workspace',
     client: 'UAE Regional Enterprises & Corporate Groups',
     category: 'Workforce & HRMS',
     year: '2026',
-    tagline: 'Workforce Management & WPS Payroll',
+    tagline: 'Company Admin Workspace Portal & Delivery Tracking',
     summary:
-      'Enterprise workforce operations suite providing 100% automated UAE WPS bank file generation, biometric attendance, and employee self-service.',
-    imageSrc: '/hero_hrms.jpg',
+      'Centralized administrative workspace and workforce platform for organizing roadmaps, tracking delivery milestones across Kanban sprints, and managing cross-functional team productivity.',
+    imageSrc: '/synapse_hrms_desktop.png',
+    tabletImageSrc: '/synapse_hrms_tablet.jpg',
+    mobileImageSrc: '/synapse_hrms_mobile.jpg',
     mockUrl: 'https://synapse.arcanum.ae',
     deliverables: [
-      'Automated UAE WPS SIF Bank Generation',
-      'Biometric Attendance & Shift Rostering',
-      'Employee Self-Service (ESS) Portal',
+      'Interactive Kanban Sprint Workspace & Live Milestones',
+      'Automated UAE WPS SIF Bank Generation & Payroll Engine',
+      'Employee Directory, Role-Based Access & Task Allocation',
     ],
     techStack: ['Next.js 14', 'Node.js', 'PostgreSQL', 'Docker'],
     metrics: [
+      { label: 'WORKFLOW', value: 'Live Kanban' },
       { label: 'WPS AUDIT', value: '100% Automated' },
       { label: 'PROCESSING', value: '< 2 Minutes' },
-      { label: 'USERS', value: '150K+ Monthly' },
     ],
     liveStatus: 'UAE Ministry Verified',
     architecture: {
@@ -631,13 +635,26 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   <span>Request Proposal</span>
                 </button>
 
-                <button
-                  onClick={() => setBlueprintModalOpen(true)}
-                  className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center space-x-1.5 shadow-2xs"
-                >
-                  <span>System Blueprint</span>
-                  <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
-                </button>
+                {activeProject.liveStatus.includes('Delivered') ? (
+                  <a
+                    href={activeProject.mockUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold transition-colors flex items-center space-x-1.5 shadow-2xs"
+                    title={`Visit ${activeProject.title} live website`}
+                  >
+                    <span>Visit Live Website</span>
+                    <ExternalLink className="h-3.5 w-3.5 text-emerald-700" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => setBlueprintModalOpen(true)}
+                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold transition-colors flex items-center space-x-1.5 shadow-2xs"
+                  >
+                    <span>System Blueprint</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-blue-600" />
+                  </button>
+                )}
               </div>
             </div>
 
@@ -671,10 +688,17 @@ export default function StandaloneLightWebsiteCatalogPage() {
                             <span className="h-1.5 w-1.5 rounded-full bg-amber-400 inline-block" />
                             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />
                           </div>
-                          <div className="flex items-center space-x-1 bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-700">
+                          <a
+                            href={activeProject.mockUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors"
+                            title="Visit website"
+                          >
                             <Lock className="h-2.5 w-2.5 text-emerald-600" />
-                            <span>{activeProject.mockUrl}</span>
-                          </div>
+                            <span className="hover:underline">{activeProject.mockUrl}</span>
+                            <ExternalLink className="h-2 w-2 text-slate-400" />
+                          </a>
                           <span className="text-[8px]">Safari</span>
                         </div>
                       </div>
@@ -686,36 +710,30 @@ export default function StandaloneLightWebsiteCatalogPage() {
                   </div>
 
                   {/* 2. Left Foreground: Silver iPad Pro Mockup */}
-                  <div className="absolute -left-2 sm:-left-6 bottom-0 w-[170px] sm:w-[210px] z-20 shadow-2xl transition-transform hover:scale-105 duration-300">
+                  <div className="absolute -left-2 sm:-left-6 bottom-0 w-[180px] sm:w-[220px] z-20 shadow-2xl transition-transform hover:scale-105 duration-300">
                     <div className="rounded-2xl border-2 border-slate-300 bg-slate-100 p-2 shadow-2xl">
                       <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-slate-200">
                         <img
                           src={activeProject.tabletImageSrc || activeProject.imageSrc}
                           alt="Tablet View"
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-contain bg-slate-50 object-top"
                         />
-                        <div className="absolute bottom-2 left-2 text-[8px] font-mono text-slate-800 bg-white/90 px-1.5 py-0.5 rounded shadow-sm border border-slate-200">
-                          iPad OS • Tablet UI
+                        <div className="absolute top-1.5 left-1.5 text-[7px] font-mono text-slate-700 bg-white/95 px-1.5 py-0.5 rounded shadow-2xs border border-slate-200 font-semibold">
+                          iPad OS
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* 3. Right Foreground: Silver iPhone 16 Pro Mockup */}
-                  <div className="absolute -right-2 sm:-right-4 bottom-4 w-[110px] sm:w-[130px] z-30 shadow-2xl transition-transform hover:scale-105 duration-300">
+                  <div className="absolute -right-2 sm:-right-4 bottom-4 w-[115px] sm:w-[135px] z-30 shadow-2xl transition-transform hover:scale-105 duration-300">
                     <div className="rounded-3xl border-2 border-slate-300 bg-slate-100 p-1.5 shadow-2xl">
-                      <div className="relative aspect-[9/19] rounded-2xl overflow-hidden bg-white border border-slate-200">
-                        <div className="absolute top-1.5 inset-x-0 flex justify-center z-20">
-                          <div className="h-2 w-8 bg-slate-900 rounded-full" />
-                        </div>
+                      <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-slate-200">
                         <img
                           src={activeProject.mobileImageSrc || activeProject.imageSrc}
                           alt="Mobile View"
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-contain bg-slate-50 object-top"
                         />
-                        <div className="absolute bottom-2 inset-x-0 flex justify-center">
-                          <div className="h-0.5 w-8 bg-slate-400 rounded-full" />
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -723,24 +741,41 @@ export default function StandaloneLightWebsiteCatalogPage() {
               )}
 
               {/* ---------------------------------------------------- */}
-              {/* OPTION B: SOLO SILVER MACBOOK PRO FOCUS */}
+              {/* OPTION B: SOLO SILVER MACBOOK PRO FOCUS (Full Scrollable) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'macbook' && (
-                <div className="w-full max-w-[620px] shadow-2xl">
-                  <div className="rounded-t-2xl border-2 border-slate-300 bg-slate-100 p-3 pb-0 shadow-2xl">
+                <div className="w-full max-w-[640px] shadow-2xl">
+                  <div className="rounded-t-2xl border-2 border-slate-300 bg-slate-100 p-2.5 pb-0 shadow-2xl">
                     <div className="h-3 flex items-center justify-center mb-1">
-                      <div className="h-2 w-2 rounded-full bg-slate-400 ring-1 ring-slate-300" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-slate-400 ring-1 ring-slate-300" />
                     </div>
-                    <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-white border border-slate-200">
+                    {/* Browser Mock Screen with Scrollable Canvas */}
+                    <div className="relative aspect-[16/10] max-h-[460px] rounded-lg overflow-y-auto no-scrollbar bg-white border border-slate-200 shadow-inner group">
+                      {/* Sticky Top Safari Chrome */}
+                      <div className="sticky top-0 inset-x-0 h-6 bg-slate-100/95 border-b border-slate-200 px-2 flex items-center justify-between text-[9px] font-mono text-slate-500 backdrop-blur-md z-20">
+                        <div className="flex items-center space-x-1">
+                          <span className="h-1.5 w-1.5 rounded-full bg-rose-400 inline-block" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-amber-400 inline-block" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />
+                        </div>
+                        <a
+                          href={activeProject.mockUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded border border-slate-200 text-slate-700 transition-colors"
+                          title="Visit website"
+                        >
+                          <Lock className="h-2.5 w-2.5 text-emerald-600" />
+                          <span className="hover:underline">{activeProject.mockUrl}</span>
+                          <ExternalLink className="h-2 w-2 text-slate-400" />
+                        </a>
+                        <span className="text-[8px] text-slate-400">Desktop View</span>
+                      </div>
                       <img
                         src={activeProject.imageSrc}
                         alt={activeProject.title}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-auto min-h-full block object-top"
                       />
-                      <div className="absolute bottom-3 left-4 text-xs font-mono text-slate-800 bg-white/95 px-3 py-1 rounded-md border border-slate-200 shadow-sm flex items-center space-x-1.5">
-                        <Lock className="h-3.5 w-3.5 text-emerald-600" />
-                        <span>{activeProject.mockUrl}</span>
-                      </div>
                     </div>
                   </div>
                   <div className="h-4 bg-gradient-to-b from-slate-200 to-slate-300 rounded-b-2xl border-t border-slate-300 shadow-lg flex items-center justify-center">
@@ -750,44 +785,73 @@ export default function StandaloneLightWebsiteCatalogPage() {
               )}
 
               {/* ---------------------------------------------------- */}
-              {/* OPTION C: SOLO SILVER IPAD PRO FOCUS */}
+              {/* OPTION C: SOLO SILVER IPAD PRO FOCUS (Full Scrollable & Legible) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'ipad' && (
-                <div className="w-full max-w-[420px] shadow-2xl">
+                <div className="w-full max-w-[560px] shadow-2xl">
                   <div className="rounded-3xl border-2 border-slate-300 bg-slate-100 p-3 shadow-2xl">
-                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white border border-slate-200">
+                    {/* iPadOS Header Bar */}
+                    <div className="flex items-center justify-between px-2 py-1 mb-1 text-[10px] font-mono text-slate-600">
+                      <div className="flex items-center space-x-1.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
+                        <span className="font-semibold text-slate-700">iPad Pro 12.9"</span>
+                      </div>
+                      <a
+                        href={activeProject.mockUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-1 bg-white hover:bg-slate-50 px-2.5 py-0.5 rounded-full border border-slate-200 text-slate-700 shadow-2xs text-[9px] transition-colors"
+                        title="Visit website"
+                      >
+                        <Lock className="h-2.5 w-2.5 text-emerald-600" />
+                        <span className="truncate max-w-[200px] hover:underline">{activeProject.mockUrl}</span>
+                        <ExternalLink className="h-2 w-2 text-slate-400" />
+                      </a>
+                      <span className="text-[9px] text-slate-400 font-medium">Scrollable UI</span>
+                    </div>
+
+                    {/* Scrollable iPad Screen - 100% Width so zero text is cropped */}
+                    <div className="relative h-[480px] sm:h-[540px] rounded-2xl overflow-y-auto no-scrollbar bg-white border border-slate-200 shadow-inner">
                       <img
                         src={activeProject.tabletImageSrc || activeProject.imageSrc}
                         alt={activeProject.title}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-auto min-h-full block object-top"
                       />
-                      <div className="absolute bottom-4 left-4 text-xs font-mono text-slate-800 bg-white/95 px-3 py-1 rounded-md border border-slate-200 shadow-sm flex items-center space-x-1.5">
-                        <Lock className="h-3 w-3 text-emerald-600" />
-                        <span>iPad Pro 12.9" • {activeProject.title}</span>
-                      </div>
+                    </div>
+
+                    {/* Bottom Aluminum Chin Indicator */}
+                    <div className="h-2.5 flex items-center justify-center pt-1">
+                      <div className="h-1 w-24 bg-slate-300 rounded-full" />
                     </div>
                   </div>
                 </div>
               )}
 
               {/* ---------------------------------------------------- */}
-              {/* OPTION D: SOLO IPHONE 16 PRO FOCUS */}
+              {/* OPTION D: SOLO IPHONE 16 PRO FOCUS (Full Scrollable & Legible) */}
               {/* ---------------------------------------------------- */}
               {deviceMode === 'iphone' && (
-                <div className="w-full max-w-[280px] shadow-2xl">
-                  <div className="rounded-[40px] border-4 border-slate-300 bg-slate-100 p-2.5 shadow-2xl">
-                    <div className="relative aspect-[9/19] rounded-[32px] overflow-hidden bg-white border border-slate-200">
-                      <div className="absolute top-2.5 inset-x-0 flex justify-center z-20">
-                        <div className="h-3.5 w-20 bg-slate-900 rounded-full" />
-                      </div>
+                <div className="w-full max-w-[320px] sm:max-w-[340px] shadow-2xl">
+                  <div className="rounded-[44px] border-4 border-slate-300 bg-slate-100 p-2.5 shadow-2xl">
+                    {/* iPhone Top Status Bar - Placed in bezel so screen content is NOT blocked */}
+                    <div className="h-6 flex items-center justify-between px-3 mb-1 text-[10px] font-mono text-slate-700 font-bold">
+                      <span>9:41</span>
+                      <div className="h-3 w-16 bg-slate-900 rounded-full" />
+                      <span className="text-[9px]">5G</span>
+                    </div>
+
+                    {/* Scrollable iPhone Screen - 100% Width so zero text is cropped */}
+                    <div className="relative h-[520px] sm:h-[560px] rounded-[30px] overflow-y-auto no-scrollbar bg-white border border-slate-200 shadow-inner">
                       <img
                         src={activeProject.mobileImageSrc || activeProject.imageSrc}
                         alt={activeProject.title}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-auto min-h-full block object-top"
                       />
-                      <div className="absolute bottom-3 inset-x-0 flex justify-center">
-                        <div className="h-1 w-24 bg-slate-400 rounded-full" />
-                      </div>
+                    </div>
+
+                    {/* iPhone Bottom Home Indicator Bar */}
+                    <div className="h-2.5 flex items-center justify-center pt-1">
+                      <div className="h-1 w-24 bg-slate-400 rounded-full" />
                     </div>
                   </div>
                 </div>
@@ -795,9 +859,9 @@ export default function StandaloneLightWebsiteCatalogPage() {
             </div>
           </div>
 
-          {/* Bottom Filmstrip Carousel Navigation */}
-          <div className="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between gap-4 font-mono text-xs">
-            <div className="flex items-center space-x-2">
+          {/* Bottom Filmstrip Carousel Navigation - FULL WIDTH */}
+          <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col xl:flex-row items-center gap-3 font-mono text-xs w-full">
+            <div className="flex items-center space-x-2 shrink-0">
               <button
                 onClick={handlePrev}
                 className="p-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 transition-colors shadow-sm"
@@ -812,35 +876,35 @@ export default function StandaloneLightWebsiteCatalogPage() {
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
-              <span className="text-slate-500 pl-2 font-medium">
-                PROJECT {activeProject.number} OF {filteredProjects.length}
+              <span className="text-slate-500 px-1 font-medium whitespace-nowrap">
+                {activeProject.number} / {filteredProjects.length}
               </span>
             </div>
 
-            {/* Thumbnail Quick Selector Strip */}
-            <div className="hidden md:flex items-center space-x-2 overflow-x-auto no-scrollbar max-w-xl">
+            {/* Thumbnail Quick Selector Strip - FULL WIDTH RESPONSIVE GRID */}
+            <div className="w-full flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
               {filteredProjects.map((p, idx) => {
                 const isCurrent = idx === activeIndex;
                 return (
                   <button
                     key={p.id}
                     onClick={() => setActiveIndex(idx)}
-                    className={`h-10 px-3.5 rounded-xl border flex items-center space-x-2 transition-all font-medium ${
+                    className={`h-11 px-3 rounded-xl border flex items-center justify-center space-x-2 transition-all font-medium w-full text-center ${
                       isCurrent
                         ? p.isCurrentlyBuilding
-                          ? 'bg-amber-500 text-white border-amber-600 shadow-sm'
-                          : 'bg-blue-600 text-white border-blue-700 shadow-sm'
-                        : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
+                          ? 'bg-amber-500 text-white border-amber-600 shadow-sm ring-2 ring-amber-400/30'
+                          : 'bg-blue-600 text-white border-blue-700 shadow-sm ring-2 ring-blue-400/30'
+                        : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300'
                     }`}
                   >
-                    <span className={`text-[10px] font-bold ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
+                    <span className={`text-[11px] font-bold shrink-0 ${isCurrent ? 'text-white' : 'text-blue-600'}`}>
                       {p.number}
                     </span>
-                    <span className="text-xs truncate max-w-[130px]">
+                    <span className="text-xs font-semibold truncate">
                       {p.title}
                     </span>
                     {p.isCurrentlyBuilding && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-amber-300 animate-pulse" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-amber-300 animate-pulse shrink-0" />
                     )}
                   </button>
                 );
