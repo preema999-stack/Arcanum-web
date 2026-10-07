@@ -49,8 +49,8 @@ export interface ClientCaseStudy {
   number: string;
   title: string;
   client: string;
-  category: 'RMS' | 'Websites' | 'ERP';
-  subcategory?: 'RMS' | 'POS' | 'Websites' | 'ERP' | 'HRMS';
+  category: 'RMS' | 'Websites' | 'Web Applications' | 'ERP';
+  subcategory?: 'RMS' | 'POS' | 'Websites' | 'Web Applications' | 'ERP' | 'HRMS';
   year: string;
   tagline: string;
   summary: string;
@@ -282,41 +282,8 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
     },
   },
   {
-    id: 'hrms',
-    number: '07',
-    title: 'Synapse HRMS & Workspace',
-    client: 'UAE Regional Enterprises & Corporate Groups',
-    category: 'Websites',
-    subcategory: 'Websites',
-    year: '2026',
-    tagline: 'Company Admin Workspace Portal & Delivery Tracking',
-    summary:
-      'Centralized administrative workspace and workforce platform for organizing roadmaps, tracking delivery milestones across Kanban sprints, and managing cross-functional team productivity.',
-    imageSrc: '/synapse_hrms_desktop.png',
-    tabletImageSrc: '/synapse_hrms_tablet.jpg',
-    mobileImageSrc: '/synapse_hrms_mobile.jpg',
-    deliverables: [
-      'Interactive Kanban Sprint Workspace & Live Milestones',
-      'Automated UAE WPS SIF Bank Generation & Payroll Engine',
-      'Employee Directory, Role-Based Access & Task Allocation',
-    ],
-    techStack: ['Next.js 14', 'Node.js', 'PostgreSQL', 'Docker'],
-    metrics: [
-      { label: 'WORKFLOW', value: 'Live Kanban' },
-      { label: 'WPS AUDIT', value: '100% Automated' },
-      { label: 'PROCESSING', value: '< 2 Minutes' },
-    ],
-    liveStatus: 'UAE Ministry Verified',
-    architecture: {
-      runtime: 'Node.js & Next.js 14 Fullstack',
-      database: 'PostgreSQL with Redis Session Cache',
-      security: 'Encrypted UAE National ID & Bank Data',
-      scalability: '150,000+ Employee Monthly Runs',
-    },
-  },
-  {
     id: 'chinese-connection',
-    number: '08',
+    number: '07',
     title: 'Chinese Connection UAE',
     client: 'Chinese Connection Restaurant Group (Abu Dhabi & Dubai)',
     category: 'Websites',
@@ -346,6 +313,39 @@ const LUXURY_PORTFOLIO_PROJECTS: ClientCaseStudy[] = [
       database: 'PostgreSQL Cluster with Real-Time Kitchen POS Bridge',
       security: 'SSL TLS 1.3, Encrypted Online Payment Gateway Integration',
       scalability: 'Elastic High-Concurrency Peak Dinner Rush Architecture',
+    },
+  },
+  {
+    id: 'hrms',
+    number: '08',
+    title: 'Synapse HRMS & Workspace',
+    client: 'UAE Regional Enterprises & Corporate Groups',
+    category: 'Web Applications',
+    subcategory: 'HRMS',
+    year: '2026',
+    tagline: 'Company Admin Workspace Portal & Delivery Tracking',
+    summary:
+      'Centralized administrative workspace and workforce platform for organizing roadmaps, tracking delivery milestones across Kanban sprints, and managing cross-functional team productivity.',
+    imageSrc: '/synapse_hrms_desktop.png',
+    tabletImageSrc: '/synapse_hrms_tablet.jpg',
+    mobileImageSrc: '/synapse_hrms_mobile.jpg',
+    deliverables: [
+      'Interactive Kanban Sprint Workspace & Live Milestones',
+      'Automated UAE WPS SIF Bank Generation & Payroll Engine',
+      'Employee Directory, Role-Based Access & Task Allocation',
+    ],
+    techStack: ['Next.js 14', 'Node.js', 'PostgreSQL', 'Docker'],
+    metrics: [
+      { label: 'WORKFLOW', value: 'Live Kanban' },
+      { label: 'WPS AUDIT', value: '100% Automated' },
+      { label: 'PROCESSING', value: '< 2 Minutes' },
+    ],
+    liveStatus: 'UAE Ministry Verified',
+    architecture: {
+      runtime: 'Node.js & Next.js 14 Fullstack',
+      database: 'PostgreSQL with Redis Session Cache',
+      security: 'Encrypted UAE National ID & Bank Data',
+      scalability: '150,000+ Employee Monthly Runs',
     },
   },
   {
@@ -386,7 +386,7 @@ export default function StandaloneLightWebsiteCatalogPage() {
   // State
   const [activeIndex, setActiveIndex] = useState(0);
   const [deviceMode, setDeviceMode] = useState<DeviceMode>('trio');
-  const [selectedFilter, setSelectedFilter] = useState<'All' | 'RMS' | 'Websites' | 'ERP'>('All');
+  const [selectedFilter, setSelectedFilter] = useState<'All' | 'RMS' | 'Websites' | 'Web Applications' | 'ERP'>('All');
   const [rmsSubFilter, setRmsSubFilter] = useState<'All' | 'RMS' | 'POS'>('All');
   const [rfpModalOpen, setRfpModalOpen] = useState(false);
   const [blueprintModalOpen, setBlueprintModalOpen] = useState(false);
@@ -427,10 +427,11 @@ export default function StandaloneLightWebsiteCatalogPage() {
   const isLaptopOnly = activeProject.category === 'ERP' || activeProject.category === 'RMS' || activeProject.id === 'arc-rms' || activeProject.id === 'arc-pos';
   const effectiveDeviceMode: DeviceMode = isLaptopOnly ? 'macbook' : deviceMode;
 
-  const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'ERP' }[] = [
+  const filterTabs: { label: string; value: 'All' | 'RMS' | 'Websites' | 'Web Applications' | 'ERP' }[] = [
     { label: 'All Systems', value: 'All' },
     { label: 'RMS', value: 'RMS' },
     { label: 'Websites', value: 'Websites' },
+    { label: 'Web Applications', value: 'Web Applications' },
     { label: 'ERP', value: 'ERP' },
   ];
 
